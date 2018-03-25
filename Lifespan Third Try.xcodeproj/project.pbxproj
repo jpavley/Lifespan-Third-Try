@@ -15,6 +15,7 @@
 		1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */; };
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
+		1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1878F0272067EEB600BEA332 /* Lifespan Third TryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lifespan Third TryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1878F0392067F2FB00BEA332 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
 				1878F00B2067EEB600BEA332 /* FirstViewController.swift */,
 				1878F00D2067EEB600BEA332 /* SecondViewController.swift */,
+				1878F0392067F2FB00BEA332 /* ThirdViewController.swift */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				1878F00E2067EEB600BEA332 /* SecondViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
+				1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */,
 				1878F00C2067EEB600BEA332 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
