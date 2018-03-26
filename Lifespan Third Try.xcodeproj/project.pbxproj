@@ -16,8 +16,19 @@
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* YearViewController.swift */; };
-		48E25CA22069B2CA006BB346 /* Life Classes in Resources */ = {isa = PBXBuildFile; fileRef = 48E25CA12069B2CA006BB346 /* Life Classes */; };
 		48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA32069B405006BB346 /* ProfileViewController.swift */; };
+		48E25CA62069B647006BB346 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA52069B646006BB346 /* SharedState.swift */; };
+		48E25CAF2069B846006BB346 /* Lifespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA92069B845006BB346 /* Lifespan.swift */; };
+		48E25CB02069B846006BB346 /* WebUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAA2069B845006BB346 /* WebUtilities.swift */; };
+		48E25CB12069B846006BB346 /* CalendarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAB2069B846006BB346 /* CalendarUtilities.swift */; };
+		48E25CB22069B846006BB346 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAC2069B846006BB346 /* UserProfile.swift */; };
+		48E25CB32069B846006BB346 /* LifeClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAD2069B846006BB346 /* LifeClock.swift */; };
+		48E25CB42069B846006BB346 /* PrettyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAE2069B846006BB346 /* PrettyBackgroundView.swift */; };
+		48E25CBB2069B88B006BB346 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB62069B88B006BB346 /* ClockView.swift */; };
+		48E25CBC2069B88B006BB346 /* SecondHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB72069B88B006BB346 /* SecondHandView.swift */; };
+		48E25CBD2069B88B006BB346 /* MinuteHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB82069B88B006BB346 /* MinuteHandView.swift */; };
+		48E25CBE2069B88B006BB346 /* HourHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB92069B88B006BB346 /* HourHandView.swift */; };
+		48E25CBF2069B88B006BB346 /* CoreGraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +64,19 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
-		48E25CA12069B2CA006BB346 /* Life Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Life Classes"; sourceTree = "<group>"; };
 		48E25CA32069B405006BB346 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		48E25CA52069B646006BB346 /* SharedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedState.swift; sourceTree = "<group>"; };
+		48E25CA92069B845006BB346 /* Lifespan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan.swift; sourceTree = "<group>"; };
+		48E25CAA2069B845006BB346 /* WebUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUtilities.swift; sourceTree = "<group>"; };
+		48E25CAB2069B846006BB346 /* CalendarUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUtilities.swift; sourceTree = "<group>"; };
+		48E25CAC2069B846006BB346 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		48E25CAD2069B846006BB346 /* LifeClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeClock.swift; sourceTree = "<group>"; };
+		48E25CAE2069B846006BB346 /* PrettyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyBackgroundView.swift; sourceTree = "<group>"; };
+		48E25CB62069B88B006BB346 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		48E25CB72069B88B006BB346 /* SecondHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHandView.swift; sourceTree = "<group>"; };
+		48E25CB82069B88B006BB346 /* MinuteHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteHandView.swift; sourceTree = "<group>"; };
+		48E25CB92069B88B006BB346 /* HourHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourHandView.swift; sourceTree = "<group>"; };
+		48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +127,11 @@
 		1878F0082067EEB600BEA332 /* Lifespan Third Try */ = {
 			isa = PBXGroup;
 			children = (
-				48E25CA12069B2CA006BB346 /* Life Classes */,
+				48E25CB52069B85B006BB346 /* Lifespan Classes */,
 				48E25CA02069B261006BB346 /* View Controllers */,
+				48E25CC02069B8A1006BB346 /* Core Graphics Views */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
+				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
 				1878F0172067EEB600BEA332 /* Info.plist */,
@@ -136,13 +160,38 @@
 		48E25CA02069B261006BB346 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
 				1878F00B2067EEB600BEA332 /* DayViewConroller.swift */,
 				1878F00D2067EEB600BEA332 /* WeekViewController.swift */,
 				1878F0392067F2FB00BEA332 /* YearViewController.swift */,
 				48E25CA32069B405006BB346 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		48E25CB52069B85B006BB346 /* Lifespan Classes */ = {
+			isa = PBXGroup;
+			children = (
+				48E25CA52069B646006BB346 /* SharedState.swift */,
+				48E25CAA2069B845006BB346 /* WebUtilities.swift */,
+				48E25CAC2069B846006BB346 /* UserProfile.swift */,
+				48E25CAE2069B846006BB346 /* PrettyBackgroundView.swift */,
+				48E25CA92069B845006BB346 /* Lifespan.swift */,
+				48E25CAD2069B846006BB346 /* LifeClock.swift */,
+				48E25CAB2069B846006BB346 /* CalendarUtilities.swift */,
+			);
+			name = "Lifespan Classes";
+			sourceTree = "<group>";
+		};
+		48E25CC02069B8A1006BB346 /* Core Graphics Views */ = {
+			isa = PBXGroup;
+			children = (
+				48E25CB62069B88B006BB346 /* ClockView.swift */,
+				48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */,
+				48E25CB92069B88B006BB346 /* HourHandView.swift */,
+				48E25CB82069B88B006BB346 /* MinuteHandView.swift */,
+				48E25CB72069B88B006BB346 /* SecondHandView.swift */,
+			);
+			path = "Core Graphics Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +303,6 @@
 			files = (
 				1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */,
 				1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */,
-				48E25CA22069B2CA006BB346 /* Life Classes in Resources */,
 				1878F0112067EEB600BEA332 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,11 +328,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E25CBF2069B88B006BB346 /* CoreGraphicsView.swift in Sources */,
+				48E25CAF2069B846006BB346 /* Lifespan.swift in Sources */,
+				48E25CBE2069B88B006BB346 /* HourHandView.swift in Sources */,
+				48E25CBD2069B88B006BB346 /* MinuteHandView.swift in Sources */,
+				48E25CA62069B647006BB346 /* SharedState.swift in Sources */,
+				48E25CB22069B846006BB346 /* UserProfile.swift in Sources */,
+				48E25CB32069B846006BB346 /* LifeClock.swift in Sources */,
+				48E25CB42069B846006BB346 /* PrettyBackgroundView.swift in Sources */,
 				1878F00E2067EEB600BEA332 /* WeekViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
+				48E25CB12069B846006BB346 /* CalendarUtilities.swift in Sources */,
 				48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */,
 				1878F03A2067F2FB00BEA332 /* YearViewController.swift in Sources */,
+				48E25CBB2069B88B006BB346 /* ClockView.swift in Sources */,
+				48E25CBC2069B88B006BB346 /* SecondHandView.swift in Sources */,
 				1878F00C2067EEB600BEA332 /* DayViewConroller.swift in Sources */,
+				48E25CB02069B846006BB346 /* WebUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
