@@ -16,6 +16,7 @@
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* ThirdViewController.swift */; };
+		48E25CA22069B2CA006BB346 /* Life Classes in Resources */ = {isa = PBXBuildFile; fileRef = 48E25CA12069B2CA006BB346 /* Life Classes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		48E25CA12069B2CA006BB346 /* Life Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Life Classes"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		1878F0082067EEB600BEA332 /* Lifespan Third Try */ = {
 			isa = PBXGroup;
 			children = (
+				48E25CA12069B2CA006BB346 /* Life Classes */,
 				48E25CA02069B261006BB346 /* View Controllers */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
@@ -248,6 +251,7 @@
 			files = (
 				1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */,
 				1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */,
+				48E25CA22069B2CA006BB346 /* Life Classes in Resources */,
 				1878F0112067EEB600BEA332 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
