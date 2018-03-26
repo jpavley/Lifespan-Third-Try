@@ -101,10 +101,7 @@
 		1878F0082067EEB600BEA332 /* Lifespan Third Try */ = {
 			isa = PBXGroup;
 			children = (
-				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
-				1878F00B2067EEB600BEA332 /* FirstViewController.swift */,
-				1878F00D2067EEB600BEA332 /* SecondViewController.swift */,
-				1878F0392067F2FB00BEA332 /* ThirdViewController.swift */,
+				48E25CA02069B261006BB346 /* View Controllers */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
@@ -129,6 +126,17 @@
 				1878F02D2067EEB600BEA332 /* Info.plist */,
 			);
 			path = "Lifespan Third TryUITests";
+			sourceTree = "<group>";
+		};
+		48E25CA02069B261006BB346 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
+				1878F00B2067EEB600BEA332 /* FirstViewController.swift */,
+				1878F00D2067EEB600BEA332 /* SecondViewController.swift */,
+				1878F0392067F2FB00BEA332 /* ThirdViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
