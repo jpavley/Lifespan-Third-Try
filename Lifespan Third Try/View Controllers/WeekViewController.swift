@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  WeekViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class WeekViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
