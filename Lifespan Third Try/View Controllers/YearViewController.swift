@@ -1,5 +1,5 @@
 //
-//  ThirdViewController.swift
+//  YearViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class YearViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
