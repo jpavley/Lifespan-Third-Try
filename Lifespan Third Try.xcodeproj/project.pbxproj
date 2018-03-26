@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0092067EEB600BEA332 /* AppDelegate.swift */; };
-		1878F00C2067EEB600BEA332 /* ClockViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00B2067EEB600BEA332 /* ClockViewConroller.swift */; };
+		1878F00C2067EEB600BEA332 /* DayViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00B2067EEB600BEA332 /* DayViewConroller.swift */; };
 		1878F00E2067EEB600BEA332 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00D2067EEB600BEA332 /* SecondViewController.swift */; };
 		1878F0112067EEB600BEA332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1878F00F2067EEB600BEA332 /* Main.storyboard */; };
 		1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0122067EEB600BEA332 /* Assets.xcassets */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1878F0062067EEB600BEA332 /* Lifespan Third Try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lifespan Third Try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1878F0092067EEB600BEA332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1878F00B2067EEB600BEA332 /* ClockViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewConroller.swift; sourceTree = "<group>"; };
+		1878F00B2067EEB600BEA332 /* DayViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewConroller.swift; sourceTree = "<group>"; };
 		1878F00D2067EEB600BEA332 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1878F0102067EEB600BEA332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1878F0122067EEB600BEA332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
-				1878F00B2067EEB600BEA332 /* ClockViewConroller.swift */,
+				1878F00B2067EEB600BEA332 /* DayViewConroller.swift */,
 				1878F00D2067EEB600BEA332 /* SecondViewController.swift */,
 				1878F0392067F2FB00BEA332 /* ThirdViewController.swift */,
 			);
@@ -280,7 +280,7 @@
 				1878F00E2067EEB600BEA332 /* SecondViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
 				1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */,
-				1878F00C2067EEB600BEA332 /* ClockViewConroller.swift in Sources */,
+				1878F00C2067EEB600BEA332 /* DayViewConroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
