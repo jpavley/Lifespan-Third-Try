@@ -17,6 +17,7 @@
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* ThirdViewController.swift */; };
 		48E25CA22069B2CA006BB346 /* Life Classes in Resources */ = {isa = PBXBuildFile; fileRef = 48E25CA12069B2CA006BB346 /* Life Classes */; };
+		48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA32069B405006BB346 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		48E25CA12069B2CA006BB346 /* Life Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Life Classes"; sourceTree = "<group>"; };
+		48E25CA32069B405006BB346 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				1878F00B2067EEB600BEA332 /* DayViewConroller.swift */,
 				1878F00D2067EEB600BEA332 /* SecondViewController.swift */,
 				1878F0392067F2FB00BEA332 /* ThirdViewController.swift */,
+				48E25CA32069B405006BB346 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				1878F00E2067EEB600BEA332 /* SecondViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
+				48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */,
 				1878F03A2067F2FB00BEA332 /* ThirdViewController.swift in Sources */,
 				1878F00C2067EEB600BEA332 /* DayViewConroller.swift in Sources */,
 			);

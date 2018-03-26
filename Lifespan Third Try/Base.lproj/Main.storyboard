@@ -87,7 +87,7 @@
         <!--Profile-->
         <scene sceneID="Vra-Wd-8V1">
             <objects>
-                <viewController id="M2B-uX-7MA" sceneMemberID="viewController">
+                <viewController id="M2B-uX-7MA" customClass="ProfileViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7pa-7P-he4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
