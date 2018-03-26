@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ClockViewConroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
