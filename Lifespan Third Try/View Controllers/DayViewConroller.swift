@@ -104,14 +104,13 @@ class DayViewController: UIViewController, SharedState {
     }
     
     fileprivate func setClock(with lifeClock: LifeClock) {
-//        let hourHand = view.viewWithTag(hourHandTag) as! HourHandView
-//        let minuteHand = view.viewWithTag(minuteHandTag) as! MinuteHandView
-//        let secondHand = view.viewWithTag(secondHandTag) as! SecondHandView
-//
-//        hourHand.angle = lifeClock.hourHandAngle
-//        minuteHand.angle = lifeClock.minuteHandAngle
-//        secondHand.angle = lifeClock.secondHandAngle
-        
+        let hourHand = view.viewWithTag(hourHandTag) as! HourHandView
+        let minuteHand = view.viewWithTag(minuteHandTag) as! MinuteHandView
+        let secondHand = view.viewWithTag(secondHandTag) as! SecondHandView
+
+        hourHand.angle = lifeClock.hourHandAngle
+        minuteHand.angle = lifeClock.minuteHandAngle
+        secondHand.angle = lifeClock.secondHandAngle
     }
     
     

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-RG-8Ff">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-RG-8Ff" userLabel="Labels Stack View">
                                 <rect key="frame" x="8" y="28" width="304" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Washington" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKk-wa-SQj">
@@ -42,22 +42,43 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                 <rect key="frame" x="8" y="106" width="304" height="304"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8og-Wa-jxE" secondAttribute="height" multiplier="1:1" id="dkR-6D-6dV"/>
                                 </constraints>
                             </view>
+                            <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="304" height="304"/>
+                            </view>
+                            <view opaque="NO" tag="300" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-n7-eFK" customClass="HourHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="304" height="304"/>
+                            </view>
+                            <view opaque="NO" tag="400" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQj-yu-WzP" customClass="SecondHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="304" height="304"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QQj-yu-WzP" firstAttribute="centerY" secondItem="8og-Wa-jxE" secondAttribute="centerY" id="3Fl-9I-Vkb"/>
+                            <constraint firstItem="GGF-n7-eFK" firstAttribute="centerX" secondItem="8og-Wa-jxE" secondAttribute="centerX" id="3dG-ln-p50"/>
+                            <constraint firstItem="GGF-n7-eFK" firstAttribute="height" secondItem="8og-Wa-jxE" secondAttribute="height" id="5cG-xv-dVS"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="8" id="8HF-Gm-Zrc"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="FHg-RG-8Ff" secondAttribute="trailing" constant="8" id="DGq-Cr-l4C"/>
+                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerX" secondItem="8og-Wa-jxE" secondAttribute="centerX" id="FXh-cu-ecL"/>
+                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="height" secondItem="8og-Wa-jxE" secondAttribute="height" id="HXO-H6-CIZ"/>
+                            <constraint firstItem="GGF-n7-eFK" firstAttribute="centerY" secondItem="8og-Wa-jxE" secondAttribute="centerY" id="J3r-yW-ktV"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="JWA-A9-Y21"/>
                             <constraint firstItem="8og-Wa-jxE" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="PT4-E9-onu"/>
+                            <constraint firstItem="QQj-yu-WzP" firstAttribute="width" secondItem="8og-Wa-jxE" secondAttribute="width" id="U44-Iu-20h"/>
+                            <constraint firstItem="GGF-n7-eFK" firstAttribute="width" secondItem="8og-Wa-jxE" secondAttribute="width" id="VsZ-cF-Uuf"/>
                             <constraint firstItem="8og-Wa-jxE" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" constant="-16" id="WT7-3h-IrH"/>
                             <constraint firstItem="8og-Wa-jxE" firstAttribute="top" secondItem="FHg-RG-8Ff" secondAttribute="bottom" constant="7.5" id="WgR-W2-Cpj"/>
+                            <constraint firstItem="QQj-yu-WzP" firstAttribute="height" secondItem="8og-Wa-jxE" secondAttribute="height" id="XQX-Ju-cic"/>
+                            <constraint firstItem="QQj-yu-WzP" firstAttribute="centerX" secondItem="8og-Wa-jxE" secondAttribute="centerX" id="fGA-Xb-Kvf"/>
+                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerY" secondItem="8og-Wa-jxE" secondAttribute="centerY" id="iVu-GR-bhV"/>
+                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="width" secondItem="8og-Wa-jxE" secondAttribute="width" id="lwO-x9-mRh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
