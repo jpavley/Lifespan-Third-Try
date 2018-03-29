@@ -116,6 +116,7 @@ If John F. Pavley is able to lower his mental stress and increase his physical a
                     <size key="freeformSize" width="320" height="1140"/>
                     <connections>
                         <outlet property="agedLabel" destination="y6W-Ol-ECE" id="kyv-aj-Lzx"/>
+                        <outlet property="analysisText" destination="r7X-PQ-rcp" id="JmG-Do-MOf"/>
                         <outlet property="timeSpanLabel" destination="b5w-fi-9yx" id="ZQO-ON-fJU"/>
                         <outlet property="userNameLabel" destination="VKk-wa-SQj" id="tY6-Zg-gna"/>
                     </connections>

@@ -15,9 +15,10 @@ struct RangedValue {
     var setting: Float = 0.5
 }
 
-struct PronounPair {
+struct PronounTrio {
     var subjective: String = "he"
     var objective: String = "him"
+    var possessive: String = "his"
 }
 
 /// Models a user of Lifespan.
@@ -31,7 +32,8 @@ class UserProfile {
     var activityLevel: RangedValue
     var stressLevel: RangedValue
     var livingOnBorrowedTime: Bool
-    var pronouns: PronounPair
+    var pronouns: PronounTrio
+    
     
     init() {
         name = "John F. Pavley"
@@ -43,11 +45,38 @@ class UserProfile {
         let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: 120, setting: 83)
         
-        activityLevel = RangedValue(min: 0, max: 10, setting: 5)
-        stressLevel = RangedValue(min: 0, max: 10, setting: 5)
+        activityLevel = RangedValue(min: 0, max: 10, setting: 0)
+        stressLevel = RangedValue(min: 0, max: 10, setting: 10)
         
         livingOnBorrowedTime = false
-        pronouns = PronounPair(subjective:"he", objective: "him")
+        pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
+    }
+    
+    func generateAnalysis(lifeSpan: Lifespan) -> String {
+        
+        let name = self.name
+        let subject = self.pronouns.subjective
+        let object = self.pronouns.objective
+        let possesser = self.pronouns.possessive
+        let age = Int(self.age.rounded(.awayFromZero))
+        let birthYear = Int(self.birthYear.setting.rounded(.awayFromZero))
+        let lifeExpectancy = Int(self.ale.rounded(.awayFromZero))
+        let modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.awayFromZero))
+        let missingYears = abs(modifiedLifeExpectancy - lifeExpectancy)
+        let deathYear = birthYear + modifiedLifeExpectancy
+        let cal = CalendarUtilities.utcCal()
+        let thisYear = cal.component(.year, from: Date())
+        let yearsLeft = deathYear - thisYear
+        
+        // Analysis is negative, neutral, positive, or universal
+        // Negative: mALE < ale
+        // Neutral: mALE = ale
+        // Positive: mALE > ale
+        // Universal: not impacted by the relation between mALE and ale
+        
+        let paragraph1 = "\(name) was born \(age) years ago in \(birthYear). \(possesser.capitalized) life expectancy of \(lifeExpectancy) years is influenced by a low level of physical activity and a high level of mental stress, and thus reduced to \(modifiedLifeExpectancy) years, robbing \(object) of \(missingYears) years. If \(subject) doesn’t improve \(possesser) life style \(subject) could die in \(yearsLeft) years from today, in the year \(deathYear)."
+        
+        return paragraph1
     }
     
     var ale: CGFloat {
