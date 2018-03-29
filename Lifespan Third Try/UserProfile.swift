@@ -15,6 +15,11 @@ struct RangedValue {
     var setting: Float = 0.5
 }
 
+struct PronounPair {
+    var subjective: String = "he"
+    var objective: String = "him"
+}
+
 /// Models a user of Lifespan.
 /// A good source for life expentancy is // https://www.ssa.gov/planners/lifeexpectancy.html
 class UserProfile {
@@ -26,6 +31,7 @@ class UserProfile {
     var activityLevel: RangedValue
     var stressLevel: RangedValue
     var livingOnBorrowedTime: Bool
+    var pronouns: PronounPair
     
     init() {
         name = "John F. Pavley"
@@ -41,12 +47,7 @@ class UserProfile {
         stressLevel = RangedValue(min: 0, max: 10, setting: 5)
         
         livingOnBorrowedTime = false
-    }
-    
-    var dob: String {
-        get {
-            return "02-13-\(Int(birthYear.setting))"
-        }
+        pronouns = PronounPair(subjective:"he", objective: "him")
     }
     
     var ale: CGFloat {

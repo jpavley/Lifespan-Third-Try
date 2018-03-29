@@ -90,8 +90,8 @@ class DayViewController: UIViewController, SharedState {
     }
     
     fileprivate func createLifespanForUser() -> Lifespan {
-        
-        let birthDate = CalendarUtilities.stringToDate(dateString: userProfile!.dob)
+                
+        let birthDate = CalendarUtilities.stringToDate(dateString: "02-13-\(Int(userProfile!.birthYear.setting))")
         let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
         
         let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: true)
