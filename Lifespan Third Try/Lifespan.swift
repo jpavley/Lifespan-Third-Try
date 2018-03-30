@@ -130,10 +130,10 @@ class Lifespan {
             }
             
             // DEBUG
-            print("---")
-            print("ALE \(ale)")
-            print("mod name \(mod.name), value \(mod.value), positive \(mod.positive), impact \(modImpact)")
-            print("modifiedALE \(modifiedALE)")
+//            print("---")
+//            print("ALE \(ale)")
+//            print("mod name \(mod.name), value \(mod.value), positive \(mod.positive), impact \(modImpact)")
+//            print("modifiedALE \(modifiedALE)")
 
         }
         
