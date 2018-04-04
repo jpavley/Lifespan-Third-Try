@@ -70,11 +70,11 @@ class Lifespan {
     }
     
     var clockDescriptionRemaining: String {
-        return "\(hoursRemaining) hours ✳︎ \(minutesRemaining) minutes ✳︎ \(secondsRemaining) seconds"
+        return "\(hoursRemaining) hrs, \(minutesRemaining) mins, \(secondsRemaining) secs"
     }
     
     var clockDescriptionSpent: String {
-        return "\(hourHandValue) hours ✳︎ \(minuteHandValue) minutes ✳︎ \(secondHandValue) seconds"
+        return "\(hourHandValue) hrs, \(minuteHandValue) mins, \(secondHandValue) secs"
     }
     
     var yearsPerHour: String {
