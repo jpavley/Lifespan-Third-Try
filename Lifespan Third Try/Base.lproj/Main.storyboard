@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,50 +42,52 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                <rect key="frame" x="8" y="106" width="304" height="304"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view opaque="NO" tag="400" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQj-yu-WzP" customClass="SecondHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                <rect key="frame" x="8" y="106" width="304" height="304"/>
-                            </view>
-                            <view opaque="NO" tag="300" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-n7-eFK" customClass="HourHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                <rect key="frame" x="8" y="106" width="304" height="304"/>
-                            </view>
-                            <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                <rect key="frame" x="8" y="106" width="304" height="304"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoF-pU-8Wr" userLabel="Clock Container">
-                                <rect key="frame" x="8" y="106" width="304" height="304"/>
+                                <rect key="frame" x="0.0" y="106" width="320" height="320"/>
+                                <subviews>
+                                    <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    </view>
+                                    <view opaque="NO" tag="300" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-n7-eFK" customClass="HourHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    </view>
+                                    <view opaque="NO" tag="400" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQj-yu-WzP" customClass="SecondHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="36y-hB-bDc"/>
+                                    <constraint firstItem="QQj-yu-WzP" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="9s6-qm-xAz"/>
+                                    <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="C7g-5x-bPu"/>
+                                    <constraint firstItem="GGF-n7-eFK" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="DOb-OL-1pO"/>
+                                    <constraint firstItem="8og-Wa-jxE" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="EoC-9n-Stg"/>
+                                    <constraint firstItem="GGF-n7-eFK" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="FcZ-eY-Ren"/>
+                                    <constraint firstItem="8og-Wa-jxE" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="GQ7-pL-v9D"/>
+                                    <constraint firstItem="QQj-yu-WzP" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="Ggt-Fw-DC3"/>
                                     <constraint firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="height" multiplier="1:1" id="GvC-xJ-cXm"/>
+                                    <constraint firstItem="xN6-Nh-LiI" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="KCj-Y5-zyW"/>
+                                    <constraint firstItem="GGF-n7-eFK" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="QHI-Ng-Vlt"/>
+                                    <constraint firstItem="QQj-yu-WzP" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="WFo-cO-wGG"/>
+                                    <constraint firstItem="GGF-n7-eFK" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="dsH-4k-BHx"/>
+                                    <constraint firstItem="xN6-Nh-LiI" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="jBA-xf-egW"/>
+                                    <constraint firstItem="8og-Wa-jxE" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="pGb-Kl-DNj"/>
+                                    <constraint firstItem="QQj-yu-WzP" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="rc0-vd-b5q"/>
+                                    <constraint firstItem="8og-Wa-jxE" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="sMR-Z7-l4e"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0Vc-Sl-vHq"/>
-                            <constraint firstItem="8og-Wa-jxE" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="3gh-Ap-hyy"/>
-                            <constraint firstItem="GGF-n7-eFK" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="3wk-hG-7Bd"/>
-                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="48R-Uk-w3N"/>
-                            <constraint firstItem="GGF-n7-eFK" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="4Jw-jy-CCF"/>
-                            <constraint firstItem="8og-Wa-jxE" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="9BA-T0-2ez"/>
-                            <constraint firstItem="8og-Wa-jxE" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="A9V-11-RgM"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="FHg-RG-8Ff" secondAttribute="trailing" constant="8" id="Hw3-Yz-Wa3"/>
-                            <constraint firstItem="GGF-n7-eFK" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="Kiz-Fy-r0j"/>
-                            <constraint firstItem="8og-Wa-jxE" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="LG1-Ft-WnN"/>
-                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="O9c-OE-ElX"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="top" secondItem="FHg-RG-8Ff" secondAttribute="bottom" constant="8" id="Owf-Do-L2k"/>
-                            <constraint firstItem="QQj-yu-WzP" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="Pyu-mM-S5M"/>
-                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="0.95" id="TXz-UN-tcp"/>
+                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="TXz-UN-tcp"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="8" id="VGG-lQ-Hvb"/>
-                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="cRP-LV-XWu"/>
-                            <constraint firstItem="xN6-Nh-LiI" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="fB4-3V-ISt"/>
-                            <constraint firstItem="QQj-yu-WzP" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="spu-3E-c2I"/>
-                            <constraint firstItem="QQj-yu-WzP" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="tIy-oA-AWf"/>
+                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="tbc-wl-c6t"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="uE7-2d-tnE"/>
-                            <constraint firstItem="QQj-yu-WzP" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="xEm-IG-ink"/>
-                            <constraint firstItem="GGF-n7-eFK" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="xc7-Xg-Rg8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -112,19 +113,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="avU-QK-hgM" userLabel="Labels Stack View">
                                 <rect key="frame" x="8" y="28" width="304" height="70.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-e8-9iN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-e8-9iN">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-JG-6qv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-JG-6qv">
                                         <rect key="frame" x="0.0" y="28.5" width="304" height="18"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-Q8-ggC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-Q8-ggC">
                                         <rect key="frame" x="0.0" y="54.5" width="304" height="16"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,13 +133,9 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7X-PQ-rcp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7X-PQ-rcp">
                                 <rect key="frame" x="8" y="106" width="304" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">John F. Pavley was born 57 years ago in the year 1961. His life expectancy of 83 years is influenced by a low level of physical activity and a high level of mental stress, and thus reduced to 75 years, robbing him of 8 years. If he doesn’t improve his life style he could die in 18 years from today, in the year 2036. 
-
-If John F. Pavley lives beyond 2036 and the age of 75, he will be living on borrowed time.
-</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -157,7 +154,10 @@ If John F. Pavley lives beyond 2036 and the age of 75, he will be living on borr
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" image="week" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="agedLabel" destination="5uU-Q8-ggC" id="4Ig-NK-fCU"/>
                         <outlet property="analysisText" destination="r7X-PQ-rcp" id="IAO-U1-Vga"/>
+                        <outlet property="timeSpanLabel" destination="Yjf-JG-6qv" id="iqW-OC-3Ck"/>
+                        <outlet property="userNameLabel" destination="gsL-e8-9iN" id="m2l-AI-KnD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

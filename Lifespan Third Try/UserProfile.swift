@@ -44,8 +44,8 @@ class UserProfile {
         let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: 120, setting: 83)
         
-        activityLevel = RangedValue(min: 0, max: 10, setting: 10)
-        stressLevel = RangedValue(min: 0, max: 10, setting: 0)
+        activityLevel = RangedValue(min: 0, max: 10, setting: 5)
+        stressLevel = RangedValue(min: 0, max: 10, setting: 5)
         
         livingOnBorrowedTime = false
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
@@ -166,7 +166,7 @@ class UserProfile {
         
         let p3 = "\(p3s1)\(cr)\(p3s2)\n\(p3s3)\n\(p3s4)\n\(p3s5)\n\(p3s6)"
         
-        return "\(p3)\(cr)\(h1)\(cr)\(p1)\(cr)\(p2)"
+        return "\(p1)\(cr)\(p2)"
     }
     
     var ale: CGFloat {
