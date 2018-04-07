@@ -51,16 +51,22 @@ class UserProfile {
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
     }
     
-    fileprivate func levelToText(level: CGFloat) -> String {
+    fileprivate func levelToText(level: CGFloat,
+                                 words: [String] = ["low", "moderate", "high", "unknown"]) -> String {
+        
+        enum Levels: Int {
+            case low = 0, moderate = 1, high = 2, unknown = 3
+        }
+        
         switch UInt(level) {
         case 0...4:
-            return "low"
+            return words[Levels.low.rawValue]
         case 5:
-            return "moderate"
+            return words[Levels.moderate.rawValue]
         case 6...:
-            return "high"
+            return words[Levels.high.rawValue]
         default:
-            return "unknown"
+            return words[Levels.unknown.rawValue]
         }
     }
     
@@ -160,11 +166,7 @@ class UserProfile {
         
         let p3 = "\(p3s1)\(cr)\(p3s2)\n\(p3s3)\n\(p3s4)\n\(p3s5)\n\(p3s6)"
         
-        // TODO: Change text based on stress and activity analysis
-        let p4 = "If \(name) is able to lower \(possesser) mental stress and increase \(possesser) physical activity \(subject) could add \(missingYears) years to \(possesser) life expectancy, live to the age of \(modifiedLifeExpectancy), and see the dawn of New Year’s Day in \(modifiedDeathYear)."
-
-        
-        return "\(p3)\(cr)\(h1)\(cr)\(p1)\(cr)\(p2)\(cr)\(p4)"
+        return "\(p3)\(cr)\(h1)\(cr)\(p1)\(cr)\(p2)"
     }
     
     var ale: CGFloat {
