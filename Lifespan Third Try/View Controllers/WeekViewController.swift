@@ -9,10 +9,14 @@
 import UIKit
 
 class WeekViewController: UIViewController {
+    
+    @IBOutlet weak var analysisText: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // analysisText.text = userProfile.generateAnalysis(lifeSpan: lifeSpan)
+
     }
 
     override func didReceiveMemoryWarning() {

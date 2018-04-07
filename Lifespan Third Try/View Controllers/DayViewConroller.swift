@@ -17,7 +17,6 @@ class DayViewController: UIViewController, SharedState {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
-    @IBOutlet weak var analysisText: UITextView!
     
     let minuteHandTag = 200
     let hourHandTag = 300
@@ -49,9 +48,6 @@ class DayViewController: UIViewController, SharedState {
         
         let age = String(format: "%.0f", lifeSpan.modifiedALE!)
         agedLabel.text = "Aged \(age)"
-        
-        analysisText.text = userProfile.generateAnalysis(lifeSpan: lifeSpan)
-        
     }
     
     fileprivate func updateLifeClock() {
