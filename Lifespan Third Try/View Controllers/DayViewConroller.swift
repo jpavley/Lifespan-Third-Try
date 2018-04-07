@@ -10,10 +10,6 @@ import UIKit
 
 class DayViewController: UIViewController {
     
-    var userProfile: UserProfile?
-    var lifeSpan: Lifespan?
-    var lifeClock: LifeClock?
-    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
@@ -28,17 +24,18 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        userProfile = UserProfile()
-        updateView()
     }
     
     fileprivate func updateView() {
         
-        updateLifeClock()
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
         
-        guard let userProfile = userProfile, let lifeSpan = lifeSpan else {
+        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan, let lifeClock = tb.lifeClock else {
             return
         }
+        
+        setClockView(with: lifeClock)
         
         userNameLabel.text = userProfile.name
         
@@ -49,60 +46,8 @@ class DayViewController: UIViewController {
         let age = String(format: "%.0f", lifeSpan.modifiedALE!)
         agedLabel.text = "Aged \(age)"
     }
-    
-    fileprivate func updateLifeClock() {
         
-        lifeSpan = createLifespanForUser()
-        
-        guard let lifeSpan = lifeSpan else {
-            print("cant create LifeSpan")
-            return
-        }
-        
-        lifeClock = createLifeClockForUser(with: lifeSpan)
-        
-        guard let lifeClock = lifeClock else {
-            print("cant create LifeClock")
-            return
-        }
-        
-        setClock(with: lifeClock)
-        
-        guard let userProfile = userProfile else {
-            print("cant create userProfile")
-            return
-        }
-        
-        if CalendarUtilities.stringToTime(timeString: "00:00:00") == lifeClock.time {
-            userProfile.livingOnBorrowedTime = true
-        } else {
-            userProfile.livingOnBorrowedTime = false
-        }
-        
-    }
-    
-    fileprivate func createLifeClockForUser(with ls: Lifespan) -> LifeClock {
-        
-        let spanTime = ls.lifespanAsTime()
-        let lc = LifeClock(time: spanTime!)
-        return lc
-    }
-    
-    fileprivate func createLifespanForUser() -> Lifespan {
-                
-        let birthDate = CalendarUtilities.stringToDate(dateString: "02-13-\(Int(userProfile!.birthYear.setting))")
-        let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
-        
-        let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: true)
-        ls.spanModifiers?.append(activityLevelMod)
-        
-        let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), positive: false)
-        ls.spanModifiers?.append(stressLevelMod)
-        
-        return ls
-    }
-    
-    fileprivate func setClock(with lifeClock: LifeClock) {
+    fileprivate func setClockView(with lifeClock: LifeClock) {
         let hourHand = view.viewWithTag(hourHandTag) as! HourHandView
         let minuteHand = view.viewWithTag(minuteHandTag) as! MinuteHandView
         let secondHand = view.viewWithTag(secondHandTag) as! SecondHandView
@@ -112,18 +57,14 @@ class DayViewController: UIViewController {
         secondHand.angle = lifeClock.secondHandAngle
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Navigation
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
+        updateView()
     }
     
 }

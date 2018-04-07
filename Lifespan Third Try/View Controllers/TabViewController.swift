@@ -18,6 +18,9 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // TODO: Load this from phone storage
+        userProfile = UserProfile()
     }
 
     override func didReceiveMemoryWarning() {

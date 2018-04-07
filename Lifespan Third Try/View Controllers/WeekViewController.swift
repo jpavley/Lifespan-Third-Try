@@ -10,21 +10,14 @@ import UIKit
 
 class WeekViewController: UIViewController {
     
-    var userProfile: UserProfile?
-    var lifeSpan: Lifespan?
-    var lifeClock: LifeClock?
-    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
-    
-    
     @IBOutlet weak var analysisText: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        updateView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +27,10 @@ class WeekViewController: UIViewController {
     
     fileprivate func updateView() {
         
-        guard let userProfile = userProfile, let lifeSpan = lifeSpan else {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
+        
+        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
             return
         }
         
@@ -54,7 +50,7 @@ class WeekViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
+        updateView()
     }
 
 
