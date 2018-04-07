@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekViewController: UIViewController, SharedState {
+class WeekViewController: UIViewController {
     
     var userProfile: UserProfile?
     var lifeSpan: Lifespan?

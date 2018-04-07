@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayViewController: UIViewController, SharedState {
+class DayViewController: UIViewController {
     
     var userProfile: UserProfile?
     var lifeSpan: Lifespan?
@@ -125,14 +125,6 @@ class DayViewController: UIViewController, SharedState {
         super.viewWillAppear(animated)
         print("viewWillAppear")
     }
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        prepareState(for: segue)
-    }
-    
     
 }
 
