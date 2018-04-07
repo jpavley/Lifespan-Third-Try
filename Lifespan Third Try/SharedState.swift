@@ -17,6 +17,8 @@ protocol SharedState {
 
 extension SharedState {
     
+    // TODO: This is never called!
+    
     func prepareState(for segue: UIStoryboardSegue) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

@@ -24,7 +24,6 @@ class WeekViewController: UIViewController, SharedState {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        userProfile = UserProfile()
         updateView()
     }
 
@@ -34,8 +33,6 @@ class WeekViewController: UIViewController, SharedState {
     }
     
     fileprivate func updateView() {
-        
-        updateLifeClock()
         
         guard let userProfile = userProfile, let lifeSpan = lifeSpan else {
             return
@@ -52,56 +49,14 @@ class WeekViewController: UIViewController, SharedState {
         
         analysisText.text = userProfile.generateAnalysis(lifeSpan: lifeSpan)
     }
+        
+    // MARK: - Navigation
     
-    fileprivate func updateLifeClock() {
-        
-        lifeSpan = createLifespanForUser()
-        
-        guard let lifeSpan = lifeSpan else {
-            print("cant create LifeSpan")
-            return
-        }
-        
-        lifeClock = createLifeClockForUser(with: lifeSpan)
-        
-        guard let lifeClock = lifeClock else {
-            print("cant create LifeClock")
-            return
-        }
-        
-        guard let userProfile = userProfile else {
-            print("cant create userProfile")
-            return
-        }
-        
-        if CalendarUtilities.stringToTime(timeString: "00:00:00") == lifeClock.time {
-            userProfile.livingOnBorrowedTime = true
-        } else {
-            userProfile.livingOnBorrowedTime = false
-        }
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
     }
-    
-    fileprivate func createLifeClockForUser(with ls: Lifespan) -> LifeClock {
-        
-        let spanTime = ls.lifespanAsTime()
-        let lc = LifeClock(time: spanTime!)
-        return lc
-    }
-    
-    fileprivate func createLifespanForUser() -> Lifespan {
-        
-        let birthDate = CalendarUtilities.stringToDate(dateString: "02-13-\(Int(userProfile!.birthYear.setting))")
-        let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
-        
-        let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: true)
-        ls.spanModifiers?.append(activityLevelMod)
-        
-        let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), positive: false)
-        ls.spanModifiers?.append(stressLevelMod)
-        
-        return ls
-    }
+
 
 }
 
