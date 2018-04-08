@@ -153,14 +153,7 @@ class UserProfile {
         // Universal
         let p2 = "If \(name) lives beyond \(modifiedDeathYear) and the age of \(modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
-        // Universal
-        
-        let p3s1 = "Time Spent: \(lifeSpan.clockDescriptionSpent)"
-        let p3s2 = "Time Remaining:  \(lifeSpan.clockDescriptionRemaining)"
-        
-        let p3 = "\(p3s1)\(cr)\(p3s2)"
-        
-        return "\(p3)\(cr)\(p1)\(cr)\(p2)"
+        return "\(p1)\(cr)\(p2)"
     }
     
     var ale: CGFloat {

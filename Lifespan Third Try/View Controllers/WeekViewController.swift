@@ -14,7 +14,9 @@ class WeekViewController: UIViewController {
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
     @IBOutlet weak var analysisText: UITextView!
-
+    @IBOutlet weak var timeSpentLabel: UILabel!
+    @IBOutlet weak var timeRemainingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +44,9 @@ class WeekViewController: UIViewController {
         
         let age = String(format: "%.0f", lifeSpan.modifiedALE!)
         agedLabel.text = "Aged \(age)"
+        
+        timeSpentLabel.text = lifeSpan.clockDescriptionSpent
+        timeRemainingLabel.text = lifeSpan.clockDescriptionRemaining
         
         analysisText.text = userProfile.generateAnalysis(lifeSpan: lifeSpan)
     }
