@@ -40,11 +40,9 @@ class DayViewController: UIViewController {
             return
         }
         
-        let hourKeyLabelText = hourKeyLabel.attributedText!
-        hourKeyLabel.attributedText = hourKeyLabelText.replacing(placeholder: "<n>", with: "\(lifeSpan.yearsPerHour)")
-
-        //minuteKeyLabel.text = "Minute: \(lifeSpan.monthsPerMinutes)"
-        //secondKeyLabel.text = "Second: \(lifeSpan.daysPerSeconds)"
+        hourKeyLabel.text = "One hour is \(lifeSpan.yearsPerHour)"
+        minuteKeyLabel.text = "One minute is \(lifeSpan.monthsPerMinutes)"
+        secondKeyLabel.text = "One second is \(lifeSpan.daysPerSeconds)"
         
         setClockView(with: lifeClock)
         
