@@ -79,13 +79,78 @@
                                     <constraint firstItem="8og-Wa-jxE" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="sMR-Z7-l4e"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-jA-PVe">
+                                <rect key="frame" x="16" y="434" width="288" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-uh-0Uw">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="One hour is ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="ArialMT"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="&lt;n&gt;">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Arial-Black"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk8-zL-Gig">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="20"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="One minute is ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="ArialMT"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="&lt;n&gt;">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Arial-Black"/>
+                                                    <font key="NSOriginalFont" size="17" name="Arial-Black"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI6-CG-6r1">
+                                        <rect key="frame" x="0.0" y="56" width="288" height="20"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="One second is ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="ArialMT"/>
+                                                    <font key="NSOriginalFont" size="17" name="ArialMT"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="&lt;n&gt;">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Arial-Black"/>
+                                                    <font key="NSOriginalFont" size="17" name="Arial-Black"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="zp1-jA-PVe" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="1pY-AR-iLZ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="zp1-jA-PVe" secondAttribute="trailing" constant="16" id="8Iu-VG-JFA"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="FHg-RG-8Ff" secondAttribute="trailing" constant="8" id="Hw3-Yz-Wa3"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="top" secondItem="FHg-RG-8Ff" secondAttribute="bottom" constant="8" id="Owf-Do-L2k"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="TXz-UN-tcp"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="8" id="VGG-lQ-Hvb"/>
+                            <constraint firstItem="zp1-jA-PVe" firstAttribute="top" secondItem="uoF-pU-8Wr" secondAttribute="bottom" constant="8" id="sCi-hi-1CD"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="tbc-wl-c6t"/>
                             <constraint firstItem="FHg-RG-8Ff" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="uE7-2d-tnE"/>
                         </constraints>
@@ -94,13 +159,16 @@
                     <tabBarItem key="tabBarItem" title="Day" image="clock" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="agedLabel" destination="y6W-Ol-ECE" id="kyv-aj-Lzx"/>
+                        <outlet property="hourKeyLabel" destination="2Xh-uh-0Uw" id="CIp-dB-C0E"/>
+                        <outlet property="minuteKeyLabel" destination="xk8-zL-Gig" id="FBo-UM-cb8"/>
+                        <outlet property="secondKeyLabel" destination="ZI6-CG-6r1" id="ofy-z8-Yth"/>
                         <outlet property="timeSpanLabel" destination="b5w-fi-9yx" id="ZQO-ON-fJU"/>
                         <outlet property="userNameLabel" destination="VKk-wa-SQj" id="tY6-Zg-gna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531.875" y="-276.76056338028167"/>
+            <point key="canvasLocation" x="750" y="-317.95774647887322"/>
         </scene>
         <!--Week-->
         <scene sceneID="wg7-f3-ORb">

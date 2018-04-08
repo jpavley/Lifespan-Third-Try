@@ -136,8 +136,6 @@ class UserProfile {
         let activityLevel = levelToText(level: activity)
         let cr = "\n\n"
         
-        let h1 = "Analysis"
-        
         let p1 = generateParagraphOne(with: ParagraphOneData(name: name,
                                                              age: age,
                                                              birthYear: birthYear,
@@ -157,16 +155,12 @@ class UserProfile {
         
         // Universal
         
-        let p3s1 = "Key"
-        let p3s2 = "Spent: \(lifeSpan.clockDescriptionSpent)"
-        let p3s3 = "Remaining:  \(lifeSpan.clockDescriptionRemaining)"
-        let p3s4 = "Hour: \(lifeSpan.yearsPerHour) years"
-        let p3s5 = "Minute: \(lifeSpan.monthsPerMinutes) months"
-        let p3s6 = "Second: \(lifeSpan.daysPerSeconds) days"
+        let p3s1 = "Time Spent: \(lifeSpan.clockDescriptionSpent)"
+        let p3s2 = "Time Remaining:  \(lifeSpan.clockDescriptionRemaining)"
         
-        let p3 = "\(p3s1)\(cr)\(p3s2)\n\(p3s3)\n\(p3s4)\n\(p3s5)\n\(p3s6)"
+        let p3 = "\(p3s1)\(cr)\(p3s2)"
         
-        return "\(p1)\(cr)\(p2)"
+        return "\(p3)\(cr)\(p1)\(cr)\(p2)"
     }
     
     var ale: CGFloat {

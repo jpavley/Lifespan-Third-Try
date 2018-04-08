@@ -13,6 +13,11 @@ class DayViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
+
+    @IBOutlet weak var hourKeyLabel: UILabel!
+    @IBOutlet weak var minuteKeyLabel: UILabel!
+    @IBOutlet weak var secondKeyLabel: UILabel!
+    
     
     let minuteHandTag = 200
     let hourHandTag = 300
@@ -34,6 +39,12 @@ class DayViewController: UIViewController {
         guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan, let lifeClock = tb.lifeClock else {
             return
         }
+        
+        let hourKeyLabelText = hourKeyLabel.attributedText!
+        hourKeyLabel.attributedText = hourKeyLabelText.replacing(placeholder: "<n>", with: "\(lifeSpan.yearsPerHour)")
+
+        //minuteKeyLabel.text = "Minute: \(lifeSpan.monthsPerMinutes)"
+        //secondKeyLabel.text = "Second: \(lifeSpan.daysPerSeconds)"
         
         setClockView(with: lifeClock)
         

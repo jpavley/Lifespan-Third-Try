@@ -29,6 +29,7 @@
 		48E25CBE2069B88B006BB346 /* HourHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB92069B88B006BB346 /* HourHandView.swift */; };
 		48E25CBF2069B88B006BB346 /* CoreGraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */; };
 		48EE8C682079771000931554 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE8C672079771000931554 /* TabViewController.swift */; };
+		48EE8C6A20799EA700931554 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE8C6920799EA700931554 /* StringUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		48E25CB92069B88B006BB346 /* HourHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourHandView.swift; sourceTree = "<group>"; };
 		48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsView.swift; sourceTree = "<group>"; };
 		48EE8C672079771000931554 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		48EE8C6920799EA700931554 /* StringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				48E25CA92069B845006BB346 /* Lifespan.swift */,
 				48E25CAD2069B846006BB346 /* LifeClock.swift */,
 				48E25CAB2069B846006BB346 /* CalendarUtilities.swift */,
+				48EE8C6920799EA700931554 /* StringUtilities.swift */,
 			);
 			name = "Lifespan Classes";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				48E25CB22069B846006BB346 /* UserProfile.swift in Sources */,
 				48EE8C682079771000931554 /* TabViewController.swift in Sources */,
 				48E25CB32069B846006BB346 /* LifeClock.swift in Sources */,
+				48EE8C6A20799EA700931554 /* StringUtilities.swift in Sources */,
 				48E25CB42069B846006BB346 /* PrettyBackgroundView.swift in Sources */,
 				1878F00E2067EEB600BEA332 /* WeekViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
