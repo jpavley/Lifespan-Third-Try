@@ -13,9 +13,9 @@ class WeekViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeSpanLabel: UILabel!
     @IBOutlet weak var agedLabel: UILabel!
-    @IBOutlet weak var analysisText: UITextView!
     @IBOutlet weak var timeSpentLabel: UILabel!
     @IBOutlet weak var timeRemainingLabel: UILabel!
+    @IBOutlet weak var analysisText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

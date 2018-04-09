@@ -130,11 +130,17 @@ class UserProfile {
         let missingYears = abs(modifiedLifeExpectancy - lifeExpectancy)
         let modifiedDeathYear = birthYear + modifiedLifeExpectancy
         let cal = CalendarUtilities.utcCal()
-        let thisYear = cal.component(.year, from: Date())
+        let now = Date()
+        let thisWeekDay = cal.weekdaySymbols[cal.component(.weekday, from: now)-1]
+        let thisDay = cal.component(.day, from: now)
+        let thisMonth = cal.monthSymbols[cal.component(.month, from: now)-1]
+        let thisYear = cal.component(.year, from: now)
         let modifiedYearsLeft = modifiedDeathYear - thisYear
         let stressLevel = levelToText(level: stress)
         let activityLevel = levelToText(level: activity)
         let cr = "\n\n"
+        
+        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear)."
         
         let p1 = generateParagraphOne(with: ParagraphOneData(name: name,
                                                              age: age,
@@ -153,7 +159,7 @@ class UserProfile {
         // Universal
         let p2 = "If \(name) lives beyond \(modifiedDeathYear) and the age of \(modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
-        return "\(p1)\(cr)\(p2)"
+        return "\(p0)\(cr)\(p1)\(cr)\(p2)"
     }
     
     var ale: CGFloat {

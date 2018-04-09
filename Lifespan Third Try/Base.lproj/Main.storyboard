@@ -168,14 +168,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="442-L6-rfo" userLabel="Time Spent Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Spent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCD-yj-oIi">
-                                                <rect key="frame" x="0.0" y="3" width="59" height="14.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Spent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCD-yj-oIi">
+                                                <rect key="frame" x="0.0" y="3" width="33.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="00 hrs 00 mins 00 secs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-Qq-8yG">
-                                                <rect key="frame" x="67" y="0.0" width="183" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="00 hrs 00 mins 00 secs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-Qq-8yG">
+                                                <rect key="frame" x="41.5" y="0.0" width="208.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -205,15 +205,15 @@
                                     <constraint firstAttribute="height" constant="49" id="HNT-6x-dCI"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7X-PQ-rcp">
-                                <rect key="frame" x="8" y="171.5" width="304" height="339.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
+                                <rect key="frame" x="8" y="171.5" width="304" height="347.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This is a test of the emergency broadcasting system. This is only a test. If this had been a actual emergency, you would have been informed where to tune in your area for further infomation.</string>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <attributes>
-                                            <font key="NSFont" size="17" name="Georgia"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="1" firstLineHeadIndent="20" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="1" firstLineHeadIndent="20" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -222,25 +222,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="r7X-PQ-rcp" secondAttribute="trailing" constant="8" id="5rm-H9-W2y"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="XeH-9s-qrD" secondAttribute="trailing" constant="8" id="2v7-h0-AeH"/>
                             <constraint firstItem="avU-QK-hgM" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="DlG-P2-3br"/>
                             <constraint firstItem="q0u-MT-989" firstAttribute="top" secondItem="avU-QK-hgM" secondAttribute="bottom" constant="12" id="Fdt-KB-Jsx"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="r7X-PQ-rcp" secondAttribute="bottom" constant="8" id="OUO-A3-uRd"/>
-                            <constraint firstItem="r7X-PQ-rcp" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="PlL-tH-EAn"/>
+                            <constraint firstItem="XeH-9s-qrD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="Ll6-PJ-h30"/>
                             <constraint firstItem="avU-QK-hgM" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="VpD-h5-gyZ"/>
-                            <constraint firstItem="r7X-PQ-rcp" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="as3-5r-Ts2"/>
-                            <constraint firstItem="r7X-PQ-rcp" firstAttribute="top" secondItem="q0u-MT-989" secondAttribute="bottom" constant="12" id="dLm-6o-KMP"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="r7X-PQ-rcp" secondAttribute="bottom" constant="8" id="f57-sr-P5K"/>
+                            <constraint firstItem="XeH-9s-qrD" firstAttribute="top" secondItem="q0u-MT-989" secondAttribute="bottom" constant="12" id="aLi-ce-H1e"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="avU-QK-hgM" secondAttribute="trailing" constant="8" id="hwA-vQ-TQW"/>
                             <constraint firstItem="q0u-MT-989" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="ltW-8b-AsS"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="r7X-PQ-rcp" secondAttribute="trailing" constant="8" id="zkl-bb-aYw"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="XeH-9s-qrD" secondAttribute="bottom" id="nT4-BY-23d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" image="week" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="agedLabel" destination="5uU-Q8-ggC" id="4Ig-NK-fCU"/>
-                        <outlet property="analysisText" destination="r7X-PQ-rcp" id="IAO-U1-Vga"/>
+                        <outlet property="analysisText" destination="XeH-9s-qrD" id="GAA-An-V1d"/>
                         <outlet property="timeRemainingLabel" destination="5uF-MV-mEC" id="dyw-rf-vRl"/>
                         <outlet property="timeSpanLabel" destination="Yjf-JG-6qv" id="iqW-OC-3Ck"/>
                         <outlet property="timeSpentLabel" destination="IBq-Qq-8yG" id="eZ5-Bl-gRs"/>
