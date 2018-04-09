@@ -16,6 +16,7 @@
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* YearViewController.swift */; };
+		48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D70425207C118600F569AF /* TombstoneViewController.swift */; };
 		48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA32069B405006BB346 /* ProfileViewController.swift */; };
 		48E25CAF2069B846006BB346 /* Lifespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA92069B845006BB346 /* Lifespan.swift */; };
 		48E25CB02069B846006BB346 /* WebUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAA2069B845006BB346 /* WebUtilities.swift */; };
@@ -65,6 +66,7 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
+		48D70425207C118600F569AF /* TombstoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TombstoneViewController.swift; sourceTree = "<group>"; };
 		48E25CA32069B405006BB346 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		48E25CA92069B845006BB346 /* Lifespan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan.swift; sourceTree = "<group>"; };
 		48E25CAA2069B845006BB346 /* WebUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUtilities.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				1878F0392067F2FB00BEA332 /* YearViewController.swift */,
 				48E25CA32069B405006BB346 /* ProfileViewController.swift */,
 				48EE8C672079771000931554 /* TabViewController.swift */,
+				48D70425207C118600F569AF /* TombstoneViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
 				48E25CB12069B846006BB346 /* CalendarUtilities.swift in Sources */,
 				48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */,
+				48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */,
 				1878F03A2067F2FB00BEA332 /* YearViewController.swift in Sources */,
 				48E25CBB2069B88B006BB346 /* ClockView.swift in Sources */,
 				48E25CBC2069B88B006BB346 /* SecondHandView.swift in Sources */,

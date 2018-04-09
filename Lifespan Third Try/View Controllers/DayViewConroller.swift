@@ -36,7 +36,7 @@ class DayViewController: UIViewController {
         let tb = self.tabBarController as! TabViewController
         tb.updateLifeClock()
         
-        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan, let lifeClock = tb.lifeClock else {
+        guard /* let userProfile = tb.userProfile, */ let lifeSpan = tb.lifeSpan, let lifeClock = tb.lifeClock else {
             return
         }
         
@@ -46,14 +46,14 @@ class DayViewController: UIViewController {
         
         setClockView(with: lifeClock)
         
-        userNameLabel.text = userProfile.name
-        
-        let birthYear = String(format: "%.0f", userProfile.birthYear.setting)
-        let deathYear = String(format: "%.0f", CGFloat(userProfile.birthYear.setting) + lifeSpan.modifiedALE!)
-        timeSpanLabel.text = "\(birthYear) to \(deathYear)"
-        
-        let age = String(format: "%.0f", lifeSpan.modifiedALE!)
-        agedLabel.text = "Aged \(age)"
+//        userNameLabel.text = userProfile.name
+//        
+//        let birthYear = String(format: "%.0f", userProfile.birthYear.setting)
+//        let deathYear = String(format: "%.0f", CGFloat(userProfile.birthYear.setting) + lifeSpan.modifiedALE!)
+//        timeSpanLabel.text = "\(birthYear) to \(deathYear)"
+//        
+//        let age = String(format: "%.0f", lifeSpan.modifiedALE!)
+//        agedLabel.text = "Aged \(age)"
     }
         
     fileprivate func setClockView(with lifeClock: LifeClock) {
