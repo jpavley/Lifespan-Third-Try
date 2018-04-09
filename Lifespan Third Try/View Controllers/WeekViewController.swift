@@ -36,14 +36,14 @@ class WeekViewController: UIViewController {
             return
         }
         
-        userNameLabel.text = userProfile.name
-        
-        let birthYear = String(format: "%.0f", userProfile.birthYear.setting)
-        let deathYear = String(format: "%.0f", CGFloat(userProfile.birthYear.setting) + lifeSpan.modifiedALE!)
-        timeSpanLabel.text = "\(birthYear) to \(deathYear)"
-        
-        let age = String(format: "%.0f", lifeSpan.modifiedALE!)
-        agedLabel.text = "Aged \(age)"
+//        userNameLabel.text = userProfile.name
+//        
+//        let birthYear = String(format: "%.0f", userProfile.birthYear.setting)
+//        let deathYear = String(format: "%.0f", CGFloat(userProfile.birthYear.setting) + lifeSpan.modifiedALE!)
+//        timeSpanLabel.text = "\(birthYear) to \(deathYear)"
+//        
+//        let age = String(format: "%.0f", lifeSpan.modifiedALE!)
+//        agedLabel.text = "Aged \(age)"
         
         timeSpentLabel.text = lifeSpan.clockDescriptionSpent
         timeRemainingLabel.text = lifeSpan.clockDescriptionRemaining

@@ -147,7 +147,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xD0-qc-1cr" firstAttribute="top" secondItem="ala-r4-Q2h" secondAttribute="top" id="5mh-3B-O8Q"/>
                             <constraint firstItem="ala-r4-Q2h" firstAttribute="trailing" secondItem="xD0-qc-1cr" secondAttribute="trailing" id="gxG-1n-XIV"/>
@@ -174,31 +173,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="avU-QK-hgM" userLabel="Labels Stack View">
-                                <rect key="frame" x="8" y="28" width="304" height="70.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="George Washington" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-e8-9iN">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="1732-1799" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-JG-6qv">
-                                        <rect key="frame" x="0.0" y="28.5" width="304" height="18"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Aged 67" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-Q8-ggC">
-                                        <rect key="frame" x="0.0" y="54.5" width="304" height="16"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-MT-989" userLabel="Time Stack">
-                                <rect key="frame" x="35" y="110.5" width="250" height="49"/>
+                                <rect key="frame" x="35" y="120" width="250" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="442-L6-rfo" userLabel="Time Spent Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
@@ -241,29 +217,38 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
-                                <rect key="frame" x="8" y="171.5" width="304" height="347.5"/>
+                                <rect key="frame" x="8" y="181" width="304" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <attributes>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="1" firstLineHeadIndent="20" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-DR-nNY">
+                                <rect key="frame" x="8" y="28" width="304" height="70.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70.5" id="xoI-Im-wDl"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Hk5-qv-r9U" kind="embed" id="erF-FG-1Zk"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="XeH-9s-qrD" secondAttribute="trailing" constant="8" id="2v7-h0-AeH"/>
-                            <constraint firstItem="avU-QK-hgM" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="DlG-P2-3br"/>
-                            <constraint firstItem="q0u-MT-989" firstAttribute="top" secondItem="avU-QK-hgM" secondAttribute="bottom" constant="12" id="Fdt-KB-Jsx"/>
+                            <constraint firstItem="oYr-DR-nNY" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="Dn8-Sf-hi4"/>
                             <constraint firstItem="XeH-9s-qrD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="Ll6-PJ-h30"/>
-                            <constraint firstItem="avU-QK-hgM" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="VpD-h5-gyZ"/>
+                            <constraint firstItem="oYr-DR-nNY" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="Sd5-QN-InV"/>
+                            <constraint firstItem="q0u-MT-989" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="100" id="UvV-KN-ljm"/>
                             <constraint firstItem="XeH-9s-qrD" firstAttribute="top" secondItem="q0u-MT-989" secondAttribute="bottom" constant="12" id="aLi-ce-H1e"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="avU-QK-hgM" secondAttribute="trailing" constant="8" id="hwA-vQ-TQW"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="oYr-DR-nNY" secondAttribute="trailing" constant="8" id="dcz-7J-Svm"/>
                             <constraint firstItem="q0u-MT-989" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="ltW-8b-AsS"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="XeH-9s-qrD" secondAttribute="bottom" id="nT4-BY-23d"/>
                         </constraints>
@@ -271,17 +256,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Week" image="week" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="agedLabel" destination="5uU-Q8-ggC" id="4Ig-NK-fCU"/>
                         <outlet property="analysisText" destination="XeH-9s-qrD" id="GAA-An-V1d"/>
                         <outlet property="timeRemainingLabel" destination="5uF-MV-mEC" id="dyw-rf-vRl"/>
-                        <outlet property="timeSpanLabel" destination="Yjf-JG-6qv" id="iqW-OC-3Ck"/>
                         <outlet property="timeSpentLabel" destination="IBq-Qq-8yG" id="eZ5-Bl-gRs"/>
-                        <outlet property="userNameLabel" destination="gsL-e8-9iN" id="m2l-AI-KnD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="370"/>
+            <point key="canvasLocation" x="742.5" y="369.71830985915494"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Vra-Wd-8V1">
@@ -365,4 +347,7 @@
         <image name="week" width="30" height="30"/>
         <image name="year" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="erF-FG-1Zk"/>
+    </inferredMetricsTieBreakers>
 </document>
