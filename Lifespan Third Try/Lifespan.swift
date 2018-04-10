@@ -70,11 +70,11 @@ class Lifespan {
     }
     
     var clockDescriptionRemaining: String {
-        return "\(hoursRemaining) hrs \(minutesRemaining) mins \(secondsRemaining) secs"
+        return "\(hoursRemaining) hours, \(minutesRemaining) minutes, \(secondsRemaining) seconds"
     }
     
     var clockDescriptionSpent: String {
-        return "\(hourHandValue) hrs \(minuteHandValue) mins \(secondHandValue) secs"
+        return "\(hourHandValue) hours, \(minuteHandValue) minutes, \(secondHandValue) seconds"
     }
     
     var yearsPerHour: String {
@@ -199,9 +199,19 @@ class Lifespan {
         
         let minutesSpent = 60 * hoursRemainder
         minuteHandValue = Int(minutesSpent.divisor)
+        
+        //            let cal = CalendarUtilities.utcCal()
+        //            let currentMonth = cal.component(.month, from: Date())
+        //            let catchUpMonths = CGFloat(currentMonth) * minSpan
+        //            let adjustedMinSpan = minSpan + catchUpMonths
 
         let secondsSpent = 60 * minutesSpent.remainder
         secondHandValue = Int(secondsSpent.divisor)
+        
+        //            let cal = CalendarUtilities.utcCal()
+        //            let currentDay = cal.component(.day, from: Date())
+        //            let catchUpDays = CGFloat(currentDay) * secSpan
+        //            let adjustedDaySpan = secSpan + catchUpDays
         
         let timeString = "\(hourHandValue):\(minuteHandValue):\(secondHandValue)"
         let time = CalendarUtilities.stringToTime(timeString: timeString)

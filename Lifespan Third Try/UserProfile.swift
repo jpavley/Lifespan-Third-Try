@@ -138,7 +138,7 @@ class UserProfile {
         let modifiedYearsLeft = modifiedDeathYear - thisYear
         let stressLevel = levelToText(level: stress)
         let activityLevel = levelToText(level: activity)
-        let cr = "\n\n"
+        let cr = "\n"
         
         let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
         
