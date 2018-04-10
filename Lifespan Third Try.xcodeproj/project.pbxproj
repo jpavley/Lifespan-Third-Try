@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0092067EEB600BEA332 /* AppDelegate.swift */; };
 		1878F00C2067EEB600BEA332 /* DayViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00B2067EEB600BEA332 /* DayViewConroller.swift */; };
-		1878F00E2067EEB600BEA332 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00D2067EEB600BEA332 /* WeekViewController.swift */; };
+		1878F00E2067EEB600BEA332 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F00D2067EEB600BEA332 /* AnalysisViewController.swift */; };
 		1878F0112067EEB600BEA332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1878F00F2067EEB600BEA332 /* Main.storyboard */; };
 		1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0122067EEB600BEA332 /* Assets.xcassets */; };
 		1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */; };
@@ -54,7 +54,7 @@
 		1878F0062067EEB600BEA332 /* Lifespan Third Try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lifespan Third Try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1878F0092067EEB600BEA332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1878F00B2067EEB600BEA332 /* DayViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewConroller.swift; sourceTree = "<group>"; };
-		1878F00D2067EEB600BEA332 /* WeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
+		1878F00D2067EEB600BEA332 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		1878F0102067EEB600BEA332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1878F0122067EEB600BEA332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1878F0152067EEB600BEA332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				1878F00B2067EEB600BEA332 /* DayViewConroller.swift */,
-				1878F00D2067EEB600BEA332 /* WeekViewController.swift */,
+				1878F00D2067EEB600BEA332 /* AnalysisViewController.swift */,
 				1878F0392067F2FB00BEA332 /* YearViewController.swift */,
 				48E25CA32069B405006BB346 /* ProfileViewController.swift */,
 				48EE8C672079771000931554 /* TabViewController.swift */,
@@ -343,7 +343,7 @@
 				48E25CB32069B846006BB346 /* LifeClock.swift in Sources */,
 				48EE8C6A20799EA700931554 /* StringUtilities.swift in Sources */,
 				48E25CB42069B846006BB346 /* PrettyBackgroundView.swift in Sources */,
-				1878F00E2067EEB600BEA332 /* WeekViewController.swift in Sources */,
+				1878F00E2067EEB600BEA332 /* AnalysisViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
 				48E25CB12069B846006BB346 /* CalendarUtilities.swift in Sources */,
 				48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */,

@@ -140,7 +140,7 @@ class UserProfile {
         let activityLevel = levelToText(level: activity)
         let cr = "\n\n"
         
-        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear)."
+        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
         
         let p1 = generateParagraphOne(with: ParagraphOneData(name: name,
                                                              age: age,

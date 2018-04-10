@@ -1,5 +1,5 @@
 //
-//  WeekViewController.swift
+//  AnalysisViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -8,10 +8,8 @@
 
 import UIKit
 
-class WeekViewController: UIViewController {
+class AnalysisViewController: UIViewController {
     
-    @IBOutlet weak var timeSpentLabel: UILabel!
-    @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var analysisText: UITextView!
     
     override func viewDidLoad() {
@@ -32,10 +30,6 @@ class WeekViewController: UIViewController {
         guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
             return
         }
-                
-        timeSpentLabel.text = lifeSpan.clockDescriptionSpent
-        timeRemainingLabel.text = lifeSpan.clockDescriptionRemaining
-        
         analysisText.text = userProfile.generateAnalysis(lifeSpan: lifeSpan)
     }
         
