@@ -44,8 +44,8 @@ class UserProfile {
         let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: 120, setting: 83)
         
-        activityLevel = RangedValue(min: 0, max: 10, setting: 5)
-        stressLevel = RangedValue(min: 0, max: 10, setting: 5)
+        activityLevel = RangedValue(min: 0, max: 10, setting: 9)
+        stressLevel = RangedValue(min: 0, max: 10, setting: 3)
         
         livingOnBorrowedTime = false
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
