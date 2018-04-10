@@ -1,5 +1,5 @@
 //
-//  DayViewController.swift
+//  ClockViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class DayViewController: UIViewController {
+class ClockViewController: UIViewController {
     
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var timeSpanLabel: UILabel!
-    @IBOutlet weak var agedLabel: UILabel!
-
     @IBOutlet weak var hourKeyLabel: UILabel!
     @IBOutlet weak var minuteKeyLabel: UILabel!
     @IBOutlet weak var secondKeyLabel: UILabel!
