@@ -65,7 +65,7 @@ class TabViewController: UITabBarController {
     }
     
     func createLifespanForUser() -> Lifespan {
-        
+                
         let birthDate = CalendarUtilities.stringToDate(dateString: "02-13-\(Int(userProfile!.birthYear.setting))")
         let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
         
