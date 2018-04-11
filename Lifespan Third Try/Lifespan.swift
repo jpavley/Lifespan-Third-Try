@@ -77,10 +77,14 @@ class Lifespan {
         return "\(hourHandValue) hours, \(minuteHandValue) minutes, \(secondHandValue) seconds"
     }
     
+    func unitsPerSlice(units: CGFloat, slices: CGFloat) -> CGFloat {
+        return units / slices
+    }
+    
     var yearsPerHour: String {
         if let mALE = modifiedALE {
-            // years per hour
-            let hourSpan = mALE/12
+            let hoursIn12HourDay: CGFloat = 12
+            let hourSpan = unitsPerSlice(units: mALE, slices: hoursIn12HourDay)
             let hourSpanString = String(format: "%.2f", hourSpan)
             return "\(hourSpanString) years"
         } else {
@@ -88,10 +92,12 @@ class Lifespan {
         }
     }
     
+    
     var monthsPerMinutes: String {
         if let mALE = modifiedALE {
-            // months per min
-            let minSpan = ((mALE/12)/60)*12
+            let monthsInYearSpan: CGFloat = 12 * mALE
+            let minuetsIn12HourDay: CGFloat = 60 * 12
+            let minSpan = unitsPerSlice(units: monthsInYearSpan, slices: minuetsIn12HourDay)
             let minSpanString = String(format: "%.2f", minSpan)
             return "\(minSpanString) months"
         } else {
@@ -99,9 +105,12 @@ class Lifespan {
         }
     }
     
+    
     var daysPerSeconds: String {
         if let mALE = modifiedALE {
-            let secSpan = (((mALE/12)/60)/60)*365
+            let daysInYearSpan: CGFloat = 365.4 * mALE
+            let secondsIn12HourDay: CGFloat = 60 * 60 * 12
+            let secSpan = unitsPerSlice(units: daysInYearSpan, slices: secondsIn12HourDay)
             let secSpanString = String(format: "%.2f", secSpan)
             return "\(secSpanString) days"
         } else {
@@ -194,24 +203,19 @@ class Lifespan {
             timeSpent = 12.0
         }
         
+        // TODO: Need to account for current partial year in hours, minutes, and seconds.
+        //       If today is 6/15/2018 then we are 50% of the way through 2018.
+        //       The current algo only calculates from 1/1/2018.
+        //       (thisYear - birthYear) + percentOfThisYearAlreadyPassed.
+
         hourHandValue = Int(timeSpent.divisor)
         let hoursRemainder = timeSpent.remainder
         
         let minutesSpent = 60 * hoursRemainder
         minuteHandValue = Int(minutesSpent.divisor)
         
-        //            let cal = CalendarUtilities.utcCal()
-        //            let currentMonth = cal.component(.month, from: Date())
-        //            let catchUpMonths = CGFloat(currentMonth) * minSpan
-        //            let adjustedMinSpan = minSpan + catchUpMonths
-
         let secondsSpent = 60 * minutesSpent.remainder
         secondHandValue = Int(secondsSpent.divisor)
-        
-        //            let cal = CalendarUtilities.utcCal()
-        //            let currentDay = cal.component(.day, from: Date())
-        //            let catchUpDays = CGFloat(currentDay) * secSpan
-        //            let adjustedDaySpan = secSpan + catchUpDays
         
         let timeString = "\(hourHandValue):\(minuteHandValue):\(secondHandValue)"
         let time = CalendarUtilities.stringToTime(timeString: timeString)
