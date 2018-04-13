@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,20 +22,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoF-pU-8Wr" userLabel="Clock Container">
-                                <rect key="frame" x="0.0" y="118" width="320" height="320"/>
+                                <rect key="frame" x="16" y="118" width="288" height="288"/>
                                 <subviews>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
                                     <view opaque="NO" tag="300" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-n7-eFK" customClass="HourHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
                                     <view opaque="NO" tag="400" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQj-yu-WzP" customClass="SecondHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -58,7 +59,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-jA-PVe">
-                                <rect key="frame" x="16" y="446" width="288" height="59.5"/>
+                                <rect key="frame" x="16" y="414" width="288" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One hour is 0.00 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-uh-0Uw">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="14.5"/>
@@ -98,7 +99,7 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="zp1-jA-PVe" secondAttribute="trailing" constant="16" id="8Iu-VG-JFA"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="top" secondItem="L9l-Wr-2DY" secondAttribute="bottom" id="Kpi-1c-wTB"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="L9l-Wr-2DY" secondAttribute="trailing" id="O4W-rE-ZbK"/>
-                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="TXz-UN-tcp"/>
+                            <constraint firstItem="uoF-pU-8Wr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="0.9" id="TXz-UN-tcp"/>
                             <constraint firstItem="zp1-jA-PVe" firstAttribute="top" secondItem="uoF-pU-8Wr" secondAttribute="bottom" constant="8" id="sCi-hi-1CD"/>
                             <constraint firstItem="L9l-Wr-2DY" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="tJv-pf-hQX"/>
                             <constraint firstItem="uoF-pU-8Wr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="tbc-wl-c6t"/>
@@ -304,6 +305,6 @@
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="erF-FG-1Zk"/>
+        <segue reference="aXA-Fl-yZ4"/>
     </inferredMetricsTieBreakers>
 </document>
