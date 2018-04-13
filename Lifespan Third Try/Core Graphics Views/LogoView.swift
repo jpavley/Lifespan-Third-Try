@@ -24,6 +24,9 @@ class LogoView: CoreGraphicsView {
         // ctx.translateBy(x: 0, y: self.bounds.size.height)
         // ctx.scaleBy(x: 1, y: -1)
         
+        let scaleFactor: CGFloat = calcScaleFactor(viewWidth: self.bounds.width)
+        ctx.scaleBy(x: scaleFactor, y: scaleFactor)
+        
         /*  Shape   */
         let pathRef = CGMutablePath()
         pathRef.move(to: CGPoint(x: 262.227, y: 247.761))

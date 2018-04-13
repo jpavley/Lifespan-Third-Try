@@ -24,9 +24,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoF-pU-8Wr" userLabel="Clock Container">
                                 <rect key="frame" x="16" y="118" width="288" height="288"/>
                                 <subviews>
-                                    <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                    <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view opaque="NO" tag="150" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnb-bU-DTB" userLabel="Logo View" customClass="LogoView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
                                     <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
@@ -40,6 +42,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="36y-hB-bDc"/>
+                                    <constraint firstItem="xnb-bU-DTB" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="4in-A3-xqh"/>
                                     <constraint firstItem="QQj-yu-WzP" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="9s6-qm-xAz"/>
                                     <constraint firstItem="xN6-Nh-LiI" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="C7g-5x-bPu"/>
                                     <constraint firstItem="GGF-n7-eFK" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="DOb-OL-1pO"/>
@@ -49,10 +52,13 @@
                                     <constraint firstItem="QQj-yu-WzP" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="Ggt-Fw-DC3"/>
                                     <constraint firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="height" multiplier="1:1" id="GvC-xJ-cXm"/>
                                     <constraint firstItem="xN6-Nh-LiI" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="KCj-Y5-zyW"/>
+                                    <constraint firstItem="xnb-bU-DTB" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="KoA-f9-xbr"/>
                                     <constraint firstItem="GGF-n7-eFK" firstAttribute="centerX" secondItem="uoF-pU-8Wr" secondAttribute="centerX" id="QHI-Ng-Vlt"/>
                                     <constraint firstItem="QQj-yu-WzP" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="WFo-cO-wGG"/>
                                     <constraint firstItem="GGF-n7-eFK" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="dsH-4k-BHx"/>
                                     <constraint firstItem="xN6-Nh-LiI" firstAttribute="width" secondItem="uoF-pU-8Wr" secondAttribute="width" id="jBA-xf-egW"/>
+                                    <constraint firstItem="xnb-bU-DTB" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="jvA-Ya-giu"/>
+                                    <constraint firstItem="xnb-bU-DTB" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="p4l-Ol-EQT"/>
                                     <constraint firstItem="8og-Wa-jxE" firstAttribute="height" secondItem="uoF-pU-8Wr" secondAttribute="height" id="pGb-Kl-DNj"/>
                                     <constraint firstItem="QQj-yu-WzP" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="rc0-vd-b5q"/>
                                     <constraint firstItem="8og-Wa-jxE" firstAttribute="centerY" secondItem="uoF-pU-8Wr" secondAttribute="centerY" id="sMR-Z7-l4e"/>
