@@ -54,4 +54,22 @@ class CalendarUtilities {
         let year = cal.component(.year, from: Date())
         return Float(year)
     }
+    
+    static func yearsFromNow(from date: Date) -> Int {
+        let cal = utcCal()
+        let now = Date()
+        return cal.dateComponents([.year], from: date, to: now).year ?? 0
+    }
+    
+    static func monthsFromNow(from date: Date) -> Int {
+        let cal = utcCal()
+        let now = Date()
+        return cal.dateComponents([.month], from: date, to: now).month ?? 0
+    }
+    
+    static func daysFromNow(from date: Date) -> Int {
+        let cal = utcCal()
+        let now = Date()
+        return cal.dateComponents([.day], from: date, to: now).day ?? 0
+    }
 }

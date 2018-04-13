@@ -176,23 +176,25 @@ class Lifespan {
         }
         
         // Algorithm: Calc remaining lifespan as clock time
-        // 1. age = thisYear - birthYear
-        // 2. percentOfLifeSpent = age/expectedLifespan
+        // 1. adjustedAgeInYears = thisYear - birthYear
+        // 2. percentOfLifeSpent = (adjustedAgeInYears + percent of year spent so far)/expectedLifespan
         // 3. timeSpent = 12 * percentOfLifeSpent
         // 4. hourHandValue = timeSpent divisor
-        // 5. minutesSpent = 60 * timeSpent remainder
+        // 5. minutesSpent = 60 * timeSpent remainder (60 * % of an hour remaining)
         // 6. minuteHandValue = minutesSpent divisor
-        // 7. secondHandValue = 60 * minutesSpent remainder
+        // 7. secondHandValue = 60 * minutesSpent remainder (60 * % of a minuet remaining)
         
-        let cal = CalendarUtilities.utcCal()
-        let birthYear = CGFloat(cal.component(.year, from: b.date))
-        let thisYear = CGFloat(cal.component(.year, from: Date()))
+        let ageInYears = CalendarUtilities.yearsFromNow(from: b.date)
+        let ageInDays = CalendarUtilities.daysFromNow(from: b.date)
         
-        let age = thisYear - birthYear
+        let elaspedDays = Double(ageInYears) * 365.4
+        let leftOverDays = Double(ageInDays) - elaspedDays
+        let percentOfThisYearSpent = leftOverDays/365.4
+        let adjustedAgeInYears = Double(ageInYears) + percentOfThisYearSpent
         
         var percentOfLifeSpent: CGFloat = 0
         if mALE > 0 {
-            percentOfLifeSpent = age/mALE
+            percentOfLifeSpent = CGFloat(adjustedAgeInYears)/mALE
         }
         
         var timeSpent = 12 * percentOfLifeSpent
