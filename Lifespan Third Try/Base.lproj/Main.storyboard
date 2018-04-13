@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUU-8E-t7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="5"/>
+            <point key="canvasLocation" x="1596" y="502"/>
         </scene>
         <!--Analysis-->
         <scene sceneID="wg7-f3-ORb">
@@ -237,7 +237,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-A3-osM">
-                                <rect key="frame" x="0.0" y="20" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="OYi-aT-OPb"/>
                                 </constraints>
@@ -250,7 +251,7 @@
                         <constraints>
                             <constraint firstItem="m4D-A3-osM" firstAttribute="leading" secondItem="rfx-JU-UsD" secondAttribute="leading" id="3FY-sb-gP5"/>
                             <constraint firstItem="m4D-A3-osM" firstAttribute="trailing" secondItem="rfx-JU-UsD" secondAttribute="trailing" id="5Hr-Ly-dla"/>
-                            <constraint firstItem="m4D-A3-osM" firstAttribute="top" secondItem="rfx-JU-UsD" secondAttribute="top" id="Vzt-Xk-GlU"/>
+                            <constraint firstItem="m4D-A3-osM" firstAttribute="top" secondItem="rfx-JU-UsD" secondAttribute="top" constant="8" id="Vzt-Xk-GlU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rfx-JU-UsD"/>
                     </view>
@@ -327,6 +328,6 @@
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="erF-FG-1Zk"/>
+        <segue reference="hGu-Mn-aHr"/>
     </inferredMetricsTieBreakers>
 </document>
