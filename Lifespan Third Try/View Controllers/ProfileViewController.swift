@@ -44,10 +44,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
 
-
-
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
