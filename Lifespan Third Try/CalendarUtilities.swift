@@ -72,4 +72,12 @@ class CalendarUtilities {
         let now = Date()
         return cal.dateComponents([.day], from: date, to: now).day ?? 0
     }
+    
+    static func monthName(from monthNumber: Int) -> String {
+        guard monthNumber > 0 && monthNumber < 12 else {
+            return ""
+        }
+        let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        return monthNames[monthNumber - 1]
+    }
 }

@@ -28,6 +28,8 @@ class UserProfile {
     var name:String
     
     var birthYear: RangedValue
+    var birthDay: RangedValue
+    var birthMonth: RangedValue
     var lifeExpectancy: RangedValue
     var activityLevel: RangedValue
     var stressLevel: RangedValue
@@ -40,6 +42,14 @@ class UserProfile {
         let birthYearMin = CalendarUtilities.thisYear() - 120
         let birthYearMax = CalendarUtilities.thisYear()
         birthYear = RangedValue(min: birthYearMin, max: birthYearMax, setting: 1961)
+        
+        let birthDayMin = 1
+        let birthDayMax = 31
+        birthDay = RangedValue(min: Float(birthDayMin), max: Float(birthDayMax), setting: 13)
+        
+        let birthMonthMin = 1
+        let birthMonthMax = 12
+        birthMonth = RangedValue(min: Float(birthMonthMin), max: Float(birthMonthMax), setting: 2)
         
         let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: 120, setting: 83)

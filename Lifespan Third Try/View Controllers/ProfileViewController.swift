@@ -43,6 +43,46 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var stressSlider: UISlider!
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
+    
+    func updateView() {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        nameField.text = userProfile.name
+        objectField.text = userProfile.pronouns.objective
+        subjectField.text = userProfile.pronouns.subjective
+        possessiveField.text = userProfile.pronouns.possessive
+        
+        let birthDay = Int(userProfile.birthDay.setting.rounded(.awayFromZero))
+        let birthMonth = CalendarUtilities.monthName(from: Int(userProfile.birthMonth.setting.rounded(.awayFromZero)))
+        let birthYear = Int(userProfile.birthYear.setting.rounded(.awayFromZero))
+        let ale = Int(userProfile.ale.rounded(.awayFromZero))
+        birthField.text = "\(birthDay) \(birthMonth) \(birthYear) \(ale)"
+        
+        dayField.text = "\(birthDay)"
+        configure(slider: daySlider, with: userProfile.birthDay)
+        
+        monthField.text = birthMonth
+        configure(slider: monthSlider, with: userProfile.birthMonth)
+        
+        yearField.text = "\(birthYear)"
+        configure(slider: yearSlider, with: userProfile.birthYear)
+        
+        lifeExpenctancyField.text = "\(ale)"
+        configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
+        
+
+    }
+    
+    fileprivate func configure(slider: UISlider, with property: RangedValue) {
+        slider.minimumValue = property.min
+        slider.maximumValue = property.max
+        slider.value = property.setting
+    }
 
     
     override func viewDidLoad() {
@@ -60,6 +100,8 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateView()
     }
 
 }
