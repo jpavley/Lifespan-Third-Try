@@ -53,14 +53,15 @@ class ProfileViewController: UIViewController {
         }
         
         nameField.text = userProfile.name
+        
         objectField.text = userProfile.pronouns.objective
         subjectField.text = userProfile.pronouns.subjective
         possessiveField.text = userProfile.pronouns.possessive
         
-        let birthDay = Int(userProfile.birthDay.setting.rounded(.awayFromZero))
-        let birthMonth = CalendarUtilities.monthName(from: Int(userProfile.birthMonth.setting.rounded(.awayFromZero)))
-        let birthYear = Int(userProfile.birthYear.setting.rounded(.awayFromZero))
-        let ale = Int(userProfile.ale.rounded(.awayFromZero))
+        let birthDay = userProfile.birthDay.settingAsInt()
+        let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
+        let birthYear = userProfile.birthYear.settingAsInt()
+        let ale = userProfile.lifeExpectancy.settingAsInt()
         birthField.text = "\(birthDay) \(birthMonth) \(birthYear) \(ale)"
         
         dayField.text = "\(birthDay)"
@@ -75,9 +76,26 @@ class ProfileViewController: UIViewController {
         lifeExpenctancyField.text = "\(ale)"
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
         
+        let activityLevel = userProfile.activityLevel.settingAsInt()
+        let stressLevel = userProfile.stressLevel.settingAsInt()
+        let riskLevel = userProfile.riskLevel.settingAsInt()
+        let geneticsLevel = userProfile.geneticsLevel.settingAsInt()
+        lifeFactorsField.text = "\(activityLevel) \(stressLevel) \(riskLevel) \(geneticsLevel)"
+        
+        activityField.text = "\(activityLevel)"
+        configure(slider: activitySlider, with: userProfile.activityLevel)
+        
+        stressField.text = "\(stressLevel)"
+        configure(slider: stressSlider, with: userProfile.stressLevel)
+        
+        riskField.text = "\(riskLevel)"
+        configure(slider: riskSlider, with: userProfile.riskLevel)
+        
+        geneticsField.text = "\(geneticsLevel)"
+        configure(slider: geneticsSlider, with: userProfile.geneticsLevel)
 
     }
-    
+        
     fileprivate func configure(slider: UISlider, with property: RangedValue) {
         slider.minimumValue = property.min
         slider.maximumValue = property.max
