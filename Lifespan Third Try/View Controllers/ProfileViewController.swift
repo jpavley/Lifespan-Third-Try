@@ -44,6 +44,30 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
+    @IBAction func daySliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func monthSliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func yearSliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func lifeSliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func activitySliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func stressSliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func riskSliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func geneticsSliderChanged(_ sender: UISlider) {
+    }
+    
     func updateView() {
         let tb = self.tabBarController as! TabViewController
         tb.updateLifeClock()
@@ -101,7 +125,6 @@ class ProfileViewController: UIViewController {
         slider.maximumValue = property.max
         slider.value = property.setting
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

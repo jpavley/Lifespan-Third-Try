@@ -368,6 +368,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-p0-Scp">
                                                                 <rect key="frame" x="12.5" y="108" width="263" height="31"/>
+                                                                <connections>
+                                                                    <action selector="daySliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="GWd-KW-XCw"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-Jb-oC3">
                                                                 <rect key="frame" x="0.0" y="162" width="288" height="30"/>
@@ -392,6 +395,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKF-8t-sJh">
                                                                 <rect key="frame" x="12" y="216" width="264" height="31"/>
+                                                                <connections>
+                                                                    <action selector="monthSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="3aO-bA-3TL"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ydx-LD-fhX">
                                                                 <rect key="frame" x="0.0" y="270" width="288" height="30"/>
@@ -416,6 +422,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Nk-45D">
                                                                 <rect key="frame" x="12.5" y="324" width="263" height="31"/>
+                                                                <connections>
+                                                                    <action selector="yearSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="O6N-QJ-o1P"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-0R-iOY">
                                                                 <rect key="frame" x="0.0" y="378" width="288" height="30"/>
@@ -446,6 +455,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-Hx-dHN">
                                                                 <rect key="frame" x="12.5" y="432" width="263" height="31"/>
+                                                                <connections>
+                                                                    <action selector="lifeSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="iYg-ji-1pj"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <constraints>
@@ -508,6 +520,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="guk-7j-0uP">
                                                                 <rect key="frame" x="12" y="108" width="264" height="31"/>
+                                                                <connections>
+                                                                    <action selector="activitySliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="Awz-De-Qeb"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yLl-sq-8TT">
                                                                 <rect key="frame" x="0.0" y="162" width="288" height="30"/>
@@ -538,6 +553,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-SB-rP0">
                                                                 <rect key="frame" x="12" y="216" width="264" height="31"/>
+                                                                <connections>
+                                                                    <action selector="stressSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="gh8-2A-wuR"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XAR-eP-YaJ">
                                                                 <rect key="frame" x="0.0" y="270" width="288" height="30"/>
@@ -568,6 +586,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-ee-fFS">
                                                                 <rect key="frame" x="12" y="324" width="264" height="31"/>
+                                                                <connections>
+                                                                    <action selector="riskSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="8rO-20-USK"/>
+                                                                </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mtG-5a-cSg">
                                                                 <rect key="frame" x="0.0" y="378" width="288" height="30"/>
@@ -598,6 +619,9 @@
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w4J-lx-hUs">
                                                                 <rect key="frame" x="12" y="432" width="264" height="31"/>
+                                                                <connections>
+                                                                    <action selector="geneticsSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="zzs-B9-9VS"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <constraints>
