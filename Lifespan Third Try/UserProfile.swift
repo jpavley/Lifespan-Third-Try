@@ -30,9 +30,14 @@ class UserProfile {
     var birthYear: RangedValue
     var birthDay: RangedValue
     var birthMonth: RangedValue
+    
     var lifeExpectancy: RangedValue
+    
     var activityLevel: RangedValue
     var stressLevel: RangedValue
+    var riskLevel: RangedValue
+    var geneticsLevel: RangedValue
+    
     var livingOnBorrowedTime: Bool
     var pronouns: PronounTrio
     
@@ -51,11 +56,15 @@ class UserProfile {
         let birthMonthMax = 12
         birthMonth = RangedValue(min: Float(birthMonthMin), max: Float(birthMonthMax), setting: 2)
         
+        
         let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
-        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: 120, setting: 83)
+        let lifeExpectancyMax = Float(120)
+        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
         
         activityLevel = RangedValue(min: 0, max: 10, setting: 5)
         stressLevel = RangedValue(min: 0, max: 10, setting: 5)
+        riskLevel = RangedValue(min: 0, max: 10, setting: 5)
+        geneticsLevel = RangedValue(min: 0, max: 10, setting: 5)
         
         livingOnBorrowedTime = false
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
