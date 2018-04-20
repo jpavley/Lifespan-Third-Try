@@ -118,7 +118,7 @@ class AnalysisViewController: UIViewController {
         let subject = userProfile.pronouns.subjective
         let object = userProfile.pronouns.objective
         let possesser = userProfile.pronouns.possessive
-        let age = Int(userProfile.age.rounded(.awayFromZero))
+        let age = Int(userProfile.age.rounded(.down))  // humans always round down their age!
         let birthYear = Int(userProfile.birthYear.setting.rounded(.awayFromZero))
         let lifeExpectancy = Int(userProfile.ale.rounded(.awayFromZero))
         let modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.awayFromZero))

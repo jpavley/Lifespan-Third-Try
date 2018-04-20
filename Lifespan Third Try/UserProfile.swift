@@ -83,6 +83,8 @@ class UserProfile {
     
     var age: CGFloat {
         get {
+            // print("CalendarUtilities.thisYear() \(CalendarUtilities.thisYear())")
+            // print("birthYear.setting \(birthYear.setting)")
             return CGFloat(CalendarUtilities.thisYear() - birthYear.setting)
         }
     }
