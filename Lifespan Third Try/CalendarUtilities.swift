@@ -74,7 +74,7 @@ class CalendarUtilities {
     }
     
     static func monthName(from monthNumber: Int) -> String {
-        guard monthNumber > 0 && monthNumber < 12 else {
+        guard monthNumber > 0 && monthNumber < 13 else {
             return ""
         }
         let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]

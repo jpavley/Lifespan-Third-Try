@@ -44,16 +44,57 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
+    @IBAction func sliderDidEnd(_ sender: UISlider) {
+        updateView()
+    }
+    
+    
     @IBAction func daySliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.birthDay.setting = sender.value
+        let birthDay = userProfile.birthDay.settingAsInt()
+        dayField.text = "\(birthDay)"
     }
     
     @IBAction func monthSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.birthMonth.setting = sender.value
+        let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
+        monthField.text = birthMonth
     }
     
     @IBAction func yearSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.birthYear.setting = sender.value
+        let birthYear = userProfile.birthYear.settingAsInt()
+        yearField.text = "\(birthYear)"
     }
     
     @IBAction func lifeSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.lifeExpectancy.setting = sender.value
+        let ale = userProfile.lifeExpectancy.settingAsInt()
+        lifeExpenctancyField.text = "\(ale)"
     }
     
     @IBAction func activitySliderChanged(_ sender: UISlider) {
@@ -124,6 +165,7 @@ class ProfileViewController: UIViewController {
         slider.minimumValue = property.min
         slider.maximumValue = property.max
         slider.value = property.setting
+        slider.addTarget(self, action: #selector(sliderDidEnd), for: [.touchUpInside, .touchUpOutside])
     }
     
     override func viewDidLoad() {
