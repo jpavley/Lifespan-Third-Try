@@ -1,6 +1,6 @@
 #TODO
 
-1. Update tombstone when user profile controls are modified.
+1. ~~Update tombstone when user profile controls are modified.~~
 2. Update the tab bar icons to reflect design changes.
 3. Update clock design so it is more modern.
 4. Update Life "Clock logo" type to read "Life Span".
