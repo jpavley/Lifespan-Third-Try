@@ -98,15 +98,51 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func activitySliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.activityLevel.setting = sender.value
+        let activityLevel = userProfile.activityLevel.settingAsInt()
+        activityField.text = "\(activityLevel)"
     }
     
     @IBAction func stressSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.stressLevel.setting = sender.value
+        let stressLevel = userProfile.stressLevel.settingAsInt()
+        stressField.text = "\(stressLevel)"
     }
     
     @IBAction func riskSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.riskLevel.setting = sender.value
+        let riskLevel = userProfile.riskLevel.settingAsInt()
+        riskField.text = "\(riskLevel)"
     }
     
     @IBAction func geneticsSliderChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.geneticsLevel.setting = sender.value
+        let geneticsLevel = userProfile.geneticsLevel.settingAsInt()
+        geneticsField.text = "\(geneticsLevel)"
     }
     
     func updateView() {
