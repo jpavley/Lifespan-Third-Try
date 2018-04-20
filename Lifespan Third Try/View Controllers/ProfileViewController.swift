@@ -8,7 +8,14 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+enum TextFieldTag: Int {
+    case name = 1000
+    case object = 2000
+    case subject = 3000
+    case possessive = 4000
+}
+
+class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     // Personal Details
     
@@ -47,7 +54,6 @@ class ProfileViewController: UIViewController {
     @IBAction func sliderDidEnd(_ sender: UISlider) {
         updateView()
     }
-    
     
     @IBAction func daySliderChanged(_ sender: UISlider) {
         let tb = self.tabBarController as! TabViewController
@@ -233,8 +239,45 @@ class ProfileViewController: UIViewController {
         slider.addTarget(self, action: #selector(sliderDidEnd), for: [.touchUpInside, .touchUpOutside])
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        if let tag = TextFieldTag(rawValue: textField.tag) {
+        
+            switch tag {
+            case .name:
+                userProfile.name = textField.text!
+                
+            case .object:
+                userProfile.pronouns.objective = textField.text!
+                
+            case .subject:
+                userProfile.pronouns.subjective = textField.text!
+
+            case .possessive:
+                userProfile.pronouns.possessive = textField.text!
+            }
+            
+            updateTombstone()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameField.delegate = self
+        objectField.delegate = self
+        subjectField.delegate = self
+        possessiveField.delegate = self
 
         // Do any additional setup after loading the view.
     }

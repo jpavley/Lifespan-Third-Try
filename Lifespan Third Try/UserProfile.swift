@@ -21,9 +21,9 @@ struct RangedValue {
 }
 
 struct PronounTrio {
-    var subjective: String = "he"
-    var objective: String = "him"
-    var possessive: String = "his"
+    var subjective: String = "he" // she, they
+    var objective: String = "him" // her, them
+    var possessive: String = "his" // hers, theirs
 }
 
 /// Models a user of Lifespan.
