@@ -101,7 +101,7 @@ class AnalysisViewController: UIViewController {
             
             s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity and a \(d.stressLevel) level of mental stress, and thus increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
             
-            s2 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay his death until the year \(d.modifiedDeathYear)."
+            s2 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
         }
         return "\(s1) \(s2)"
         
