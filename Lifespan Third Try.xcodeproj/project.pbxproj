@@ -67,6 +67,7 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
+		48D01AEB208A2A2600AF13F0 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		48D70425207C118600F569AF /* TombstoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TombstoneViewController.swift; sourceTree = "<group>"; };
 		48D7042720803ECA00F569AF /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		48E25CA32069B405006BB346 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
 				1878F0172067EEB600BEA332 /* Info.plist */,
+				48D01AEB208A2A2600AF13F0 /* TODO.md */,
 			);
 			path = "Lifespan Third Try";
 			sourceTree = "<group>";
