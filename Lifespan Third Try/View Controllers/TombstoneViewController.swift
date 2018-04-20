@@ -19,6 +19,7 @@ class TombstoneViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,7 @@ class TombstoneViewController: UIViewController {
         updateView()
     }
     
-    fileprivate func updateView() {
+    func updateView() {
         
         let tb = self.parent!.tabBarController as! TabViewController
         tb.updateLifeClock()

@@ -194,6 +194,9 @@ class ProfileViewController: UIViewController {
         
         geneticsField.text = "\(geneticsLevel)"
         configure(slider: geneticsSlider, with: userProfile.geneticsLevel)
+        
+        let tombstoneVC = childViewControllers[0] as! TombstoneViewController
+        tombstoneVC.updateView()
 
     }
         
