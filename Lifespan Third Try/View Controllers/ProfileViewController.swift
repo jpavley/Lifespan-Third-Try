@@ -146,6 +146,13 @@ class ProfileViewController: UIViewController {
     }
     
     func updateView() {
+        updatePersonalFactors()
+        updateBirthFactors()
+        updateLifeFactors()
+        updateTombstone()
+    }
+    
+    fileprivate func updatePersonalFactors() {
         let tb = self.tabBarController as! TabViewController
         tb.updateLifeClock()
         
@@ -158,7 +165,16 @@ class ProfileViewController: UIViewController {
         objectField.text = userProfile.pronouns.objective
         subjectField.text = userProfile.pronouns.subjective
         possessiveField.text = userProfile.pronouns.possessive
+    }
+    
+    fileprivate func updateBirthFactors() {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
         
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+
         let birthDay = userProfile.birthDay.settingAsInt()
         let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
         let birthYear = userProfile.birthYear.settingAsInt()
@@ -176,7 +192,16 @@ class ProfileViewController: UIViewController {
         
         lifeExpenctancyField.text = "\(ale)"
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
+    }
+    
+    fileprivate func updateLifeFactors() {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
         
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+
         let activityLevel = userProfile.activityLevel.settingAsInt()
         let stressLevel = userProfile.stressLevel.settingAsInt()
         let riskLevel = userProfile.riskLevel.settingAsInt()
@@ -194,10 +219,11 @@ class ProfileViewController: UIViewController {
         
         geneticsField.text = "\(geneticsLevel)"
         configure(slider: geneticsSlider, with: userProfile.geneticsLevel)
-        
+    }
+    
+    fileprivate func updateTombstone() {
         let tombstoneVC = childViewControllers[0] as! TombstoneViewController
         tombstoneVC.updateView()
-
     }
         
     fileprivate func configure(slider: UISlider, with property: RangedValue) {
