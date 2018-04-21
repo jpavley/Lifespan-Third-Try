@@ -118,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				48EB7AC8208B743400DBA476 /* README.md */,
+				48D01AEB208A2A2600AF13F0 /* TODO.md */,
 				1878F0082067EEB600BEA332 /* Lifespan Third Try */,
 				1878F01F2067EEB600BEA332 /* Lifespan Third TryTests */,
 				1878F02A2067EEB600BEA332 /* Lifespan Third TryUITests */,
@@ -145,7 +146,6 @@
 				48E25CC02069B8A1006BB346 /* Lifespan Views */,
 				1878F0092067EEB600BEA332 /* AppDelegate.swift */,
 				1878F0172067EEB600BEA332 /* Info.plist */,
-				48D01AEB208A2A2600AF13F0 /* TODO.md */,
 			);
 			path = "Lifespan Third Try";
 			sourceTree = "<group>";

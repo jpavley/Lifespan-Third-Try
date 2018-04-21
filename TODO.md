@@ -6,6 +6,6 @@
 4. Update Life "Clock logo" type to read "Life Span".
 5. ~~Profile View Controller needs to manage and dismiss keyboard when editing of personal data is done.~~
 6. Update analysys to take risk and genetics factors into account.
-7. Update Lifespan object to take risk and genetics into account.
+7. ~~Update Lifespan object to take risk and genetics into account.~~
 
 

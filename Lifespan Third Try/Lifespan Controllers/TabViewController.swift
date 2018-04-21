@@ -75,6 +75,12 @@ class TabViewController: UITabBarController {
         let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), positive: false)
         ls.spanModifiers?.append(stressLevelMod)
         
+        let riskLevelMod = SpanModifier(name: "riskLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: false)
+        ls.spanModifiers?.append(riskLevelMod)
+        
+        let geneticsQualityMod = SpanModifier(name: "geneticsQuality", value: CGFloat(userProfile!.geneticsLevel.setting), positive: true)
+        ls.spanModifiers?.append(geneticsQualityMod)
+        
         return ls
     }
     
