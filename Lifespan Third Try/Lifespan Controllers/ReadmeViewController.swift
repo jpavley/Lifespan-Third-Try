@@ -1,5 +1,5 @@
 //
-//  YearViewController.swift
+//  ReadmeViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
-class YearViewController: UIViewController {
+class ReadmeViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        webView.navigationDelegate = self
+        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
+
     }
 
     override func didReceiveMemoryWarning() {
