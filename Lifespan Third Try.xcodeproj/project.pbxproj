@@ -31,6 +31,7 @@
 		48E25CBE2069B88B006BB346 /* HourHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CB92069B88B006BB346 /* HourHandView.swift */; };
 		48E25CBF2069B88B006BB346 /* CoreGraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */; };
 		48EB7ACA208B79DB00DBA476 /* Readme.html in Resources */ = {isa = PBXBuildFile; fileRef = 48EB7AC9208B79DB00DBA476 /* Readme.html */; };
+		48EB7ACC208B98DD00DBA476 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 48EB7ACB208B98DC00DBA476 /* LICENSE */; };
 		48EE8C682079771000931554 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE8C672079771000931554 /* TabViewController.swift */; };
 		48EE8C6A20799EA700931554 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE8C6920799EA700931554 /* StringUtilities.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsView.swift; sourceTree = "<group>"; };
 		48EB7AC8208B743400DBA476 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		48EB7AC9208B79DB00DBA476 /* Readme.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Readme.html; sourceTree = "<group>"; };
+		48EB7ACB208B98DC00DBA476 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		48EE8C672079771000931554 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		48EE8C6920799EA700931554 /* StringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			children = (
 				48EB7AC8208B743400DBA476 /* README.md */,
 				48D01AEB208A2A2600AF13F0 /* TODO.md */,
+				48EB7ACB208B98DC00DBA476 /* LICENSE */,
 				1878F0082067EEB600BEA332 /* Lifespan Third Try */,
 				1878F01F2067EEB600BEA332 /* Lifespan Third TryTests */,
 				1878F02A2067EEB600BEA332 /* Lifespan Third TryUITests */,
@@ -337,6 +340,7 @@
 				1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */,
 				1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */,
 				1878F0112067EEB600BEA332 /* Main.storyboard in Resources */,
+				48EB7ACC208B98DD00DBA476 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
