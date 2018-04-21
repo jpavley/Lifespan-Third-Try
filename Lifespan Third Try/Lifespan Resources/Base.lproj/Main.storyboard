@@ -249,7 +249,7 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="hGu-Mn-aHr"/>
                                 </connections>
                             </containerView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-ua-ehr">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-ua-ehr">
                                 <rect key="frame" x="0.0" y="128" width="320" height="1183"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-wW-bgG">

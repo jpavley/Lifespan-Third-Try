@@ -244,6 +244,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    // Called by UITextFieldDelegate
     func textFieldDidEndEditing(_ textField: UITextField) {
         let tb = self.tabBarController as! TabViewController
         
@@ -271,15 +272,22 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         nameField.delegate = self
         objectField.delegate = self
         subjectField.delegate = self
         possessiveField.delegate = self
-
-        // Do any additional setup after loading the view.
+        
+        // enable user to dismiss keyboard with a tap
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
