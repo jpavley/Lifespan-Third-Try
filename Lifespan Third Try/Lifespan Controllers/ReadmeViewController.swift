@@ -18,9 +18,6 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
 
         // Do any additional setup after loading the view.
         
-        webView.navigationDelegate = self
-        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +30,9 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        webView.navigationDelegate = self
+        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
     }
 
 }
