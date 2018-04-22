@@ -8,7 +8,7 @@
 - Complete readme file.
 - Add unit tests back in from ealier version of project.
 - Change locked fields in user profile tab into labels.
-- Create bugs list. First Bug: Intermitent disagreement between analysis and tombstone about profile age calculation.
+- Create bugs list.
 - Change readme to a native text view (don't like the delay while the HTML is parsed and rendered).
 - Support Dynamic Type (Attributed Text does not support dynamic type).
 - Implement alerts with tips for factors on Profile tab.
@@ -22,6 +22,7 @@
 - Update analysys to take risk and genetics factors into account.
 - Add open source license (MIT).
 - Complete readme tab and format with CSS
+- First Bug: Intermitent disagreement between analysis and tombstone about profile age calculation.
 
 
 

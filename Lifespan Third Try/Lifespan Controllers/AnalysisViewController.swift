@@ -50,7 +50,7 @@ class AnalysisViewController: UIViewController {
         }
         
         // round that float to a neo-Int	
-        let level = level.rounded(.awayFromZero)
+        let level = level.rounded(.down)
         
         switch UInt(level) {
         case 0...4:
@@ -128,19 +128,16 @@ class AnalysisViewController: UIViewController {
         let subject = userProfile.pronouns.subjective
         let object = userProfile.pronouns.objective
         let possesser = userProfile.pronouns.possessive
-        let age = Int(userProfile.age)
-        let birthYear = Int(userProfile.birthYear.setting.rounded(.awayFromZero))
-        let lifeExpectancy = Int(userProfile.ale.rounded(.down))
-        let modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.down))
-        let missingYears = abs(modifiedLifeExpectancy - lifeExpectancy)
-        let modifiedDeathYear = birthYear + modifiedLifeExpectancy
+        
+        
+        let us = userProfile.calcUserStats(from: lifeSpan)
         let cal = CalendarUtilities.utcCal()
         let now = Date()
         let thisWeekDay = cal.weekdaySymbols[cal.component(.weekday, from: now)-1]
         let thisDay = cal.component(.day, from: now)
         let thisMonth = cal.monthSymbols[cal.component(.month, from: now)-1]
         let thisYear = cal.component(.year, from: now)
-        let modifiedYearsLeft = modifiedDeathYear - thisYear
+        let modifiedYearsLeft = us.modifiedDeathYear - thisYear
         let stressLevel = levelToText(level: userProfile.stress)
         let activityLevel = levelToText(level: userProfile.activity)
         let riskLevel = levelToText(level: userProfile.risk)
@@ -150,23 +147,23 @@ class AnalysisViewController: UIViewController {
         let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
         
         let p1 = generateParagraphOne(with: ParagraphOneData(name: name,
-                                                             age: age,
-                                                             birthYear: birthYear,
-                                                             modifiedLifeExpectancy: modifiedLifeExpectancy,
-                                                             lifeExpectancy: lifeExpectancy,
+                                                             age: us.age,
+                                                             birthYear: us.birthYear,
+                                                             modifiedLifeExpectancy: us.modifiedLifeExpectancy,
+                                                             lifeExpectancy: us.lifeExpectancy,
                                                              possesser: possesser,
                                                              object: object,
                                                              subject: subject,
-                                                             missingYears: missingYears,
+                                                             missingYears: us.missingYears,
                                                              modifiedYearsLeft: modifiedYearsLeft,
-                                                             modifiedDeathYear: modifiedDeathYear,
+                                                             modifiedDeathYear: us.modifiedDeathYear,
                                                              stressLevel: stressLevel,
                                                              activityLevel: activityLevel,
                                                              riskLevel: riskLevel,
                                                              geneticsLevel: geneticsLevel))
         
         // Universal
-        let p2 = "If \(name) lives beyond \(modifiedDeathYear) and the age of \(modifiedLifeExpectancy), \(subject) will be living on borrowed time."
+        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
         return "\(p0)\(cr)\(p1)\(cr)\(p2)"
     }

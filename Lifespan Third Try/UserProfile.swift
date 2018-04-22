@@ -15,7 +15,7 @@ struct RangedValue {
     var setting: Float = 0.5
     
     func settingAsInt() -> Int {
-        return Int(setting.rounded(.awayFromZero))
+        return Int(setting.rounded(.down))
     }
     
 }
@@ -24,6 +24,15 @@ struct PronounTrio {
     var subjective: String = "he" // she, they
     var objective: String = "him" // her, them
     var possessive: String = "his" // hers, theirs
+}
+
+struct UserStats {
+    var age: Int = 0
+    var birthYear: Int = 0
+    var lifeExpectancy: Int = 0
+    var modifiedLifeExpectancy: Int = 0
+    var missingYears: Int = 0
+    var modifiedDeathYear: Int = 0
 }
 
 /// Models a user of Lifespan.
@@ -75,9 +84,23 @@ class UserProfile {
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
     }
     
+    func calcUserStats(from lifeSpan: Lifespan) -> UserStats {
+        
+        var us = UserStats()
+        
+        us.age = Int(age)
+        us.birthYear = Int(birthYear.setting.rounded(.down))
+        us.lifeExpectancy = Int(ale.rounded(.down))
+        us.modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.down))
+        us.missingYears = abs(us.modifiedLifeExpectancy - us.lifeExpectancy)
+        us.modifiedDeathYear = us.birthYear + us.modifiedLifeExpectancy
+        
+        return us
+    }
+    
     var ale: CGFloat {
         get {
-            return CGFloat(lifeExpectancy.setting)
+            return CGFloat(lifeExpectancy.setting).rounded(.down)
         }
     }
     

@@ -41,13 +41,14 @@ class TombstoneViewController: UIViewController {
             return
         }
         
+        let us = userProfile.calcUserStats(from: lifeSpan)
         headlineLabel.text = userProfile.name
         
-        let birthYear = String(format: "%.0f", userProfile.birthYear.setting)
-        let deathYear = String(format: "%.0f", CGFloat(userProfile.birthYear.setting) + lifeSpan.modifiedALE!)
+        let birthYear = us.birthYear
+        let deathYear = us.modifiedDeathYear
         subheadLabel.text = "\(birthYear) to \(deathYear)"
         
-        let age = String(format: "%.0f", lifeSpan.modifiedALE!)
-        footnoteLabel.text = "Aged \(age)"
+        let ageAtDeath = us.modifiedLifeExpectancy
+        footnoteLabel.text = "Aged \(ageAtDeath)"
     }
 }
