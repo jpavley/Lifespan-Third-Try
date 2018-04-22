@@ -10,6 +10,8 @@
 - Change locked fields in user profile tab into labels.
 - Create bugs list. First Bug: Intermitent disagreement between analysis and tombstone about profile age calculation.
 - Change readme to a native text view (don't like the delay while the HTML is parsed and rendered).
+- Support Dynamic Type (Attributed Text does not support dynamic type).
+- Implement alerts with tips for factors on Profile tab.
 
 ## Closed
 

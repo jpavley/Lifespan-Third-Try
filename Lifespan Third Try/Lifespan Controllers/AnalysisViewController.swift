@@ -145,7 +145,7 @@ class AnalysisViewController: UIViewController {
         let activityLevel = levelToText(level: userProfile.activity)
         let riskLevel = levelToText(level: userProfile.risk)
         let geneticsLevel = levelToText(level: userProfile.genetics, words: ["unfortunate", "average", "excellent", "unknown"])
-        let cr = "\n"
+        let cr = "\n\n"
         
         let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
         
