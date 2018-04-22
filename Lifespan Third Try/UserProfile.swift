@@ -60,7 +60,7 @@ class UserProfile {
         
         let birthYearMin = CalendarUtilities.thisYear() - 120
         let birthYearMax = CalendarUtilities.thisYear()
-        birthYear = RangedValue(min: birthYearMin, max: birthYearMax, setting: 1961)
+        birthYear = RangedValue(min: Float(birthYearMin), max: Float(birthYearMax), setting: 1961)
         
         let birthDayMin = 1
         let birthDayMax = 31
@@ -71,7 +71,7 @@ class UserProfile {
         birthMonth = RangedValue(min: Float(birthMonthMin), max: Float(birthMonthMax), setting: 2)
         
         
-        let lifeExpectancyMin = CalendarUtilities.thisYear() - birthYear.setting
+        let lifeExpectancyMin = Float(CalendarUtilities.thisYear()) - birthYear.setting
         let lifeExpectancyMax = Float(120)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
         
@@ -107,7 +107,8 @@ class UserProfile {
     var age: CGFloat {
         get {            
             // humans always round down their age!
-            return CGFloat(CalendarUtilities.thisYear() - birthYear.setting).rounded(.down)
+            let userAge = Float(CalendarUtilities.thisYear()) - birthYear.setting.rounded(.down)
+            return CGFloat(userAge)
         }
     }
     

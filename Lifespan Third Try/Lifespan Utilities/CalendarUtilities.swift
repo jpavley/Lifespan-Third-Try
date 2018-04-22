@@ -49,10 +49,10 @@ class CalendarUtilities {
         return cal
     }
     
-    static func thisYear() -> Float {
+    static func thisYear() -> Int {
         let cal = CalendarUtilities.utcCal()
         let year = cal.component(.year, from: Date())
-        return Float(year)
+        return year
     }
     
     static func yearsFromNow(from date: Date) -> Int {
