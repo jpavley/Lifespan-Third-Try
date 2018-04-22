@@ -17,5 +17,6 @@
 - Update tombstone when user profile controls are modified.
 - Profile View Controller needs to manage and dismiss keyboard when editing of personal data is done.
 - Update Lifespan object to take risk and genetics into account.
+- Dismiss the keyboard when the user hits the return key, when the user taps outside the keyboard, or when the user scrolls
 
 

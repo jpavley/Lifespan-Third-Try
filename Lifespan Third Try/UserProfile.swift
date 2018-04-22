@@ -82,10 +82,9 @@ class UserProfile {
     }
     
     var age: CGFloat {
-        get {
-            // print("CalendarUtilities.thisYear() \(CalendarUtilities.thisYear())")
-            // print("birthYear.setting \(birthYear.setting)")
-            return CGFloat(CalendarUtilities.thisYear() - birthYear.setting)
+        get {            
+            // humans always round down their age!
+            return CGFloat(CalendarUtilities.thisYear() - birthYear.setting).rounded(.down)
         }
     }
     
@@ -98,6 +97,18 @@ class UserProfile {
     var stress: CGFloat {
         get {
             return CGFloat(stressLevel.setting)
+        }
+    }
+    
+    var risk: CGFloat {
+        get {
+            return CGFloat(riskLevel.setting)
+        }
+    }
+    
+    var genetics: CGFloat {
+        get {
+            return CGFloat(geneticsLevel.setting)
         }
     }
     

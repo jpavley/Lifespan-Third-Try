@@ -45,8 +45,12 @@ class AnalysisViewController: UIViewController {
                                  words: [String] = ["low", "moderate", "high", "unknown"]) -> String {
         
         enum Levels: Int {
+            // map the index of the words to their place in the array
             case low = 0, moderate = 1, high = 2, unknown = 3
         }
+        
+        // round that float to a neo-Int	
+        let level = level.rounded(.awayFromZero)
         
         switch UInt(level) {
         case 0...4:
@@ -74,36 +78,42 @@ class AnalysisViewController: UIViewController {
         let modifiedDeathYear: Int
         let stressLevel: String
         let activityLevel: String
+        let riskLevel: String
+        let geneticsLevel: String
     }
     
     fileprivate func generateParagraphOne(with d: ParagraphOneData) -> String {
-        var s1 = ""
+        
+        let s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity, a \(d.stressLevel) level of mental stress, a \(d.riskLevel) level of risky behavior, and an \(d.geneticsLevel) genetic history."
+
         var s2 = ""
+        var s3 = ""
+        
         if d.modifiedLifeExpectancy < d.lifeExpectancy {
             
             // negative
             
-            s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity and a \(d.stressLevel) level of mental stress, and thus reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
+            s2 = "\(d.possesser.capitalized) life expectancy is therefore reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
             
-            s2 = "If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            s3 = "If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
             
         } else if d.modifiedLifeExpectancy == d.lifeExpectancy {
             
             // neutral
             
-            s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity and a \(d.stressLevel) level of mental stress, and thus unchanged with no missing or extra years."
+            s2 = "\(d.possesser.capitalized) life expectancy is therefore unchanged with no missing or extra years."
             
-            s2 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
             
         } else if d.modifiedLifeExpectancy > d.lifeExpectancy {
             
             // positive
             
-            s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity and a \(d.stressLevel) level of mental stress, and thus increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
+            s2 = "\(d.possesser.capitalized) life expectancy is therefore increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
             
-            s2 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
+            s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
         }
-        return "\(s1) \(s2)"
+        return "\(s1) \(s2) \(s3)"
         
     }
     
@@ -118,10 +128,10 @@ class AnalysisViewController: UIViewController {
         let subject = userProfile.pronouns.subjective
         let object = userProfile.pronouns.objective
         let possesser = userProfile.pronouns.possessive
-        let age = Int(userProfile.age.rounded(.down))  // humans always round down their age!
+        let age = Int(userProfile.age)
         let birthYear = Int(userProfile.birthYear.setting.rounded(.awayFromZero))
-        let lifeExpectancy = Int(userProfile.ale.rounded(.awayFromZero))
-        let modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.awayFromZero))
+        let lifeExpectancy = Int(userProfile.ale.rounded(.down))
+        let modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.down))
         let missingYears = abs(modifiedLifeExpectancy - lifeExpectancy)
         let modifiedDeathYear = birthYear + modifiedLifeExpectancy
         let cal = CalendarUtilities.utcCal()
@@ -133,6 +143,8 @@ class AnalysisViewController: UIViewController {
         let modifiedYearsLeft = modifiedDeathYear - thisYear
         let stressLevel = levelToText(level: userProfile.stress)
         let activityLevel = levelToText(level: userProfile.activity)
+        let riskLevel = levelToText(level: userProfile.risk)
+        let geneticsLevel = levelToText(level: userProfile.genetics, words: ["unfortunate", "average", "excellent", "unknown"])
         let cr = "\n"
         
         let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
@@ -149,7 +161,9 @@ class AnalysisViewController: UIViewController {
                                                              modifiedYearsLeft: modifiedYearsLeft,
                                                              modifiedDeathYear: modifiedDeathYear,
                                                              stressLevel: stressLevel,
-                                                             activityLevel: activityLevel))
+                                                             activityLevel: activityLevel,
+                                                             riskLevel: riskLevel,
+                                                             geneticsLevel: geneticsLevel))
         
         // Universal
         let p2 = "If \(name) lives beyond \(modifiedDeathYear) and the age of \(modifiedLifeExpectancy), \(subject) will be living on borrowed time."
