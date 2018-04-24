@@ -535,7 +535,7 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="guk-7j-0uP">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="guk-7j-0uP">
                                                                 <rect key="frame" x="12" y="108" width="264" height="31"/>
                                                                 <connections>
                                                                     <action selector="activitySliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="Awz-De-Qeb"/>
@@ -568,7 +568,7 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-SB-rP0">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-SB-rP0">
                                                                 <rect key="frame" x="12" y="216" width="264" height="31"/>
                                                                 <connections>
                                                                     <action selector="stressSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="gh8-2A-wuR"/>
@@ -601,7 +601,7 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-ee-fFS">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-ee-fFS">
                                                                 <rect key="frame" x="12" y="324" width="264" height="31"/>
                                                                 <connections>
                                                                     <action selector="riskSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="8rO-20-USK"/>
@@ -634,7 +634,7 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w4J-lx-hUs">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="w4J-lx-hUs">
                                                                 <rect key="frame" x="12" y="432" width="264" height="31"/>
                                                                 <connections>
                                                                     <action selector="geneticsSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="zzs-B9-9VS"/>

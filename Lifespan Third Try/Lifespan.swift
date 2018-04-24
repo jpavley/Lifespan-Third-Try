@@ -129,6 +129,10 @@ class Lifespan {
             return nil
         }
         
+        // DEBUG
+//        print("---")
+//        print("modifiedALE")
+        
         var modifiedALE = averageLifeExpectancy!
         for mod in spanModifiers {
             let modImpact = (ale * 0.01) * mod.value
@@ -140,9 +144,8 @@ class Lifespan {
             
             // DEBUG
 //            print("---")
-//            print("ALE \(ale)")
-//            print("mod name \(mod.name), value \(mod.value), positive \(mod.positive), impact \(modImpact)")
-//            print("modifiedALE \(modifiedALE)")
+//            print("mod name \(mod.name), value \(mod.value), positive \(mod.positive)")
+//            print("ALE \(ale), impact \(modImpact), modifiedALE \(modifiedALE)")
 
         }
         

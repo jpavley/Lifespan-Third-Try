@@ -62,8 +62,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.birthDay.setting = sender.value
+        userProfile.birthDay.setting = sender.value.rounded(.awayFromZero)
         let birthDay = userProfile.birthDay.settingAsInt()
+        daySlider.value = sender.value.rounded(.awayFromZero)
         dayField.text = "\(birthDay)"
     }
     
@@ -74,8 +75,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.birthMonth.setting = sender.value
+        userProfile.birthMonth.setting = sender.value.rounded(.awayFromZero)
         let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
+        monthSlider.value = sender.value.rounded(.awayFromZero)
         monthField.text = birthMonth
     }
     
@@ -86,8 +88,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.birthYear.setting = sender.value
+        userProfile.birthYear.setting = sender.value.rounded(.awayFromZero)
         let birthYear = userProfile.birthYear.settingAsInt()
+        yearSlider.value = sender.value.rounded(.awayFromZero)
         yearField.text = "\(birthYear)"
     }
     
@@ -98,8 +101,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.lifeExpectancy.setting = sender.value
+        userProfile.lifeExpectancy.setting = sender.value.rounded(.awayFromZero)
         let ale = userProfile.lifeExpectancy.settingAsInt()
+        lifeExpencetancySlider.value = sender.value.rounded(.awayFromZero)
         lifeExpenctancyField.text = "\(ale)"
     }
     
@@ -110,8 +114,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.activityLevel.setting = sender.value
+        userProfile.activityLevel.setting = sender.value.rounded(.awayFromZero)
         let activityLevel = userProfile.activityLevel.settingAsInt()
+        activitySlider.value = sender.value.rounded(.awayFromZero)
         activityField.text = "\(activityLevel)"
     }
     
@@ -122,8 +127,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.stressLevel.setting = sender.value
+        userProfile.stressLevel.setting = sender.value.rounded(.awayFromZero)
         let stressLevel = userProfile.stressLevel.settingAsInt()
+        stressSlider.value = sender.value.rounded(.awayFromZero)
         stressField.text = "\(stressLevel)"
     }
     
@@ -134,8 +140,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.riskLevel.setting = sender.value
+        userProfile.riskLevel.setting = sender.value.rounded(.awayFromZero)
         let riskLevel = userProfile.riskLevel.settingAsInt()
+        riskSlider.value = sender.value.rounded(.awayFromZero)
         riskField.text = "\(riskLevel)"
     }
     
@@ -146,8 +153,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.geneticsLevel.setting = sender.value
+        userProfile.geneticsLevel.setting = sender.value.rounded(.awayFromZero)
         let geneticsLevel = userProfile.geneticsLevel.settingAsInt()
+        geneticsSlider.value = sender.value.rounded(.awayFromZero)
         geneticsField.text = "\(geneticsLevel)"
     }
     
