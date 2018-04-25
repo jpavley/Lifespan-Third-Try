@@ -80,4 +80,25 @@ class CalendarUtilities {
         let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         return monthNames[monthNumber - 1]
     }
+    
+    static func daysIn(monthNumber: Int, for year: Int) -> Int {
+        guard monthNumber > 0 && monthNumber < 13 else {
+            return 0
+        }
+        
+        switch monthNumber {
+        case 1,3,5,7,8,10,12:
+            return 31
+        case 4,6,9,11:
+            return 30
+        case 2:
+            // a year is leap if evenly divided by 4 but not 100 or every divided by 400
+            let isLeapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)
+            
+            // feb has 29 days in a leap year and 28 otherwise
+            return isLeapYear ? 29 : 28
+       default:
+            return 0 // monthNumber out of bounds
+        }
+    }
 }

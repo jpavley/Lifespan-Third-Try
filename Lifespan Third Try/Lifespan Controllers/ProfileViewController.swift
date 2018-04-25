@@ -58,10 +58,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        userProfile.birthDay.setting = sender.value.rounded(.awayFromZero)
-        let birthDay = userProfile.birthDay.settingAsInt()
-        daySlider.value = sender.value.rounded(.awayFromZero)
-        dayField.text = "\(birthDay)"
+        let sliderIntValue = sender.value.rounded(.awayFromZero)
+        userProfile.birthDay.setting = sliderIntValue
+        daySlider.value = sliderIntValue
+        dayField.text = "\(Int(sliderIntValue))"
     }
     
     @IBAction func monthSliderChanged(_ sender: UISlider) {
@@ -186,10 +186,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
 
         let birthDay = userProfile.birthDay.settingAsInt()
-        let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
+        let birthMonthNumber = userProfile.birthMonth.settingAsInt()
+        let birthMonth = CalendarUtilities.monthName(from: birthMonthNumber)
         let birthYear = userProfile.birthYear.settingAsInt()
         let ale = userProfile.lifeExpectancy.settingAsInt()
         birthField.text = "\(birthDay) \(birthMonth) \(birthYear) \(ale)"
+        
+        // handle the varible number of days in a month
+        userProfile.birthDay.max = Float(CalendarUtilities.daysIn(monthNumber: birthMonthNumber, for: birthYear))
         
         dayField.text = "\(birthDay)"
         configure(slider: daySlider, with: userProfile.birthDay)
