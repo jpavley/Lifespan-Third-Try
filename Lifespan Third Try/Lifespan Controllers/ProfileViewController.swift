@@ -51,10 +51,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
-    @IBAction func sliderDidEnd(_ sender: UISlider) {
-        updateView()
-    }
-    
     @IBAction func daySliderChanged(_ sender: UISlider) {
         let tb = self.tabBarController as! TabViewController
         
@@ -159,7 +155,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         geneticsField.text = "\(geneticsLevel)"
     }
     
-    func updateView() {
+    @objc func updateView() {
         updatePersonalFactors()
         updateBirthFactors()
         updateLifeFactors()
@@ -244,7 +240,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         slider.minimumValue = property.min
         slider.maximumValue = property.max
         slider.value = property.setting
-        slider.addTarget(self, action: #selector(sliderDidEnd), for: [.touchUpInside, .touchUpOutside])
+        slider.addTarget(self, action: #selector(updateView), for: [.touchUpInside, .touchUpOutside])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

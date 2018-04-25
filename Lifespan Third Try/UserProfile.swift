@@ -75,10 +75,10 @@ class UserProfile {
         let lifeExpectancyMax = Float(120)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
         
-        activityLevel = RangedValue(min: 0, max: 10, setting: 8)
-        stressLevel = RangedValue(min: 0, max: 10, setting: 6)
-        riskLevel = RangedValue(min: 0, max: 10, setting: 4)
-        geneticsLevel = RangedValue(min: 0, max: 10, setting: 2)
+        activityLevel = RangedValue(min: 0, max: 10, setting: 0)
+        stressLevel = RangedValue(min: 0, max: 10, setting: 0)
+        riskLevel = RangedValue(min: 0, max: 10, setting: 0)
+        geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
         
         livingOnBorrowedTime = false
         pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")

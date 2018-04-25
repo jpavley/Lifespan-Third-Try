@@ -66,7 +66,7 @@ class TabViewController: UITabBarController {
     
     func createLifespanForUser() -> Lifespan {
                 
-        let birthDate = CalendarUtilities.stringToDate(dateString: "02-13-\(Int(userProfile!.birthYear.setting))")
+        let birthDate = CalendarUtilities.stringToDate(dateString: "\(userProfile!.birthMonth.settingAsInt())-\(userProfile!.birthDay.settingAsInt())-\(userProfile!.birthYear.settingAsInt())")
         let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
         
         let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: true)
@@ -75,7 +75,7 @@ class TabViewController: UITabBarController {
         let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), positive: false)
         ls.spanModifiers?.append(stressLevelMod)
         
-        let riskLevelMod = SpanModifier(name: "riskLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: false)
+        let riskLevelMod = SpanModifier(name: "riskLevel", value: CGFloat(userProfile!.riskLevel.setting), positive: false)
         ls.spanModifiers?.append(riskLevelMod)
         
         let geneticsQualityMod = SpanModifier(name: "geneticsQuality", value: CGFloat(userProfile!.geneticsLevel.setting), positive: true)

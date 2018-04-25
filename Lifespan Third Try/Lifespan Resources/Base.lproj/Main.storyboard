@@ -386,7 +386,6 @@
                                                                 <rect key="frame" x="12.5" y="108" width="263" height="31"/>
                                                                 <connections>
                                                                     <action selector="daySliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="GWd-KW-XCw"/>
-                                                                    <action selector="sliderDidEnd:" destination="M2B-uX-7MA" eventType="editingDidEnd" id="LeZ-RW-j8c"/>
                                                                 </connections>
                                                             </slider>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-Jb-oC3">
