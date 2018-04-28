@@ -32,6 +32,7 @@ class AnalysisViewController: UIViewController {
         }
         
         analysisText.text = generateAnalysis(lifeSpan: lifeSpan)
+
     }
         
     // MARK: - Navigation
@@ -39,6 +40,10 @@ class AnalysisViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        analysisText.setContentOffset(CGPoint.zero, animated: true)
     }
     
     fileprivate func levelToText(level: CGFloat,
@@ -165,7 +170,7 @@ class AnalysisViewController: UIViewController {
         // Universal
         let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
-        return "\(p0)\(cr)\(p1)\(cr)\(p2)"
+        return "\(cr)\(cr)\(p0)\(cr)\(p1)\(cr)\(p2)"
     }
     
 }

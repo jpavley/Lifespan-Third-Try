@@ -19,6 +19,12 @@ class TombstoneViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //view.addSubview(blurView)
+        view.insertSubview(blurView, at: 0)
         
     }
 

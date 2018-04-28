@@ -92,7 +92,7 @@
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Wr-2DY">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="0.24855522259999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="CJR-Nv-RG6"/>
                                 </constraints>
@@ -185,9 +185,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
+                                <rect key="frame" x="8" y="28" width="304" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="50" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-DR-nNY">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="0.24855522259999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xoI-Im-wDl"/>
                                 </constraints>
@@ -195,23 +209,16 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="erF-FG-1Zk"/>
                                 </connections>
                             </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
-                                <rect key="frame" x="8" y="128" width="304" height="391"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XeH-9s-qrD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="5HP-1v-PEF"/>
                             <constraint firstItem="XeH-9s-qrD" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="BxW-89-w4h"/>
                             <constraint firstItem="oYr-DR-nNY" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="Dn8-Sf-hi4"/>
-                            <constraint firstItem="XeH-9s-qrD" firstAttribute="top" secondItem="oYr-DR-nNY" secondAttribute="bottom" id="O8M-Ig-9YN"/>
                             <constraint firstItem="oYr-DR-nNY" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Sd5-QN-InV"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="XeH-9s-qrD" secondAttribute="trailing" constant="8" id="c5F-cA-ntj"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="oYr-DR-nNY" secondAttribute="trailing" id="dcz-7J-Svm"/>
+                            <constraint firstItem="XeH-9s-qrD" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="s2h-jV-hwH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -234,7 +241,7 @@
                         <subviews>
                             <containerView opaque="NO" tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-A3-osM">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="0.24855522259999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="OYi-aT-OPb"/>
                                 </constraints>
@@ -309,19 +316,19 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he she they" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxj-Jc-K2b" userLabel="he, she, they">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="90.5" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="him her them" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-z8-2kG" userLabel="him, her, them">
                                                                                 <rect key="frame" x="98.5" y="0.0" width="91" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="his her their" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-sx-hsk">
                                                                                 <rect key="frame" x="197.5" y="0.0" width="90.5" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -723,9 +730,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUT-TP-9rY">
+                                <rect key="frame" x="0.0" y="28" width="320" height="491"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPv-QD-8cD">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="0.24855522260273974" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="v0I-IZ-BNH"/>
                                 </constraints>
@@ -733,22 +748,13 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="aAA-Bj-cbU"/>
                                 </connections>
                             </containerView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUT-TP-9rY">
-                                <rect key="frame" x="0.0" y="128" width="320" height="391"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gUT-TP-9rY" firstAttribute="trailing" secondItem="OZg-IU-5Yi" secondAttribute="trailing" id="4aa-QS-7Dr"/>
-                            <constraint firstItem="gUT-TP-9rY" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="99o-w2-7SF"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="top" secondItem="OZg-IU-5Yi" secondAttribute="top" constant="8" id="9S6-BA-SQN"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" id="EoE-Me-6oG"/>
-                            <constraint firstItem="gUT-TP-9rY" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="SXO-bj-1eI"/>
+                            <constraint firstItem="gUT-TP-9rY" firstAttribute="top" secondItem="OZg-IU-5Yi" secondAttribute="top" constant="8" id="Ig5-oB-cxy"/>
                             <constraint firstItem="gUT-TP-9rY" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" id="bMA-8s-Jb5"/>
                             <constraint firstItem="gUT-TP-9rY" firstAttribute="bottom" secondItem="OZg-IU-5Yi" secondAttribute="bottom" id="rBO-eN-j7u"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="trailing" secondItem="OZg-IU-5Yi" secondAttribute="trailing" id="t51-Ck-9Qd"/>
@@ -794,6 +800,6 @@
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hGu-Mn-aHr"/>
+        <segue reference="erF-FG-1Zk"/>
     </inferredMetricsTieBreakers>
 </document>
