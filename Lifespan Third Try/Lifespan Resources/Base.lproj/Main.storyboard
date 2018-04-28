@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="128" width="320" height="1183"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-wW-bgG">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-R1-ZQR">
                                                 <rect key="frame" x="16" y="16" width="288" height="1058"/>
@@ -656,7 +656,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1100" id="2ZB-DJ-kLF"/>
+                                            <constraint firstAttribute="height" constant="1150" id="2ZB-DJ-kLF"/>
                                             <constraint firstItem="xzG-R1-ZQR" firstAttribute="leading" secondItem="Onf-wW-bgG" secondAttribute="leading" constant="16" id="5ga-q9-93z"/>
                                             <constraint firstAttribute="trailing" secondItem="xzG-R1-ZQR" secondAttribute="trailing" constant="16" id="Cs4-Um-rda"/>
                                             <constraint firstItem="xzG-R1-ZQR" firstAttribute="top" secondItem="Onf-wW-bgG" secondAttribute="top" constant="16" id="FJG-zC-XRQ"/>
