@@ -170,7 +170,7 @@ class AnalysisViewController: UIViewController {
         // Universal
         let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
-        return "\(cr)\(cr)\(p0)\(cr)\(p1)\(cr)\(p2)"
+        return "\(p0)\(cr)\(p1)\(cr)\(p2)"
     }
     
 }
