@@ -5,9 +5,8 @@
 - Update the tab bar icons to reflect design changes.
 - Update clock design so it is more modern.
 - Update Life "Clock logo" type to read "Life Span".
-- Complete readme file.
+- Convert readme into Attributed Type.
 - Add unit tests back in from ealier version of project.
-- Change locked fields in user profile tab into labels.
 - Create bugs list.
 - Change readme to a native text view (don't like the delay while the HTML is parsed and rendered).
 - Support Dynamic Type (Attributed Text does not support dynamic type).
@@ -23,6 +22,8 @@
 - Add open source license (MIT).
 - Complete readme tab and format with CSS
 - First Bug: Intermitent disagreement between analysis and tombstone about profile age calculation.
+- Change locked fields in user profile tab into labels.
+
 
 
 
