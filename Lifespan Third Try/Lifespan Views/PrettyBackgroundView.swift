@@ -15,7 +15,7 @@ import UIKit
 @IBDesignable
 class PrettyBackgroundView: UIView {
     
-    /*
+    
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
@@ -40,7 +40,7 @@ class PrettyBackgroundView: UIView {
         let context = UIGraphicsGetCurrentContext()
         context?.drawRadialGradient(gradient!, startCenter: centerPoint, startRadius: 0, endCenter: centerPoint, endRadius: radius, options: .drawsAfterEndLocation)
     }
- */
+ 
     
     
     
