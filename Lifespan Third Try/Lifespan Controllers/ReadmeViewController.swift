@@ -11,7 +11,7 @@ import WebKit
 
 class ReadmeViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var webView: WKWebView!
+//    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,8 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        webView.navigationDelegate = self
-        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
+//        webView.navigationDelegate = self
+//        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
     }
 
 }
