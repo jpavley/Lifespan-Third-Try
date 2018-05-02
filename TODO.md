@@ -5,12 +5,14 @@
 - Update the tab bar icons to reflect design changes.
 - Update clock design so it is more modern.
 - Update Life "Clock logo" type to read "Life Span".
-- Convert readme into Attributed Type.
 - Add unit tests back in from ealier version of project.
 - Create bugs list.
-- Change readme to a native text view (don't like the delay while the HTML is parsed and rendered).
 - Support Dynamic Type (Attributed Text does not support dynamic type).
 - Implement alerts with tips for factors on Profile tab.
+- Add famous lives, large scale events, and celestial events to analysis
+
+## In Progress
+- Bold the numeric text in the clock key: One hour is **6.92** years
 
 ## Closed
 
@@ -23,8 +25,7 @@
 - Complete readme tab and format with CSS
 - First Bug: Intermitent disagreement between analysis and tombstone about profile age calculation.
 - Change locked fields in user profile tab into labels.
-
-
+- Convert readme into Attributed Type.
 
 
 
