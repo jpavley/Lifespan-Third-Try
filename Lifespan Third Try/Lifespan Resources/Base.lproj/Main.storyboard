@@ -68,22 +68,22 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One hour is 0.00 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-uh-0Uw">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One minute is 0.00 months" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk8-zL-Gig">
                                         <rect key="frame" x="0.0" y="28.5" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One second is 0.00 days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI6-CG-6r1">
                                         <rect key="frame" x="0.0" y="57" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
@@ -211,11 +211,18 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="erF-FG-1Zk"/>
                                 </connections>
                             </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
                                 <rect key="frame" x="8" y="128" width="304" height="391"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -771,7 +778,8 @@ DQo
 Lifespan incorporates longevity factors into the estimation of a user's life. These factors include activity level, stress level, risk behavior level, and quality of genetics. The user self-scores these factors on a scale from 1 to 10. Some small attempt has been made by the author to apply the most recent scientific thinking to these factors in terms of their impact on longevity. But, honestly, there is little hard-data and the author of this app assumes that in the years to come research will continue to break the current model of longevity and bring new insights into consideration. Therefore, Lifespan is an app for inspirational, entertainment, and educational purposes. Lifespan's job is to enable the user to focus on their life and how much they have left of it—not in any way predict the length of a user's life.
 </mutableString>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
+                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -794,7 +802,8 @@ DQo
                                         <string key="content">To use the Lifespan app go to the Profile tab and enter your biographical data and self-score your life factors. Then hop over to the Clock and Analysis tabs to see how your data and factors are displayed. You can move back and forth between the tabs until you get a clock and analysis that you prefer or that seems more accurate to you.
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
+                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -817,21 +826,31 @@ ICAgDQo
                                         <mutableString key="content">You can customize the Analysis text with your preferred personal pronouns. Below each pronoun field are suggestion but you are not restricted to any of these. If you are grammarian than you'll want to know that that the three pronoun fields correspond to subjective, objective, and possessive (in that order). In longevity research there is much analysis of women enjoying longer lifespans than men, but this observation seems to have more to do with lifestyle factors than gender or sex at birth. So, the author decided to side step the issue and separate gender/sex from grammar such that the analysis text is personalized to your preferences.
 </mutableString>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
+                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Data Privacy">
                                         <attributes>
                                             <font key="NSFont" size="24" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-The Lifespan app had not server-side services and there is no transmission or collection of user data by the author. All data entered into the app is contained within the app on the user's phone. There is no advertising or marketing functionality built into the app. The entire source code of the app is available on GitHub under the MIT open source license. For more info take a look at the Lifespan code at https://github.com/jpavley/Lifespan-Third-Try</string>
+                                        <string key="content" base64-UTF8="YES">
+DQo
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">The Lifespan app had not server-side services and there is no transmission or collection of user data by the author. All data entered into the app is contained within the app on the user's phone. There is no advertising or marketing functionality built into the app. The entire source code of the app is available on GitHub under the MIT open source license. For more info take a look at the Lifespan code at https://github.com/jpavley/Lifespan-Third-Try</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
