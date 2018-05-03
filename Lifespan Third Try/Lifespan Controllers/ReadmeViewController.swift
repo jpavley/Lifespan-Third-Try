@@ -11,7 +11,7 @@ import WebKit
 
 class ReadmeViewController: UIViewController, WKNavigationDelegate {
 
-//    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +25,16 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        // FIX: https://stackoverflow.com/questions/28053140/uitextview-is-not-scrolled-to-top-when-loaded
+        textView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
     
     // MARK: - Navigation
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        webView.navigationDelegate = self
-//        WebUtilities.loadHTMLFile(named: "Readme", webView: webView)
     }
 
 }

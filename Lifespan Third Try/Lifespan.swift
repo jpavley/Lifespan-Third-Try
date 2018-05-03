@@ -86,7 +86,7 @@ class Lifespan {
             let hoursIn12HourDay: CGFloat = 12
             let hourSpan = unitsPerSlice(units: mALE, slices: hoursIn12HourDay)
             let hourSpanString = String(format: "%.2f", hourSpan)
-            return "\(hourSpanString) years"
+            return "\(hourSpanString)"
         } else {
             return ""
         }
@@ -99,7 +99,7 @@ class Lifespan {
             let minuetsIn12HourDay: CGFloat = 60 * 12
             let minSpan = unitsPerSlice(units: monthsInYearSpan, slices: minuetsIn12HourDay)
             let minSpanString = String(format: "%.2f", minSpan)
-            return "\(minSpanString) months"
+            return "\(minSpanString)"
         } else {
             return ""
         }
@@ -112,7 +112,7 @@ class Lifespan {
             let secondsIn12HourDay: CGFloat = 60 * 60 * 12
             let secSpan = unitsPerSlice(units: daysInYearSpan, slices: secondsIn12HourDay)
             let secSpanString = String(format: "%.2f", secSpan)
-            return "\(secSpanString) days"
+            return "\(secSpanString)"
         } else {
             return ""
         }
