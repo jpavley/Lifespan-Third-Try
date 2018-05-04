@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension NSAttributedString {
     func replacing(placeholder: String, with valueString: String) -> NSAttributedString {
@@ -19,4 +20,52 @@ extension NSAttributedString {
         }
         return self
     }
+}
+
+class TextFormatter {
+    
+    var plainFontDescriptor: UIFontDescriptor
+    var boldFontDescriptor: UIFontDescriptor
+    
+    var plainFont: UIFont
+    
+    var boldFontSize: CGFloat
+    var boldFont: UIFont
+    
+    var plainAttributes: [NSAttributedStringKey : UIFont]
+    var boldAttributes: [NSAttributedStringKey : UIFont]
+    
+    init() {
+        plainFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFontTextStyle.body)
+        boldFontDescriptor = plainFontDescriptor.withSymbolicTraits(.traitBold)!
+        
+        plainFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        
+        boldFontSize = plainFont.pointSize + 4
+        boldFont = UIFont(descriptor: boldFontDescriptor, size: boldFontSize)
+        
+        plainAttributes = [NSAttributedStringKey.font : plainFont]
+        boldAttributes = [NSAttributedStringKey.font : boldFont]
+    }
+    
+    
+    /// Returns an attributed string with three parts: plain, bolded, plain.
+    ///
+    /// - Parameters:
+    ///   - text1: plain text that begins the string
+    ///   - text2: bold text in the middle of the string
+    ///   - text3: plain text that ends the string
+    /// - Returns: attributed string, "\(text1) \(text2) \(text3)", where text2 is bolded.
+    func createStringWithBoldPart(with text1: String, and text2: String, and text3: String) -> NSMutableAttributedString {
+        
+        let mainString = NSMutableAttributedString(string: text1,attributes: plainAttributes)
+        let middleString = NSMutableAttributedString(string: text2, attributes: boldAttributes)
+        let endString = NSMutableAttributedString(string: text3,attributes: plainAttributes)
+        
+        mainString.append(middleString)
+        mainString.append(endString)
+        
+        return mainString
+    }
+
 }
