@@ -21,8 +21,8 @@ class PrettyBackgroundView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
-        let components: [CGFloat] = [0.0, 0, 0.05, 0.0, // start color
-                                     0.0, 0, 0.05, 0.2] // end color
+        let components: [CGFloat] = [0.0, 0, 0.01, 0.0, // start color
+                                     0.0, 0, 0.01, 0.1] // end color
         
         let locations: [CGFloat] = [0, 1]
         
