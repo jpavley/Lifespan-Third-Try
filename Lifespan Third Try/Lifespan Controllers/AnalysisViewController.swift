@@ -31,7 +31,7 @@ class AnalysisViewController: UIViewController {
             return
         }
         
-        analysisText.text = generateAnalysis(lifeSpan: lifeSpan)
+        analysisText.attributedText = generateAnalysis(lifeSpan: lifeSpan)
 
     }
         
@@ -122,11 +122,13 @@ class AnalysisViewController: UIViewController {
         
     }
     
-    func generateAnalysis(lifeSpan: Lifespan) -> String {
+    func generateAnalysis(lifeSpan: Lifespan) -> NSMutableAttributedString {
         
+        let resultString = NSMutableAttributedString(string: "", attributes: [:])
+
         let tb = self.tabBarController as! TabViewController
         guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
-            return ""
+            return resultString
         }
         
         let name = userProfile.name
@@ -149,7 +151,37 @@ class AnalysisViewController: UIViewController {
         let geneticsLevel = levelToText(level: userProfile.genetics, words: ["unfortunate", "average", "excellent", "unknown"])
         let cr = "\n\n"
         
-        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
+//        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
+        
+        let stringsParagraph0 = [
+            "Today is ",       // 0
+            "\(thisWeekDay)",  // 1
+            ", ",              // 2
+            "\(thisMonth)",    // 3
+            " ",               // 4
+            "\(thisDay)",      // 5
+            ", ",              // 6
+            "\(thisYear)",     // 7
+            ". ",              // 8
+            "\(name)",         // 9
+            " has spent ",     // 10
+            "\(lifeSpan.clockDescriptionSpent)",     // 11
+            " in ",            // 12
+            "\(possesser)",    // 13
+            " life to date. At this point in time ", // 14
+            "\(subject)",      // 15
+            " could live for another ",              // 16
+            "\(lifeSpan.clockDescriptionRemaining)", // 17
+            "." ,               // 18
+            "\(cr)"            // 19
+        ]
+        
+        let boldInexesParagraph0 = [11,17]
+        
+        let tf = TextFormatter()
+        let attributedParagraph0 = tf.createStringWithBoldParts(with: stringsParagraph0, boldedIndexes: boldInexesParagraph0)
+        
+        resultString.append(attributedParagraph0)
         
         let p1 = generateParagraphOne(with: ParagraphOneData(name: name,
                                                              age: us.age,
@@ -168,9 +200,28 @@ class AnalysisViewController: UIViewController {
                                                              geneticsLevel: geneticsLevel))
         
         // Universal
-        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
+//        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
         
-        return "\(p0)\(cr)\(p1)\(cr)\(p2)"
+        let stringsParagraph2 = [
+            "If ",              // 0
+            "\(name)",          // 1
+            " lives beyond ",   // 2
+            "\(us.modifiedDeathYear)",          // 3
+            " and the age of ", // 4
+            "\(us.modifiedLifeExpectancy)",     // 5
+            ", ",               // 6
+            "\(subject)",       // 7
+            " will be living on borrowed time." // 8
+        ]
+        
+        let boldInexesParagraph2 = [3, 5]
+        
+        let attributedParagraph2 = tf.createStringWithBoldParts(with: stringsParagraph2, boldedIndexes: boldInexesParagraph2)
+        
+        resultString.append(attributedParagraph2)
+        
+        // return "\(p0)\(cr)\(p1)\(cr)\(p2)"
+        return resultString
     }
     
 }
