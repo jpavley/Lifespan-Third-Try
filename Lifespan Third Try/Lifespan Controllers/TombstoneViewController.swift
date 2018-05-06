@@ -56,5 +56,14 @@ class TombstoneViewController: UIViewController {
         
         let ageAtDeath = us.modifiedLifeExpectancy
         footnoteLabel.text = "Aged \(ageAtDeath)"
+        
+        if us.modifiedLifeExpectancy == us.lifeExpectancy {
+            footnoteLabel.textColor = UIColor.blue
+        } else if us.modifiedLifeExpectancy > us.lifeExpectancy {
+            footnoteLabel.textColor = UIColor(named: "DarkGreen")
+        } else if us.modifiedLifeExpectancy < us.lifeExpectancy {
+            footnoteLabel.textColor = UIColor.red
+        }
+
     }
 }

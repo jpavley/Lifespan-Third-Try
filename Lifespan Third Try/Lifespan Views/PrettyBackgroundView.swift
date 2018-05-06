@@ -33,7 +33,7 @@ class PrettyBackgroundView: UIView {
 
         
         p.close()
-        UIColor.gray.set()
+        UIColor.lightGray.set()
         p.stroke()
     }
 }
