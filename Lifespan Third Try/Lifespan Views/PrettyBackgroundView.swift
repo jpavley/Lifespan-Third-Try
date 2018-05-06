@@ -21,74 +21,19 @@ class PrettyBackgroundView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
-        let components: [CGFloat] = [0.0, 0, 0.01, 0.0, // start color
-                                     0.0, 0, 0.01, 0.1] // end color
+        let p = UIBezierPath()
         
-        let locations: [CGFloat] = [0, 1]
+        // top line
+        p.move(to: CGPoint(x: 0, y: 0))
+        p.addLine(to: CGPoint(x: frame.width, y: 0))
         
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let gradient = CGGradient(colorSpace: colorSpace,
-                                  colorComponents: components,
-                                  locations: locations,
-                                  count: 2)
-        
-        let x = bounds.midX
-        let y = bounds.midY
-        let centerPoint = CGPoint(x: x, y: y)
-        let radius = max(x, y)
-        
-        let context = UIGraphicsGetCurrentContext()
-        context?.drawRadialGradient(gradient!, startCenter: centerPoint, startRadius: 0, endCenter: centerPoint, endRadius: radius, options: .drawsAfterEndLocation)
-    }
- 
-    
-    
-    
-    @IBInspectable var borderWith: CGFloat = 1.0 {
-        didSet {
-            self.layer.borderWidth = borderWith
-        }
-    }
-    
-    @IBInspectable var borderColor: UIColor = UIColor.black {
-        didSet {
-            self.layer.borderColor = borderColor.cgColor
-        }
-    }
-    
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            if isX() {
-                layer.cornerRadius = 40
-            } else {
-                layer.cornerRadius = cornerRadius
-            }
+        // bottom line
+        p.move(to: CGPoint(x: 0, y: frame.height))
+        p.addLine(to: CGPoint(x: frame.width, y: frame.height))
 
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.layer.shouldRasterize = true
-        //backgroundColor = UIColor.clear
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.layer.shouldRasterize = true
-        //backgroundColor = UIColor.clear
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-    }
-    
-    fileprivate func isX() -> Bool {
-        if UIDevice().userInterfaceIdiom == .phone {
-            return (UIScreen.main.nativeBounds.height == 2436)
-        } else {
-            return false
-        }
+        
+        p.close()
+        UIColor.gray.set()
+        p.stroke()
     }
 }

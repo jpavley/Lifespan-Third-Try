@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoF-pU-8Wr" userLabel="Clock Container">
-                                <rect key="frame" x="16" y="128" width="288" height="288"/>
+                                <rect key="frame" x="16" y="118" width="288" height="288"/>
                                 <subviews>
                                     <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
@@ -64,7 +64,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-jA-PVe">
-                                <rect key="frame" x="16" y="424" width="288" height="70"/>
+                                <rect key="frame" x="16" y="414" width="288" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-uh-0Uw">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
@@ -108,9 +108,9 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Wr-2DY">
-                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="CJR-Nv-RG6"/>
+                                    <constraint firstAttribute="height" constant="90" id="CJR-Nv-RG6"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="aXA-Fl-yZ4"/>
@@ -151,17 +151,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-3J-ehQ" customClass="PrettyBackgroundView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                <rect key="frame" x="16" y="4.5" width="288" height="81"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -190,11 +187,11 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="0wx-3J-ehQ" firstAttribute="width" secondItem="vv1-s5-W3c" secondAttribute="width" multiplier="0.9" id="GQu-hB-xEp"/>
+                            <constraint firstItem="0wx-3J-ehQ" firstAttribute="width" secondItem="vv1-s5-W3c" secondAttribute="width" id="GQu-hB-xEp"/>
                             <constraint firstItem="0wx-3J-ehQ" firstAttribute="centerY" secondItem="ala-r4-Q2h" secondAttribute="centerY" id="McP-if-nqE"/>
                             <constraint firstItem="ala-r4-Q2h" firstAttribute="trailing" secondItem="xD0-qc-1cr" secondAttribute="trailing" constant="8" id="OkZ-rx-6lS"/>
                             <constraint firstItem="xD0-qc-1cr" firstAttribute="leading" secondItem="ala-r4-Q2h" secondAttribute="leading" constant="8" id="T2h-Bg-KKy"/>
-                            <constraint firstItem="0wx-3J-ehQ" firstAttribute="height" secondItem="vv1-s5-W3c" secondAttribute="height" multiplier="0.9" id="iET-2t-Xb4"/>
+                            <constraint firstItem="0wx-3J-ehQ" firstAttribute="height" secondItem="vv1-s5-W3c" secondAttribute="height" id="iET-2t-Xb4"/>
                             <constraint firstItem="xD0-qc-1cr" firstAttribute="top" secondItem="ala-r4-Q2h" secondAttribute="top" constant="12" id="mwd-yB-YVE"/>
                             <constraint firstItem="0wx-3J-ehQ" firstAttribute="centerX" secondItem="ala-r4-Q2h" secondAttribute="centerX" id="qIq-z5-pxy"/>
                             <constraint firstItem="ala-r4-Q2h" firstAttribute="bottom" secondItem="xD0-qc-1cr" secondAttribute="bottom" constant="12" id="zy8-bt-9XL"/>
@@ -221,16 +218,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-DR-nNY">
-                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="xoI-Im-wDl"/>
+                                    <constraint firstAttribute="height" constant="90" id="xoI-Im-wDl"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="erF-FG-1Zk"/>
                                 </connections>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
-                                <rect key="frame" x="8" y="128" width="304" height="391"/>
+                                <rect key="frame" x="8" y="118" width="304" height="401"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -274,16 +271,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-A3-osM">
-                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="OYi-aT-OPb"/>
+                                    <constraint firstAttribute="height" constant="90" id="OYi-aT-OPb"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="hGu-Mn-aHr"/>
                                 </connections>
                             </containerView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-ua-ehr">
-                                <rect key="frame" x="0.0" y="128" width="320" height="1183"/>
+                                <rect key="frame" x="0.0" y="118" width="320" height="1193"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-wW-bgG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
@@ -764,16 +761,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPv-QD-8cD">
-                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="v0I-IZ-BNH"/>
+                                    <constraint firstAttribute="height" constant="90" id="v0I-IZ-BNH"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="aAA-Bj-cbU"/>
                                 </connections>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-bM-rkh">
-                                <rect key="frame" x="8" y="136" width="304" height="383"/>
+                                <rect key="frame" x="8" y="118" width="304" height="401"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Lifespan 1.0">
@@ -885,7 +882,7 @@ DQo
                             <constraint firstItem="zeo-bM-rkh" firstAttribute="bottom" secondItem="OZg-IU-5Yi" secondAttribute="bottom" id="a9O-W4-rdG"/>
                             <constraint firstItem="OZg-IU-5Yi" firstAttribute="trailing" secondItem="zeo-bM-rkh" secondAttribute="trailing" constant="8" id="ogS-ks-mFy"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="trailing" secondItem="OZg-IU-5Yi" secondAttribute="trailing" id="t51-Ck-9Qd"/>
-                            <constraint firstItem="zeo-bM-rkh" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" constant="8" id="zAd-ZF-p6X"/>
+                            <constraint firstItem="zeo-bM-rkh" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="zAd-ZF-p6X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OZg-IU-5Yi"/>
                     </view>
@@ -927,6 +924,6 @@ DQo
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aXA-Fl-yZ4"/>
+        <segue reference="aAA-Bj-cbU"/>
     </inferredMetricsTieBreakers>
 </document>
