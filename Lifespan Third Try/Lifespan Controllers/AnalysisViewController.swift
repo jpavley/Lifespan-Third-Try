@@ -69,7 +69,7 @@ class AnalysisViewController: UIViewController {
         }
     }
     
-    struct ParagraphOneData {
+    struct ParagraphData {
         let name: String
         let age: Int
         let birthYear: Int
@@ -87,7 +87,37 @@ class AnalysisViewController: UIViewController {
         let geneticsLevel: String
     }
     
-    fileprivate func generateParagraphOneSentanceOne(with d: ParagraphOneData) -> NSMutableAttributedString {
+    fileprivate func generateParagraphTwo(with d: ParagraphData) -> NSMutableAttributedString {
+        
+        let resultString = NSMutableAttributedString(string: "", attributes: [:])
+        
+        // Universal
+        //        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
+        
+        let stringsParagraph2 = [
+            "If ",              // 0
+            "\(d.name)",        // 1
+            " lives beyond ",   // 2
+            "\(d.modifiedDeathYear)",          // 3
+            " and the age of ", // 4
+            "\(d.modifiedLifeExpectancy)",     // 5
+            ", ",               // 6
+            "\(d.subject)",     // 7
+            " will be living on borrowed time." // 8
+        ]
+        
+        let boldInexesParagraph2 = [1, 3, 5]
+        
+        let tf = TextFormatter()
+        let attributedParagraph2 = tf.createStringWithBoldParts(with: stringsParagraph2, boldedIndexes: boldInexesParagraph2)
+        
+        resultString.append(attributedParagraph2)
+        
+        return resultString
+
+    }
+    
+    fileprivate func generateParagraphOneSentanceOne(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
         
@@ -121,7 +151,7 @@ class AnalysisViewController: UIViewController {
         return resultString
     }
     
-    fileprivate func generateParagraphOne(with d: ParagraphOneData) -> NSMutableAttributedString {
+    fileprivate func generateParagraphOne(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
 
@@ -166,7 +196,7 @@ class AnalysisViewController: UIViewController {
         
     }
     
-    fileprivate func generateParagraphZero(with d: ParagraphOneData) -> NSMutableAttributedString {
+    fileprivate func generateParagraphZero(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
         
@@ -255,16 +285,17 @@ class AnalysisViewController: UIViewController {
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
 
         let tb = self.tabBarController as! TabViewController
+        
         guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
             return resultString
         }
+        
+        // To make things easy load all the calcuated and shared data into a data structure...
         
         let name = userProfile.name
         let subject = userProfile.pronouns.subjective
         let object = userProfile.pronouns.objective
         let possesser = userProfile.pronouns.possessive
-        
-        
         let us = userProfile.calcUserStats(from: lifeSpan)
         let cal = CalendarUtilities.utcCal()
         let now = Date()
@@ -275,7 +306,7 @@ class AnalysisViewController: UIViewController {
         let riskLevel = levelToText(level: userProfile.risk)
         let geneticsLevel = levelToText(level: userProfile.genetics, words: ["unfortunate", "average", "excellent", "unknown"])
         
-        let paragraphData = ParagraphOneData(name: name,
+        let paragraphData = ParagraphData(name: name,
                                              age: us.age,
                                              birthYear: us.birthYear,
                                              modifiedLifeExpectancy: us.modifiedLifeExpectancy,
@@ -292,32 +323,8 @@ class AnalysisViewController: UIViewController {
                                              geneticsLevel: geneticsLevel)
         
         resultString.append(generateParagraphZero(with: paragraphData))
-        
-        let attributedParagraph1 = generateParagraphOne(with: paragraphData)
-        
-        resultString.append(attributedParagraph1)
-
-        // Universal
-//        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
-        
-        let stringsParagraph2 = [
-            "If ",              // 0
-            "\(name)",          // 1
-            " lives beyond ",   // 2
-            "\(us.modifiedDeathYear)",          // 3
-            " and the age of ", // 4
-            "\(us.modifiedLifeExpectancy)",     // 5
-            ", ",               // 6
-            "\(subject)",       // 7
-            " will be living on borrowed time." // 8
-        ]
-        
-        let boldInexesParagraph2 = [1, 3, 5]
-        
-        let tf = TextFormatter()
-        let attributedParagraph2 = tf.createStringWithBoldParts(with: stringsParagraph2, boldedIndexes: boldInexesParagraph2)
-        
-        resultString.append(attributedParagraph2)
+        resultString.append(generateParagraphOne(with: paragraphData))
+        resultString.append(generateParagraphTwo(with: paragraphData))
         
         // return "\(p0)\(cr)\(p1)\(cr)\(p2)"
         return resultString
