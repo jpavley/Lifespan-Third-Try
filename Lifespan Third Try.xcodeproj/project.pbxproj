@@ -69,6 +69,7 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* ReadmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
+		48963FC420A21C6E00334205 /* BUGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUGS.md; sourceTree = "<group>"; };
 		48D01AEB208A2A2600AF13F0 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		48D70425207C118600F569AF /* TombstoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TombstoneViewController.swift; sourceTree = "<group>"; };
 		48D7042720803ECA00F569AF /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 			children = (
 				48EB7AC8208B743400DBA476 /* README.md */,
 				48D01AEB208A2A2600AF13F0 /* TODO.md */,
+				48963FC420A21C6E00334205 /* BUGS.md */,
 				48EB7ACB208B98DC00DBA476 /* LICENSE */,
 				1878F0082067EEB600BEA332 /* Lifespan Third Try */,
 				1878F01F2067EEB600BEA332 /* Lifespan Third TryTests */,

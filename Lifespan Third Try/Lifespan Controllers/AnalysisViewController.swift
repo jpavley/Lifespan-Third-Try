@@ -87,67 +87,63 @@ class AnalysisViewController: UIViewController {
         let geneticsLevel: String
     }
     
+    /// Creates the styled text for the thrid paragraph of the analysis tab.
+    ///
+    /// - Parameter d: a bag of shared properties used to fill in the blanks.
+    /// - Returns: customized attributed text string based on ParagraphData properites
     fileprivate func generateParagraphTwo(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
-        
-        // Universal
-        //        let p2 = "If \(name) lives beyond \(us.modifiedDeathYear) and the age of \(us.modifiedLifeExpectancy), \(subject) will be living on borrowed time."
-        
-        let stringsParagraph2 = [
-            "If ",              // 0
-            "\(d.name)",        // 1
-            " lives beyond ",   // 2
-            "\(d.modifiedDeathYear)",          // 3
-            " and the age of ", // 4
-            "\(d.modifiedLifeExpectancy)",     // 5
-            ", ",               // 6
-            "\(d.subject)",     // 7
-            " will be living on borrowed time." // 8
-        ]
-        
-        let boldInexesParagraph2 = [1, 3, 5]
-        
         let tf = TextFormatter()
-        let attributedParagraph2 = tf.createStringWithBoldParts(with: stringsParagraph2, boldedIndexes: boldInexesParagraph2)
         
-        resultString.append(attributedParagraph2)
+        // handle part before the name
+        let p2p1 = ["If "]
+        let boldIndexesP2P1 = [Int]()
+        let attributedP2P1 = tf.createStringWithBoldParts(with: p2p1, boldedIndexes: boldIndexesP2P1)
+        resultString.append(attributedP2P1)
+        
+        // handle name (in case it's more than one substring
+        let p2p2 = ["\(d.name)"]
+        let boldIndexesP2P2 = [0]
+        let attributedP2P2 = tf.createStringWithBoldParts(with: p2p2, boldedIndexes: boldIndexesP2P2)
+        resultString.append(attributedP2P2)
+
+        // handle part after the name
+        let p2p3 = " lives beyond \(d.modifiedDeathYear) and the age of \(d.modifiedLifeExpectancy), \(d.subject) will be living on borrowed time."
+        let stringsP2P3 = generateStringLists(from: p2p3)
+        let boldInexesP2P3 = [3, 8, 14]
+        let attributedP2P3 = tf.createStringWithBoldParts(with: stringsP2P3, boldedIndexes: boldInexesP2P3)
+        resultString.append(attributedP2P3)
         
         return resultString
 
     }
     
+    /// Creates the styled text for the second paragraph of the analysis tab.
+    ///
+    /// - Parameter d: a bag of shared properties used to fill in the blanks.
+    /// - Returns: customized attributed text string based on ParagraphData properites
     fileprivate func generateParagraphOneSentanceOne(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
-        
-        let stringsS1 = [
-            "\(d.name)",       // 0
-            " was born ",      // 1
-            " \(d.age)",       // 2
-            " years ago in ",  // 3
-            "\(d.birthYear)",  // 4
-            ". ",              // 5
-            "\(d.possesser.capitalized)",        // 6
-            " life expectancy of ",              // 7
-            "\(d.lifeExpectancy)",               // 8
-            " years is influenced by a ",        // 9
-            "\(d.activityLevel)",                // 10
-            " level of physical activity, a ",   // 11
-            "\(d.stressLevel)",                  // 12
-            " level of mental stress, a ",       // 13
-            "\(d.riskLevel) ",                   // 14
-            "level of risky behavior, and an ",  // 15
-            "\(d.geneticsLevel)",      // 16
-            " genetic history.",       // 17
-            "\n\n"                     // 18
-        ]
-        
-        let boldIndexesS1 = [0, 2, 4, 8, 10, 12, 14, 16]
-        
         let tf = TextFormatter()
-        let attributedS1 = tf.createStringWithBoldParts(with: stringsS1, boldedIndexes: boldIndexesS1)
-        resultString.append(attributedS1)
+        
+        // handle name seperately in case it's more than one substring
+        
+        let s1p1 = ["\(d.name)"]
+        let boldIndexesS1P1 = [0]
+        let attributedS1P1 = tf.createStringWithBoldParts(with: s1p1, boldedIndexes: boldIndexesS1P1)
+        resultString.append(attributedS1P1)
+        
+        // handle the rest of the sentance
+        
+        let s1p2 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity, a \(d.stressLevel) level of mental stress, a \(d.riskLevel) level of risky behavior, and an \(d.geneticsLevel) genetic history. \n\n"
+        
+        let stringsS1P2WithSpaces = generateStringLists(from: s1p2)
+        let boldIndexesS1P2 = [3, 7, 12, 18, 24, 30, 37]
+        let attributedS1P2 = tf.createStringWithBoldParts(with: stringsS1P2WithSpaces, boldedIndexes: boldIndexesS1P2)
+        resultString.append(attributedS1P2)
+        
         return resultString
     }
     
@@ -159,6 +155,10 @@ class AnalysisViewController: UIViewController {
         return stringListWithSpaces
     }
     
+    /// Creates the styled text for the third paragraph of the analysis tab.
+    ///
+    /// - Parameter d: a bag of shared properties used to fill in the blanks.
+    /// - Returns: customized attributed text string based on ParagraphData properites
     fileprivate func generateParagraphOne(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
@@ -233,9 +233,14 @@ class AnalysisViewController: UIViewController {
         return resultString
     }
     
+    /// Creates the styled text for the first paragraph of the analysis tab.
+    ///
+    /// - Parameter d: a bag of shared properties used to fill in the blanks.
+    /// - Returns: customized attributed text string based on ParagraphData properites
     fileprivate func generateParagraphZero(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
+        let tf = TextFormatter()
         
         let tb = self.tabBarController as! TabViewController
         guard let lifeSpan = tb.lifeSpan else {
@@ -248,67 +253,57 @@ class AnalysisViewController: UIViewController {
         let thisDay = cal.component(.day, from: now)
         let thisMonth = cal.monthSymbols[cal.component(.month, from: now)-1]
         let thisYear = cal.component(.year, from: now)
+        
+        // generate paragraph 0 part 1
 
-        //        let p0 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \(name) has spent \(lifeSpan.clockDescriptionSpent) in \(possesser) life to date. At this point in time \(subject) could live for another \(lifeSpan.clockDescriptionRemaining)."
+        let p0Part1 = "Today is \(thisWeekDay), \(thisMonth) \(thisDay), \(thisYear). \n\n"
+        let stringsParagraph0Part1 = generateStringLists(from: p0Part1)
+        let boldIndexesParagraph0Part1 = [2, 3, 4, 5, 6, 7, 8]
         
-        let stringsParagraph0Part1 = [
-            "Today is ",       // 0
-            "\(thisWeekDay)",  // 1
-            ", ",              // 2
-            "\(thisMonth)",    // 3
-            " ",               // 4
-            "\(thisDay)",      // 5
-            ", ",              // 6
-            "\(thisYear)",     // 7
-            ". ",              // 8
-            "\n\n",           // 9
-            "\(d.name)",         // 10
-            " has spent "      // 11
-        ]
-        
-        let boldIndexesParagraph0Part1 = [1, 3, 5, 7, 10]
-        
-        let tf = TextFormatter()
         let attributedParagraph0Part1 = tf.createStringWithBoldParts(with: stringsParagraph0Part1, boldedIndexes: boldIndexesParagraph0Part1)
         resultString.append(attributedParagraph0Part1)
         
-        //    "\(lifeSpan.clockDescriptionSpent)",     // 12
+        // generate paragraph 0 part 1a (user name seperated because a name could have 0 to n substrings)
         
-        let clockDescriptionSpentList = lifeSpan.clockDescriptionSpent.components(separatedBy: " ")
-        let clockDescriptionSpentListWithSpaces = clockDescriptionSpentList.map({ $0 + " "})
+        let p0Part1a = "\(d.name) "
+        
+        let p0Part1a1 = "has spent "
+        let stringsParagraph0Part1a = [p0Part1a, p0Part1a1]
+        let boldIndexesParagraph0Part1a = [0]
+        
+        let attributedParagraph0Part1a = tf.createStringWithBoldParts(with: stringsParagraph0Part1a, boldedIndexes: boldIndexesParagraph0Part1a)
+        resultString.append(attributedParagraph0Part1a)
+
+        
+        // generate paragraph 0 part 1b (time spent)
+        
+        let clockDescriptionSpentListWithSpaces = generateStringLists(from: lifeSpan.clockDescriptionSpent)
         let boldIndexesSpentList = [0, 2, 4]
         
         let attributedParagraphSpent = tf.createStringWithBoldParts(with: clockDescriptionSpentListWithSpaces, boldedIndexes: boldIndexesSpentList)
         resultString.append(attributedParagraphSpent)
         
-        let stringsParagraph0Part2 = [
-            " in ",            // 0
-            "\(d.possesser)",    // 1
-            " life to date. At this point in time ", // 2
-            "\(d.subject)",      // 3
-            " could live for another "               // 4
-        ]
+        // generate paragraph 0 part 2
         
+        let p0Part2 = " in \(d.possesser) life to date. At this point in time \(d.subject) could live for another "
+        let stringsParagraph0Part2 = generateStringLists(from: p0Part2)
         let boldIndexesParagraph0Part2 = [Int]()
         
         let attributedParagraph0Part2 = tf.createStringWithBoldParts(with: stringsParagraph0Part2, boldedIndexes: boldIndexesParagraph0Part2)
         resultString.append(attributedParagraph0Part2)
         
-        //    "\(lifeSpan.clockDescriptionRemaining)", // 18
+        // generate paragraph 0 part 2a (time remaining)
         
-        let clockDescriptionRemainingList = lifeSpan.clockDescriptionRemaining.components(separatedBy: " ")
-        let clockDescriptionRemainingListWithSpaces = clockDescriptionRemainingList.map({ $0 + " "})
-
+        let clockDescriptionRemainingListWithSpaces = generateStringLists(from: lifeSpan.clockDescriptionRemaining)
         let boldInedxesRemainingList = [0, 2, 4]
         
         let attributedParagraphRemaining = tf.createStringWithBoldParts(with: clockDescriptionRemainingListWithSpaces, boldedIndexes: boldInedxesRemainingList)
         resultString.append(attributedParagraphRemaining)
         
-        let stringsParagraph0Part3 = [
-            "." ,               // 0
-            "\n\n"              // 1
-        ]
+        // generate paragraph 0 part 3 (which, as of now, isn't much)
         
+        let p0Part3 = ". \n\n"
+        let stringsParagraph0Part3 = generateStringLists(from: p0Part3)
         let boldIndexesParagraph0Part3 = [Int]()
         
         let attributedParagraph0Part3 = tf.createStringWithBoldParts(with: stringsParagraph0Part3, boldedIndexes: boldIndexesParagraph0Part3)
@@ -317,6 +312,10 @@ class AnalysisViewController: UIViewController {
         return resultString
     }
     
+    /// Creates stylized analysis text for use with a UITextView's attributedText property.
+    ///
+    /// - Parameter lifeSpan: shared LifeSpan instance.
+    /// - Returns: customized attributed text string based on LifeSpan properites.
     func generateAnalysis(lifeSpan: Lifespan) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
@@ -362,8 +361,6 @@ class AnalysisViewController: UIViewController {
         resultString.append(generateParagraphZero(with: paragraphData))
         resultString.append(generateParagraphOne(with: paragraphData))
         resultString.append(generateParagraphTwo(with: paragraphData))
-        
-        // return "\(p0)\(cr)\(p1)\(cr)\(p2)"
         return resultString
     }
     
