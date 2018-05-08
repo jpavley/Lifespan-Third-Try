@@ -151,18 +151,28 @@ class AnalysisViewController: UIViewController {
         return resultString
     }
     
+    fileprivate func generateStringLists(from s: String) -> [String] {
+        
+        let stringList = s.components(separatedBy: " ")
+        let stringListWithSpaces = stringList.map({ $0 + " "})
+        
+        return stringListWithSpaces
+    }
+    
     fileprivate func generateParagraphOne(with d: ParagraphData) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
-
-        
-//        let s1 = "\(d.name) was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity, a \(d.stressLevel) level of mental stress, a \(d.riskLevel) level of risky behavior, and an \(d.geneticsLevel) genetic history."
-        
+        let tf = TextFormatter()
+    
         let s1 = generateParagraphOneSentanceOne(with: d)
         
         var s2 = ""
+        var stringListWithSpacesS2 = [String]()
+        var boldIndexesS2 = [Int]()
+        
         var s3 = ""
-
+        var stringListWithSpacesS3 = [String]()
+        var boldIndexesS3 = [Int]()
         
         if d.modifiedLifeExpectancy < d.lifeExpectancy {
             
@@ -170,7 +180,13 @@ class AnalysisViewController: UIViewController {
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
             
+            stringListWithSpacesS2 = generateStringLists(from: s2)
+            boldIndexesS2 = [5, 7, 12]
+            
             s3 = "If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            
+            stringListWithSpacesS3 = generateStringLists(from: s3)
+            boldIndexesS3 = [3, 11, 18]
             
         } else if d.modifiedLifeExpectancy == d.lifeExpectancy {
             
@@ -178,7 +194,14 @@ class AnalysisViewController: UIViewController {
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore unchanged with no missing or extra years."
             
+            stringListWithSpacesS2 = generateStringLists(from: s2)
+            boldIndexesS2 = [5, 8, 10]
+            
             s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            
+            stringListWithSpacesS3 = generateStringLists(from: s3)
+            boldIndexesS3 = [5, 14, 21]
+
             
         } else if d.modifiedLifeExpectancy > d.lifeExpectancy {
             
@@ -186,14 +209,28 @@ class AnalysisViewController: UIViewController {
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
             
+            stringListWithSpacesS2 = generateStringLists(from: s2)
+            boldIndexesS2 = [5, 7, 12]
+
+            
             s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
+            
+            stringListWithSpacesS3 = generateStringLists(from: s3)
+            boldIndexesS3 = [5, 15, 26]
         }
         
         resultString.append(s1)
-        return resultString
-
-//        return "\(s1) \(s2) \(s3)"
         
+        let attributedS2 = tf.createStringWithBoldParts(with: stringListWithSpacesS2, boldedIndexes: boldIndexesS2)
+        resultString.append(attributedS2)
+        
+        stringListWithSpacesS3.append("\n\n")
+
+        let attributedS3 = tf.createStringWithBoldParts(with: stringListWithSpacesS3, boldedIndexes: boldIndexesS3)
+        resultString.append(attributedS3)
+
+        
+        return resultString
     }
     
     fileprivate func generateParagraphZero(with d: ParagraphData) -> NSMutableAttributedString {
