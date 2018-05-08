@@ -48,6 +48,22 @@ class TextFormatter {
         boldAttributes = [NSAttributedStringKey.font : boldFont]
     }
     
+    /// Creates a plain style attributed string.
+    ///
+    /// - Returns: A single attributed string.
+    func createPlainString(with s: String) -> NSMutableAttributedString {
+        
+        return NSMutableAttributedString(string: s, attributes: plainAttributes)
+    }
+    
+    /// Creates a bold style attributed string.
+    ///
+    /// - Returns: A single attributed string.
+    func createBoldString(with s: String) -> NSMutableAttributedString {
+        
+        return NSMutableAttributedString(string: s, attributes: boldAttributes)
+    }
+    
     /// Returns an attributed string composed of plain and bold parts.
     ///
     /// - Parameters:
@@ -95,5 +111,4 @@ class TextFormatter {
         
         return mainString
     }
-
 }
