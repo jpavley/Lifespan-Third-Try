@@ -97,10 +97,7 @@ class AnalysisViewController: UIViewController {
         let tf = TextFormatter()
         
         // handle part before the name
-        let p2p1 = ["If "]
-        let boldIndexesP2P1 = [Int]()
-        let attributedP2P1 = tf.createStringWithBoldParts(with: p2p1, boldedIndexes: boldIndexesP2P1)
-        resultString.append(attributedP2P1)
+        resultString.append(tf.createPlainString(with: "If "))
         
         // handle name (in case it's more than one substring
         resultString.append(tf.createBoldString(with: "\(d.name)"))
@@ -143,7 +140,16 @@ class AnalysisViewController: UIViewController {
     fileprivate func generateStringLists(from s: String) -> [String] {
         
         let stringList = s.components(separatedBy: " ")
-        let stringListWithSpaces = stringList.map({ $0 + " "})
+        var stringListWithSpaces = stringList.map({ $0 + " "})
+        
+        // remove space from end of last string in the list
+        // (screws up spacing between parts of strings)
+        
+        if stringListWithSpaces.count > 0 {
+            let trimmedString = stringListWithSpaces.last!.trimmingCharacters(in: .whitespaces)
+            stringListWithSpaces.remove(at: stringListWithSpaces.count - 1)
+            stringListWithSpaces.append(trimmedString)
+        }
         
         return stringListWithSpaces
     }
@@ -176,10 +182,10 @@ class AnalysisViewController: UIViewController {
             stringListWithSpacesS2 = generateStringLists(from: s2)
             boldIndexesS2 = [5, 7, 12]
             
-            s3 = "If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            s3 = " If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
-            boldIndexesS3 = [3, 11, 18]
+            boldIndexesS3 = [3, 12, 19]
             
         } else if d.modifiedLifeExpectancy == d.lifeExpectancy {
             
@@ -190,10 +196,10 @@ class AnalysisViewController: UIViewController {
             stringListWithSpacesS2 = generateStringLists(from: s2)
             boldIndexesS2 = [5, 8, 10]
             
-            s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
-            boldIndexesS3 = [5, 14, 21]
+            boldIndexesS3 = [6, 15, 22]
 
             
         } else if d.modifiedLifeExpectancy > d.lifeExpectancy {
@@ -206,10 +212,10 @@ class AnalysisViewController: UIViewController {
             boldIndexesS2 = [5, 7, 12]
 
             
-            s3 = "If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
+            s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
-            boldIndexesS3 = [5, 15, 26]
+            boldIndexesS3 = [6, 16, 27]
         }
         
         resultString.append(s1)
@@ -259,14 +265,7 @@ class AnalysisViewController: UIViewController {
         // generate paragraph 0 part 1a (user name seperated because a name could have 0 to n substrings)
         
         resultString.append(tf.createBoldString(with: "\(d.name)"))
-
-        let p0Part1a1 = " has spent "
-        let stringsParagraph0Part1a = [p0Part1a1]
-        let boldIndexesParagraph0Part1a = [Int]()
-        
-        let attributedParagraph0Part1a = tf.createStringWithBoldParts(with: stringsParagraph0Part1a, boldedIndexes: boldIndexesParagraph0Part1a)
-        resultString.append(attributedParagraph0Part1a)
-
+        resultString.append(tf.createPlainString(with: " has spent "))
         
         // generate paragraph 0 part 1b (time spent)
         
@@ -279,11 +278,7 @@ class AnalysisViewController: UIViewController {
         // generate paragraph 0 part 2
         
         let p0Part2 = " in \(d.possesser) life to date. At this point in time \(d.subject) could live for another "
-        let stringsParagraph0Part2 = generateStringLists(from: p0Part2)
-        let boldIndexesParagraph0Part2 = [Int]()
-        
-        let attributedParagraph0Part2 = tf.createStringWithBoldParts(with: stringsParagraph0Part2, boldedIndexes: boldIndexesParagraph0Part2)
-        resultString.append(attributedParagraph0Part2)
+        resultString.append(tf.createPlainString(with: p0Part2))
         
         // generate paragraph 0 part 2a (time remaining)
         
@@ -296,11 +291,7 @@ class AnalysisViewController: UIViewController {
         // generate paragraph 0 part 3 (which, as of now, isn't much)
         
         let p0Part3 = ". \n\n"
-        let stringsParagraph0Part3 = generateStringLists(from: p0Part3)
-        let boldIndexesParagraph0Part3 = [Int]()
-        
-        let attributedParagraph0Part3 = tf.createStringWithBoldParts(with: stringsParagraph0Part3, boldedIndexes: boldIndexesParagraph0Part3)
-        resultString.append(attributedParagraph0Part3)
+        resultString.append(tf.createPlainString(with: p0Part3))
         
         return resultString
     }
