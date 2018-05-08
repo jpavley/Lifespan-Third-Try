@@ -87,6 +87,26 @@ class AnalysisViewController: UIViewController {
         let geneticsLevel: String
     }
     
+    /// Utility function for when there is a entire attributed string needs to be bolded.
+    ///
+    /// - TODO: generalize this to apply a single style to entire string.
+    /// - TODO: remove dependency on TextFormater.createStringWithBoldParts().
+    /// - TODO: move into TetFormatter.
+    ///
+    /// - Parameter s: string to be bolded
+    /// - Returns: attributed text with bold string
+    fileprivate func generateBoldedString(for s: String) -> NSMutableAttributedString {
+        let resultString = NSMutableAttributedString(string: "", attributes: [:])
+        let tf = TextFormatter()
+
+        let stringList = ["\(s)"]
+        let boldIndexes = [0]
+        let attributedString = tf.createStringWithBoldParts(with: stringList, boldedIndexes: boldIndexes)
+        resultString.append(attributedString)
+        
+        return resultString
+    }
+    
     /// Creates the styled text for the thrid paragraph of the analysis tab.
     ///
     /// - Parameter d: a bag of shared properties used to fill in the blanks.
@@ -103,10 +123,7 @@ class AnalysisViewController: UIViewController {
         resultString.append(attributedP2P1)
         
         // handle name (in case it's more than one substring
-        let p2p2 = ["\(d.name)"]
-        let boldIndexesP2P2 = [0]
-        let attributedP2P2 = tf.createStringWithBoldParts(with: p2p2, boldedIndexes: boldIndexesP2P2)
-        resultString.append(attributedP2P2)
+        resultString.append(generateBoldedString(for: "\(d.name)"))
 
         // handle part after the name
         let p2p3 = " lives beyond \(d.modifiedDeathYear) and the age of \(d.modifiedLifeExpectancy), \(d.subject) will be living on borrowed time."
@@ -129,12 +146,8 @@ class AnalysisViewController: UIViewController {
         let tf = TextFormatter()
         
         // handle name seperately in case it's more than one substring
-        
-        let s1p1 = ["\(d.name)"]
-        let boldIndexesS1P1 = [0]
-        let attributedS1P1 = tf.createStringWithBoldParts(with: s1p1, boldedIndexes: boldIndexesS1P1)
-        resultString.append(attributedS1P1)
-        
+        resultString.append(generateBoldedString(for: "\(d.name)"))
+
         // handle the rest of the sentance
         
         let s1p2 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity, a \(d.stressLevel) level of mental stress, a \(d.riskLevel) level of risky behavior, and an \(d.geneticsLevel) genetic history. \n\n"
@@ -265,11 +278,11 @@ class AnalysisViewController: UIViewController {
         
         // generate paragraph 0 part 1a (user name seperated because a name could have 0 to n substrings)
         
-        let p0Part1a = "\(d.name) "
+        resultString.append(generateBoldedString(for: "\(d.name)"))
         
-        let p0Part1a1 = "has spent "
-        let stringsParagraph0Part1a = [p0Part1a, p0Part1a1]
-        let boldIndexesParagraph0Part1a = [0]
+        let p0Part1a1 = " has spent "
+        let stringsParagraph0Part1a = [p0Part1a1]
+        let boldIndexesParagraph0Part1a = [Int]()
         
         let attributedParagraph0Part1a = tf.createStringWithBoldParts(with: stringsParagraph0Part1a, boldedIndexes: boldIndexesParagraph0Part1a)
         resultString.append(attributedParagraph0Part1a)
