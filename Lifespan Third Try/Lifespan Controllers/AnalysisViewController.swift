@@ -8,6 +8,14 @@
 
 import UIKit
 
+/// Creates and displays analysis of the user's longevity based on data from the user profile
+/// and today's date. It's important to note how the text is create from the class methods:
+/// - There appear to be 5 paragraphs but actually there are only 3
+/// - First paragraph (appears to be two because of CRs after the date) created by generateParagraphZero()
+/// - Second paragraph created by generateParagraphOne(), generateParagraphOneSentanceOne(), and generateLifeFactorsAnalsysText()
+/// - Thrid paragraph (appears to be two because of CRs before the last sentance) created by generateParagraphTwo()
+///
+/// TODO: Clean up all the function and property names to be more clear, improve the ordering of methods
 class AnalysisViewController: UIViewController {
     
     @IBOutlet weak var analysisText: UITextView!
@@ -47,18 +55,24 @@ class AnalysisViewController: UIViewController {
     }
     
     fileprivate func levelToText(level: CGFloat,
-                                 words: [String] = ["low", "moderate", "high", "unknown"]) -> String {
+                                 words: [String] = ["notset",
+                                                    "low",
+                                                    "moderate",
+                                                    "high",
+                                                    "unknown"]) -> String {
         
         enum Levels: Int {
             // map the index of the words to their place in the array
-            case low = 0, moderate = 1, high = 2, unknown = 3
+            case notset = 0, low = 1, moderate = 2, high = 3, unknown = 4
         }
         
         // round that float to a neo-Int	
         let level = level.rounded(.down)
         
         switch UInt(level) {
-        case 0...4:
+        case 0:
+            return words[Levels.notset.rawValue]
+        case 1...4:
             return words[Levels.low.rawValue]
         case 5:
             return words[Levels.moderate.rawValue]
@@ -113,6 +127,92 @@ class AnalysisViewController: UIViewController {
 
     }
     
+    /// Creates the second paragraph's life factors analysis text with the inext of key terms for bolding.
+    ///
+    /// - Parameter d: a bag of shared properties used to fill in the blanks.
+    /// - Returns: A string and array of index values ready to transformed into attributed text.
+    fileprivate func generateLifeFactorsAnalsysText(with d: ParagraphData) -> (String, [Int]) {
+        
+        var resultString = ""
+        var resultIndexes = [Int]()
+        
+        // declare states
+        enum LifeFactorState {
+            case noFactors, someFactors, allFactors
+        }
+        
+        // compute states
+        var lifeFactorState: LifeFactorState
+        if d.activityLevel == "notset" && d.stressLevel == "notset" && d.riskLevel == "notset" && d.geneticsLevel == "notset" {
+            lifeFactorState = .noFactors
+        } else if d.activityLevel != "notset" && d.stressLevel != "notset" && d.riskLevel != "notset" && d.geneticsLevel != "notset" {
+            lifeFactorState = .allFactors
+        } else {
+            lifeFactorState = .someFactors
+        }
+        
+        // use states to build text
+        switch lifeFactorState {
+            
+        case .noFactors:
+            
+            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) "
+            let part2 = "life factors were not recorded on the profile tab. \n\n"
+            
+            resultString = part1 + part2
+            resultIndexes = [9, 10, 12, 16]
+            
+        case .allFactors:
+            
+            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by the following life factors: "
+            let part2 = "A \(d.activityLevel) level of physical activity. "
+            let part3 = "A \(d.stressLevel) level of mental stress. "
+            let part4 = "A \(d.riskLevel) level of risky behavior. "
+            let part5 = "An \(d.geneticsLevel) genetic history. "
+            let part6 = "\n\n"
+            
+            resultString = part1 + part2 + part3 + part4 + part5 + part6
+            resultIndexes = [3, 7, 12, 19, 20, 22, 28, 34, 40]
+        case .someFactors:
+            
+            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by one or more life factors: "
+            let part2 = d.activityLevel != "notset" ? "A \(d.activityLevel) level of physical activity. " : ""
+            let part3 = d.stressLevel != "notset" ? "A \(d.stressLevel) level of mental stress. " : ""
+            let part4 = d.riskLevel != "notset" ? "A \(d.riskLevel) level of risky behavior. " : ""
+            let part5 = d.geneticsLevel != "notset" ? "An \(d.geneticsLevel) genetic history. " : ""
+            let part6 = "\n\n"
+            
+            resultString = part1 + part2 + part3 + part4 + part5 + part6
+
+            resultIndexes = [3, 7, 12, 20, 21]
+            var wordCount = resultIndexes.last!
+            
+            // Calcuate resultIndexes based on the appearance of unique words and offsets (wordCount)
+            
+            if resultString.contains("physical") {
+                resultIndexes += [wordCount + 2]
+                wordCount += 6
+            }
+            
+            if resultString.contains("mental") {
+                resultIndexes += [wordCount + 2]
+                wordCount += 6
+            }
+            
+            if resultString.contains("risky") {
+                resultIndexes += [wordCount + 2]
+                wordCount += 6
+            }
+            
+            if resultString.contains("genetic") {
+                resultIndexes += [wordCount + 2]
+                wordCount += 4 // update wordCount incase more parts are added in the future
+            }
+        }
+        
+        return (resultString, resultIndexes)
+    }
+    
     /// Creates the styled text for the second paragraph of the analysis tab.
     ///
     /// - Parameter d: a bag of shared properties used to fill in the blanks.
@@ -126,13 +226,11 @@ class AnalysisViewController: UIViewController {
         resultString.append(tf.createBoldString(with: "\(d.name)"))
 
         // handle the rest of the sentance
-        
-        let s1p2 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by a \(d.activityLevel) level of physical activity, a \(d.stressLevel) level of mental stress, a \(d.riskLevel) level of risky behavior, and an \(d.geneticsLevel) genetic history. \n\n"
-        
-        let stringsS1P2WithSpaces = generateStringLists(from: s1p2)
-        let boldIndexesS1P2 = [3, 7, 12, 18, 24, 30, 37]
-        let attributedS1P2 = tf.createStringWithBoldParts(with: stringsS1P2WithSpaces, boldedIndexes: boldIndexesS1P2)
-        resultString.append(attributedS1P2)
+        let (restOfTheSentance, boldIndexes) = generateLifeFactorsAnalsysText(with: d)
+        let stringsWithSpaces = generateStringLists(from: restOfTheSentance)
+        //let boldIndexes = [3, 7, 12, 18, 24, 30, 37]
+        let attributed = tf.createStringWithBoldParts(with: stringsWithSpaces, boldedIndexes: boldIndexes)
+        resultString.append(attributed)
         
         return resultString
     }
@@ -324,7 +422,11 @@ class AnalysisViewController: UIViewController {
         let stressLevel = levelToText(level: userProfile.stress)
         let activityLevel = levelToText(level: userProfile.activity)
         let riskLevel = levelToText(level: userProfile.risk)
-        let geneticsLevel = levelToText(level: userProfile.genetics, words: ["unfortunate", "average", "excellent", "unknown"])
+        let geneticsLevel = levelToText(level: userProfile.genetics, words: ["notset",
+                                                                             "unfortunate",
+                                                                             "average",
+                                                                             "excellent",
+                                                                             "unknown"])
         
         let paragraphData = ParagraphData(name: name,
                                              age: us.age,
