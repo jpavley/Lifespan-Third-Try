@@ -316,10 +316,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TipView" {
+        if segue.identifier == "ShowTip" {
             let tipViewController = segue.destination as! TipViewController
-            let senderTag = sender as! Int
-            tipViewController.tipSource = TipButtonTag(rawValue: senderTag)
+            let button = sender as! UIButton
+            tipViewController.tipSource = TipButtonTag(rawValue: button.tag)
         }
     }
 

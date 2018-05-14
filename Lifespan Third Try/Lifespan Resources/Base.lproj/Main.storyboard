@@ -771,20 +771,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sax-bs-rLa" customClass="PrettyBackgroundView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="320" height="420"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zd0-FM-6A4">
-                                        <rect key="frame" x="8" y="8" width="304" height="404"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNr-xK-HKf">
-                                                <rect key="frame" x="134.5" y="0.0" width="35" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-c7-5S6">
-                                                <rect key="frame" x="22" y="28.5" width="260" height="337.5"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">On a scale from 1 to 10 how much risk are you inviting into your life?
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNr-xK-HKf">
+                                        <rect key="frame" x="30" y="8" width="260" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-c7-5S6">
+                                        <rect key="frame" x="30" y="36.5" width="260" height="337.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="337.5" id="Ehb-dF-VPf"/>
+                                        </constraints>
+                                        <string key="text">On a scale from 1 to 10 how much risk are you inviting into your life?
 
 If you avoids drugs, guns, alcohol, fast cars, and contact sports score a 1. 
 
@@ -793,29 +791,27 @@ If you drink moderately, occationally skis, and drive in the fast lane sore a 5.
 If you are an adrenalian junkie who drag races, lives hard, and plays harder score a 10.
 
 Lower is better.</string>
-                                                        <attributes>
-                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWL-w7-gnb">
-                                                <rect key="frame" x="133" y="374" width="38" height="30"/>
-                                                <state key="normal" title="Got It"/>
-                                                <connections>
-                                                    <action selector="GotItAction:" destination="v9W-Xg-VXD" eventType="touchUpInside" id="kCn-Tc-uLx"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWL-w7-gnb">
+                                        <rect key="frame" x="141" y="382" width="38" height="30"/>
+                                        <state key="normal" title="Got It"/>
+                                        <connections>
+                                            <action selector="GotItAction:" destination="v9W-Xg-VXD" eventType="touchUpInside" id="kCn-Tc-uLx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zd0-FM-6A4" secondAttribute="bottom" constant="8" id="1j6-NX-6vj"/>
-                                    <constraint firstItem="zd0-FM-6A4" firstAttribute="top" secondItem="sax-bs-rLa" secondAttribute="top" constant="8" id="Aq5-s6-qqi"/>
-                                    <constraint firstAttribute="trailing" secondItem="zd0-FM-6A4" secondAttribute="trailing" constant="8" id="Pnw-dh-T6F"/>
-                                    <constraint firstItem="zd0-FM-6A4" firstAttribute="leading" secondItem="sax-bs-rLa" secondAttribute="leading" constant="8" id="bOk-v8-ade"/>
+                                    <constraint firstItem="Zzu-c7-5S6" firstAttribute="top" secondItem="PNr-xK-HKf" secondAttribute="bottom" constant="8" id="0mM-Ad-2GA"/>
+                                    <constraint firstItem="PNr-xK-HKf" firstAttribute="top" secondItem="sax-bs-rLa" secondAttribute="top" constant="8" id="8TE-UU-aRr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zzu-c7-5S6" secondAttribute="trailing" constant="30" id="S4l-Zy-heg"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="PNr-xK-HKf" secondAttribute="trailing" constant="30" id="UcF-Lp-ZQN"/>
+                                    <constraint firstItem="PNr-xK-HKf" firstAttribute="leading" secondItem="sax-bs-rLa" secondAttribute="leading" constant="30" id="Y9U-K6-Iab"/>
+                                    <constraint firstItem="Zzu-c7-5S6" firstAttribute="leading" secondItem="sax-bs-rLa" secondAttribute="leading" constant="30" id="pOF-uY-kqN"/>
+                                    <constraint firstItem="lWL-w7-gnb" firstAttribute="top" secondItem="Zzu-c7-5S6" secondAttribute="bottom" constant="8" id="sTr-Bc-MkS"/>
+                                    <constraint firstItem="lWL-w7-gnb" firstAttribute="centerX" secondItem="sax-bs-rLa" secondAttribute="centerX" id="vMb-JW-B78"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -835,7 +831,7 @@ Lower is better.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jfa-Mc-NuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="1581"/>
+            <point key="canvasLocation" x="1674.375" y="1580.2816901408451"/>
         </scene>
         <!--Read Me-->
         <scene sceneID="BiT-b3-XWa">
