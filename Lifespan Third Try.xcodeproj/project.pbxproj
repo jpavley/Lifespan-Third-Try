@@ -16,6 +16,8 @@
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
 		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* ReadmeViewController.swift */; };
+		484D707A20A541910086CA68 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707920A541910086CA68 /* TipViewController.swift */; };
+		484D707C20A547470086CA68 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707B20A547470086CA68 /* DimmingPresentationController.swift */; };
 		48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D70425207C118600F569AF /* TombstoneViewController.swift */; };
 		48D7042820803ECA00F569AF /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7042720803ECA00F569AF /* LogoView.swift */; };
 		48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA32069B405006BB346 /* ProfileViewController.swift */; };
@@ -69,6 +71,8 @@
 		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
 		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* ReadmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
+		484D707920A541910086CA68 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		484D707B20A547470086CA68 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		48963FC420A21C6E00334205 /* BUGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUGS.md; sourceTree = "<group>"; };
 		48D01AEB208A2A2600AF13F0 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		48D70425207C118600F569AF /* TombstoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TombstoneViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				48E25CA32069B405006BB346 /* ProfileViewController.swift */,
 				48EE8C672079771000931554 /* TabViewController.swift */,
 				48D70425207C118600F569AF /* TombstoneViewController.swift */,
+				484D707920A541910086CA68 /* TipViewController.swift */,
+				484D707B20A547470086CA68 /* DimmingPresentationController.swift */,
 			);
 			path = "Lifespan Controllers";
 			sourceTree = "<group>";
@@ -377,12 +383,14 @@
 				48E25CB32069B846006BB346 /* LifeClock.swift in Sources */,
 				48EE8C6A20799EA700931554 /* StringUtilities.swift in Sources */,
 				48E25CB42069B846006BB346 /* PrettyBackgroundView.swift in Sources */,
+				484D707A20A541910086CA68 /* TipViewController.swift in Sources */,
 				1878F00E2067EEB600BEA332 /* AnalysisViewController.swift in Sources */,
 				1878F00A2067EEB600BEA332 /* AppDelegate.swift in Sources */,
 				48E25CB12069B846006BB346 /* CalendarUtilities.swift in Sources */,
 				48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */,
 				48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */,
 				1878F03A2067F2FB00BEA332 /* ReadmeViewController.swift in Sources */,
+				484D707C20A547470086CA68 /* DimmingPresentationController.swift in Sources */,
 				48E25CBB2069B88B006BB346 /* ClockView.swift in Sources */,
 				48E25CBC2069B88B006BB346 /* SecondHandView.swift in Sources */,
 				1878F00C2067EEB600BEA332 /* ClockViewController.swift in Sources */,

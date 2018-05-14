@@ -753,11 +753,89 @@
                         <outlet property="subjectField" destination="fDi-pU-IkR" id="N21-Ve-UD8"/>
                         <outlet property="yearField" destination="pVe-B2-kPM" id="VxI-zt-n1Q"/>
                         <outlet property="yearSlider" destination="kAz-Nk-45D" id="Bdx-sJ-t7v"/>
+                        <segue destination="v9W-Xg-VXD" kind="presentation" identifier="ShowTip" id="8jQ-c9-dUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at2-l1-5PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742.5" y="1681.6901408450703"/>
+        </scene>
+        <!--Tip View Controller-->
+        <scene sceneID="y7a-0o-R4B">
+            <objects>
+                <viewController id="v9W-Xg-VXD" customClass="TipViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHw-KM-Kaj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sax-bs-rLa" customClass="PrettyBackgroundView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="320" height="420"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zd0-FM-6A4">
+                                        <rect key="frame" x="8" y="8" width="304" height="404"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNr-xK-HKf">
+                                                <rect key="frame" x="134.5" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-c7-5S6">
+                                                <rect key="frame" x="22" y="28.5" width="260" height="337.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">On a scale from 1 to 10 how much risk are you inviting into your life?
+
+If you avoids drugs, guns, alcohol, fast cars, and contact sports score a 1. 
+
+If you drink moderately, occationally skis, and drive in the fast lane sore a 5. 
+
+If you are an adrenalian junkie who drag races, lives hard, and plays harder score a 10.
+
+Lower is better.</string>
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWL-w7-gnb">
+                                                <rect key="frame" x="133" y="374" width="38" height="30"/>
+                                                <state key="normal" title="Got It"/>
+                                                <connections>
+                                                    <action selector="GotItAction:" destination="v9W-Xg-VXD" eventType="touchUpInside" id="kCn-Tc-uLx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zd0-FM-6A4" secondAttribute="bottom" constant="8" id="1j6-NX-6vj"/>
+                                    <constraint firstItem="zd0-FM-6A4" firstAttribute="top" secondItem="sax-bs-rLa" secondAttribute="top" constant="8" id="Aq5-s6-qqi"/>
+                                    <constraint firstAttribute="trailing" secondItem="zd0-FM-6A4" secondAttribute="trailing" constant="8" id="Pnw-dh-T6F"/>
+                                    <constraint firstItem="zd0-FM-6A4" firstAttribute="leading" secondItem="sax-bs-rLa" secondAttribute="leading" constant="8" id="bOk-v8-ade"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hoy-3t-VYU" firstAttribute="trailing" secondItem="sax-bs-rLa" secondAttribute="trailing" id="1Rq-kG-2Ih"/>
+                            <constraint firstItem="sax-bs-rLa" firstAttribute="leading" secondItem="hoy-3t-VYU" secondAttribute="leading" id="91o-cm-N7t"/>
+                            <constraint firstItem="hoy-3t-VYU" firstAttribute="bottom" secondItem="sax-bs-rLa" secondAttribute="bottom" constant="64" id="StF-h7-vFA"/>
+                            <constraint firstItem="sax-bs-rLa" firstAttribute="top" secondItem="hoy-3t-VYU" secondAttribute="top" constant="64" id="cvZ-K4-HEe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hoy-3t-VYU"/>
+                    </view>
+                    <connections>
+                        <outlet property="tipText" destination="Zzu-c7-5S6" id="bpj-AS-XMA"/>
+                        <outlet property="tipTitle" destination="PNr-xK-HKf" id="sgA-PU-4zl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfa-Mc-NuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="1581"/>
         </scene>
         <!--Read Me-->
         <scene sceneID="BiT-b3-XWa">
