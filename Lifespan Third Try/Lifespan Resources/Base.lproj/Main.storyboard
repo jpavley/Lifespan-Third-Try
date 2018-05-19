@@ -278,7 +278,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-R1-ZQR">
-                                                <rect key="frame" x="16" y="16" width="288" height="1058"/>
+                                                <rect key="frame" x="16" y="16" width="288" height="1010"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-wC-5xI">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="165"/>
@@ -367,7 +367,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-Ds-pPB" userLabel="Birth Date Stack View">
-                                                        <rect key="frame" x="0.0" y="197" width="288" height="408.5"/>
+                                                        <rect key="frame" x="0.0" y="197" width="288" height="360.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7GK-V2-uVw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -389,86 +389,17 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GoX-h1-mUF">
-                                                                <rect key="frame" x="0.0" y="44.5" width="288" height="18"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sE-Rj-RsJ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="18"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fA-4E-5SE">
-                                                                        <rect key="frame" x="168" y="0.0" width="120" height="18"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="120" id="ldL-nQ-YX5"/>
-                                                                        </constraints>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-p0-Scp">
-                                                                <rect key="frame" x="12.5" y="86.5" width="263" height="31"/>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-ze-B6J">
+                                                                <rect key="frame" x="0.0" y="44.5" width="288" height="216"/>
+                                                                <date key="date" timeIntervalSinceReferenceDate="548430204.25644195">
+                                                                    <!--2018-05-19 13:43:24 +0000-->
+                                                                </date>
                                                                 <connections>
-                                                                    <action selector="daySliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="GWd-KW-XCw"/>
+                                                                    <action selector="birthDateValueChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="TxX-Ju-kaM"/>
                                                                 </connections>
-                                                            </slider>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-Jb-oC3">
-                                                                <rect key="frame" x="0.0" y="140.5" width="288" height="18"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzB-tQ-o2I">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="18"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Feb" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-Y7-LP7">
-                                                                        <rect key="frame" x="168" y="0.0" width="120" height="18"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="120" id="ibn-ZJ-czu"/>
-                                                                        </constraints>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKF-8t-sJh">
-                                                                <rect key="frame" x="12" y="182.5" width="264" height="31"/>
-                                                                <connections>
-                                                                    <action selector="monthSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="3aO-bA-3TL"/>
-                                                                </connections>
-                                                            </slider>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ydx-LD-fhX">
-                                                                <rect key="frame" x="0.0" y="236.5" width="288" height="18"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-hD-lme">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="18"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1961" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-B2-kPM">
-                                                                        <rect key="frame" x="168" y="0.0" width="120" height="18"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="120" id="rmI-Oe-Xzx"/>
-                                                                        </constraints>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Nk-45D">
-                                                                <rect key="frame" x="12.5" y="278.5" width="263" height="31"/>
-                                                                <connections>
-                                                                    <action selector="yearSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="O6N-QJ-o1P"/>
-                                                                </connections>
-                                                            </slider>
+                                                            </datePicker>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-0R-iOY">
-                                                                <rect key="frame" x="0.0" y="332.5" width="288" height="22"/>
+                                                                <rect key="frame" x="0.0" y="284.5" width="288" height="22"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqv-hG-Wfo">
                                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -497,21 +428,18 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-Hx-dHN">
-                                                                <rect key="frame" x="12.5" y="378.5" width="263" height="31"/>
+                                                                <rect key="frame" x="12.5" y="330.5" width="263" height="31"/>
                                                                 <connections>
                                                                     <action selector="lifeSliderChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="iYg-ji-1pj"/>
                                                                 </connections>
                                                             </slider>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="NKF-8t-sJh" firstAttribute="width" secondItem="cBv-Jb-oC3" secondAttribute="width" multiplier="0.9" id="TDZ-uL-iS5"/>
                                                             <constraint firstItem="n3d-Hx-dHN" firstAttribute="width" secondItem="hYZ-0R-iOY" secondAttribute="width" multiplier="0.9" id="VoF-uA-1DA"/>
-                                                            <constraint firstItem="kAz-Nk-45D" firstAttribute="width" secondItem="Ydx-LD-fhX" secondAttribute="width" multiplier="0.9" id="ons-JE-Hw4"/>
-                                                            <constraint firstItem="5Be-p0-Scp" firstAttribute="width" secondItem="GoX-h1-mUF" secondAttribute="width" multiplier="0.9" id="sfX-CE-Vhw"/>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-on-BUw" userLabel="Life Factors Stack View">
-                                                        <rect key="frame" x="0.0" y="637.5" width="288" height="420.5"/>
+                                                        <rect key="frame" x="0.0" y="589.5" width="288" height="420.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ix9-TU-oHc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -685,11 +613,8 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="XAR-eP-YaJ" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="CFC-sW-mog"/>
-                                                    <constraint firstItem="Ydx-LD-fhX" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="PKW-gs-5F6"/>
-                                                    <constraint firstItem="cBv-Jb-oC3" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="TRV-zl-5xl"/>
                                                     <constraint firstItem="Fs0-2f-obE" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="Udu-0A-SON"/>
                                                     <constraint firstItem="7GK-V2-uVw" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="YF3-tw-gng"/>
-                                                    <constraint firstItem="GoX-h1-mUF" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="YeW-v2-wmK"/>
                                                     <constraint firstItem="hmx-wC-5xI" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="cD0-wC-SHc"/>
                                                     <constraint firstItem="ix9-TU-oHc" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="jzn-d2-RiY"/>
                                                     <constraint firstItem="mtG-5a-cSg" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="rWO-wj-2mW"/>
@@ -733,16 +658,13 @@
                     <connections>
                         <outlet property="activityField" destination="HiW-Zb-XQg" id="vT4-Tp-dIK"/>
                         <outlet property="activitySlider" destination="guk-7j-0uP" id="BZN-4X-VeR"/>
+                        <outlet property="birthDatePicker" destination="dZ7-ze-B6J" id="7bD-BH-hd3"/>
                         <outlet property="birthField" destination="SKK-QM-iLg" id="0GI-8Y-0nv"/>
-                        <outlet property="dayField" destination="4fA-4E-5SE" id="Sej-On-KZM"/>
-                        <outlet property="daySlider" destination="5Be-p0-Scp" id="BSr-f5-0Te"/>
                         <outlet property="geneticsField" destination="BtL-Dj-zt7" id="sGB-Fb-Bb4"/>
                         <outlet property="geneticsSlider" destination="w4J-lx-hUs" id="LJd-a7-FmC"/>
                         <outlet property="lifeExpencetancySlider" destination="n3d-Hx-dHN" id="oBJ-4f-Y7m"/>
                         <outlet property="lifeExpenctancyField" destination="sZk-h3-LaZ" id="hPn-E0-qsv"/>
                         <outlet property="lifeFactorsField" destination="noj-Xc-V7k" id="9Us-bK-j9a"/>
-                        <outlet property="monthField" destination="ujV-Y7-LP7" id="mC5-Zw-rCC"/>
-                        <outlet property="monthSlider" destination="NKF-8t-sJh" id="DJL-Hx-1d6"/>
                         <outlet property="nameField" destination="Q4T-j9-h5N" id="XUZ-C8-vgq"/>
                         <outlet property="objectField" destination="qnd-ol-lMy" id="2mv-qZ-rYt"/>
                         <outlet property="possessiveField" destination="Phg-5e-84S" id="myE-fK-AUf"/>
@@ -751,14 +673,12 @@
                         <outlet property="stressField" destination="dQS-f1-7Ph" id="GSb-IU-zKi"/>
                         <outlet property="stressSlider" destination="jtb-SB-rP0" id="XHy-1M-IV3"/>
                         <outlet property="subjectField" destination="fDi-pU-IkR" id="N21-Ve-UD8"/>
-                        <outlet property="yearField" destination="pVe-B2-kPM" id="VxI-zt-n1Q"/>
-                        <outlet property="yearSlider" destination="kAz-Nk-45D" id="Bdx-sJ-t7v"/>
                         <segue destination="v9W-Xg-VXD" kind="presentation" identifier="ShowTip" id="8jQ-c9-dUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at2-l1-5PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="1728"/>
+            <point key="canvasLocation" x="742.5" y="1681.6901408450703"/>
         </scene>
         <!--Tip View Controller-->
         <scene sceneID="y7a-0o-R4B">

@@ -98,6 +98,19 @@ class UserProfile {
         return us
     }
     
+    var birthDate: Date {
+        
+        let birthDateString = "\(birthMonth.settingAsInt())-\(birthDay.settingAsInt())-\(birthYear.settingAsInt())"
+        print(birthDateString)
+        if let birthDate = CalendarUtilities.stringToDate(dateString: birthDateString) {
+            print(birthDate)
+            return birthDate
+        } else {
+            print("Error calculating birthdate")
+            return Date()
+        }
+    }
+    
     var ale: CGFloat {
         get {
             return CGFloat(lifeExpectancy.setting).rounded(.down)

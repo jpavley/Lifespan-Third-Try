@@ -28,14 +28,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     // Birth and Life Expectancy
     
     @IBOutlet weak var birthField: UITextField!
-    @IBOutlet weak var dayField: UITextField!
-    @IBOutlet weak var monthField: UITextField!
-    @IBOutlet weak var yearField: UITextField!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var lifeExpenctancyField: UITextField!
 
-    @IBOutlet weak var daySlider: UISlider!
-    @IBOutlet weak var monthSlider: UISlider!
-    @IBOutlet weak var yearSlider: UISlider!
     @IBOutlet weak var lifeExpencetancySlider: UISlider!
     
     // Life Factors
@@ -51,44 +46,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
-    @IBAction func daySliderChanged(_ sender: UISlider) {
-        let tb = self.tabBarController as! TabViewController
-        
-        guard let userProfile = tb.userProfile else {
-            return
-        }
-        
-        let sliderIntValue = sender.value.rounded(.awayFromZero)
-        userProfile.birthDay.setting = sliderIntValue
-        daySlider.value = sliderIntValue
-        dayField.text = "\(Int(sliderIntValue))"
+    @IBAction func birthDateValueChanged(_ sender: UIDatePicker) {
+        print(sender.date)
     }
     
-    @IBAction func monthSliderChanged(_ sender: UISlider) {
-        let tb = self.tabBarController as! TabViewController
-        
-        guard let userProfile = tb.userProfile else {
-            return
-        }
-        
-        userProfile.birthMonth.setting = sender.value.rounded(.awayFromZero)
-        let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth.settingAsInt())
-        monthSlider.value = sender.value.rounded(.awayFromZero)
-        monthField.text = birthMonth
-    }
-    
-    @IBAction func yearSliderChanged(_ sender: UISlider) {
-        let tb = self.tabBarController as! TabViewController
-        
-        guard let userProfile = tb.userProfile else {
-            return
-        }
-        
-        userProfile.birthYear.setting = sender.value.rounded(.awayFromZero)
-        let birthYear = userProfile.birthYear.settingAsInt()
-        yearSlider.value = sender.value.rounded(.awayFromZero)
-        yearField.text = "\(birthYear)"
-    }
     
     @IBAction func lifeSliderChanged(_ sender: UISlider) {
         let tb = self.tabBarController as! TabViewController
@@ -188,7 +149,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         guard let userProfile = tb.userProfile else {
             return
         }
-
+        
         let birthDay = userProfile.birthDay.settingAsInt()
         let birthMonthNumber = userProfile.birthMonth.settingAsInt()
         let birthMonth = CalendarUtilities.monthName(from: birthMonthNumber)
@@ -199,14 +160,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         // handle the varible number of days in a month
         userProfile.birthDay.max = Float(CalendarUtilities.daysIn(monthNumber: birthMonthNumber, for: birthYear))
         
-        dayField.text = "\(birthDay)"
-        configure(slider: daySlider, with: userProfile.birthDay)
+        birthDatePicker.timeZone = TimeZone(abbreviation: "UTC")
+        birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: "01-01-1898")
+        birthDatePicker.maximumDate = Date()
+        birthDatePicker.setDate(userProfile.birthDate, animated: true)
+
         
-        monthField.text = birthMonth
-        configure(slider: monthSlider, with: userProfile.birthMonth)
-        
-        yearField.text = "\(birthYear)"
-        configure(slider: yearSlider, with: userProfile.birthYear)
         
         lifeExpenctancyField.text = "\(ale)"
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
