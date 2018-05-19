@@ -98,12 +98,23 @@ class UserProfile {
         return us
     }
     
+    func setBirthDate(with newDate: Date) {
+        let cal = CalendarUtilities.utcCal()
+        
+        let month = cal.component(.month, from: newDate)
+        birthMonth.setting = Float(month)
+        
+        let day = cal.component(.day, from: newDate)
+        birthDay.setting = Float(day)
+        
+        let year = cal.component(.year, from: newDate)
+        birthYear.setting = Float(year)
+    }
+    
     var birthDate: Date {
         
         let birthDateString = "\(birthMonth.settingAsInt())-\(birthDay.settingAsInt())-\(birthYear.settingAsInt())"
-        print(birthDateString)
         if let birthDate = CalendarUtilities.stringToDate(dateString: birthDateString) {
-            print(birthDate)
             return birthDate
         } else {
             print("Error calculating birthdate")

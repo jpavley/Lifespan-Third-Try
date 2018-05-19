@@ -47,7 +47,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var geneticsSlider: UISlider!
     
     @IBAction func birthDateValueChanged(_ sender: UIDatePicker) {
-        print(sender.date)
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.setBirthDate(with: sender.date)
+        updateView()
     }
     
     
@@ -59,9 +66,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         userProfile.lifeExpectancy.setting = sender.value.rounded(.awayFromZero)
-        let ale = userProfile.lifeExpectancy.settingAsInt()
         lifeExpencetancySlider.value = sender.value.rounded(.awayFromZero)
-        lifeExpenctancyField.text = "\(ale)"
+        updateView()
     }
     
     @IBAction func activitySliderChanged(_ sender: UISlider) {
@@ -72,9 +78,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         userProfile.activityLevel.setting = sender.value.rounded(.awayFromZero)
-        let activityLevel = userProfile.activityLevel.settingAsInt()
         activitySlider.value = sender.value.rounded(.awayFromZero)
-        activityField.text = "\(activityLevel)"
+        updateView()
     }
     
     @IBAction func stressSliderChanged(_ sender: UISlider) {
@@ -85,9 +90,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         userProfile.stressLevel.setting = sender.value.rounded(.awayFromZero)
-        let stressLevel = userProfile.stressLevel.settingAsInt()
         stressSlider.value = sender.value.rounded(.awayFromZero)
-        stressField.text = "\(stressLevel)"
+        updateView()
     }
     
     @IBAction func riskSliderChanged(_ sender: UISlider) {
@@ -98,9 +102,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         userProfile.riskLevel.setting = sender.value.rounded(.awayFromZero)
-        let riskLevel = userProfile.riskLevel.settingAsInt()
         riskSlider.value = sender.value.rounded(.awayFromZero)
-        riskField.text = "\(riskLevel)"
+        updateView()
     }
     
     @IBAction func geneticsSliderChanged(_ sender: UISlider) {
@@ -111,9 +114,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         userProfile.geneticsLevel.setting = sender.value.rounded(.awayFromZero)
-        let geneticsLevel = userProfile.geneticsLevel.settingAsInt()
         geneticsSlider.value = sender.value.rounded(.awayFromZero)
-        geneticsField.text = "\(geneticsLevel)"
+        updateView()
     }
     
     @IBAction func showTipAction(_ sender: UIButton) {
@@ -121,6 +123,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func updateView() {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLifeClock()
+
         updatePersonalFactors()
         updateBirthFactors()
         updateLifeFactors()
@@ -129,7 +134,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     fileprivate func updatePersonalFactors() {
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
         
         guard let userProfile = tb.userProfile else {
             return
@@ -142,14 +146,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         possessiveField.text = userProfile.pronouns.possessive
     }
     
-    fileprivate func updateBirthFactors() {
+    fileprivate func updateBirthField() {
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
         
         guard let userProfile = tb.userProfile else {
             return
         }
-        
+
         let birthDay = userProfile.birthDay.settingAsInt()
         let birthMonthNumber = userProfile.birthMonth.settingAsInt()
         let birthMonth = CalendarUtilities.monthName(from: birthMonthNumber)
@@ -159,21 +162,46 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         // handle the varible number of days in a month
         userProfile.birthDay.max = Float(CalendarUtilities.daysIn(monthNumber: birthMonthNumber, for: birthYear))
+    }
+    
+    fileprivate func updateAleField() {
+        let tb = self.tabBarController as! TabViewController
         
-        birthDatePicker.timeZone = TimeZone(abbreviation: "UTC")
-        birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: "01-01-1898")
-        birthDatePicker.maximumDate = Date()
-        birthDatePicker.setDate(userProfile.birthDate, animated: true)
-
+        guard let userProfile = tb.userProfile else {
+            return
+        }
         
-        
+        let ale = userProfile.lifeExpectancy.settingAsInt()
         lifeExpenctancyField.text = "\(ale)"
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
     }
     
+    fileprivate func updateBirthDatePicker() {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+
+        // instead of user local timezone, the default, this app uses UTC
+        birthDatePicker.timeZone = TimeZone(abbreviation: "UTC")
+        
+        // TODO: set this to currentdate - userProfile.lifeExpectancy.max
+        birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: "01-01-1898")
+        
+        birthDatePicker.maximumDate = Date()
+        birthDatePicker.setDate(userProfile.birthDate, animated: true)
+
+    }
+    
+    fileprivate func updateBirthFactors() {
+        updateBirthField()
+        updateAleField()
+        updateBirthDatePicker()
+    }
+    
     fileprivate func updateLifeFactors() {
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
         
         guard let userProfile = tb.userProfile else {
             return
@@ -207,7 +235,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         slider.minimumValue = property.min
         slider.maximumValue = property.max
         slider.value = property.setting
-        slider.addTarget(self, action: #selector(updateView), for: [.touchUpInside, .touchUpOutside])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
