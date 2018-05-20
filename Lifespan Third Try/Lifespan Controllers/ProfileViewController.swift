@@ -10,20 +10,20 @@ import UIKit
 
 enum TextFieldTag: Int {
     case name = 1000
-    case object = 2000
-    case subject = 3000
-    case possessive = 4000
+//    case object = 2000
+//    case subject = 3000
+//    case possessive = 4000
 }
 
 class ProfileViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK:- Control Outlets -
+    
     // Personal Details
     
     @IBOutlet weak var nameField: UITextField!
-    
-    @IBOutlet weak var objectField: UITextField!
-    @IBOutlet weak var subjectField: UITextField!
-    @IBOutlet weak var possessiveField: UITextField!
+    @IBOutlet weak var pronounSlider: UISlider!
+    @IBOutlet weak var pronounsField: UITextField!
     
     // Birth and Life Expectancy
     
@@ -46,6 +46,21 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
+    // MARK:- Control Actions -
+    
+    @IBAction func pronounsValueChanged(_ sender: UISlider) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let userProfile = tb.userProfile else {
+            return
+        }
+        
+        userProfile.pronounChoices.setting = sender.value.rounded(.awayFromZero)
+        pronounSlider.value = sender.value.rounded(.awayFromZero)
+        updateView()
+    }
+    
+
     @IBAction func birthDateValueChanged(_ sender: UIDatePicker) {
         let tb = self.tabBarController as! TabViewController
         
@@ -135,15 +150,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     fileprivate func updatePersonalFactors() {
         let tb = self.tabBarController as! TabViewController
         
-        guard let userProfile = tb.userProfile else {
+        guard let up = tb.userProfile else {
             return
         }
         
-        nameField.text = userProfile.name
+        nameField.text = up.name
         
-        objectField.text = userProfile.pronouns.objective
-        subjectField.text = userProfile.pronouns.subjective
-        possessiveField.text = userProfile.pronouns.possessive
+        let currentPronouns = "\(up.pronouns.objective) \(up.pronouns.subjective) \(up.pronouns.possessive)"
+        pronounsField.text = currentPronouns
+        
+        configure(slider: pronounSlider, with: up.pronounChoices)
     }
     
     fileprivate func updateBirthField() {
@@ -255,15 +271,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             switch tag {
             case .name:
                 userProfile.name = textField.text!
-                
-            case .object:
-                userProfile.pronouns.objective = textField.text!
-                
-            case .subject:
-                userProfile.pronouns.subjective = textField.text!
-
-            case .possessive:
-                userProfile.pronouns.possessive = textField.text!
             }
             
             updateTombstone()
@@ -279,9 +286,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         nameField.delegate = self
-        objectField.delegate = self
-        subjectField.delegate = self
-        possessiveField.delegate = self
         
         // enable user to dismiss keyboard with a tap
         let tap = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.dismissKeyboard))

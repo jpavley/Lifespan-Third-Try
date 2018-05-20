@@ -5,13 +5,14 @@
 - Update the tab bar icons to reflect design changes.
 - Add unit tests back in from ealier version of project.
 - Support Dynamic Type (Attributed Text does not support dynamic type).
-- It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
 - The analysis doesn't changes between low, medium, and high that impact longetivity. A so-called "low" level of activity can positively impact longetivity.
 - Replace the Readme view with an car dashboard like speedometer, odometer, and fuel guage. This view will display biological vs chronological age.
 - Rewrite the tips as poetry (rhymed coupets)
 - Make the tip view even more polished: rounded corners, no border, add graphics, better typography
 
 ## In Progress
+- It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
+
 
 ## Parked
 - Update clock design so it is more modern.

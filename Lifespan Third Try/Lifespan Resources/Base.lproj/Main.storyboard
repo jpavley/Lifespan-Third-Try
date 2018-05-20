@@ -278,10 +278,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-R1-ZQR">
-                                                <rect key="frame" x="16" y="16" width="288" height="1010"/>
+                                                <rect key="frame" x="16" y="16" width="288" height="1043.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-wC-5xI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="165"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="198.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6b9-tE-iXB" userLabel="Name Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="58.5"/>
@@ -300,54 +300,57 @@
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-xe-nTZ" userLabel="Pronouns Stack View">
-                                                                <rect key="frame" x="0.0" y="82.5" width="288" height="82.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-xe-nTZ" userLabel="Pronouns Stack View">
+                                                                <rect key="frame" x="0.0" y="82.5" width="288" height="116"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronouns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eB-HO-aSV">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-eS-yfv" userLabel="Pronoun Fields Stack View">
-                                                                        <rect key="frame" x="0.0" y="28.5" width="288" height="30"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-0R-acE">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="22"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fDi-pU-IkR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="30"/>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-do-DUE">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="22" id="fMC-L3-fyz"/>
+                                                                                </constraints>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronouns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eB-HO-aSV">
+                                                                                <rect key="frame" x="30" y="0.0" width="130" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
-                                                                            </textField>
-                                                                            <textField opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qnd-ol-lMy">
-                                                                                <rect key="frame" x="98.5" y="0.0" width="91" height="30"/>
-                                                                                <nil key="textColor"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
-                                                                            </textField>
-                                                                            <textField opaque="NO" tag="4000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Phg-5e-84S">
-                                                                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="30"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="he him his" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rw3-Rh-169">
+                                                                                <rect key="frame" x="168" y="0.0" width="120" height="17"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="120" id="IxI-tD-6sC"/>
+                                                                                </constraints>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                         </subviews>
                                                                     </stackView>
+                                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="jAm-TC-oVJ">
+                                                                        <rect key="frame" x="12.5" y="46" width="263" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="pronounsValueChanged:" destination="M2B-uX-7MA" eventType="valueChanged" id="wEz-IW-9R0"/>
+                                                                        </connections>
+                                                                    </slider>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-xy-P1z" userLabel="Pronoun Key">
-                                                                        <rect key="frame" x="0.0" y="66.5" width="288" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="100" width="288" height="16"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he she they" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxj-Jc-K2b" userLabel="he, she, they">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="she" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxj-Jc-K2b" userLabel="he, she, they">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="90.5" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="him her them" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-z8-2kG" userLabel="him, her, them">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="they" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-z8-2kG" userLabel="him, her, them">
                                                                                 <rect key="frame" x="98.5" y="0.0" width="91" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="his her their" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-sx-hsk">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-sx-hsk">
                                                                                 <rect key="frame" x="197.5" y="0.0" width="90.5" height="16"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -358,7 +361,8 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="pOf-eS-yfv" firstAttribute="width" secondItem="C4X-xe-nTZ" secondAttribute="width" id="Al6-ae-2Sx"/>
+                                                                    <constraint firstItem="qyb-0R-acE" firstAttribute="width" secondItem="C4X-xe-nTZ" secondAttribute="width" id="grJ-XA-d9D"/>
+                                                                    <constraint firstItem="jAm-TC-oVJ" firstAttribute="width" secondItem="C4X-xe-nTZ" secondAttribute="width" multiplier="0.9" id="nxF-v1-3Rl"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
@@ -367,7 +371,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-Ds-pPB" userLabel="Birth Date Stack View">
-                                                        <rect key="frame" x="0.0" y="197" width="288" height="360.5"/>
+                                                        <rect key="frame" x="0.0" y="230.5" width="288" height="360.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7GK-V2-uVw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -439,7 +443,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-on-BUw" userLabel="Life Factors Stack View">
-                                                        <rect key="frame" x="0.0" y="589.5" width="288" height="420.5"/>
+                                                        <rect key="frame" x="0.0" y="623" width="288" height="420.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ix9-TU-oHc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
@@ -666,13 +670,12 @@
                         <outlet property="lifeExpenctancyField" destination="sZk-h3-LaZ" id="hPn-E0-qsv"/>
                         <outlet property="lifeFactorsField" destination="noj-Xc-V7k" id="9Us-bK-j9a"/>
                         <outlet property="nameField" destination="Q4T-j9-h5N" id="XUZ-C8-vgq"/>
-                        <outlet property="objectField" destination="qnd-ol-lMy" id="2mv-qZ-rYt"/>
-                        <outlet property="possessiveField" destination="Phg-5e-84S" id="myE-fK-AUf"/>
+                        <outlet property="pronounSlider" destination="jAm-TC-oVJ" id="N5R-E1-Buj"/>
+                        <outlet property="pronounsField" destination="rw3-Rh-169" id="5MK-rN-oCh"/>
                         <outlet property="riskField" destination="kzf-MC-UlU" id="J87-Q9-3Ga"/>
                         <outlet property="riskSlider" destination="bPe-ee-fFS" id="LRG-4i-Z5B"/>
                         <outlet property="stressField" destination="dQS-f1-7Ph" id="GSb-IU-zKi"/>
                         <outlet property="stressSlider" destination="jtb-SB-rP0" id="XHy-1M-IV3"/>
-                        <outlet property="subjectField" destination="fDi-pU-IkR" id="N21-Ve-UD8"/>
                         <segue destination="v9W-Xg-VXD" kind="presentation" identifier="ShowTip" id="8jQ-c9-dUA"/>
                     </connections>
                 </viewController>

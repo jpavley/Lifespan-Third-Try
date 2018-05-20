@@ -20,12 +20,6 @@ struct RangedValue {
     
 }
 
-struct PronounTrio {
-    var subjective: String = "he" // she, they
-    var objective: String = "him" // her, them
-    var possessive: String = "his" // hers, theirs
-}
-
 struct UserStats {
     var age: Int = 0
     var birthYear: Int = 0
@@ -40,7 +34,8 @@ struct UserStats {
 class UserProfile {
     
     var name:String
-    
+    var pronounChoices: RangedValue
+
     var birthYear: RangedValue
     var birthDay: RangedValue
     var birthMonth: RangedValue
@@ -53,7 +48,6 @@ class UserProfile {
     var geneticsLevel: RangedValue
     
     var livingOnBorrowedTime: Bool
-    var pronouns: PronounTrio
     
     init() {
         name = "John F. Pavley"
@@ -81,7 +75,9 @@ class UserProfile {
         geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
         
         livingOnBorrowedTime = false
-        pronouns = PronounTrio(subjective:"he", objective: "him", possessive: "his")
+        pronounChoices = RangedValue(min: Float(PronounGender.male.rawValue),
+                                     max: Float(PronounGender.female.rawValue),
+                                     setting: Float(PronounGender.netural.rawValue))
     }
     
     func calcUserStats(from lifeSpan: Lifespan) -> UserStats {
@@ -109,6 +105,12 @@ class UserProfile {
         
         let year = cal.component(.year, from: newDate)
         birthYear.setting = Float(year)
+    }
+    
+    var pronouns: PronounTrio {
+        let currentSetting = pronounChoices.settingAsInt()
+        let gender = PronounGender(rawValue: currentSetting)
+        return PronounTrio.getPronouns(for: gender!)
     }
     
     var birthDate: Date {
