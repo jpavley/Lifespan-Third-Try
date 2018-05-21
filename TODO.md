@@ -8,10 +8,9 @@
 - The analysis doesn't changes between low, medium, and high that impact longetivity. A so-called "low" level of activity can positively impact longetivity.
 - Replace the Readme view with an car dashboard like speedometer, odometer, and fuel guage. This view will display biological vs chronological age.
 - Rewrite the tips as poetry (rhymed coupets)
-- Make the tip view even more polished: rounded corners, no border, add graphics, better typography
 
 ## In Progress
-- It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
+- Make the tip view even more polished: rounded corners, no border, add graphics, better typography
 
 
 ## Parked
@@ -39,6 +38,8 @@
 - The tip alert dialog box text is too small and formatted poorly. Create a custom view!
 - Update Life "Clock logo" type to read "Life Span".
 - It's too hard to set the birth day, month, and year with sliders. Use regular fields.
+- It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
+
 
 
 
