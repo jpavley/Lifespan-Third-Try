@@ -156,7 +156,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         nameField.text = up.name
         
-        let currentPronouns = "\(up.pronouns.objective) \(up.pronouns.subjective) \(up.pronouns.possessive)"
+        let currentPronouns = "\(up.pronouns.subjective) \(up.pronouns.possessive)"
         pronounsField.text = currentPronouns
         
         configure(slider: pronounSlider, with: up.pronounChoices)

@@ -75,9 +75,9 @@ class UserProfile {
         geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
         
         livingOnBorrowedTime = false
-        pronounChoices = RangedValue(min: Float(PronounGender.male.rawValue),
-                                     max: Float(PronounGender.female.rawValue),
-                                     setting: Float(PronounGender.netural.rawValue))
+        pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
+                                     max: Float(PronounGender.male.rawValue),
+                                     setting: Float(PronounGender.male.rawValue))
     }
     
     func calcUserStats(from lifeSpan: Lifespan) -> UserStats {
