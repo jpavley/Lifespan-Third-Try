@@ -10,8 +10,7 @@
 - Rewrite the tips as poetry (rhymed coupets)
 
 ## In Progress
-- Make the tip view even more polished: rounded corners, no border, add graphics, better typography
-
+- create tip for gender pronouns
 
 ## Parked
 - Update clock design so it is more modern.
@@ -39,6 +38,8 @@
 - Update Life "Clock logo" type to read "Life Span".
 - It's too hard to set the birth day, month, and year with sliders. Use regular fields.
 - It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
+- Make the tip view even more polished: rounded corners, no border, add graphics, better typography
+
 
 
 

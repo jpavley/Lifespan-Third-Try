@@ -31,6 +31,7 @@ class TipViewController: UIViewController {
     @IBOutlet weak var tipDirection: UILabel!
     @IBOutlet weak var dimissButton: UIButton!
     
+    @IBOutlet weak var roundedView: UIView!
     
     var tipDictionary = [TipButtonTag:Tip]()
     var tipSource: TipButtonTag!
@@ -45,7 +46,8 @@ class TipViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        ;loadTipData()
+        roundedView.layer.cornerRadius = 40
+        loadTipData()
         
         if tipSource != nil {
             updateView()
