@@ -9,7 +9,7 @@
 import UIKit
 
 enum TipButtonTag: Int {
-    case lifeExpectancy = 1000, activity, stress, risk, genetics
+    case lifeExpectancy = 1000, activity, stress, risk, genetics, gender
 }
 
 struct Tip {
@@ -87,28 +87,36 @@ class TipViewController: UIViewController {
                                              direction: "Higher is better.")
         tipDictionary[.activity] = Tip(title: "Activity",
                                        explanation: "On a scale from 1 to 10 how active are you?",
-                                       low: "If you are a couch potato who's favorite sport is eating score a 1.",
+                                       low: "If you are a couch potato whose favorite sport is eating score a 1.",
                                        middle: "If you are a brisk walker a who hits the gym a couple of days a week score a 5.",
-                                       high: "If you are a crossfit enthusist who maintains a perfect BMI score a 10.",
+                                       high: "If you are a CrossFit enthusiast who maintains a perfect BMI score a 10.",
                                        direction: "Higher is better")
         tipDictionary[.stress] = Tip(title: "Stress",
                                      explanation: "On a scale from 1 to 10 how stressed out are you?",
-                                     low: "if you are a stoic who medidates daily and keep your emotions in check like Mr. Spock score a 1.",
+                                     low: "if you are a stoic who meditates daily and keep your emotions in check like Mr. Spock score a 1.",
                                      middle: "If you are mentally well balanced with a job, a bit of money in the bank, and a loving family sore a 5.",
-                                     high: "If you are passoinately overworked, underappreicated, and living in a metaphorical warzone score a 10.",
+                                     high: "If you are passionately overworked, underappreciated, and living in a metaphorical warzone score a 10.",
                                      direction: "Lower is better")
         tipDictionary[.risk] = Tip(title: "Risk",
                                    explanation: "On a scale from 1 to 10 how much risk are you inviting into your life?",
                                    low: "If you avoid drugs, guns, alcohol, fast cars, and contact sports score a 1.",
-                                   middle: "If you drink moderately, occationally ski, and drive in the fast lane sore a 5.",
-                                   high: "If you are an adrenalian junkie who drag races, lives hard, and plays harder score a 10.",
+                                   middle: "If you drink moderately, occasionally ski, and drive in the fast lane sore a 5.",
+                                   high: "If you are an adrenalin junkie who drag races, lives hard, and plays harder score a 10.",
                                    direction: "Lower is better")
         tipDictionary[.genetics] = Tip(title: "Genetics",
                                        explanation: "On a scale from 1 to 10 how good is your genetic material?",
-                                       low: "If chronic diseases run rampent in your family and your parents died young score a 1.",
+                                       low: "If chronic diseases run rampant in your family and your parents died young score a 1.",
                                        middle: "If you parents lived well into their eighties and age-related diseases are rare in your family sore a 5.",
-                                       high: "If your parents lived well into their 90s or 100s while smoking and driking score a 10.",
+                                       high: "If your parents lived well into their 90s or 100s while smoking and drinking score a 10.",
                                        direction: "Higher is better")
+        tipDictionary[.gender] = Tip(title: "Gender and Pronouns",
+                                     explanation: "You can customize the Analysis text with your preferred personal pronouns.",
+                                     low: "Data shows that women live longer than men, perhaps a biological advantage or a cultural advantage, or both.",
+                                     middle: "The differences in longevity between the sexes are shrinking as women engage in activities previously reserved for men.",
+                                     high: "Lifespan therefore does not take gender in account as overall impact of gender on longevity is impossible to measure. ",
+                                     direction: "All pronouns are good!")
+        
+
 
     }
     

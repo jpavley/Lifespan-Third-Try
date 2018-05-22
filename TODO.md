@@ -5,14 +5,15 @@
 - Update the tab bar icons to reflect design changes.
 - Add unit tests back in from ealier version of project.
 - Support Dynamic Type (Attributed Text does not support dynamic type).
-- The analysis doesn't changes between low, medium, and high that impact longetivity. A so-called "low" level of activity can positively impact longetivity.
 - Replace the Readme view with an car dashboard like speedometer, odometer, and fuel guage. This view will display biological vs chronological age.
 - Rewrite the tips as poetry (rhymed coupets)
 
 ## In Progress
-- create tip for gender pronouns
+
+- The analysis doesn't changes between low, medium, and high that impact longetivity. A so-called "low" level of activity can positively impact longetivity.
 
 ## Parked
+
 - Update clock design so it is more modern.
 - Add famous lives, large scale events, and celestial events to analysis.
 
@@ -39,6 +40,8 @@
 - It's too hard to set the birth day, month, and year with sliders. Use regular fields.
 - It's too much of a pain in the but enter in custom pronouns. Use a way to set all three at once without typing.
 - Make the tip view even more polished: rounded corners, no border, add graphics, better typography
+- create tip for gender pronouns
+
 
 
 

@@ -152,7 +152,6 @@
 		1878F0082067EEB600BEA332 /* Lifespan Third Try */ = {
 			isa = PBXGroup;
 			children = (
-				4828069220B05E7700F0091E /* lifeclock3.idraw */,
 				48EB7AC7208B73E300DBA476 /* Lifespan Resources */,
 				48EB7AC6208B738E00DBA476 /* Lifespan Utilities */,
 				48E25CB52069B85B006BB346 /* Lifespan Models */,
@@ -235,6 +234,7 @@
 		48EB7AC7208B73E300DBA476 /* Lifespan Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4828069220B05E7700F0091E /* lifeclock3.idraw */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,

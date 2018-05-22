@@ -307,11 +307,14 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-0R-acE">
                                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="22"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-do-DUE">
+                                                                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-do-DUE">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="22" id="fMC-L3-fyz"/>
                                                                                 </constraints>
+                                                                                <connections>
+                                                                                    <action selector="showTipAction:" destination="M2B-uX-7MA" eventType="touchUpInside" id="54b-Wo-SAJ"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronouns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eB-HO-aSV">
                                                                                 <rect key="frame" x="30" y="0.0" width="130" height="20.5"/>
