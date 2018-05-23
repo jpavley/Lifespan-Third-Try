@@ -49,6 +49,7 @@ class UserProfile {
     var riskLevel: RangedValue
     var geneticsLevel: RangedValue
     
+    var isDead: Bool
     var livingOnBorrowedTime: Bool
     
     init() {
@@ -76,7 +77,10 @@ class UserProfile {
         riskLevel = RangedValue(min: 0, max: 10, setting: 0)
         geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
         
+        // these are at runtime set by TabViewController:updateLifeClock()
+        isDead = false
         livingOnBorrowedTime = false
+        
         pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
                                      max: Float(PronounGender.male.rawValue),
                                      setting: Float(PronounGender.male.rawValue))

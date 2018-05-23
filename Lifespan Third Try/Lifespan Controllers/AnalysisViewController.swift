@@ -176,7 +176,9 @@ class AnalysisViewController: UIViewController {
             
         case .allFactors:
             
-            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by the following life factors: "
+            // TODO: is this ever called?
+            
+            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) natural life expectancy of \(d.lifeExpectancy) years is influenced by the following life factors: "
             let part2 = "A \(d.activityLevel) level of physical activity. "
             let part3 = "A \(d.stressLevel) level of mental stress. "
             let part4 = "A \(d.riskLevel) level of risky behavior. "
@@ -184,10 +186,10 @@ class AnalysisViewController: UIViewController {
             let part6 = "\n\n"
             
             resultString = part1 + part2 + part3 + part4 + part5 + part6
-            resultIndexes = [3, 7, 12, 19, 20, 22, 28, 34, 40]
+            resultIndexes = [3, 7, 13, 20, 21, 23, 29, 35, 41]
         case .someFactors:
             
-            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by one or more life factors: "
+            let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) natural life expectancy of \(d.lifeExpectancy) years is influenced by one or more life factors: "
             let part2 = d.activityLevel != "not set" ? "A \(d.activityLevel) level of physical activity. " : ""
             let part3 = d.stressLevel != "not set" ? "A \(d.stressLevel) level of mental stress. " : ""
             let part4 = d.riskLevel != "not set" ? "A \(d.riskLevel) level of risky behavior. " : ""
@@ -196,7 +198,7 @@ class AnalysisViewController: UIViewController {
             
             resultString = part1 + part2 + part3 + part4 + part5 + part6
 
-            resultIndexes = [3, 7, 12, 20, 21]
+            resultIndexes = [3, 7, 13, 21, 22]
             var wordCount = resultIndexes.last!
             
             // Calcuate resultIndexes based on the appearance of unique words and offsets (wordCount)
@@ -218,7 +220,7 @@ class AnalysisViewController: UIViewController {
             
             if resultString.contains("genetic") {
                 resultIndexes += [wordCount + 2]
-                wordCount += 4 // update wordCount incase more parts are added in the future
+                wordCount += 4 // update wordCount in case more parts are added in the future
             }
         }
         
