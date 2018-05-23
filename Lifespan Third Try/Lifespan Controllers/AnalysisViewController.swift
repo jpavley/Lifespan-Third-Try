@@ -130,9 +130,9 @@ class AnalysisViewController: UIViewController {
             resultString.append(tf.createBoldString(with: "\(d.name)"))
             
             // handle part after the name
-            let p2p3 = " is still alive \(d.subject) is living on borrowed time. \(d.subject.capitalized) must be around \(d.age + abs(d.modifiedYearsLeft)) years old now."
+            let p2p3 = " is still alive \(d.subject) is living on borrowed time. \(d.subject.capitalized) has lived an extra \(abs(d.modifiedYearsLeft)) years so far."
             let stringsP2P3 = generateStringLists(from: p2p3)
-            let boldInexesP2P3 = [3, 8, 14]
+            let boldInexesP2P3 = [3, 8, 15]
             let attributedP2P3 = tf.createStringWithBoldParts(with: stringsP2P3, boldedIndexes: boldInexesP2P3)
             resultString.append(attributedP2P3)
 
