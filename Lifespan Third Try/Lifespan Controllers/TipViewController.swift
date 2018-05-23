@@ -80,11 +80,11 @@ class TipViewController: UIViewController {
     func loadTipData() {
         // TODO: Read this text from a text file!
         tipDictionary[.lifeExpectancy] = Tip(title: "Life Expectancy",
-                                             explanation: "How long do you think you will live, all things being equal?",
-                                             low: "The average American can expect to live for around 83 years (as of 2018).",
-                                             middle: "Women tend to little live longer, men a little less.",
-                                             high: "The longest documented human life is 122 years.",
-                                             direction: "Higher is better.")
+                                             explanation: "How long do you think you will live?",
+                                             low: "The country where you live effects your life expectancy. In the US the average life expectancy is around 83 years.",
+                                             middle: "Studies show that your biological sex effects your life expectancy. Women in the US live around 5.8 years longer than men.",
+                                             high: "The longest human lives are around 122 years.",
+                                             direction: "Higher is better")
         tipDictionary[.activity] = Tip(title: "Activity",
                                        explanation: "On a scale from 1 to 10 how active are you?",
                                        low: "If you are a couch potato whose favorite sport is eating score a 1.",
@@ -93,27 +93,27 @@ class TipViewController: UIViewController {
                                        direction: "Higher is better")
         tipDictionary[.stress] = Tip(title: "Stress",
                                      explanation: "On a scale from 1 to 10 how stressed out are you?",
-                                     low: "if you are a stoic who meditates daily and keep your emotions in check like Mr. Spock score a 1.",
-                                     middle: "If you are mentally well balanced with a job, a bit of money in the bank, and a loving family sore a 5.",
-                                     high: "If you are passionately overworked, underappreciated, and living in a metaphorical warzone score a 10.",
+                                     low: "if you are a stoic who meditates daily and controls emotions like Mr. Spock score a 1.",
+                                     middle: "If you feel well balanced with a job, a bit of money in the bank, and a loving family sore a 5.",
+                                     high: "If you are overworked, underappreciated, and ready to pop score a 10.",
                                      direction: "Lower is better")
         tipDictionary[.risk] = Tip(title: "Risk",
                                    explanation: "On a scale from 1 to 10 how much risk are you inviting into your life?",
                                    low: "If you avoid drugs, guns, alcohol, fast cars, and contact sports score a 1.",
-                                   middle: "If you drink moderately, occasionally ski, and drive in the fast lane sore a 5.",
-                                   high: "If you are an adrenalin junkie who drag races, lives hard, and plays harder score a 10.",
+                                   middle: "If you drink moderately, seldom act foolishly, and usually obey posted signs and placards score a 5.",
+                                   high: "If you are an adrenalin junkie who lives hard and plays harder score a 10.",
                                    direction: "Lower is better")
         tipDictionary[.genetics] = Tip(title: "Genetics",
                                        explanation: "On a scale from 1 to 10 how good is your genetic material?",
                                        low: "If chronic diseases run rampant in your family and your parents died young score a 1.",
-                                       middle: "If you parents lived well into their eighties and age-related diseases are rare in your family sore a 5.",
-                                       high: "If your parents lived well into their 90s or 100s while smoking and drinking score a 10.",
+                                       middle: "If your parents lived into their eighties and diseases are rare in your family sore a 5.",
+                                       high: "If your parents lived well into their 90s or 100s while recklessly smoking and drinking score a 10.",
                                        direction: "Higher is better")
         tipDictionary[.gender] = Tip(title: "Gender and Pronouns",
-                                     explanation: "You can customize the Analysis text with your preferred personal pronouns.",
-                                     low: "Data shows that women live longer than men, perhaps a biological advantage or a cultural advantage, or both.",
-                                     middle: "The differences in longevity between the sexes are shrinking as women engage in activities previously reserved for men.",
-                                     high: "Lifespan therefore does not take gender in account as overall impact of gender on longevity is impossible to measure. ",
+                                     explanation: "You can choose the pronouns used by the analysis tab.",
+                                     low: "The pronouns you choose have no effect on how Lifespan caluclates your longetivity.",
+                                     middle: "The pronouns included are the most popular personal pronouns according to LGBTQ websites.",
+                                     high: "Choose what works for you.",
                                      direction: "All pronouns are good!")
         
 
