@@ -18,10 +18,14 @@ struct LifeEvent {
     var date: Date
 }
 
+enum SpanModifierEffect {
+    case positive, negative, both
+}
+
 struct SpanModifier {
     var name: String
     var value: CGFloat
-    var positive: Bool
+    var effect: SpanModifierEffect
 }
 
 extension CGFloat {
@@ -129,15 +133,37 @@ class Lifespan {
             return nil
         }
         
+        let valueOfMostFactors: CGFloat = 0.01
+        let valueOfGenetics: CGFloat = 0.02
+        
         var modifiedALE = averageLifeExpectancy!
-        let lifeFraction = ale * 0.01
+        var lifeFraction = ale * valueOfMostFactors
         for mod in spanModifiers {
-            let modImpact = lifeFraction * mod.value
-            if mod.positive {
-                modifiedALE += modImpact
-            } else {
-                modifiedALE -= modImpact
+            
+            if mod.name == "geneticsQuality" {
+                lifeFraction = ale * valueOfGenetics
             }
+            
+            let modImpact = lifeFraction * mod.value
+            
+            switch mod.effect {
+            case .positive:
+                modifiedALE += modImpact
+            case .negative:
+                modifiedALE -= modImpact
+            case .both:
+                if mod.value < 5.0 {
+                    // negative effect
+                    modifiedALE -= modImpact
+                } else if mod.value == 5.0 {
+                     // no effect
+                    modifiedALE += 0
+                } else {
+                    // positive effect
+                    modifiedALE += modImpact
+                }
+            }
+            
         }
                 
         if modifiedALE > 120 {

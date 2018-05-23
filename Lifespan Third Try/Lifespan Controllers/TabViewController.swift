@@ -74,16 +74,16 @@ class TabViewController: UITabBarController {
         let birthDate = CalendarUtilities.stringToDate(dateString: "\(userProfile!.birthMonth.settingAsInt())-\(userProfile!.birthDay.settingAsInt())-\(userProfile!.birthYear.settingAsInt())")
         let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
         
-        let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), positive: true)
+        let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), effect: .positive)
         ls.spanModifiers?.append(activityLevelMod)
         
-        let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), positive: false)
+        let stressLevelMod = SpanModifier(name: "stressLevel", value: CGFloat(userProfile!.stressLevel.setting), effect: .negative)
         ls.spanModifiers?.append(stressLevelMod)
         
-        let riskLevelMod = SpanModifier(name: "riskLevel", value: CGFloat(userProfile!.riskLevel.setting), positive: false)
+        let riskLevelMod = SpanModifier(name: "riskLevel", value: CGFloat(userProfile!.riskLevel.setting), effect: .negative)
         ls.spanModifiers?.append(riskLevelMod)
         
-        let geneticsQualityMod = SpanModifier(name: "geneticsQuality", value: CGFloat(userProfile!.geneticsLevel.setting), positive: true)
+        let geneticsQualityMod = SpanModifier(name: "geneticsQuality", value: CGFloat(userProfile!.geneticsLevel.setting), effect: .both)
         ls.spanModifiers?.append(geneticsQualityMod)
         
         return ls
