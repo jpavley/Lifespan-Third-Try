@@ -49,7 +49,7 @@ class TombstoneViewController: UIViewController {
         subheadLabel.text = "\(birthYear) to \(deathYear)"
         
         let ageAtDeath = us.modifiedLifeExpectancy
-        footnoteLabel.text = "Expected Age At Death \(ageAtDeath)"
+        footnoteLabel.text = "Expected Age At Death: \(ageAtDeath)"
         
         if us.modifiedLifeExpectancy == us.lifeExpectancy {
             footnoteLabel.textColor = UIColor.blue

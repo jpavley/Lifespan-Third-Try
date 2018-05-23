@@ -122,18 +122,35 @@ class AnalysisViewController: UIViewController {
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
         let tf = TextFormatter()
         
-        // handle part before the name
-        resultString.append(tf.createPlainString(with: "If "))
-        
-        // handle name (in case it's more than one substring
-        resultString.append(tf.createBoldString(with: "\(d.name)"))
+        if d.modifiedYearsLeft < 0 {
+            // handle part before the name
+            resultString.append(tf.createPlainString(with: "If "))
+            
+            // handle name (in case it's more than one substring
+            resultString.append(tf.createBoldString(with: "\(d.name)"))
+            
+            // handle part after the name
+            let p2p3 = " is still alive \(d.subject) is living on borrowed time. \(d.subject.capitalized) must be around \(d.age + abs(d.modifiedYearsLeft)) years old now."
+            let stringsP2P3 = generateStringLists(from: p2p3)
+            let boldInexesP2P3 = [3, 8, 14]
+            let attributedP2P3 = tf.createStringWithBoldParts(with: stringsP2P3, boldedIndexes: boldInexesP2P3)
+            resultString.append(attributedP2P3)
 
-        // handle part after the name
-        let p2p3 = " lives beyond \(d.modifiedDeathYear) and the age of \(d.modifiedLifeExpectancy), \(d.subject) will be living on borrowed time."
-        let stringsP2P3 = generateStringLists(from: p2p3)
-        let boldInexesP2P3 = [3, 8, 14]
-        let attributedP2P3 = tf.createStringWithBoldParts(with: stringsP2P3, boldedIndexes: boldInexesP2P3)
-        resultString.append(attributedP2P3)
+        } else {
+            // handle part before the name
+            resultString.append(tf.createPlainString(with: "If "))
+            
+            // handle name (in case it's more than one substring
+            resultString.append(tf.createBoldString(with: "\(d.name)"))
+            
+            // handle part after the name
+            let p2p3 = " lives beyond \(d.modifiedDeathYear) and the age of \(d.modifiedLifeExpectancy), \(d.subject) will be living on borrowed time."
+            let stringsP2P3 = generateStringLists(from: p2p3)
+            let boldInexesP2P3 = [3, 8, 14]
+            let attributedP2P3 = tf.createStringWithBoldParts(with: stringsP2P3, boldedIndexes: boldInexesP2P3)
+            resultString.append(attributedP2P3)
+
+        }
         
         return resultString
 
@@ -172,7 +189,7 @@ class AnalysisViewController: UIViewController {
             let part2 = "life factors were not recorded on the profile tab. \n\n"
             
             resultString = part1 + part2
-            resultIndexes = [9, 10, 12, 16]
+            resultIndexes = [3, 7, 9, 10, 12, 16]
             
         case .allFactors:
             
@@ -294,7 +311,14 @@ class AnalysisViewController: UIViewController {
             stringListWithSpacesS2 = generateStringLists(from: s2)
             boldIndexesS2 = [5, 7, 12]
             
-            s3 = " If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            if d.modifiedYearsLeft < 0 {
+                
+                s3 = ""
+                
+            } else {
+                
+                s3 = " If \(d.subject) doesn’t improve \(d.possesser) life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            }
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
             boldIndexesS3 = [3, 12, 19]
@@ -308,7 +332,15 @@ class AnalysisViewController: UIViewController {
             stringListWithSpacesS2 = generateStringLists(from: s2)
             boldIndexesS2 = [5, 8, 10]
             
-            s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            if d.modifiedYearsLeft < 0 {
+                
+                s3 = ""
+
+            } else {
+                
+                s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
+            }
+
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
             boldIndexesS3 = [6, 15, 22]
@@ -323,8 +355,14 @@ class AnalysisViewController: UIViewController {
             stringListWithSpacesS2 = generateStringLists(from: s2)
             boldIndexesS2 = [5, 7, 12]
 
+            if d.modifiedYearsLeft < 0 {
+                
+                s3 = ""
+                
+            } else {
             
             s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could live for another \(d.modifiedYearsLeft) years from today, and delay \(d.possesser) death until the year \(d.modifiedDeathYear)."
+            }
             
             stringListWithSpacesS3 = generateStringLists(from: s3)
             boldIndexesS3 = [6, 16, 27]
@@ -388,18 +426,32 @@ class AnalysisViewController: UIViewController {
         resultString.append(attributedParagraphSpent)
         
         // generate paragraph 0 part 2
+        var p0Part2 = ""
         
-        let p0Part2 = " in \(d.possesser) life to date. At this point in time \(d.subject) could live for another "
+        if d.modifiedYearsLeft < 0 {
+            p0Part2 = " in \(d.possesser) life to date. At this point we have no estimation of how much longer \(d.subject) could live"
+        } else {
+            p0Part2 = " in \(d.possesser) life to date. At this point in time \(d.subject) could live for another "
+        }
+
+        
         resultString.append(tf.createPlainString(with: p0Part2))
         
         // generate paragraph 0 part 2a (time remaining)
         
-        let clockDescriptionRemainingListWithSpaces = generateStringLists(from: lifeSpan.clockDescriptionRemaining)
-        let boldInedxesRemainingList = [0, 2, 4]
-        
-        let attributedParagraphRemaining = tf.createStringWithBoldParts(with: clockDescriptionRemainingListWithSpaces, boldedIndexes: boldInedxesRemainingList)
-        resultString.append(attributedParagraphRemaining)
-        
+        if d.modifiedYearsLeft < 0 {
+            
+            // nothing yet
+            
+        } else {
+            
+            let clockDescriptionRemainingListWithSpaces = generateStringLists(from: lifeSpan.clockDescriptionRemaining)
+            let boldInedxesRemainingList = [0, 2, 4]
+            
+            let attributedParagraphRemaining = tf.createStringWithBoldParts(with: clockDescriptionRemainingListWithSpaces, boldedIndexes: boldInedxesRemainingList)
+            resultString.append(attributedParagraphRemaining)
+        }
+
         // generate paragraph 0 part 3 (which, as of now, isn't much)
         
         let p0Part3 = ". \n\n"
