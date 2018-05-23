@@ -44,13 +44,9 @@ let maxHumanLifeExpectancy = 122
 /// able to predict how much time the user has left.
 class UserProfile {
     
-    var name:String
+    var name: String
+    var birthDate: Date
     var pronounChoices: RangedValue
-
-    var birthYear: RangedValue
-    var birthDay: RangedValue
-    var birthMonth: RangedValue
-    
     var lifeExpectancy: RangedValue
     
     var activityLevel: RangedValue
@@ -60,21 +56,11 @@ class UserProfile {
         
     init() {
         name = "John F. Pavley"
+        birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1961")!
         
-        let birthYearMin = CalendarUtilities.thisYear() - maxHumanLifeExpectancy
-        let birthYearMax = CalendarUtilities.thisYear()
-        birthYear = RangedValue(min: Float(birthYearMin), max: Float(birthYearMax), setting: 1961)
-        
-        let birthDayMin = 1
-        let birthDayMax = 31
-        birthDay = RangedValue(min: Float(birthDayMin), max: Float(birthDayMax), setting: 13)
-        
-        let birthMonthMin = 1
-        let birthMonthMax = 12
-        birthMonth = RangedValue(min: Float(birthMonthMin), max: Float(birthMonthMax), setting: 2)
-        
-        
-        let lifeExpectancyMin = Float(CalendarUtilities.thisYear()) - birthYear.setting
+        let cal = CalendarUtilities.utcCal()
+        let birthYear = cal.component(.year, from: birthDate)
+        let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
         let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
         
@@ -93,7 +79,7 @@ class UserProfile {
         var us = UserStats()
         
         us.age = Int(age)
-        us.birthYear = Int(birthYear.setting.rounded(.down))
+        us.birthYear = birthYear
         us.lifeExpectancy = Int(ale.rounded(.down))
         us.modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.down))
         us.missingYears = abs(us.modifiedLifeExpectancy - us.lifeExpectancy)
@@ -104,33 +90,31 @@ class UserProfile {
     }
     
     func setBirthDate(with newDate: Date) {
+        birthDate = newDate
+    }
+    
+    var birthYear: Int {
         let cal = CalendarUtilities.utcCal()
-        
-        let month = cal.component(.month, from: newDate)
-        birthMonth.setting = Float(month)
-        
-        let day = cal.component(.day, from: newDate)
-        birthDay.setting = Float(day)
-        
-        let year = cal.component(.year, from: newDate)
-        birthYear.setting = Float(year)
+        let year = cal.component(.year, from: birthDate)
+        return year
+    }
+    
+    var birthMonth: Int {
+        let cal = CalendarUtilities.utcCal()
+        let month = cal.component(.month, from: birthDate)
+        return month
+    }
+    
+    var birthDay: Int {
+        let cal = CalendarUtilities.utcCal()
+        let day = cal.component(.day, from: birthDate)
+        return day
     }
     
     var pronouns: PronounTrio {
         let currentSetting = pronounChoices.settingAsInt()
         let gender = PronounGender(rawValue: currentSetting)
         return PronounTrio.getPronouns(for: gender!)
-    }
-    
-    var birthDate: Date {
-        
-        let birthDateString = "\(birthMonth.settingAsInt())-\(birthDay.settingAsInt())-\(birthYear.settingAsInt())"
-        if let birthDate = CalendarUtilities.stringToDate(dateString: birthDateString) {
-            return birthDate
-        } else {
-            print("Error calculating birthdate")
-            return Date()
-        }
     }
     
     var ale: CGFloat {
@@ -142,7 +126,7 @@ class UserProfile {
     var age: CGFloat {
         get {            
             // humans always round down their age!
-            let userAge = Float(CalendarUtilities.thisYear()) - birthYear.setting.rounded(.down)
+            let userAge = CalendarUtilities.thisYear() - birthYear
             return CGFloat(userAge)
         }
     }

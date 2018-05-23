@@ -12,8 +12,8 @@ class CalendarUtilities {
     
     /// Transforms a string into a Date object.
     ///
-    /// - Parameter dateString: mm-dd-yyy
-    /// - Returns: Date based on mm-dd-yyy
+    /// - Parameter dateString: MM-dd-yyyy
+    /// - Returns: Date based on MM-dd-yyyy
     static func stringToDate(dateString: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"

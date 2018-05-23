@@ -51,7 +51,7 @@ class TabViewController: UITabBarController {
     
     func createLifespanForUser() -> Lifespan {
                 
-        let birthDate = CalendarUtilities.stringToDate(dateString: "\(userProfile!.birthMonth.settingAsInt())-\(userProfile!.birthDay.settingAsInt())-\(userProfile!.birthYear.settingAsInt())")
+        let birthDate = CalendarUtilities.stringToDate(dateString: "\(userProfile!.birthMonth)-\(userProfile!.birthDay)-\(userProfile!.birthYear)")
         let ls = Lifespan(name: userProfile!.name, dateOfBirth: birthDate!, averageLifeExpectancy: userProfile!.ale)
         
         let activityLevelMod = SpanModifier(name: "activityLevel", value: CGFloat(userProfile!.activityLevel.setting), effect: .positive)

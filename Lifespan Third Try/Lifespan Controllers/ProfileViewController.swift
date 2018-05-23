@@ -179,15 +179,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
-        let birthDay = userProfile.birthDay.settingAsInt()
-        let birthMonthNumber = userProfile.birthMonth.settingAsInt()
-        let birthMonth = CalendarUtilities.monthName(from: birthMonthNumber)
-        let birthYear = userProfile.birthYear.settingAsInt()
+        let birthDay = userProfile.birthDay
+        let birthMonth = CalendarUtilities.monthName(from: userProfile.birthMonth)
+        let birthYear = userProfile.birthYear
         let ale = userProfile.lifeExpectancy.settingAsInt()
         birthField.text = "\(birthDay) \(birthMonth) \(birthYear) \(ale)"
-        
-        // handle the varible number of days in a month
-        userProfile.birthDay.max = Float(CalendarUtilities.daysIn(monthNumber: birthMonthNumber, for: birthYear))
     }
     
     fileprivate func updateAleField() {
