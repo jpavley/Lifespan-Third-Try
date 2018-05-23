@@ -84,11 +84,11 @@ class AnalysisViewController: UIViewController {
             return words[Levels.low.rawValue]
         case 3...4:
             return words[Levels.mediumLow.rawValue]
-        case 5:
+        case 5...6:
             return words[Levels.moderate.rawValue]
-        case 6...7:
+        case 7...8:
             return words[Levels.mediumHigh.rawValue]
-        case 8...:
+        case 9...10:
             return words[Levels.high.rawValue]
         default:
             return words[Levels.unknown.rawValue]
