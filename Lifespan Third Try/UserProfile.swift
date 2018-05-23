@@ -29,6 +29,8 @@ struct UserStats {
     var modifiedDeathYear: Int = 0
 }
 
+let maxHumanLifeExpectancy = 122
+
 /// Models a user of Lifespan.
 /// A good source for life expentancy is // https://www.ssa.gov/planners/lifeexpectancy.html
 class UserProfile {
@@ -52,7 +54,7 @@ class UserProfile {
     init() {
         name = "John F. Pavley"
         
-        let birthYearMin = CalendarUtilities.thisYear() - 120
+        let birthYearMin = CalendarUtilities.thisYear() - maxHumanLifeExpectancy
         let birthYearMax = CalendarUtilities.thisYear()
         birthYear = RangedValue(min: Float(birthYearMin), max: Float(birthYearMax), setting: 1961)
         
@@ -66,7 +68,7 @@ class UserProfile {
         
         
         let lifeExpectancyMin = Float(CalendarUtilities.thisYear()) - birthYear.setting
-        let lifeExpectancyMax = Float(120)
+        let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
         
         activityLevel = RangedValue(min: 0, max: 10, setting: 0)
