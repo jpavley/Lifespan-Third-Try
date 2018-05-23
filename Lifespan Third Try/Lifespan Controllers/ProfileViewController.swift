@@ -48,6 +48,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     // MARK:- Control Actions -
     
+    @IBAction func nameEditingChanged(_ sender: UITextField) {
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let up = tb.userProfile else {
+            return
+        }
+        
+        up.name = nameField.text!
+    }
+    
     @IBAction func pronounsValueChanged(_ sender: UISlider) {
         let tb = self.tabBarController as! TabViewController
         
