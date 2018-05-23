@@ -55,15 +55,23 @@ class AnalysisViewController: UIViewController {
     }
     
     fileprivate func levelToText(level: CGFloat,
-                                 words: [String] = ["notset",
+                                 words: [String] = ["not set",
+                                                    "very-low",
                                                     "low",
                                                     "moderate",
                                                     "high",
+                                                    "very-high",
                                                     "unknown"]) -> String {
         
         enum Levels: Int {
             // map the index of the words to their place in the array
-            case notset = 0, low = 1, moderate = 2, high = 3, unknown = 4
+            case notset = 0
+            case low = 1
+            case mediumLow = 2
+            case moderate = 3
+            case mediumHigh = 4
+            case high = 5
+            case unknown = 6
         }
         
         // round that float to a neo-Int	
@@ -72,11 +80,15 @@ class AnalysisViewController: UIViewController {
         switch UInt(level) {
         case 0:
             return words[Levels.notset.rawValue]
-        case 1...4:
+        case 1...2:
             return words[Levels.low.rawValue]
+        case 3...4:
+            return words[Levels.mediumLow.rawValue]
         case 5:
             return words[Levels.moderate.rawValue]
-        case 6...:
+        case 6...7:
+            return words[Levels.mediumHigh.rawValue]
+        case 8...:
             return words[Levels.high.rawValue]
         default:
             return words[Levels.unknown.rawValue]
@@ -143,9 +155,9 @@ class AnalysisViewController: UIViewController {
         
         // compute states
         var lifeFactorState: LifeFactorState
-        if d.activityLevel == "notset" && d.stressLevel == "notset" && d.riskLevel == "notset" && d.geneticsLevel == "notset" {
+        if d.activityLevel == "not set" && d.stressLevel == "not set" && d.riskLevel == "not set" && d.geneticsLevel == "not set" {
             lifeFactorState = .noFactors
-        } else if d.activityLevel != "notset" && d.stressLevel != "notset" && d.riskLevel != "notset" && d.geneticsLevel != "notset" {
+        } else if d.activityLevel != "not set" && d.stressLevel != "not set" && d.riskLevel != "not set" && d.geneticsLevel != "not set" {
             lifeFactorState = .allFactors
         } else {
             lifeFactorState = .someFactors
@@ -176,10 +188,10 @@ class AnalysisViewController: UIViewController {
         case .someFactors:
             
             let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) life expectancy of \(d.lifeExpectancy) years is influenced by one or more life factors: "
-            let part2 = d.activityLevel != "notset" ? "A \(d.activityLevel) level of physical activity. " : ""
-            let part3 = d.stressLevel != "notset" ? "A \(d.stressLevel) level of mental stress. " : ""
-            let part4 = d.riskLevel != "notset" ? "A \(d.riskLevel) level of risky behavior. " : ""
-            let part5 = d.geneticsLevel != "notset" ? "An \(d.geneticsLevel) genetic history. " : ""
+            let part2 = d.activityLevel != "not set" ? "A \(d.activityLevel) level of physical activity. " : ""
+            let part3 = d.stressLevel != "not set" ? "A \(d.stressLevel) level of mental stress. " : ""
+            let part4 = d.riskLevel != "not set" ? "A \(d.riskLevel) level of risky behavior. " : ""
+            let part5 = d.geneticsLevel != "not set" ? "An \(d.geneticsLevel) genetic history. " : ""
             let part6 = "\n\n"
             
             resultString = part1 + part2 + part3 + part4 + part5 + part6
@@ -422,9 +434,11 @@ class AnalysisViewController: UIViewController {
         let stressLevel = levelToText(level: userProfile.stress)
         let activityLevel = levelToText(level: userProfile.activity)
         let riskLevel = levelToText(level: userProfile.risk)
-        let geneticsLevel = levelToText(level: userProfile.genetics, words: ["notset",
+        let geneticsLevel = levelToText(level: userProfile.genetics, words: ["not set",
                                                                              "unfortunate",
+                                                                             "below-average",
                                                                              "average",
+                                                                             "above-average",
                                                                              "excellent",
                                                                              "unknown"])
         
