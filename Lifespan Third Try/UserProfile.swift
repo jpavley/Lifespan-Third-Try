@@ -27,12 +27,21 @@ struct UserStats {
     var modifiedLifeExpectancy: Int = 0
     var missingYears: Int = 0
     var modifiedDeathYear: Int = 0
+    var hoursBeyondALE: CGFloat = 0.0
 }
 
 let maxHumanLifeExpectancy = 122
 
 /// Models a user of Lifespan.
 /// A good source for life expentancy is // https://www.ssa.gov/planners/lifeexpectancy.html
+/// An interesting question is this: Is the user alive or dead and does this model care?
+/// No. The model doesn't care about the state of the user's ghost. What model cares about
+/// is the user's life expectancy and how it is effect by life factors. If the user is dead,
+/// is PII. However, if the model detects that the user seems to be alive beyond their
+/// life expectancy then the user is "living on borrow time" and that fact is important
+/// to the LifeClock and Analysis. Living past your life expectancy means the LifeClock is
+/// set to 00:00:00 (12 midnight) and the analysis might want to mention it's no longer
+/// able to predict how much time the user has left.
 class UserProfile {
     
     var name:String
@@ -48,10 +57,7 @@ class UserProfile {
     var stressLevel: RangedValue
     var riskLevel: RangedValue
     var geneticsLevel: RangedValue
-    
-    var isDead: Bool
-    var livingOnBorrowedTime: Bool
-    
+        
     init() {
         name = "John F. Pavley"
         
@@ -76,11 +82,7 @@ class UserProfile {
         stressLevel = RangedValue(min: 0, max: 10, setting: 0)
         riskLevel = RangedValue(min: 0, max: 10, setting: 0)
         geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
-        
-        // these are at runtime set by TabViewController:updateLifeClock()
-        isDead = false
-        livingOnBorrowedTime = false
-        
+                
         pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
                                      max: Float(PronounGender.male.rawValue),
                                      setting: Float(PronounGender.male.rawValue))
@@ -96,6 +98,7 @@ class UserProfile {
         us.modifiedLifeExpectancy = Int(lifeSpan.modifiedALE!.rounded(.down))
         us.missingYears = abs(us.modifiedLifeExpectancy - us.lifeExpectancy)
         us.modifiedDeathYear = us.birthYear + us.modifiedLifeExpectancy
+        us.hoursBeyondALE = lifeSpan.hoursBeyondALE
         
         return us
     }

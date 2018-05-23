@@ -37,28 +37,8 @@ class TabViewController: UITabBarController {
             return
         }
         
+        // update the LifeClock by creating a new one
         lifeClock = createLifeClockForUser(with: lifeSpan)
-        
-        guard let lifeClock = lifeClock else {
-            print("cant create LifeClock")
-            return
-        }
-        
-        guard let userProfile = userProfile else {
-            print("cant create userProfile")
-            return
-        }
-        
-        // TODO: check if the user is dead
-        
-        // if the lifeClock is set to 00:00:00 and the user is not dead they
-        // are living on borrowed time.
-        if !userProfile.isDead && CalendarUtilities.stringToTime(timeString: "00:00:00") == lifeClock.time {
-            userProfile.livingOnBorrowedTime = true
-            print("\(userProfile.name) (aged \(userProfile.age) is living on borrowed time.")
-        } else {
-            userProfile.livingOnBorrowedTime = false
-        }
         
     }
     

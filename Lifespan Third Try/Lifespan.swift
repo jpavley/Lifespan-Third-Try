@@ -50,6 +50,8 @@ class Lifespan {
     var minuteHandValue = 0
     var secondHandValue = 0
     
+    var hoursBeyondALE:CGFloat = 0.0
+    
     var hoursRemaining: Int {
         
         if minuteHandValue == 0 && secondHandValue == 0 {
@@ -219,17 +221,16 @@ class Lifespan {
         
         var timeSpent = 12 * percentOfLifeSpent
         
-        // TODO: User is "living on borrowed time"
-        //       How to show that? Black clock face?
         if timeSpent > 12.0 {
+            // user is living on borrowed time
+            // save the amount of "over time"
+            hoursBeyondALE = timeSpent
+            // set the time to 12 midnight
             timeSpent = 12.0
+        } else {
+            hoursBeyondALE = 0.0
         }
         
-        // TODO: Need to account for current partial year in hours, minutes, and seconds.
-        //       If today is 6/15/2018 then we are 50% of the way through 2018.
-        //       The current algo only calculates from 1/1/2018.
-        //       (thisYear - birthYear) + percentOfThisYearAlreadyPassed.
-
         hourHandValue = Int(timeSpent.divisor)
         let hoursRemainder = timeSpent.remainder
         
