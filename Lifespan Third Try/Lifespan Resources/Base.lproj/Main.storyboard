@@ -818,6 +818,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAk-24-vJp" userLabel="Biometer Container">
+                                <rect key="frame" x="16" y="118" width="288" height="288"/>
+                                <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-d5-DQx" userLabel="Biometer View" customClass="BiometerView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="height" multiplier="1:1" id="5cb-9F-Ewm"/>
+                                    <constraint firstItem="c0I-d5-DQx" firstAttribute="centerY" secondItem="UAk-24-vJp" secondAttribute="centerY" id="NKp-hY-x25"/>
+                                    <constraint firstItem="c0I-d5-DQx" firstAttribute="height" secondItem="UAk-24-vJp" secondAttribute="height" id="Utq-AI-5yo"/>
+                                    <constraint firstItem="c0I-d5-DQx" firstAttribute="centerX" secondItem="UAk-24-vJp" secondAttribute="centerX" id="gIG-ZA-cYL"/>
+                                    <constraint firstItem="c0I-d5-DQx" firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="width" id="pKO-o4-Cs6"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPv-QD-8cD">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <constraints>
@@ -827,131 +844,23 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="aAA-Bj-cbU"/>
                                 </connections>
                             </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-bM-rkh">
-                                <rect key="frame" x="8" y="118" width="304" height="401"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Lifespan 1.0">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-DQo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">This iOS app implements a life clock. The idea is to map a human life span from birth to estimated death on a 12-hour analog clock. The time the clock is set to represents the user's current age in terms of hours, minutes, and seconds. By glancing at the life clock now and then, the user is reminded not to waste valuable time on trivial matters.
-Lifespan incorporates longevity factors into the estimation of a user's life. These factors include activity level, stress level, risk behavior level, and quality of genetics. The user self-scores these factors on a scale from 1 to 10. Some small attempt has been made by the author to apply the most recent scientific thinking to these factors in terms of their impact on longevity. But, honestly, there is little hard-data and the author of this app assumes that in the years to come research will continue to break the current model of longevity and bring new insights into consideration. Therefore, Lifespan is an app for inspirational, entertainment, and educational purposes. Lifespan's job is to enable the user to focus on their life and how much they have left of it—not in any way predict the length of a user's life.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="ArialMT"/>
-                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Usage">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-DQo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">To use the Lifespan app go to the Profile tab and enter your biographical data and self-score your life factors. Then hop over to the Clock and Analysis tabs to see how your data and factors are displayed. You can move back and forth between the tabs until you get a clock and analysis that you prefer or that seems more accurate to you.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="ArialMT"/>
-                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Gender and Pronouns">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-ICAgDQo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You can customize the Analysis text with your preferred personal pronouns. Below each pronoun field are suggestion but you are not restricted to any of these. If you are grammarian than you'll want to know that that the three pronoun fields correspond to subjective, objective, and possessive (in that order). In longevity research there is much analysis of women enjoying longer lifespans than men, but this observation seems to have more to do with lifestyle factors than gender or sex at birth. So, the author decided to side step the issue and separate gender/sex from grammar such that the analysis text is personalized to your preferences.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="ArialMT"/>
-                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Data Privacy">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-DQo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">The Lifespan app had not server-side services and there is no transmission or collection of user data by the author. All data entered into the app is contained within the app on the user's phone. There is no advertising or marketing functionality built into the app. The entire source code of the app is available on GitHub under the MIT open source license. For more info take a look at the Lifespan code at https://github.com/jpavley/Lifespan-Third-Try</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="ArialMT"/>
-                                            <font key="NSOriginalFont" size="18" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="10" firstLineHeadIndent="50" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UAk-24-vJp" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="4QH-2n-arw"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="top" secondItem="OZg-IU-5Yi" secondAttribute="top" constant="8" id="9S6-BA-SQN"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" id="EoE-Me-6oG"/>
-                            <constraint firstItem="zeo-bM-rkh" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" constant="8" id="FS4-n9-z31"/>
-                            <constraint firstItem="zeo-bM-rkh" firstAttribute="bottom" secondItem="OZg-IU-5Yi" secondAttribute="bottom" id="a9O-W4-rdG"/>
-                            <constraint firstItem="OZg-IU-5Yi" firstAttribute="trailing" secondItem="zeo-bM-rkh" secondAttribute="trailing" constant="8" id="ogS-ks-mFy"/>
+                            <constraint firstItem="UAk-24-vJp" firstAttribute="centerX" secondItem="Dzx-nE-EA7" secondAttribute="centerX" id="Z7j-2v-xvr"/>
+                            <constraint firstItem="UAk-24-vJp" firstAttribute="width" secondItem="Dzx-nE-EA7" secondAttribute="width" multiplier="0.9" id="j2c-0v-kdq"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="trailing" secondItem="OZg-IU-5Yi" secondAttribute="trailing" id="t51-Ck-9Qd"/>
-                            <constraint firstItem="zeo-bM-rkh" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="zAd-ZF-p6X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OZg-IU-5Yi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Read Me" image="year" id="gRs-q8-UqQ"/>
-                    <connections>
-                        <outlet property="textView" destination="zeo-bM-rkh" id="Jzi-7P-wKd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyl-J6-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.125" y="1067.9577464788733"/>
+            <point key="canvasLocation" x="1449" y="-320"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -982,6 +891,6 @@ DQo
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hGu-Mn-aHr"/>
+        <segue reference="aXA-Fl-yZ4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -27,7 +27,7 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLayoutSubviews() {
         // FIX: https://stackoverflow.com/questions/28053140/uitextview-is-not-scrolled-to-top-when-loaded
-        textView.setContentOffset(CGPoint.zero, animated: false)
+        // textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     

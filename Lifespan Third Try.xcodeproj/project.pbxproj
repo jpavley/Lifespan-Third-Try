@@ -20,6 +20,7 @@
 		4828069520B115C800F0091E /* Pronouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828069420B115C800F0091E /* Pronouns.swift */; };
 		484D707A20A541910086CA68 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707920A541910086CA68 /* TipViewController.swift */; };
 		484D707C20A547470086CA68 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707B20A547470086CA68 /* DimmingPresentationController.swift */; };
+		48664C3B20B98D770060634E /* BiometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3A20B98D770060634E /* BiometerView.swift */; };
 		48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D70425207C118600F569AF /* TombstoneViewController.swift */; };
 		48D7042820803ECA00F569AF /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7042720803ECA00F569AF /* LogoView.swift */; };
 		48E25CA42069B405006BB346 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA32069B405006BB346 /* ProfileViewController.swift */; };
@@ -77,6 +78,7 @@
 		4828069420B115C800F0091E /* Pronouns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pronouns.swift; sourceTree = "<group>"; };
 		484D707920A541910086CA68 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		484D707B20A547470086CA68 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		48664C3A20B98D770060634E /* BiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometerView.swift; sourceTree = "<group>"; };
 		48963FC420A21C6E00334205 /* BUGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUGS.md; sourceTree = "<group>"; };
 		48D01AEB208A2A2600AF13F0 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		48D70425207C118600F569AF /* TombstoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TombstoneViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,26 @@
 			path = "Lifespan Third TryUITests";
 			sourceTree = "<group>";
 		};
+		48664C3720B98C470060634E /* Clock Views */ = {
+			isa = PBXGroup;
+			children = (
+				48E25CB92069B88B006BB346 /* HourHandView.swift */,
+				48E25CB82069B88B006BB346 /* MinuteHandView.swift */,
+				48E25CB72069B88B006BB346 /* SecondHandView.swift */,
+				48D7042720803ECA00F569AF /* LogoView.swift */,
+				48E25CB62069B88B006BB346 /* ClockView.swift */,
+			);
+			name = "Clock Views";
+			sourceTree = "<group>";
+		};
+		48664C3C20B98F560060634E /* Biometer Views */ = {
+			isa = PBXGroup;
+			children = (
+				48664C3A20B98D770060634E /* BiometerView.swift */,
+			);
+			name = "Biometer Views";
+			sourceTree = "<group>";
+		};
 		48E25CA02069B261006BB346 /* Lifespan Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,12 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				48E25CAE2069B846006BB346 /* PrettyBackgroundView.swift */,
-				48E25CB62069B88B006BB346 /* ClockView.swift */,
 				48E25CBA2069B88B006BB346 /* CoreGraphicsView.swift */,
-				48E25CB92069B88B006BB346 /* HourHandView.swift */,
-				48E25CB82069B88B006BB346 /* MinuteHandView.swift */,
-				48E25CB72069B88B006BB346 /* SecondHandView.swift */,
-				48D7042720803ECA00F569AF /* LogoView.swift */,
+				48664C3720B98C470060634E /* Clock Views */,
+				48664C3C20B98F560060634E /* Biometer Views */,
 			);
 			path = "Lifespan Views";
 			sourceTree = "<group>";
@@ -403,6 +422,7 @@
 				4828069520B115C800F0091E /* Pronouns.swift in Sources */,
 				1878F00C2067EEB600BEA332 /* ClockViewController.swift in Sources */,
 				48E25CB02069B846006BB346 /* WebUtilities.swift in Sources */,
+				48664C3B20B98D770060634E /* BiometerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
