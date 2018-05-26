@@ -810,7 +810,7 @@
             </objects>
             <point key="canvasLocation" x="1596" y="1661"/>
         </scene>
-        <!--Read Me-->
+        <!--Biometer-->
         <scene sceneID="BiT-b3-XWa">
             <objects>
                 <viewController id="NKT-sB-7m9" customClass="BiometerViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
@@ -856,7 +856,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OZg-IU-5Yi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Read Me" image="year" id="gRs-q8-UqQ"/>
+                    <tabBarItem key="tabBarItem" title="Biometer" image="year" id="gRs-q8-UqQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyl-J6-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -874,8 +874,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="NKT-sB-7m9" kind="relationship" relationship="viewControllers" id="SMM-En-54e"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="M2B-uX-7MA" kind="relationship" relationship="viewControllers" id="ruJ-VD-Dlb"/>
                     </connections>
                 </tabBarController>
@@ -891,6 +891,6 @@
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aXA-Fl-yZ4"/>
+        <segue reference="aAA-Bj-cbU"/>
     </inferredMetricsTieBreakers>
 </document>
