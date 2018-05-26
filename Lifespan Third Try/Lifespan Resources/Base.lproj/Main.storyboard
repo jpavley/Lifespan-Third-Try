@@ -813,7 +813,7 @@
         <!--Read Me-->
         <scene sceneID="BiT-b3-XWa">
             <objects>
-                <viewController id="NKT-sB-7m9" customClass="ReadmeViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NKT-sB-7m9" customClass="BiometerViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dzx-nE-EA7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

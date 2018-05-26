@@ -1,5 +1,5 @@
 //
-//  ReadmeViewController.swift
+//  BiometerViewController.swift
 //  Lifespan Third Try
 //
 //  Created by jpavley12 on 3/25/18.
@@ -9,9 +9,7 @@
 import UIKit
 import WebKit
 
-class ReadmeViewController: UIViewController, WKNavigationDelegate {
-
-    @IBOutlet weak var textView: UITextView!
+class BiometerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +22,7 @@ class ReadmeViewController: UIViewController, WKNavigationDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidLayoutSubviews() {
-        // FIX: https://stackoverflow.com/questions/28053140/uitextview-is-not-scrolled-to-top-when-loaded
-        // textView.setContentOffset(CGPoint.zero, animated: false)
-    }
-    
+
     
     // MARK: - Navigation
     
