@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class BiometerView: CoreGraphicsView {
     
     // Only override draw() if you perform custom drawing.
