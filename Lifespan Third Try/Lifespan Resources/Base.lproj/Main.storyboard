@@ -831,6 +831,9 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-2k-og5" userLabel="Biological Age Hand" customClass="BiologicalHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zD-qP-YIi" customClass="OdometerTextView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -842,9 +845,13 @@
                                     <constraint firstItem="c0I-d5-DQx" firstAttribute="height" secondItem="UAk-24-vJp" secondAttribute="height" id="Utq-AI-5yo"/>
                                     <constraint firstItem="oKJ-2k-og5" firstAttribute="centerX" secondItem="UAk-24-vJp" secondAttribute="centerX" id="WGi-hX-86x"/>
                                     <constraint firstItem="oKJ-2k-og5" firstAttribute="height" secondItem="UAk-24-vJp" secondAttribute="height" id="aFX-b9-096"/>
+                                    <constraint firstItem="6zD-qP-YIi" firstAttribute="centerX" secondItem="UAk-24-vJp" secondAttribute="centerX" id="bm1-6I-reA"/>
+                                    <constraint firstItem="6zD-qP-YIi" firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="width" id="dGf-2A-mv2"/>
+                                    <constraint firstItem="6zD-qP-YIi" firstAttribute="height" secondItem="UAk-24-vJp" secondAttribute="height" id="dcb-OX-DiO"/>
                                     <constraint firstItem="c0I-d5-DQx" firstAttribute="centerX" secondItem="UAk-24-vJp" secondAttribute="centerX" id="gIG-ZA-cYL"/>
                                     <constraint firstItem="c0I-d5-DQx" firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="width" id="pKO-o4-Cs6"/>
                                     <constraint firstItem="oKJ-2k-og5" firstAttribute="centerY" secondItem="UAk-24-vJp" secondAttribute="centerY" id="qjs-ku-FYX"/>
+                                    <constraint firstItem="6zD-qP-YIi" firstAttribute="centerY" secondItem="UAk-24-vJp" secondAttribute="centerY" id="uwh-dr-uJe"/>
                                     <constraint firstItem="CYO-Tf-EGZ" firstAttribute="height" secondItem="UAk-24-vJp" secondAttribute="height" id="x8F-b6-c5u"/>
                                     <constraint firstItem="oKJ-2k-og5" firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="width" id="ypp-ZG-gzp"/>
                                 </constraints>
@@ -888,7 +895,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-bQ-9gp">
                                         <rect key="frame" x="0.0" y="52" width="288" height="18"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="74% of Potential Life Expectancey">
+                                            <fragment content="Living at 74%">
                                                 <attributes>
                                                     <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
