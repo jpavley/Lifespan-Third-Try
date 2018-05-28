@@ -825,10 +825,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-Tf-EGZ" userLabel="Chronological Age Hand" customClass="ChronologicalAgeView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                    <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-Tf-EGZ" userLabel="Chronological Age Hand" customClass="ChronologicalAgeView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-2k-og5" userLabel="Biological Age Hand" customClass="BiologicalHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                    <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-2k-og5" userLabel="Biological Age Hand" customClass="BiologicalHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zD-qP-YIi" customClass="OdometerTextView" customModule="Lifespan_Third_Try" customModuleProvider="target">
@@ -922,6 +922,12 @@
                         <viewLayoutGuide key="safeArea" id="OZg-IU-5Yi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Biometer" image="year" id="gRs-q8-UqQ"/>
+                    <connections>
+                        <outlet property="biologicalKeyLabel" destination="9at-5X-lkE" id="WSn-Sd-DJd"/>
+                        <outlet property="chronologicalKeyLabel" destination="GYc-xK-L2W" id="4RT-zA-EbL"/>
+                        <outlet property="livingKeyLabel" destination="d18-bQ-9gp" id="MRd-LU-2QU"/>
+                        <outlet property="odometerTextView" destination="6zD-qP-YIi" id="uBF-gE-nhH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyl-J6-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

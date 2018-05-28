@@ -11,6 +11,16 @@ import WebKit
 
 class BiometerViewController: UIViewController {
     
+    @IBOutlet weak var chronologicalKeyLabel: UILabel!
+    @IBOutlet weak var biologicalKeyLabel: UILabel!
+    @IBOutlet weak var livingKeyLabel: UILabel!
+    
+    
+    @IBOutlet weak var odometerTextView: OdometerTextView!
+    
+    let chronologicalHandTag = 100
+    let biologicalHandTag = 200
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
