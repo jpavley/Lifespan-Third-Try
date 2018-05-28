@@ -527,43 +527,43 @@ class BiometerView: CoreGraphicsView {
         /*  Odometer Shapes  */
         /*  Shape 34  */
         let pathRef34 = CGMutablePath()
-        pathRef34.move(to: CGPoint(x: 168.3, y: 456))
-        pathRef34.addLine(to: CGPoint(x: 456.3, y: 456))
-        pathRef34.addLine(to: CGPoint(x: 456.3, y: 504))
-        pathRef34.addLine(to: CGPoint(x: 168.3, y: 504))
-        pathRef34.addLine(to: CGPoint(x: 168.3, y: 456))
+        pathRef34.move(to: CGPoint(x: 176, y: 455.333))
+        pathRef34.addLine(to: CGPoint(x: 464, y: 455.333))
+        pathRef34.addLine(to: CGPoint(x: 464, y: 503.333))
+        pathRef34.addLine(to: CGPoint(x: 176, y: 503.333))
+        pathRef34.addLine(to: CGPoint(x: 176, y: 455.333))
         pathRef34.closeSubpath()
         
         /*  Drop Shadow  */
         let shadowColor3 = CGColor(colorSpace: colorSpace, components: [0.722, 0.722, 0.722, 1])
         
         let shadowPath3 = CGMutablePath()
-        shadowPath3.move(to: CGPoint(x: 133.8, y: 452.5))
-        shadowPath3.addCurve(to: CGPoint(x: 137.8, y: 456.5), control1: CGPoint(x: 136.009, y: 452.5), control2: CGPoint(x: 137.8, y: 454.291))
-        shadowPath3.addLine(to: CGPoint(x: 137.8, y: 504.5))
-        shadowPath3.addCurve(to: CGPoint(x: 133.8, y: 508.5), control1: CGPoint(x: 137.8, y: 506.709), control2: CGPoint(x: 136.009, y: 508.5))
-        shadowPath3.addLine(to: CGPoint(x: -154.2, y: 508.5))
-        shadowPath3.addCurve(to: CGPoint(x: -158.2, y: 504.5), control1: CGPoint(x: -156.409, y: 508.5), control2: CGPoint(x: -158.2, y: 506.709))
-        shadowPath3.addLine(to: CGPoint(x: -158.2, y: 456.5))
-        shadowPath3.addCurve(to: CGPoint(x: -154.2, y: 452.5), control1: CGPoint(x: -158.2, y: 454.291), control2: CGPoint(x: -156.409, y: 452.5))
-        shadowPath3.addLine(to: CGPoint(x: 133.8, y: 452.5))
+        shadowPath3.move(to: CGPoint(x: 141.5, y: 451.833))
+        shadowPath3.addCurve(to: CGPoint(x: 145.5, y: 455.833), control1: CGPoint(x: 143.709, y: 451.833), control2: CGPoint(x: 145.5, y: 453.624))
+        shadowPath3.addLine(to: CGPoint(x: 145.5, y: 503.833))
+        shadowPath3.addCurve(to: CGPoint(x: 141.5, y: 507.833), control1: CGPoint(x: 145.5, y: 506.042), control2: CGPoint(x: 143.709, y: 507.833))
+        shadowPath3.addLine(to: CGPoint(x: -146.5, y: 507.833))
+        shadowPath3.addCurve(to: CGPoint(x: -150.5, y: 503.833), control1: CGPoint(x: -148.709, y: 507.833), control2: CGPoint(x: -150.5, y: 506.042))
+        shadowPath3.addLine(to: CGPoint(x: -150.5, y: 455.833))
+        shadowPath3.addCurve(to: CGPoint(x: -146.5, y: 451.833), control1: CGPoint(x: -150.5, y: 453.624), control2: CGPoint(x: -148.709, y: 451.833))
+        shadowPath3.addLine(to: CGPoint(x: 141.5, y: 451.833))
         shadowPath3.closeSubpath()
         
         let clipPath3 = CGMutablePath()
-        clipPath3.move(to: CGPoint(x: 151.8, y: 424.5))
-        clipPath3.addLine(to: CGPoint(x: 473.8, y: 424.5))
-        clipPath3.addLine(to: CGPoint(x: 473.8, y: 536.5))
-        clipPath3.addLine(to: CGPoint(x: 151.8, y: 536.5))
+        clipPath3.move(to: CGPoint(x: 159.5, y: 423.833))
+        clipPath3.addLine(to: CGPoint(x: 481.5, y: 423.833))
+        clipPath3.addLine(to: CGPoint(x: 481.5, y: 535.833))
+        clipPath3.addLine(to: CGPoint(x: 159.5, y: 535.833))
         clipPath3.closeSubpath()
-        clipPath3.move(to: CGPoint(x: 456.8, y: 452.5))
-        clipPath3.addLine(to: CGPoint(x: 168.8, y: 452.5))
-        clipPath3.addCurve(to: CGPoint(x: 164.8, y: 456.5), control1: CGPoint(x: 166.591, y: 452.5), control2: CGPoint(x: 164.8, y: 454.291))
-        clipPath3.addLine(to: CGPoint(x: 164.8, y: 504.5))
-        clipPath3.addCurve(to: CGPoint(x: 168.8, y: 508.5), control1: CGPoint(x: 164.8, y: 506.709), control2: CGPoint(x: 166.591, y: 508.5))
-        clipPath3.addLine(to: CGPoint(x: 456.8, y: 508.5))
-        clipPath3.addCurve(to: CGPoint(x: 460.8, y: 504.5), control1: CGPoint(x: 459.009, y: 508.5), control2: CGPoint(x: 460.8, y: 506.709))
-        clipPath3.addLine(to: CGPoint(x: 460.8, y: 456.5))
-        clipPath3.addCurve(to: CGPoint(x: 456.8, y: 452.5), control1: CGPoint(x: 460.8, y: 454.291), control2: CGPoint(x: 459.009, y: 452.5))
+        clipPath3.move(to: CGPoint(x: 464.5, y: 451.833))
+        clipPath3.addLine(to: CGPoint(x: 176.5, y: 451.833))
+        clipPath3.addCurve(to: CGPoint(x: 172.5, y: 455.833), control1: CGPoint(x: 174.291, y: 451.833), control2: CGPoint(x: 172.5, y: 453.624))
+        clipPath3.addLine(to: CGPoint(x: 172.5, y: 503.833))
+        clipPath3.addCurve(to: CGPoint(x: 176.5, y: 507.833), control1: CGPoint(x: 172.5, y: 506.042), control2: CGPoint(x: 174.291, y: 507.833))
+        clipPath3.addLine(to: CGPoint(x: 464.5, y: 507.833))
+        clipPath3.addCurve(to: CGPoint(x: 468.5, y: 503.833), control1: CGPoint(x: 466.709, y: 507.833), control2: CGPoint(x: 468.5, y: 506.042))
+        clipPath3.addLine(to: CGPoint(x: 468.5, y: 455.833))
+        clipPath3.addCurve(to: CGPoint(x: 464.5, y: 451.833), control1: CGPoint(x: 468.5, y: 453.624), control2: CGPoint(x: 466.709, y: 451.833))
         clipPath3.closeSubpath()
         
         ctx.saveGState()
@@ -592,11 +592,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 35  */
         let pathRef35 = CGMutablePath()
-        pathRef35.move(to: CGPoint(x: 168.3, y: 456))
-        pathRef35.addLine(to: CGPoint(x: 216.3, y: 456))
-        pathRef35.addLine(to: CGPoint(x: 216.3, y: 504))
-        pathRef35.addLine(to: CGPoint(x: 168.3, y: 504))
-        pathRef35.addLine(to: CGPoint(x: 168.3, y: 456))
+        pathRef35.move(to: CGPoint(x: 176, y: 455.333))
+        pathRef35.addLine(to: CGPoint(x: 224, y: 455.333))
+        pathRef35.addLine(to: CGPoint(x: 224, y: 503.333))
+        pathRef35.addLine(to: CGPoint(x: 176, y: 503.333))
+        pathRef35.addLine(to: CGPoint(x: 176, y: 455.333))
         pathRef35.closeSubpath()
         
         /*  Gradient Fill  */
@@ -612,7 +612,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations2: [CGFloat] = [0, 0.554, 0.62, 1]
         
         guard let gradientRef2 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors2, locations: gradientLocations2, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef2, start: CGPoint(x: 192.8, y: 504.5), end: CGPoint(x: 192.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef2, start: CGPoint(x: 200.5, y: 503.833), end: CGPoint(x: 200.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
@@ -625,11 +625,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 36  */
         let pathRef36 = CGMutablePath()
-        pathRef36.move(to: CGPoint(x: 216.3, y: 456))
-        pathRef36.addLine(to: CGPoint(x: 264.3, y: 456))
-        pathRef36.addLine(to: CGPoint(x: 264.3, y: 504))
-        pathRef36.addLine(to: CGPoint(x: 216.3, y: 504))
-        pathRef36.addLine(to: CGPoint(x: 216.3, y: 456))
+        pathRef36.move(to: CGPoint(x: 224, y: 455.333))
+        pathRef36.addLine(to: CGPoint(x: 272, y: 455.333))
+        pathRef36.addLine(to: CGPoint(x: 272, y: 503.333))
+        pathRef36.addLine(to: CGPoint(x: 224, y: 503.333))
+        pathRef36.addLine(to: CGPoint(x: 224, y: 455.333))
         pathRef36.closeSubpath()
         
         /*  Gradient Fill  */
@@ -645,7 +645,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations3: [CGFloat] = [0, 0.493, 0.562, 1]
         
         guard let gradientRef3 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors3, locations: gradientLocations3, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef3, start: CGPoint(x: 240.8, y: 504.5), end: CGPoint(x: 240.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef3, start: CGPoint(x: 248.5, y: 503.833), end: CGPoint(x: 248.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
@@ -658,11 +658,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 37  */
         let pathRef37 = CGMutablePath()
-        pathRef37.move(to: CGPoint(x: 264.3, y: 456))
-        pathRef37.addLine(to: CGPoint(x: 312.3, y: 456))
-        pathRef37.addLine(to: CGPoint(x: 312.3, y: 504))
-        pathRef37.addLine(to: CGPoint(x: 264.3, y: 504))
-        pathRef37.addLine(to: CGPoint(x: 264.3, y: 456))
+        pathRef37.move(to: CGPoint(x: 272, y: 455.333))
+        pathRef37.addLine(to: CGPoint(x: 320, y: 455.333))
+        pathRef37.addLine(to: CGPoint(x: 320, y: 503.333))
+        pathRef37.addLine(to: CGPoint(x: 272, y: 503.333))
+        pathRef37.addLine(to: CGPoint(x: 272, y: 455.333))
         pathRef37.closeSubpath()
         
         /*  Gradient Fill  */
@@ -678,7 +678,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations4: [CGFloat] = [0, 0.554, 0.62, 1]
         
         guard let gradientRef4 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors4, locations: gradientLocations4, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef4, start: CGPoint(x: 288.8, y: 504.5), end: CGPoint(x: 288.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef4, start: CGPoint(x: 296.5, y: 503.833), end: CGPoint(x: 296.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
@@ -691,11 +691,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 38  */
         let pathRef38 = CGMutablePath()
-        pathRef38.move(to: CGPoint(x: 312.3, y: 456))
-        pathRef38.addLine(to: CGPoint(x: 360.3, y: 456))
-        pathRef38.addLine(to: CGPoint(x: 360.3, y: 504))
-        pathRef38.addLine(to: CGPoint(x: 312.3, y: 504))
-        pathRef38.addLine(to: CGPoint(x: 312.3, y: 456))
+        pathRef38.move(to: CGPoint(x: 320, y: 455.333))
+        pathRef38.addLine(to: CGPoint(x: 368, y: 455.333))
+        pathRef38.addLine(to: CGPoint(x: 368, y: 503.333))
+        pathRef38.addLine(to: CGPoint(x: 320, y: 503.333))
+        pathRef38.addLine(to: CGPoint(x: 320, y: 455.333))
         pathRef38.closeSubpath()
         
         /*  Gradient Fill  */
@@ -711,7 +711,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations5: [CGFloat] = [0, 0.644, 0.702, 1]
         
         guard let gradientRef5 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors5, locations: gradientLocations5, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef5, start: CGPoint(x: 336.8, y: 504.5), end: CGPoint(x: 336.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef5, start: CGPoint(x: 344.5, y: 503.833), end: CGPoint(x: 344.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
@@ -724,11 +724,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 39  */
         let pathRef39 = CGMutablePath()
-        pathRef39.move(to: CGPoint(x: 360.3, y: 456))
-        pathRef39.addLine(to: CGPoint(x: 408.3, y: 456))
-        pathRef39.addLine(to: CGPoint(x: 408.3, y: 504))
-        pathRef39.addLine(to: CGPoint(x: 360.3, y: 504))
-        pathRef39.addLine(to: CGPoint(x: 360.3, y: 456))
+        pathRef39.move(to: CGPoint(x: 368, y: 455.333))
+        pathRef39.addLine(to: CGPoint(x: 416, y: 455.333))
+        pathRef39.addLine(to: CGPoint(x: 416, y: 503.333))
+        pathRef39.addLine(to: CGPoint(x: 368, y: 503.333))
+        pathRef39.addLine(to: CGPoint(x: 368, y: 455.333))
         pathRef39.closeSubpath()
         
         /*  Gradient Fill  */
@@ -744,7 +744,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations6: [CGFloat] = [0, 0.554, 0.62, 1]
         
         guard let gradientRef6 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors6, locations: gradientLocations6, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef6, start: CGPoint(x: 384.8, y: 504.5), end: CGPoint(x: 384.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef6, start: CGPoint(x: 392.5, y: 503.833), end: CGPoint(x: 392.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
@@ -757,11 +757,11 @@ class BiometerView: CoreGraphicsView {
         
         /*  Shape 40  */
         let pathRef40 = CGMutablePath()
-        pathRef40.move(to: CGPoint(x: 408.3, y: 456))
-        pathRef40.addLine(to: CGPoint(x: 456.3, y: 456))
-        pathRef40.addLine(to: CGPoint(x: 456.3, y: 504))
-        pathRef40.addLine(to: CGPoint(x: 408.3, y: 504))
-        pathRef40.addLine(to: CGPoint(x: 408.3, y: 456))
+        pathRef40.move(to: CGPoint(x: 416, y: 455.333))
+        pathRef40.addLine(to: CGPoint(x: 464, y: 455.333))
+        pathRef40.addLine(to: CGPoint(x: 464, y: 503.333))
+        pathRef40.addLine(to: CGPoint(x: 416, y: 503.333))
+        pathRef40.addLine(to: CGPoint(x: 416, y: 455.333))
         pathRef40.closeSubpath()
         
         /*  Gradient Fill  */
@@ -777,7 +777,7 @@ class BiometerView: CoreGraphicsView {
         let gradientLocations7: [CGFloat] = [0, 0.484, 0.553, 1]
         
         guard let gradientRef7 = CGGradient(colorSpace: colorSpace, colorComponents: gradientColors7, locations: gradientLocations7, count: 4) else { return }
-        ctx.drawLinearGradient(gradientRef7, start: CGPoint(x: 432.8, y: 504.5), end: CGPoint(x: 432.8, y: 456.5), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        ctx.drawLinearGradient(gradientRef7, start: CGPoint(x: 440.5, y: 503.833), end: CGPoint(x: 440.5, y: 455.833), options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         ctx.restoreGState()
         
         ctx.setLineWidth(3)
