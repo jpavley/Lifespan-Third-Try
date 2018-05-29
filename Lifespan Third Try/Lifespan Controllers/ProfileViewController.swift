@@ -149,7 +149,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @objc func updateView() {
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
+        tb.updateLife()
 
         updatePersonalFactors()
         updateBirthFactors()

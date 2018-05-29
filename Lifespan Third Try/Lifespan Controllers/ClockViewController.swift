@@ -30,7 +30,7 @@ class ClockViewController: UIViewController {
     fileprivate func updateView() {
         
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
+        tb.updateLife()
         
         guard let lifeSpan = tb.lifeSpan, let lifeClock = tb.lifeClock else {
             return

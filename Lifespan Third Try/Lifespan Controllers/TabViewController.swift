@@ -13,6 +13,7 @@ class TabViewController: UITabBarController {
     var userProfile: UserProfile?
     var lifeSpan: Lifespan?
     var lifeClock: LifeClock?
+    var lifeBioMeter: LifeBioMeter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class TabViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateLifeClock() {
+    func updateLife() {
         
         lifeSpan = createLifespanForUser()
         
@@ -40,6 +41,16 @@ class TabViewController: UITabBarController {
         // update the LifeClock by creating a new one
         lifeClock = createLifeClockForUser(with: lifeSpan)
         
+        if let userProfile = userProfile {
+            lifeBioMeter = createLifeBioMeterForUser(with: userProfile, and: lifeSpan)
+        }
+        
+    }
+    
+    func createLifeBioMeterForUser(with up: UserProfile, and ls: Lifespan) -> LifeBioMeter {
+        
+        let lbm = LifeBioMeter(chronologicalAge: up.age, ale: up.ale, mAle: ls.modifiedALE!)
+        return lbm
     }
     
     func createLifeClockForUser(with ls: Lifespan) -> LifeClock {

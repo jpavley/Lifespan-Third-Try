@@ -33,7 +33,7 @@ class AnalysisViewController: UIViewController {
     fileprivate func updateView() {
         
         let tb = self.tabBarController as! TabViewController
-        tb.updateLifeClock()
+        tb.updateLife()
         
         guard let lifeSpan = tb.lifeSpan else {
             return

@@ -35,7 +35,7 @@ class TombstoneViewController: UIViewController {
     func updateView() {
         
         let tb = self.parent!.tabBarController as! TabViewController
-        tb.updateLifeClock()
+        tb.updateLife()
         
         guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
             return
