@@ -29,32 +29,35 @@ class BiometerViewController: UIViewController {
         let tb = self.tabBarController as! TabViewController
         tb.updateLife()
         
-        guard let ls = tb.lifeSpan, let lc = tb.lifeClock, let up = tb.userProfile else {
+        guard let lbm = tb.lifeBioMeter else {
             return
         }
         
         let tf = TextFormatter()
         
-        let chronAge = up.age
-        let chronText = tf.createStringWithBoldPart(with: "Chronological Age ", and: "\(chronAge.rounded())", and: " years")
+        let chronAge = Int(lbm.chronologicalAge)
+        let chronText = tf.createStringWithBoldPart(with: "Chronological Age ", and: "\(chronAge)", and: " years")
         chronologicalKeyLabel.attributedText = chronText
         
-        let lifeFactor = ls.modifiedALE!/ls.averageLifeExpectancy!
-        print(ls.modifiedALE!)
-        let bioAge = chronAge * lifeFactor
+        let bioAge = Int(lbm.biologicalAge)
         
-        let bioText = tf.createStringWithBoldPart(with: "Biological Age ", and: "\(bioAge.rounded())", and: " years")
+        let bioText = tf.createStringWithBoldPart(with: "Biological Age ", and: "\(bioAge)", and: " years")
         biologicalKeyLabel.attributedText = bioText
-    
-        let invertedLifeFactor = Int((1.0 - lifeFactor) * 100) * -1
-        //let lifeFactorString = String(format: "%.2f", invertedLifeFactor)
-        let livingRateText = tf.createStringWithBoldPart(with: "Life Bonus of ", and: "\(invertedLifeFactor)", and: " %")
+        
+        let lifeBonus = lbm.lifeBonus
+        var bonusTerm = ""
+        if lifeBonus >= 0 {
+            bonusTerm = "bonus"
+        } else {
+            bonusTerm = "penalty"
+        }
+        let livingRateText = tf.createStringWithBoldPart(with: "Life \(bonusTerm) of ", and: "\(abs(lifeBonus))", and: " %")
         livingKeyLabel.attributedText = livingRateText
 
-        setBiometerView(with: lc)
+        setBiometerView()
     }
     
-    fileprivate func setBiometerView(with lifeClock: LifeClock) {
+    fileprivate func setBiometerView() {
         
     }
     

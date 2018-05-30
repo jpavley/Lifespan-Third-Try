@@ -20,7 +20,7 @@ class LifeBioMeter {
     
     init(chronologicalAge: CGFloat, ale: CGFloat, mAle: CGFloat) {
         self.chronologicalAge = chronologicalAge
-        lifeFactor = mAle/ale
+        lifeFactor = ale/mAle
         biologicalAge = chronologicalAge * lifeFactor
     }
     
@@ -45,7 +45,7 @@ class LifeBioMeter {
     }
     var lifeBonus: Int {
         get {
-            return 0
+            return Int((1.0 - lifeFactor) * 100)
         }
         
     }
