@@ -37,8 +37,8 @@ class LifeBioMeter {
         
     }
     
-    var secondsSpent: [Int] {
-        get {
+    var daysSpent: [Int] {
+        get {            
             return [0,0,0,0,0,0]
         }
         

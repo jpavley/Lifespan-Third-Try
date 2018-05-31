@@ -9,16 +9,19 @@
 import UIKit
 
 class OdometerTextView: CoreGraphicsView {
+    
+    var odoValues = [0,1,2,3,4,5]
+    var odoLabel = "Days spent since 12 Feb 1960"
 
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        drawOdometerNumbers(with: [0,1,2,3,4,5], odoLabel: "Days spent since 12 Feb 1960")
+        drawOdometerNumbers()
     }
     
-    func drawOdometerNumbers(with odoValues: [Int], odoLabel: String) {
+    func drawOdometerNumbers() {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         // enable the following lines for flipped coordinate systems
         // ctx.translateBy(x: 0, y: self.bounds.size.height)
@@ -186,8 +189,8 @@ class OdometerTextView: CoreGraphicsView {
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle7
             ] as [NSAttributedStringKey: Any]
-        attributedStr7.setAttributes(textAttribs7, range: NSRange(location: 0, length: 28))
-        
+        attributedStr7.setAttributes(textAttribs7, range: NSRange(location: 0, length: odoLabel.count))
+
         let textBox7 = CGRect(x: 174.5, y: 512.833, width: 288, height: 29.899)
         let textBoxPath7 = CGPath(rect: CGRect(x: 0, y: 0, width: textBox7.size.width, height: textBox7.size.height), transform: nil)
         let framesetter7 = CTFramesetterCreateWithAttributedString(attributedStr7)
