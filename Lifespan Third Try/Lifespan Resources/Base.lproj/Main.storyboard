@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -18,26 +14,26 @@
             <objects>
                 <viewController title="Clock" id="9pv-A4-QxB" customClass="ClockViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoF-pU-8Wr" userLabel="Clock Container">
-                                <rect key="frame" x="16" y="118" width="288" height="288"/>
+                                <rect key="frame" x="30" y="118" width="540" height="540"/>
                                 <subviews>
                                     <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8og-Wa-jxE" customClass="ClockView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" tag="150" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnb-bU-DTB" userLabel="Logo View" customClass="LogoView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-Nh-LiI" customClass="MinuteHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" tag="300" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-n7-eFK" customClass="HourHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" tag="400" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQj-yu-WzP" customClass="SecondHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -65,10 +61,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-jA-PVe">
-                                <rect key="frame" x="16" y="414" width="288" height="70"/>
+                                <rect key="frame" x="16" y="666" width="568" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-uh-0Uw">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="One hour is 0.00 years">
                                                 <attributes>
@@ -81,7 +77,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk8-zL-Gig">
-                                        <rect key="frame" x="0.0" y="26" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="26" width="568" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="One minute is 0.00 months">
                                                 <attributes>
@@ -94,7 +90,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI6-CG-6r1">
-                                        <rect key="frame" x="0.0" y="52" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="52" width="568" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="One second is 0.00 days">
                                                 <attributes>
@@ -109,7 +105,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Wr-2DY">
-                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="CJR-Nv-RG6"/>
                                 </constraints>
@@ -207,11 +203,11 @@
             <objects>
                 <viewController title="Analysis" id="8rJ-Kc-sve" customClass="AnalysisViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-DR-nNY">
-                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="xoI-Im-wDl"/>
                                 </constraints>
@@ -220,7 +216,7 @@
                                 </connections>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9s-qrD">
-                                <rect key="frame" x="8" y="118" width="304" height="401"/>
+                                <rect key="frame" x="8" y="118" width="584" height="433"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -713,53 +709,53 @@
             <objects>
                 <viewController id="v9W-Xg-VXD" customClass="TipViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHw-KM-Kaj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sax-bs-rLa">
-                                <rect key="frame" x="16" y="84" width="288" height="420"/>
+                                <rect key="frame" x="16" y="84" width="568" height="452"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eLs-ak-EPc">
-                                        <rect key="frame" x="16" y="8" width="256" height="404"/>
+                                        <rect key="frame" x="16" y="8" width="536" height="436"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNr-xK-HKf">
-                                                <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="536" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-PW-zj0">
-                                                <rect key="frame" x="0.0" y="62.5" width="256" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="67.5" width="536" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDe-AH-khA">
-                                                <rect key="frame" x="12.5" y="124.5" width="231" height="20.5"/>
+                                                <rect key="frame" x="26.5" y="135.5" width="483" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Middle Explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqU-Eq-dDN">
-                                                <rect key="frame" x="12.5" y="187" width="231" height="20.5"/>
+                                                <rect key="frame" x="26.5" y="203" width="483" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyZ-G9-l0N">
-                                                <rect key="frame" x="12.5" y="249.5" width="231" height="20.5"/>
+                                                <rect key="frame" x="26.5" y="270.5" width="483" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-xY-ggB">
-                                                <rect key="frame" x="0.0" y="311.5" width="256" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="338.5" width="536" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWL-w7-gnb">
-                                                <rect key="frame" x="0.0" y="374" width="256" height="30"/>
+                                                <rect key="frame" x="0.0" y="406" width="536" height="30"/>
                                                 <state key="normal" title="Got It"/>
                                                 <connections>
                                                     <action selector="GotItAction:" destination="v9W-Xg-VXD" eventType="touchUpInside" id="kCn-Tc-uLx"/>
@@ -815,24 +811,24 @@
             <objects>
                 <viewController id="NKT-sB-7m9" customClass="BiometerViewController" customModule="Lifespan_Third_Try" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dzx-nE-EA7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAk-24-vJp" userLabel="Biometer Container">
-                                <rect key="frame" x="16" y="118" width="288" height="288"/>
+                                <rect key="frame" x="30" y="118" width="540" height="540"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-d5-DQx" userLabel="Biometer View" customClass="BiometerView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-Tf-EGZ" userLabel="Chronological Age Hand" customClass="ChronologicalAgeView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                    <view opaque="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-Tf-EGZ" userLabel="Chronological Age Hand" customClass="ChronologicalHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-2k-og5" userLabel="Biological Age Hand" customClass="BiologicalHandView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zD-qP-YIi" customClass="OdometerTextView" customModule="Lifespan_Third_Try" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -857,7 +853,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPv-QD-8cD">
-                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="v0I-IZ-BNH"/>
                                 </constraints>
@@ -866,10 +862,10 @@
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-is-Iym" userLabel="Labels Stack">
-                                <rect key="frame" x="16" y="414" width="288" height="70"/>
+                                <rect key="frame" x="30" y="666" width="540" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-xK-L2W">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Chronological Age 57">
                                                 <attributes>
@@ -881,7 +877,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9at-5X-lkE">
-                                        <rect key="frame" x="0.0" y="26" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="26" width="540" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Biological Age 62">
                                                 <attributes>
@@ -893,7 +889,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-bQ-9gp">
-                                        <rect key="frame" x="0.0" y="52" width="288" height="18"/>
+                                        <rect key="frame" x="0.0" y="52" width="540" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Living at 74%">
                                                 <attributes>

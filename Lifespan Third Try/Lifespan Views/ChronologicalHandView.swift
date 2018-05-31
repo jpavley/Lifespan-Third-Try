@@ -1,5 +1,5 @@
 //
-//  ChronologicalAgeView.swift
+//  ChronologicalHandView
 //  Lifespan Third Try
 //
 //  Created by John Pavley on 5/27/18.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-// TODO: Rename to ChronologicalHandView
-class ChronologicalAgeView: CoreGraphicsView {
+class ChronologicalHandView: CoreGraphicsView {
 
     
     // Only override draw() if you perform custom drawing.

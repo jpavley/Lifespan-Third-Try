@@ -66,7 +66,7 @@ class BiometerViewController: UIViewController {
             return
         }
         
-        let chronHand = view.viewWithTag(chronologicalHandTag) as! ChronologicalAgeView
+        let chronHand = view.viewWithTag(chronologicalHandTag) as! ChronologicalHandView
         chronHand.angle = lbm.chronAgeHandAngle
         
         let bioHand = view.viewWithTag(biologicalHandTag) as! BiologicalHandView

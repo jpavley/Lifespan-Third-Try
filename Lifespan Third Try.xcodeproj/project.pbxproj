@@ -22,7 +22,7 @@
 		484D707A20A541910086CA68 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707920A541910086CA68 /* TipViewController.swift */; };
 		484D707C20A547470086CA68 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707B20A547470086CA68 /* DimmingPresentationController.swift */; };
 		48664C3B20B98D770060634E /* BiometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3A20B98D770060634E /* BiometerView.swift */; };
-		48664C3E20BADE420060634E /* ChronologicalAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3D20BADE420060634E /* ChronologicalAgeView.swift */; };
+		48664C3E20BADE420060634E /* ChronologicalHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3D20BADE420060634E /* ChronologicalHandView.swift */; };
 		48664C4020BADE600060634E /* BiologicalHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3F20BADE600060634E /* BiologicalHandView.swift */; };
 		48664C4220BAE0490060634E /* lifeaccelerometer.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 48664C4120BAE0490060634E /* lifeaccelerometer.idraw */; };
 		48C6207D20BB4B9700026456 /* OdometerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6207C20BB4B9700026456 /* OdometerTextView.swift */; };
@@ -84,7 +84,7 @@
 		484D707920A541910086CA68 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		484D707B20A547470086CA68 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		48664C3A20B98D770060634E /* BiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometerView.swift; sourceTree = "<group>"; };
-		48664C3D20BADE420060634E /* ChronologicalAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronologicalAgeView.swift; sourceTree = "<group>"; };
+		48664C3D20BADE420060634E /* ChronologicalHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronologicalHandView.swift; sourceTree = "<group>"; };
 		48664C3F20BADE600060634E /* BiologicalHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiologicalHandView.swift; sourceTree = "<group>"; };
 		48664C4120BAE0490060634E /* lifeaccelerometer.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifeaccelerometer.idraw; sourceTree = "<group>"; };
 		48963FC420A21C6E00334205 /* BUGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUGS.md; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				48664C3A20B98D770060634E /* BiometerView.swift */,
-				48664C3D20BADE420060634E /* ChronologicalAgeView.swift */,
+				48664C3D20BADE420060634E /* ChronologicalHandView.swift */,
 				48664C3F20BADE600060634E /* BiologicalHandView.swift */,
 				48C6207C20BB4B9700026456 /* OdometerTextView.swift */,
 			);
@@ -418,7 +418,7 @@
 				48E25CAF2069B846006BB346 /* Lifespan.swift in Sources */,
 				48E25CBE2069B88B006BB346 /* HourHandView.swift in Sources */,
 				48E25CBD2069B88B006BB346 /* MinuteHandView.swift in Sources */,
-				48664C3E20BADE420060634E /* ChronologicalAgeView.swift in Sources */,
+				48664C3E20BADE420060634E /* ChronologicalHandView.swift in Sources */,
 				48E25CB22069B846006BB346 /* UserProfile.swift in Sources */,
 				48D7042820803ECA00F569AF /* LogoView.swift in Sources */,
 				48EE8C682079771000931554 /* TabViewController.swift in Sources */,
