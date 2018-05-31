@@ -9,6 +9,9 @@
 import Foundation
 import CoreGraphics
 
+/// Model of a partial dial that displays the difference between
+/// chronological age (what the calendar says) and biological age
+/// (what your doctor says).
 class LifeBioMeter {
     
     var chronologicalAge: CGFloat
@@ -18,6 +21,9 @@ class LifeBioMeter {
     let minAge: CGFloat = 0.0
     let maxAge: CGFloat = 120.0
     
+    let startingAngle: CGFloat = 120.0
+    let totalDegrees: CGFloat = 240.0
+    
     init(chronologicalAge: CGFloat, ale: CGFloat, mAle: CGFloat) {
         self.chronologicalAge = chronologicalAge
         lifeFactor = ale/mAle
@@ -26,13 +32,15 @@ class LifeBioMeter {
     
     var chronAgeHandAngle: CGFloat {
         get {
-            return 0.0
+            let percentOfMaxAge = chronologicalAge/maxAge
+            return (percentOfMaxAge * totalDegrees) - startingAngle
         }
     }
     
     var bioAgeHandAngle: CGFloat {
         get {
-            return 0.0
+            let percentOfMaxAge = biologicalAge/maxAge
+            return (percentOfMaxAge * totalDegrees) - startingAngle
         }
         
     }

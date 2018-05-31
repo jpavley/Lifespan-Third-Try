@@ -53,11 +53,28 @@ class BiometerViewController: UIViewController {
         }
         let livingRateText = tf.createStringWithBoldPart(with: "Life \(bonusTerm) of ", and: "\(abs(lifeBonus))", and: " %")
         livingKeyLabel.attributedText = livingRateText
-
-        setOdometerTextView()
+        
+        setBiometerHands()
+        setOdometerText()
     }
     
-    fileprivate func setOdometerTextView() {
+    fileprivate func setBiometerHands() {
+        let tb = self.tabBarController as! TabViewController
+        tb.updateLife()
+        
+        guard let lbm = tb.lifeBioMeter else {
+            return
+        }
+        
+        let chronHand = view.viewWithTag(chronologicalHandTag) as! ChronologicalAgeView
+        chronHand.angle = lbm.chronAgeHandAngle
+        
+        let bioHand = view.viewWithTag(biologicalHandTag) as! BiologicalHandView
+        bioHand.angle = lbm.bioAgeHandAngle
+
+    }
+    
+    fileprivate func setOdometerText() {
         let tb = self.tabBarController as! TabViewController
         tb.updateLife()
         
