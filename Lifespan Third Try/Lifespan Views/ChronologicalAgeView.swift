@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: Rename to ChronologicalHandView
 class ChronologicalAgeView: CoreGraphicsView {
 
     
