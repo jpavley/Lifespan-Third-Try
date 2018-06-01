@@ -132,7 +132,8 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 8 hours, 16 minutes, 48 seconds in his life to date. At this point in time he could live for another 3 hours, 43 minutes, 12 seconds.
     // John F. Pavley was born 57 years ago in 1961. His life factors were not recorded on the profile tab.
-    // His life expectancy is therefore unchanged with no missing or extra years. If he is able to maintain his current life style he could die in 26 years from today, in the year 2044.
+    // His life expectancy is therefore unchanged with no missing or extra years. His chronological age is the same as his biological age of 57 years.
+    // If he is able to maintain his current life style he could die in 26 years from today, in the year 2044.
     // If John F. Pavley lives beyond 2044 and the age of 83, he will be living on borrowed time.
     
     // Example Output - Positive, all factors
@@ -140,7 +141,8 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 6 hours, 37 minutes, 27 seconds in his life to date. At this point in time he could live for another 5 hours, 22 minutes, 33 seconds.
     // John F. Pavley was born 57 years ago in 1961. His natural life expectancy of 83 years is influenced by the following life factors: A very-high level of physical activity. A very-low level of mental stress. A very-low level of risky behavior. An excellent genetic history.
-    // His life expectancy is therefore increased to 103 years, gifting him another 20 years. If he is able to maintain his current life style he could live for another 46 years from today, and delay his death until the year 2064.
+    // His life expectancy is therefore increased to 103 years, gifting him another 20 years. His chronological age is 57 years but his biological age is only 55 years--a life factor bonus of 2%.
+    // If he is able to maintain his current life style he could live for another 46 years from today, and delay his death until the year 2064.
     // If John F. Pavley lives beyond 2064 and the age of 103, he will be living on borrowed time.
     
     // Example Output - Negative, two factors, customized pronouns
@@ -148,7 +150,8 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 10 hours, 21 minutes, 0 seconds in its life to date. At this point in time it could live for another 1 hours, 39 minutes, 60 seconds.
     // John F. Pavley was born 57 years ago in 1961. Its natural life expectancy of 83 years is influenced by one or more life factors: A very-high level of mental stress. A very-high level of risky behavior.
-    // Its life expectancy is therefore reduced to 66 years, robbing it of 17 years. If it doesn’t improve its life style it could die in 9 years from today, in the year 2027.
+    // Its life expectancy is therefore reduced to 66 years, robbing it of 17 years. Its chronological age is 57 years but Its biological age is 65 years--a life factor penality of 20%.
+    // If it doesn’t improve its life style it could die in 9 years from today, in the year 2027.
     // If John F. Pavley lives beyond 2027 and the age of 66, it will be living on borrowed time.
 
     
