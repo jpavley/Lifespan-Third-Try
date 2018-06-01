@@ -21,7 +21,6 @@ class BiologicalHandView: CoreGraphicsView {
 
     }
     
-    
     func drawBiologicalAgeHand() {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         // enable the following lines for flipped coordinate systems
@@ -51,8 +50,5 @@ class BiologicalHandView: CoreGraphicsView {
         ctx.setFillColor(red: 0.004, green: 0.259, blue: 0.949, alpha: 0.6)
         ctx.addPath(pathRef)
         ctx.fillPath()
-        
-        
     }
-
 }
