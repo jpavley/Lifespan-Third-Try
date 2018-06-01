@@ -49,7 +49,7 @@ class SecondHandView: CoreGraphicsView {
         secondHandPathRef.addCurve(to: CGPoint(x: 314.679, y: 367.873), control1: CGPoint(x: 325.321, y: 367.873), control2: CGPoint(x: 314.679, y: 367.873))
         secondHandPathRef.closeSubpath()
         
-        ctx.setFillColor(red: 0.671, green: 0.082, blue: 0, alpha: 1)
+        ctx.setFillColor(red: 0.671, green: 0.082, blue: 0, alpha: 0.6)
         ctx.addPath(secondHandPathRef)
         ctx.fillPath()
     }

@@ -48,7 +48,7 @@ class MinuteHandView: CoreGraphicsView {
         minuteHandPathRef.addCurve(to: CGPoint(x: 308.028, y: 367.873), control1: CGPoint(x: 331.972, y: 367.873), control2: CGPoint(x: 308.028, y: 367.873))
         minuteHandPathRef.closeSubpath()
         
-        ctx.setFillColor(red: 0, green: 0.498, blue: 0.075, alpha: 1)
+        ctx.setFillColor(red: 0, green: 0.498, blue: 0.075, alpha: 0.6)
         ctx.addPath(minuteHandPathRef)
         ctx.fillPath()
         

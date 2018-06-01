@@ -47,7 +47,7 @@ class ChronologicalHandView: CoreGraphicsView {
         pathRef.addCurve(to: CGPoint(x: 308.028, y: 367.873), control1: CGPoint(x: 331.972, y: 367.873), control2: CGPoint(x: 308.028, y: 367.873))
         pathRef.closeSubpath()
         
-        ctx.setFillColor(red: 0.671, green: 0.082, blue: 0, alpha: 1)
+        ctx.setFillColor(red: 0.671, green: 0.082, blue: 0, alpha: 0.6)
         ctx.addPath(pathRef)
         ctx.fillPath()
         
