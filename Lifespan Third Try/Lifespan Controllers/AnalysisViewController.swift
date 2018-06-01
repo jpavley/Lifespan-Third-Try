@@ -347,13 +347,13 @@ class AnalysisViewController: UIViewController {
             
             // neutral
             
+            s2a = "\(d.possesser.capitalized) chronological age is the same as \(d.possesser) biological age of \(d.age) years. "
+            stringListWithSpacesS2a = transformStringIntoList(with: s2a)
+            boldIndexesS2a = [1, 8, 11]
+            
             s2 = "\(d.possesser.capitalized) life expectancy is therefore unchanged with no missing or extra years."
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
             boldIndexesS2 = [5, 8, 10]
-            
-            s2a = "\(d.possesser.capitalized) chronological age is the same as \(d.possesser) biological age of \(d.age) years. "
-            stringListWithSpacesS2a = transformStringIntoList(with: s2a)
-            boldIndexesS2a = [2, 9, 12]
             
             if d.modifiedYearsLeft < 0 {
                 
