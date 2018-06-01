@@ -132,7 +132,7 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 8 hours, 16 minutes, 48 seconds in his life to date. At this point in time he could live for another 3 hours, 43 minutes, 12 seconds.
     // John F. Pavley was born 57 years ago in 1961. His life factors were not recorded on the profile tab.
-    // His life expectancy is therefore unchanged with no missing or extra years. His chronological age is the same as his biological age of 57 years.
+    // His chronological age is the same as his biological age of 57 years. His life expectancy is therefore unchanged with no missing or extra years.
     // If he is able to maintain his current life style he could die in 26 years from today, in the year 2044.
     // If John F. Pavley lives beyond 2044 and the age of 83, he will be living on borrowed time.
     
@@ -141,7 +141,7 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 6 hours, 37 minutes, 27 seconds in his life to date. At this point in time he could live for another 5 hours, 22 minutes, 33 seconds.
     // John F. Pavley was born 57 years ago in 1961. His natural life expectancy of 83 years is influenced by the following life factors: A very-high level of physical activity. A very-low level of mental stress. A very-low level of risky behavior. An excellent genetic history.
-    // His life expectancy is therefore increased to 103 years, gifting him another 20 years. His chronological age is 57 years but his biological age is only 55 years--a life factor bonus of 2%.
+    // His chronological age is 57 years but his biological age is only 55 years--a life factor bonus of 2%. His life expectancy is therefore increased to 103 years, gifting him another 20 years.
     // If he is able to maintain his current life style he could live for another 46 years from today, and delay his death until the year 2064.
     // If John F. Pavley lives beyond 2064 and the age of 103, he will be living on borrowed time.
     
@@ -150,7 +150,7 @@ class AnalysisViewController: UIViewController {
     // Today is Friday, June 1, 2018.
     // John F. Pavley has spent 10 hours, 21 minutes, 0 seconds in its life to date. At this point in time it could live for another 1 hours, 39 minutes, 60 seconds.
     // John F. Pavley was born 57 years ago in 1961. Its natural life expectancy of 83 years is influenced by one or more life factors: A very-high level of mental stress. A very-high level of risky behavior.
-    // Its life expectancy is therefore reduced to 66 years, robbing it of 17 years. Its chronological age is 57 years but Its biological age is 65 years--a life factor penality of 20%.
+    // Its chronological age is 57 years but Its biological age is 65 years--a life factor penality of 20%. Its life expectancy is therefore reduced to 66 years, robbing it of 17 years.
     // If it doesn’t improve its life style it could die in 9 years from today, in the year 2027.
     // If John F. Pavley lives beyond 2027 and the age of 66, it will be living on borrowed time.
 
@@ -315,6 +315,10 @@ class AnalysisViewController: UIViewController {
         var stringListWithSpacesS2 = [String]()
         var boldIndexesS2 = [Int]()
         
+        var s2a = ""
+        var stringListWithSpacesS2a = [String]()
+        var boldIndexesS2a = [Int]()
+        
         var s3 = ""
         var stringListWithSpacesS3 = [String]()
         var boldIndexesS3 = [Int]()
@@ -324,7 +328,6 @@ class AnalysisViewController: UIViewController {
             // negative
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
-            
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
             boldIndexesS2 = [5, 7, 12]
             
@@ -345,9 +348,12 @@ class AnalysisViewController: UIViewController {
             // neutral
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore unchanged with no missing or extra years."
-            
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
             boldIndexesS2 = [5, 8, 10]
+            
+            s2a = "\(d.possesser.capitalized) chronological age is the same as \(d.possesser) biological age of \(d.age) years. "
+            stringListWithSpacesS2a = transformStringIntoList(with: s2a)
+            boldIndexesS2a = [2, 9, 12]
             
             if d.modifiedYearsLeft < 0 {
                 
@@ -358,7 +364,6 @@ class AnalysisViewController: UIViewController {
                 s3 = " If \(d.subject) is able to maintain \(d.possesser) current life style \(d.subject) could die in \(d.modifiedYearsLeft) years from today, in the year \(d.modifiedDeathYear)."
             }
             
-            
             stringListWithSpacesS3 = transformStringIntoList(with: s3)
             boldIndexesS3 = [6, 15, 22]
             
@@ -368,7 +373,6 @@ class AnalysisViewController: UIViewController {
             // positive
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
-            
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
             boldIndexesS2 = [5, 7, 12]
             
@@ -387,8 +391,12 @@ class AnalysisViewController: UIViewController {
         
         resultString.append(s1)
         
+        let attributedS2a = tf.createStringWithBoldParts(with: stringListWithSpacesS2a, boldedIndexes: boldIndexesS2a)
+        resultString.append(attributedS2a)
+        
         let attributedS2 = tf.createStringWithBoldParts(with: stringListWithSpacesS2, boldedIndexes: boldIndexesS2)
         resultString.append(attributedS2)
+
         
         stringListWithSpacesS3.append("\n\n")
         
