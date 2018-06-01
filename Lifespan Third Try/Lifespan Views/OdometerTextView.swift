@@ -185,13 +185,13 @@ class OdometerTextView: CoreGraphicsView {
         let paragraphStyle7 = NSMutableParagraphStyle()
         paragraphStyle7.alignment = .center
         let textAttribs7 = [
-            .font: UIFont(name: "Helvetica-LightOblique", size: 18)!,
+            .font: UIFont(name: "Helvetica-LightOblique", size: 28)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle7
             ] as [NSAttributedStringKey: Any]
         attributedStr7.setAttributes(textAttribs7, range: NSRange(location: 0, length: odoLabel.count))
 
-        let textBox7 = CGRect(x: 174.5, y: 512.833, width: 288, height: 29.899)
+        let textBox7 = CGRect(x: 115, y: 530, width: 400, height: 40)
         let textBoxPath7 = CGPath(rect: CGRect(x: 0, y: 0, width: textBox7.size.width, height: textBox7.size.height), transform: nil)
         let framesetter7 = CTFramesetterCreateWithAttributedString(attributedStr7)
         let frameRef7 = CTFramesetterCreateFrame(framesetter7, CFRange(location: 0, length: 0), textBoxPath7, nil)
