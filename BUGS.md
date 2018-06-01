@@ -2,7 +2,6 @@
 
 ## Open
 
-- The readme tab can take a very long time to load.
 - The app can take a very long time to load.
 - The plurality of connecting verbs doesn't agree with plural pronouns (they, their)
 
@@ -15,5 +14,6 @@
 
 ## Not reproducable
 - When activity silder is moved up to 2 from 0 it should set the age to an increase value on the Profile tab. User has to click into another to see the change. This could be replated to B2. Same problem for the year slider.
+- The readme tab can take a very long time to load.
 
 
