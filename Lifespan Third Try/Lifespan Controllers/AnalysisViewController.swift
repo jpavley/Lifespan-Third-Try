@@ -327,6 +327,8 @@ class AnalysisViewController: UIViewController {
             
             // negative
             
+            // TODO: s2a here
+            
             s2 = "\(d.possesser.capitalized) life expectancy is therefore reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
             boldIndexesS2 = [5, 7, 12]
@@ -371,6 +373,8 @@ class AnalysisViewController: UIViewController {
         } else if d.modifiedLifeExpectancy > d.lifeExpectancy {
             
             // positive
+            
+            // TODO: s2a here
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
             stringListWithSpacesS2 = transformStringIntoList(with: s2)

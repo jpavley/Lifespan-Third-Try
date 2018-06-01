@@ -28,6 +28,8 @@ struct UserStats {
     var missingYears: Int = 0
     var modifiedDeathYear: Int = 0
     var hoursBeyondALE: CGFloat = 0.0
+    
+    // TODO: Add biometer properties
 }
 
 let maxHumanLifeExpectancy = 122
