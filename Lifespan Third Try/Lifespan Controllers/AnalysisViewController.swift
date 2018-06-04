@@ -214,7 +214,7 @@ class AnalysisViewController: UIViewController {
                                           geneticsLevel: geneticsLevel)
         
         resultString.append(generateParagraphZero(with: paragraphData))
-        resultString.append(generateParagraphOne(with: paragraphData))
+        resultString.append(generateParagraphOne(with: paragraphData, and: us))
         resultString.append(generateParagraphTwo(with: paragraphData))
         
         // print(resultString.mutableString)
@@ -304,7 +304,7 @@ class AnalysisViewController: UIViewController {
     ///
     /// - Parameter d: a bag of shared properties used to fill in the blanks.
     /// - Returns: customized attributed text string based on ParagraphData properites
-    fileprivate func generateParagraphOne(with d: ParagraphData) -> NSMutableAttributedString {
+    fileprivate func generateParagraphOne(with d: ParagraphData, and us: UserStats) -> NSMutableAttributedString {
         
         let resultString = NSMutableAttributedString(string: "", attributes: [:])
         let tf = TextFormatter()
@@ -327,7 +327,9 @@ class AnalysisViewController: UIViewController {
             
             // negative
             
-            // TODO: s2a here
+            s2a = "\(d.possesser.capitalized) chronological age is \(us.chronologicalAge) years but \(d.possesser) biological age is \(us.biologicalAge) years—a life factor penality of \(abs(us.lifeBonus))%. "
+            stringListWithSpacesS2a = transformStringIntoList(with: s2a)
+            boldIndexesS2a = [1, 4, 8, 11, 13, 14, 17]
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore reduced to \(d.modifiedLifeExpectancy) years, robbing \(d.object) of \(d.missingYears) years."
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
@@ -374,7 +376,10 @@ class AnalysisViewController: UIViewController {
             
             // positive
             
-            // TODO: s2a here
+            s2a = "\(d.possesser.capitalized) chronological age is \(us.chronologicalAge) years but \(d.possesser) biological age is only \(us.biologicalAge) years—a life factor bonus of \(us.lifeBonus)%. "
+            stringListWithSpacesS2a = transformStringIntoList(with: s2a)
+            boldIndexesS2a = [1, 4, 8, 12, 14, 15, 18]
+
             
             s2 = "\(d.possesser.capitalized) life expectancy is therefore increased to \(d.modifiedLifeExpectancy) years, gifting \(d.object) another \(d.missingYears) years."
             stringListWithSpacesS2 = transformStringIntoList(with: s2)
