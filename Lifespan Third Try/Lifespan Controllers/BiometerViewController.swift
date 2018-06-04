@@ -29,29 +29,27 @@ class BiometerViewController: UIViewController {
         let tb = self.tabBarController as! TabViewController
         tb.updateLife()
         
-        guard let lbm = tb.lifeBioMeter else {
+        guard let up = tb.userProfile, let ls = tb.lifeSpan, let lbm = tb.lifeBioMeter else {
             return
         }
         
+        let us = up.calcUserStats(from: ls, and: lbm)
+        
         let tf = TextFormatter()
         
-        let chronAge = Int(lbm.chronologicalAge)
-        let chronText = tf.createStringWithBoldPart(with: "Chronological Age ", and: "\(chronAge)", and: " years")
+        let chronText = tf.createStringWithBoldPart(with: "Chronological Age ", and: "\(us.chronologicalAge)", and: " years")
         chronologicalKeyLabel.attributedText = chronText
         
-        let bioAge = Int(lbm.biologicalAge)
-        
-        let bioText = tf.createStringWithBoldPart(with: "Biological Age ", and: "\(bioAge)", and: " years")
+        let bioText = tf.createStringWithBoldPart(with: "Biological Age ", and: "\(us.biologicalAge)", and: " years")
         biologicalKeyLabel.attributedText = bioText
         
-        let lifeBonus = lbm.lifeBonus
         var bonusTerm = ""
-        if lifeBonus >= 0 {
+        if us.lifeBonus >= 0 {
             bonusTerm = "bonus"
         } else {
             bonusTerm = "penalty"
         }
-        let livingRateText = tf.createStringWithBoldPart(with: "Life \(bonusTerm) of ", and: "\(abs(lifeBonus))", and: " %")
+        let livingRateText = tf.createStringWithBoldPart(with: "Life \(bonusTerm) of ", and: "\(abs(us.lifeBonus))", and: " %")
         livingKeyLabel.attributedText = livingRateText
         
         setBiometerHands()
