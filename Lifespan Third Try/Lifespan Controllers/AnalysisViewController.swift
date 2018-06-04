@@ -171,7 +171,7 @@ class AnalysisViewController: UIViewController {
         
         let tb = self.tabBarController as! TabViewController
         
-        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
+        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan, let lbm = tb.lifeBioMeter else {
             return resultString
         }
         
@@ -181,7 +181,7 @@ class AnalysisViewController: UIViewController {
         let subject = userProfile.pronouns.subjective
         let object = userProfile.pronouns.objective
         let possesser = userProfile.pronouns.possessive
-        let us = userProfile.calcUserStats(from: lifeSpan)
+        let us = userProfile.calcUserStats(from: lifeSpan, and: lbm)
         let cal = CalendarUtilities.utcCal()
         let now = Date()
         let thisYear = cal.component(.year, from: now)

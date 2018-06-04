@@ -37,11 +37,11 @@ class TombstoneViewController: UIViewController {
         let tb = self.parent!.tabBarController as! TabViewController
         tb.updateLife()
         
-        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan else {
+        guard let userProfile = tb.userProfile, let lifeSpan = tb.lifeSpan, let lbm = tb.lifeBioMeter else {
             return
         }
         
-        let us = userProfile.calcUserStats(from: lifeSpan)
+        let us = userProfile.calcUserStats(from: lifeSpan, and: lbm)
         headlineLabel.text = userProfile.name
         
         let birthYear = us.birthYear

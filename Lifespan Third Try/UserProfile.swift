@@ -20,7 +20,12 @@ struct RangedValue {
     
 }
 
+/// Data generally shared across views from the LifeSpan and LifeBioMeter
+/// objects. Calculation of this data is centralized in the creation of
+/// this data structure.
 struct UserStats {
+    
+    // lifespan properties
     var age: Int = 0
     var birthYear: Int = 0
     var lifeExpectancy: Int = 0
@@ -29,7 +34,10 @@ struct UserStats {
     var modifiedDeathYear: Int = 0
     var hoursBeyondALE: CGFloat = 0.0
     
-    // TODO: Add biometer properties
+    // life biometer properties
+    var chronologicalAge: Int = 0
+    var biologicalAge: Int = 0
+    var lifeBonus: Int = 0
 }
 
 let maxHumanLifeExpectancy = 122
@@ -76,7 +84,7 @@ class UserProfile {
                                      setting: Float(PronounGender.male.rawValue))
     }
     
-    func calcUserStats(from lifeSpan: Lifespan) -> UserStats {
+    func calcUserStats(from lifeSpan: Lifespan, and lbm: LifeBioMeter) -> UserStats {
         
         var us = UserStats()
         
@@ -87,6 +95,10 @@ class UserProfile {
         us.missingYears = abs(us.modifiedLifeExpectancy - us.lifeExpectancy)
         us.modifiedDeathYear = us.birthYear + us.modifiedLifeExpectancy
         us.hoursBeyondALE = lifeSpan.hoursBeyondALE
+        
+        us.chronologicalAge = Int(lbm.chronologicalAge.rounded(.down))
+        us.biologicalAge = Int(lbm.biologicalAge.rounded(.down))
+        us.lifeBonus = lbm.lifeBonus
         
         return us
     }
