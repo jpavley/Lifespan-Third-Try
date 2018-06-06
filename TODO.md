@@ -5,6 +5,7 @@
 - Update the tab bar icons to reflect design changes.
 - Add unit tests back in from ealier version of project.
 - Support Dynamic Type (Attributed Text does not support dynamic type).
+- Create launch screen
 
 ## In Progress
 - The Analysis code is a horrible mess! What is really needed is a single templating and formatting engine that talks marked up text and turns it into Apple's Attributed Text. Yeah, I know, the simple solution is  HTML and web views. Unfortunately for me web views, even local ones, make a few noticable moments to load. I don't want to implement a progress indicator for an app that doesn't hit a server!
