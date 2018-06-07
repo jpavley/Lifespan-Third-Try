@@ -6,7 +6,6 @@
 - Support Dynamic Type (Attributed Text does not support dynamic type).
 
 ## In Progress
-- Create launch screen
 
 ## Parked
 
@@ -42,6 +41,7 @@
 - Replace the Readme view with an car dashboard like speedometer, odometer, and fuel guage. This view will display biological vs chronological age.
 - Add biological age analysis to the Analysis tab.
 - Update the tab bar icons to reflect design changes.
+- Create launch screen
 
 
 
