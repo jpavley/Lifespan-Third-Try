@@ -61,11 +61,11 @@ class LifeBioMeter {
         
     }
     
-    func daysSpent(from birthDate: Date) -> [Int] {
+    func daysSpent(from birthDate: Date,  to compareDate: Date = Date()) -> [Int] {
         
         // Convert the number of days from Now to the user's birthday to an array of Ints
         // for display in the odometer
-        let dayCount = CalendarUtilities.daysFromNow(from: birthDate)
+        let dayCount = CalendarUtilities.days(from: birthDate, to: compareDate)
         let dayCountString = String(dayCount)
         let dayCountArray = dayCountString.map { String($0) }
         var rightSizedArray: [String]
@@ -77,6 +77,7 @@ class LifeBioMeter {
             let difference = 6 - dayCountArray.count
             rightSizedArray = Array(repeating: "0", count: difference)
             rightSizedArray += dayCountArray
+            
         } else {
             
             // drop right (honestly this will never happen!)
@@ -84,8 +85,6 @@ class LifeBioMeter {
         }
         
         let finalArray = rightSizedArray.map { Int($0)! }
-        
-        
         return finalArray
     }
     

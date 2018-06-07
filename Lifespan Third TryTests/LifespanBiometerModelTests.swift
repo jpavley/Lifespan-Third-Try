@@ -72,10 +72,9 @@ class LifespanBiometerModelTests: XCTestCase {
         
         let lbm3UT = LifeBioMeter(chronologicalAge: 0, ale: 100, mAle: 100)
         XCTAssertEqual(lbm3UT.chronAgeHandAngle, -120)
-
     }
     
-    func tesBioAgeHandAngle() {
+    func testBioAgeHandAngle() {
         
         let lbm1UT = LifeBioMeter(chronologicalAge: 120, ale: 120, mAle: 120)
         XCTAssertEqual(lbm1UT.bioAgeHandAngle, 120)
@@ -83,9 +82,20 @@ class LifespanBiometerModelTests: XCTestCase {
         let lbm2UT = LifeBioMeter(chronologicalAge: 60, ale: 60, mAle: 60)
         XCTAssertEqual(lbm2UT.bioAgeHandAngle, 0)
         
-        let lbm3UT = LifeBioMeter(chronologicalAge: 0, ale: 0, mAle: 0)
+        let lbm3UT = LifeBioMeter(chronologicalAge: 0, ale: 1, mAle: 1)
         XCTAssertEqual(lbm3UT.bioAgeHandAngle, -120)
+    }
+    
+    func testDaysSpent() {
+        let lbm1UT = LifeBioMeter(chronologicalAge: 120, ale: 120, mAle: 120)
+        let up = UserProfile()
         
+        up.setBirthDate(with: Date())
+        XCTAssertEqual(lbm1UT.daysSpent(from: up.birthDate), [0, 0, 0, 0, 0, 0])
+        
+        up.setBirthDate(with: CalendarUtilities.stringToDate(dateString: "02-13-1961")!)
+        XCTAssertEqual(lbm1UT.daysSpent(from: up.birthDate, to: CalendarUtilities.stringToDate(dateString: "06-07-2018")!), [0, 2, 0, 9, 3, 3])
+        XCTAssertEqual(lbm1UT.daysSpent(from: up.birthDate, to: CalendarUtilities.stringToDate(dateString: "02-14-1961")!), [0, 0, 0, 0, 0, 1])
     }
 
     

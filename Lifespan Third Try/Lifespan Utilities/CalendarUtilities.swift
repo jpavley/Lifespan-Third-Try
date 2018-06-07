@@ -73,6 +73,11 @@ class CalendarUtilities {
         return cal.dateComponents([.day], from: date, to: now).day ?? 0
     }
     
+    static func days(from date1: Date, to date2: Date) -> Int {
+        let cal = utcCal()
+        return cal.dateComponents([.day], from: date1, to: date2).day ?? 0
+    }
+    
     static func monthName(from monthNumber: Int) -> String {
         guard monthNumber > 0 && monthNumber < 13 else {
             return ""
