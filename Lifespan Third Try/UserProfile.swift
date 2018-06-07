@@ -40,7 +40,8 @@ struct UserStats {
     var lifeBonus: Int = 0
 }
 
-let maxHumanLifeExpectancy = 122
+let maxHumanLifeExpectancy = 120
+let minHumanLifeExpectancy = 0
 
 /// Models a user of Lifespan.
 /// A good source for life expentancy is // https://www.ssa.gov/planners/lifeexpectancy.html
@@ -73,6 +74,7 @@ class UserProfile {
         let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
         let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
+        // setLifeExpectancy(with: 83)
         
         activityLevel = RangedValue(min: 0, max: 10, setting: 0)
         stressLevel = RangedValue(min: 0, max: 10, setting: 0)
@@ -82,6 +84,12 @@ class UserProfile {
         pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
                                      max: Float(PronounGender.male.rawValue),
                                      setting: Float(PronounGender.male.rawValue))
+    }
+    
+    fileprivate func setLifeExpectancy(with ale: Float) {
+        let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
+        let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
+        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: ale)
     }
     
     func calcUserStats(from lifeSpan: Lifespan, and lbm: LifeBioMeter) -> UserStats {
@@ -105,6 +113,8 @@ class UserProfile {
     
     func setBirthDate(with newDate: Date) {
         birthDate = newDate
+        let currentLifeExpectancy = lifeExpectancy.setting
+        setLifeExpectancy(with: currentLifeExpectancy)
     }
     
     var birthYear: Int {
