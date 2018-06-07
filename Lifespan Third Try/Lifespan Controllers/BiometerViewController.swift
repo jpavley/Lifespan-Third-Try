@@ -73,40 +73,18 @@ class BiometerViewController: UIViewController {
     }
     
     fileprivate func setOdometerText() {
+        
         let tb = self.tabBarController as! TabViewController
         tb.updateLife()
         
-        guard let up = tb.userProfile else {
+        guard let up = tb.userProfile, let lbm = tb.lifeBioMeter else {
             return
         }
         
         let monthName = CalendarUtilities.monthName(from: up.birthMonth)
         let odoLabelString = "Days spent since \(up.birthDay) \(monthName) \(up.birthYear)"
         odometerTextView.odoLabel = odoLabelString
-        
-        // Convert the number of days from Now to the user's birthday to an array of Ints
-        // for display in the odometer
-        let dayCount = CalendarUtilities.daysFromNow(from: up.birthDate)
-        let dayCountString = String(dayCount)
-        let dayCountArray = dayCountString.map { String($0) }
-        var rightSizedArray: [String]
-        
-        // the Odometer only has 6 slots for 6 Ints
-        if dayCountArray.count < 6 {
-            
-            // pad left
-            let difference = 6 - dayCountArray.count
-            rightSizedArray = Array(repeating: "0", count: difference)
-            rightSizedArray += dayCountArray
-        } else {
-            
-            // drop right (honestly this will never happen!)
-            rightSizedArray = Array(dayCountArray[..<6])
-        }
-        
-        let finalArray = rightSizedArray.map { Int($0)! }
-        odometerTextView.odoValues = finalArray
-
+        odometerTextView.odoValues = lbm.daysSpent(from: up.birthDate)
     }
     
     // MARK: - Overrides -

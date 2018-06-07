@@ -61,12 +61,34 @@ class LifeBioMeter {
         
     }
     
-    var daysSpent: [Int] {
-        get {            
-            return [0,0,0,0,0,0]
+    func daysSpent(from birthDate: Date) -> [Int] {
+        
+        // Convert the number of days from Now to the user's birthday to an array of Ints
+        // for display in the odometer
+        let dayCount = CalendarUtilities.daysFromNow(from: birthDate)
+        let dayCountString = String(dayCount)
+        let dayCountArray = dayCountString.map { String($0) }
+        var rightSizedArray: [String]
+        
+        // the Odometer only has 6 slots for 6 Ints
+        if dayCountArray.count < 6 {
+            
+            // pad left
+            let difference = 6 - dayCountArray.count
+            rightSizedArray = Array(repeating: "0", count: difference)
+            rightSizedArray += dayCountArray
+        } else {
+            
+            // drop right (honestly this will never happen!)
+            rightSizedArray = Array(dayCountArray[..<6])
         }
         
+        let finalArray = rightSizedArray.map { Int($0)! }
+        
+        
+        return finalArray
     }
+    
     var lifeBonus: Int {
         get {
             let r = 1.0 - lifeFactor
