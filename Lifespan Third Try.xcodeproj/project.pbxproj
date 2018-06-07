@@ -87,6 +87,9 @@
 		48664C3D20BADE420060634E /* ChronologicalHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronologicalHandView.swift; sourceTree = "<group>"; };
 		48664C3F20BADE600060634E /* BiologicalHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiologicalHandView.swift; sourceTree = "<group>"; };
 		48664C4120BAE0490060634E /* lifeaccelerometer.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifeaccelerometer.idraw; sourceTree = "<group>"; };
+		486D55E520C8E64F00FA265C /* biometer.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = biometer.idraw; sourceTree = "<group>"; };
+		486D55E620C8E66300FA265C /* LifeSpanLogo.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifeSpanLogo.idraw; sourceTree = "<group>"; };
+		486D55E720C8E66900FA265C /* analysis.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = analysis.idraw; sourceTree = "<group>"; };
 		48963FC420A21C6E00334205 /* BUGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUGS.md; sourceTree = "<group>"; };
 		48C6207C20BB4B9700026456 /* OdometerTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdometerTextView.swift; sourceTree = "<group>"; };
 		48D01AEB208A2A2600AF13F0 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
@@ -267,6 +270,9 @@
 			children = (
 				48664C4120BAE0490060634E /* lifeaccelerometer.idraw */,
 				4828069220B05E7700F0091E /* lifeclock3.idraw */,
+				486D55E520C8E64F00FA265C /* biometer.idraw */,
+				486D55E620C8E66300FA265C /* LifeSpanLogo.idraw */,
+				486D55E720C8E66900FA265C /* analysis.idraw */,
 				1878F00F2067EEB600BEA332 /* Main.storyboard */,
 				1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */,
 				1878F0122067EEB600BEA332 /* Assets.xcassets */,
