@@ -18,6 +18,13 @@
 		4802A60920BD786D00BEB1C5 /* LifeBioMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */; };
 		481274FD20C97769008AF535 /* LifespanBiometerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481274FC20C97769008AF535 /* LifespanBiometerModelTests.swift */; };
 		481274FE20C97817008AF535 /* LifeBioMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */; };
+		481274FF20C98834008AF535 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAC2069B846006BB346 /* UserProfile.swift */; };
+		4812750020C98838008AF535 /* Lifespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CA92069B845006BB346 /* Lifespan.swift */; };
+		4812750120C9883C008AF535 /* LifeClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAD2069B846006BB346 /* LifeClock.swift */; };
+		4812750220C98842008AF535 /* Pronouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828069420B115C800F0091E /* Pronouns.swift */; };
+		4812750320C9895F008AF535 /* CalendarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAB2069B846006BB346 /* CalendarUtilities.swift */; };
+		4812750420C98964008AF535 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE8C6920799EA700931554 /* StringUtilities.swift */; };
+		4812750520C98973008AF535 /* WebUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E25CAA2069B845006BB346 /* WebUtilities.swift */; };
 		4828069320B05E7700F0091E /* lifeclock3.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 4828069220B05E7700F0091E /* lifeclock3.idraw */; };
 		4828069520B115C800F0091E /* Pronouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828069420B115C800F0091E /* Pronouns.swift */; };
 		484D707A20A541910086CA68 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707920A541910086CA68 /* TipViewController.swift */; };
@@ -443,9 +450,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4812750320C9895F008AF535 /* CalendarUtilities.swift in Sources */,
+				481274FF20C98834008AF535 /* UserProfile.swift in Sources */,
 				481274FE20C97817008AF535 /* LifeBioMeter.swift in Sources */,
 				481274FD20C97769008AF535 /* LifespanBiometerModelTests.swift in Sources */,
+				4812750220C98842008AF535 /* Pronouns.swift in Sources */,
+				4812750520C98973008AF535 /* WebUtilities.swift in Sources */,
 				1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */,
+				4812750120C9883C008AF535 /* LifeClock.swift in Sources */,
+				4812750420C98964008AF535 /* StringUtilities.swift in Sources */,
+				4812750020C98838008AF535 /* Lifespan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
