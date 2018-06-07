@@ -14,9 +14,10 @@
 		1878F0132067EEB600BEA332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0122067EEB600BEA332 /* Assets.xcassets */; };
 		1878F0162067EEB600BEA332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1878F0142067EEB600BEA332 /* LaunchScreen.storyboard */; };
 		1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */; };
-		1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */; };
 		1878F03A2067F2FB00BEA332 /* BiometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878F0392067F2FB00BEA332 /* BiometerViewController.swift */; };
 		4802A60920BD786D00BEB1C5 /* LifeBioMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */; };
+		481274FD20C97769008AF535 /* LifespanBiometerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481274FC20C97769008AF535 /* LifespanBiometerModelTests.swift */; };
+		481274FE20C97817008AF535 /* LifeBioMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */; };
 		4828069320B05E7700F0091E /* lifeclock3.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 4828069220B05E7700F0091E /* lifeclock3.idraw */; };
 		4828069520B115C800F0091E /* Pronouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828069420B115C800F0091E /* Pronouns.swift */; };
 		484D707A20A541910086CA68 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D707920A541910086CA68 /* TipViewController.swift */; };
@@ -75,10 +76,9 @@
 		1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryTests.swift; sourceTree = "<group>"; };
 		1878F0222067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0272067EEB600BEA332 /* Lifespan Third TryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lifespan Third TryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifespan_Third_TryUITests.swift; sourceTree = "<group>"; };
-		1878F02D2067EEB600BEA332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878F0392067F2FB00BEA332 /* BiometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometerViewController.swift; sourceTree = "<group>"; };
 		4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBioMeter.swift; sourceTree = "<group>"; };
+		481274FC20C97769008AF535 /* LifespanBiometerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifespanBiometerModelTests.swift; sourceTree = "<group>"; };
 		4828069220B05E7700F0091E /* lifeclock3.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifeclock3.idraw; sourceTree = "<group>"; };
 		4828069420B115C800F0091E /* Pronouns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pronouns.swift; sourceTree = "<group>"; };
 		484D707920A541910086CA68 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 				48EB7ACB208B98DC00DBA476 /* LICENSE */,
 				1878F0082067EEB600BEA332 /* Lifespan Third Try */,
 				1878F01F2067EEB600BEA332 /* Lifespan Third TryTests */,
-				1878F02A2067EEB600BEA332 /* Lifespan Third TryUITests */,
 				1878F0072067EEB600BEA332 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,19 +178,11 @@
 		1878F01F2067EEB600BEA332 /* Lifespan Third TryTests */ = {
 			isa = PBXGroup;
 			children = (
+				481274FC20C97769008AF535 /* LifespanBiometerModelTests.swift */,
 				1878F0202067EEB600BEA332 /* Lifespan_Third_TryTests.swift */,
 				1878F0222067EEB600BEA332 /* Info.plist */,
 			);
 			path = "Lifespan Third TryTests";
-			sourceTree = "<group>";
-		};
-		1878F02A2067EEB600BEA332 /* Lifespan Third TryUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1878F02B2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift */,
-				1878F02D2067EEB600BEA332 /* Info.plist */,
-			);
-			path = "Lifespan Third TryUITests";
 			sourceTree = "<group>";
 		};
 		48664C3720B98C470060634E /* Clock Views */ = {
@@ -452,6 +443,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481274FE20C97817008AF535 /* LifeBioMeter.swift in Sources */,
+				481274FD20C97769008AF535 /* LifespanBiometerModelTests.swift in Sources */,
 				1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +453,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1878F02C2067EEB600BEA332 /* Lifespan_Third_TryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,8 @@ class LifeBioMeter {
         self.chronologicalAge = chronologicalAge
         lifeFactor = ale/mAle
         biologicalAge = chronologicalAge * lifeFactor
+                
+        biologicalAge = biologicalAge > maxAge ? maxAge : biologicalAge
     }
     
     var chronAgeHandAngle: CGFloat {

@@ -4,6 +4,7 @@
 
 - Add unit tests back in from ealier version of project.
 - Support Dynamic Type (Attributed Text does not support dynamic type).
+- Support localized text
 
 ## In Progress
 
