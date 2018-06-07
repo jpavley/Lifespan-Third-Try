@@ -36,6 +36,9 @@ class LifespanBiometerModelTests: XCTestCase {
         
         let lbm3UT = LifeBioMeter(chronologicalAge: 100, ale: 100, mAle: 80)
         XCTAssertEqual(lbm3UT.biologicalAge.rounded(.down), 120)
+        
+        let lbm4UT = LifeBioMeter(chronologicalAge: 0, ale: 0, mAle: 0)
+        XCTAssertEqual(lbm4UT.biologicalAge.rounded(.down), 0)
     }
     
     func testLifeFactor() {

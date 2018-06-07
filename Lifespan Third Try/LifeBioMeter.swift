@@ -34,7 +34,7 @@ class LifeBioMeter {
     
     init(chronologicalAge: CGFloat, ale: CGFloat, mAle: CGFloat) {
         self.chronologicalAge = chronologicalAge
-        lifeFactor = ale/mAle
+        lifeFactor = mAle != 0 ? ale/mAle : 1
         biologicalAge = chronologicalAge * lifeFactor
         
         biologicalAge = biologicalAge > maxAge ? maxAge : biologicalAge

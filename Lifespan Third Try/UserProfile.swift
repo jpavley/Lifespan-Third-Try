@@ -105,7 +105,7 @@ class UserProfile {
         us.hoursBeyondALE = lifeSpan.hoursBeyondALE
         
         us.chronologicalAge = Int(lbm.chronologicalAge.rounded(.down))
-        us.biologicalAge = Int(lbm.biologicalAge.rounded(.down))
+        us.biologicalAge = lbm.biologicalAge <= 0.0 ? Int(lbm.biologicalAge) : Int(lbm.biologicalAge.rounded(.down))
         us.lifeBonus = lbm.lifeBonus
         
         return us
