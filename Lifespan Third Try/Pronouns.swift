@@ -18,16 +18,16 @@ enum PronounGender: Int {
 }
 
 struct PronounTrio {
-    var subjective: String = "he" // she, they, xe, zhe, it
-    var objective: String = "him" // her, them, xim, zer, it
-    var possessive: String = "his" // her, their, xis, zer, its
+    var subjective: String = "he" // she, they, e, zie, it
+    var objective: String = "him" // her, them, em, zim, it
+    var possessive: String = "his" // her, their, eir, zir, its
     
     static func female() -> PronounTrio {
         return PronounTrio(subjective: "she", objective: "her", possessive: "her")
     }
     
     static func netural1() -> PronounTrio {
-        return PronounTrio(subjective: "zhe", objective: "zer", possessive: "zer")
+        return PronounTrio(subjective: "zie", objective: "zim", possessive: "zir")
     }
 
     
@@ -40,7 +40,7 @@ struct PronounTrio {
     }
 
     static func netural4() -> PronounTrio {
-        return PronounTrio(subjective: "xe", objective: "xim", possessive: "xis")
+        return PronounTrio(subjective: "e", objective: "em", possessive: "eir")
     }
 
     
