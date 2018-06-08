@@ -65,11 +65,19 @@ class BiometerViewController: UIViewController {
         }
         
         let chronHand = view.viewWithTag(chronologicalHandTag) as! ChronologicalHandView
-        chronHand.angle = lbm.chronAgeHandAngle
-        
         let bioHand = view.viewWithTag(biologicalHandTag) as! BiologicalHandView
-        bioHand.angle = lbm.bioAgeHandAngle
-
+        
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: {
+            chronHand.transform = CGAffineTransform(rotationAngle: lbm.chronAgeHandAngle.degreesToRadians)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.10, options: .curveEaseInOut, animations: {
+            bioHand.transform = CGAffineTransform(rotationAngle: lbm.bioAgeHandAngle.degreesToRadians)
+        }, completion: nil)
+        
+//        chronHand.angle = lbm.chronAgeHandAngle
+//        bioHand.angle = lbm.bioAgeHandAngle
+        
     }
     
     fileprivate func setOdometerText() {
@@ -89,22 +97,31 @@ class BiometerViewController: UIViewController {
     
     // MARK: - Overrides -
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // NOTE: All initalization work done in viewWillAppear
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // reset clock hands before view appears
+        let chronHand = view.viewWithTag(chronologicalHandTag) as! ChronologicalHandView
+        let bioHand = view.viewWithTag(biologicalHandTag) as! BiologicalHandView
+        
+        chronHand.angle = 0
+        bioHand.angle = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // set clock hands after view appears
         updateView()
         odometerTextView.setNeedsDisplay()
     }
-
 }

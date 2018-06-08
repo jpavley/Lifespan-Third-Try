@@ -22,11 +22,6 @@ class ClockViewController: UIViewController {
     let spentSegment = 0
     let remainingSegment = 1
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
     fileprivate func updateView() {
         
         let tb = self.tabBarController as! TabViewController
@@ -75,11 +70,9 @@ class ClockViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // set clock hands after view appears
-        updateView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,8 +86,14 @@ class ClockViewController: UIViewController {
         hourHand.angle = 0
         minuteHand.angle = 0
         secondHand.angle = 0
-
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // set clock hands after view appears
+        updateView()
+    }
 }
 
