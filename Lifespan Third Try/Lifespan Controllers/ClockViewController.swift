@@ -52,13 +52,22 @@ class ClockViewController: UIViewController {
     }
             
     fileprivate func setClockView(with lifeClock: LifeClock) {
+        
         let hourHand = view.viewWithTag(hourHandTag) as! HourHandView
         let minuteHand = view.viewWithTag(minuteHandTag) as! MinuteHandView
         let secondHand = view.viewWithTag(secondHandTag) as! SecondHandView
-
-        hourHand.angle = lifeClock.hourHandAngle
-        minuteHand.angle = lifeClock.minuteHandAngle
-        secondHand.angle = lifeClock.secondHandAngle
+        
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: {
+            hourHand.transform = CGAffineTransform(rotationAngle: lifeClock.hourHandAngle.degreesToRadians)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.10, options: .curveEaseInOut, animations: {
+            minuteHand.transform = CGAffineTransform(rotationAngle: lifeClock.minuteHandAngle.degreesToRadians)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.20, options: .curveEaseInOut, animations: {
+            secondHand.transform = CGAffineTransform(rotationAngle: lifeClock.secondHandAngle.degreesToRadians)
+        }, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,9 +75,25 @@ class ClockViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // set clock hands after view appears
+        updateView()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateView()
+        
+        // reset clock hands before view appears
+        let hourHand = view.viewWithTag(hourHandTag) as! HourHandView
+        let minuteHand = view.viewWithTag(minuteHandTag) as! MinuteHandView
+        let secondHand = view.viewWithTag(secondHandTag) as! SecondHandView
+        
+        hourHand.angle = 0
+        minuteHand.angle = 0
+        secondHand.angle = 0
+
     }
     
 }
