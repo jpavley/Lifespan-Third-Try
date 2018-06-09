@@ -67,7 +67,7 @@ class UserProfile {
         
     init() {
         name = "Lee Q. Smith"
-        birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1961")!
+        birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1990")!
         
         let cal = CalendarUtilities.utcCal()
         let birthYear = cal.component(.year, from: birthDate)
