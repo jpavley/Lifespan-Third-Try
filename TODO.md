@@ -6,8 +6,7 @@
 - Support localized text
 
 ## In Progress
-- Support Dynamic Type (Attributed Text does support dynamic type).
-- Use scroll views on biometer and clock tabs to support growing type
+- Save user profile data so that if the app is killed the data is reloaded.
 
 
 ## Parked
@@ -45,6 +44,9 @@
 - Add biological age analysis to the Analysis tab.
 - Update the tab bar icons to reflect design changes.
 - Create launch screen
+- Support Dynamic Type (Attributed Text does support dynamic type).
+- Use scroll views on biometer and clock tabs to support growing type
+
 
 
 
