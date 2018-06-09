@@ -25,11 +25,19 @@
                                     <constraint firstAttribute="width" constant="240" id="pum-KC-iDD"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Epic Loot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63O-Yj-r6q">
+                                <rect key="frame" x="112" y="533" width="97" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TIV-JJ-bAq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3Ll-yJ-o2c"/>
                             <constraint firstItem="TIV-JJ-bAq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8kD-AG-oQw"/>
+                            <constraint firstItem="63O-Yj-r6q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fsh-Le-TrJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="63O-Yj-r6q" secondAttribute="bottom" constant="20" id="LSo-fB-4Cn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
