@@ -66,24 +66,24 @@ class UserProfile {
     var geneticsLevel: RangedValue
         
     init() {
-        name = "John F. Pavley"
+        name = "Lee Q. Smith"
         birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1961")!
         
         let cal = CalendarUtilities.utcCal()
         let birthYear = cal.component(.year, from: birthDate)
         let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
         let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
-        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 83)
+        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 88)
         // setLifeExpectancy(with: 83)
         
-        activityLevel = RangedValue(min: 0, max: 10, setting: 0)
-        stressLevel = RangedValue(min: 0, max: 10, setting: 0)
-        riskLevel = RangedValue(min: 0, max: 10, setting: 0)
-        geneticsLevel = RangedValue(min: 0, max: 10, setting: 0)
+        activityLevel = RangedValue(min: 1, max: 10, setting: 5)
+        stressLevel = RangedValue(min: 1, max: 10, setting: 5)
+        riskLevel = RangedValue(min: 1, max: 10, setting: 5)
+        geneticsLevel = RangedValue(min: 1, max: 10, setting: 5)
                 
         pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
                                      max: Float(PronounGender.male.rawValue),
-                                     setting: Float(PronounGender.male.rawValue))
+                                     setting: Float(PronounGender.female.rawValue))
     }
     
     fileprivate func setLifeExpectancy(with ale: Float) {

@@ -17,10 +17,11 @@ enum PronounGender: Int {
     case male = 5
 }
 
+/// https://uwm.edu/lgbtrc/support/gender-pronouns/
 struct PronounTrio {
-    var subjective: String = "he" // she, they, e, zie, it
-    var objective: String = "him" // her, them, em, zim, it
-    var possessive: String = "his" // her, their, eir, zir, its
+    var subjective: String = "zie" // she, they, e, zie, it
+    var objective: String = "zim" // her, them, em, zim, it
+    var possessive: String = "zir" // her, their, eir, zir, its
     
     static func female() -> PronounTrio {
         return PronounTrio(subjective: "she", objective: "her", possessive: "her")

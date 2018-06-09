@@ -3,10 +3,12 @@
 ## Open
 
 - Add unit tests back in from ealier version of project.
-- Support Dynamic Type (Attributed Text does not support dynamic type).
 - Support localized text
 
 ## In Progress
+- Support Dynamic Type (Attributed Text does support dynamic type).
+- Use scroll views on biometer and clock tabs to support growing type
+
 
 ## Parked
 
