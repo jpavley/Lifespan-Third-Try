@@ -863,6 +863,9 @@
                                     <segue destination="Hk5-qv-r9U" kind="embed" id="aAA-Bj-cbU"/>
                                 </connections>
                             </containerView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-OH-JpM">
+                                <rect key="frame" x="0.0" y="118" width="320" height="533"/>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAk-24-vJp" userLabel="Biometer Container">
                                 <rect key="frame" x="16" y="118" width="288" height="288"/>
                                 <subviews>
@@ -948,10 +951,14 @@
                             <constraint firstItem="UAk-24-vJp" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="4QH-2n-arw"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="top" secondItem="OZg-IU-5Yi" secondAttribute="top" constant="8" id="9S6-BA-SQN"/>
                             <constraint firstItem="Duz-is-Iym" firstAttribute="width" secondItem="UAk-24-vJp" secondAttribute="width" id="Bcg-Tw-lbO"/>
+                            <constraint firstItem="5UO-OH-JpM" firstAttribute="top" secondItem="wPv-QD-8cD" secondAttribute="bottom" id="D0K-Hz-bDn"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" id="EoE-Me-6oG"/>
+                            <constraint firstItem="OZg-IU-5Yi" firstAttribute="trailing" secondItem="5UO-OH-JpM" secondAttribute="trailing" id="FjJ-2I-s3F"/>
                             <constraint firstItem="Duz-is-Iym" firstAttribute="top" secondItem="UAk-24-vJp" secondAttribute="bottom" constant="8" id="MHY-pC-hQ6"/>
+                            <constraint firstItem="OZg-IU-5Yi" firstAttribute="bottom" secondItem="5UO-OH-JpM" secondAttribute="bottom" id="Opw-OY-zqq"/>
                             <constraint firstItem="Duz-is-Iym" firstAttribute="centerX" secondItem="Dzx-nE-EA7" secondAttribute="centerX" id="OqH-sJ-NVy"/>
                             <constraint firstItem="UAk-24-vJp" firstAttribute="centerX" secondItem="Dzx-nE-EA7" secondAttribute="centerX" id="Z7j-2v-xvr"/>
+                            <constraint firstItem="5UO-OH-JpM" firstAttribute="leading" secondItem="OZg-IU-5Yi" secondAttribute="leading" id="hNX-Ga-Ybw"/>
                             <constraint firstItem="UAk-24-vJp" firstAttribute="width" secondItem="Dzx-nE-EA7" secondAttribute="width" multiplier="0.9" id="j2c-0v-kdq"/>
                             <constraint firstItem="wPv-QD-8cD" firstAttribute="trailing" secondItem="OZg-IU-5Yi" secondAttribute="trailing" id="t51-Ck-9Qd"/>
                         </constraints>
