@@ -132,6 +132,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.activityLevel.setting = sender.value.rounded(.awayFromZero)
         activitySlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.activityLevel.min) \(userProfile.activityLevel.max) \(userProfile.activityLevel.setting)", forKey: udc.activityLevelKey)
     }
     
     @IBAction func stressSliderChanged(_ sender: UISlider) {
@@ -144,6 +147,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.stressLevel.setting = sender.value.rounded(.awayFromZero)
         stressSlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.stressLevel.min) \(userProfile.stressLevel.max) \(userProfile.stressLevel.setting)", forKey: udc.stressLevelKey)
     }
     
     @IBAction func riskSliderChanged(_ sender: UISlider) {
@@ -156,6 +162,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.riskLevel.setting = sender.value.rounded(.awayFromZero)
         riskSlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.riskLevel.min) \(userProfile.riskLevel.max) \(userProfile.riskLevel.setting)", forKey: udc.riskLevelKey)
     }
     
     @IBAction func geneticsSliderChanged(_ sender: UISlider) {
@@ -168,6 +177,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.geneticsLevel.setting = sender.value.rounded(.awayFromZero)
         geneticsSlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.geneticsLevel.min) \(userProfile.geneticsLevel.max) \(userProfile.geneticsLevel.setting)", forKey: udc.geneticsLevelKey)
     }
     
     @IBAction func showTipAction(_ sender: UIButton) {
