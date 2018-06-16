@@ -287,6 +287,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    // MARK: - Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -297,13 +299,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Navigation
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

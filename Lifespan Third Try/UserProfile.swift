@@ -65,25 +65,81 @@ class UserProfile {
     var riskLevel: RangedValue
     var geneticsLevel: RangedValue
         
-    init() {
-        name = "Lee Q. Smith"
-        birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1990")!
+    /// Initalizes the UserProfile with stored properties (sp). If any properties are missing then a defualt value is used.
+    ///
+    /// - Parameter sp: A dictionary of stored properties. Each property is coded as String.
+    init(with sp: [String:String]) {
         
-        let cal = CalendarUtilities.utcCal()
-        let birthYear = cal.component(.year, from: birthDate)
-        let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
-        let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
-        lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 88)
-        // setLifeExpectancy(with: 83)
+        if let spName = sp["name"] {
+            name = spName
+        } else {
+            name = "Lee Q. Smith"
+        }
         
-        activityLevel = RangedValue(min: 1, max: 10, setting: 5)
-        stressLevel = RangedValue(min: 1, max: 10, setting: 5)
-        riskLevel = RangedValue(min: 1, max: 10, setting: 5)
-        geneticsLevel = RangedValue(min: 1, max: 10, setting: 5)
-                
-        pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
-                                     max: Float(PronounGender.male.rawValue),
-                                     setting: Float(PronounGender.female.rawValue))
+        // format: mm-dd-yyyy"
+        if let spBirthDate = sp["birthDate"] {
+            birthDate = CalendarUtilities.stringToDate(dateString: spBirthDate)!
+        } else {
+            birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1990")!
+        }
+        
+        if let spLifeExpectancy = sp["lifeExpectancy"] {
+            lifeExpectancy = UserProfile.tranformIntoRV(storedProperty: spLifeExpectancy)
+        } else {
+            let cal = CalendarUtilities.utcCal()
+            let birthYear = cal.component(.year, from: birthDate)
+            let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
+            let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
+            lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 88)
+        }
+        
+        if let spActivityLevel = sp["activityLevel"] {
+            activityLevel = UserProfile.tranformIntoRV(storedProperty: spActivityLevel)
+        } else {
+            activityLevel = RangedValue(min: 1, max: 10, setting: 5)
+        }
+        
+        if let spStressLevel = sp["stressLevel"] {
+            stressLevel = UserProfile.tranformIntoRV(storedProperty: spStressLevel)
+        } else {
+            stressLevel = RangedValue(min: 1, max: 10, setting: 5)
+        }
+        
+        if let spRiskLevel = sp["riskLevel"] {
+            riskLevel = UserProfile.tranformIntoRV(storedProperty: spRiskLevel)
+        } else {
+            riskLevel = RangedValue(min: 1, max: 10, setting: 5)
+        }
+        
+        if let spGeneticsLevel = sp["geneticsLevel"] {
+            geneticsLevel = UserProfile.tranformIntoRV(storedProperty: spGeneticsLevel)
+        } else {
+            geneticsLevel = RangedValue(min: 1, max: 10, setting: 5)
+        }
+        
+        if let spPronounChoices = sp["pronounChoices"] {
+            pronounChoices = UserProfile.tranformIntoRV(storedProperty: spPronounChoices)
+        } else {
+            pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
+                                         max: Float(PronounGender.male.rawValue),
+                                         setting: Float(PronounGender.female.rawValue))
+        }
+    }
+    
+    /// Takes a stored property string and transforms it into a RangedValue.
+    ///
+    /// - Parameter storedProperty: String with the format "minValue maxValue settingValue"
+    /// - Returns: RangedValue representation of storedProperty
+    static fileprivate func tranformIntoRV(storedProperty: String) -> RangedValue {
+        
+        // break the stored property string into a list of compontents (minValue, maxValue, settingValue)
+        let s = storedProperty.components(separatedBy: " ")
+        
+        // convert the components into Floats
+        let f = s.map({ Float($0)! })
+        
+        // create and return a RangedValue from the list of Floats
+        return RangedValue(min: f[0], max: f[1], setting: f[2])
     }
     
     fileprivate func setLifeExpectancy(with ale: Float) {
