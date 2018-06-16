@@ -40,9 +40,6 @@ struct UserStats {
     var lifeBonus: Int = 0
 }
 
-let maxHumanLifeExpectancy = 120
-let minHumanLifeExpectancy = 0
-
 /// Models a user of Lifespan.
 /// A good source for life expentancy is // https://www.ssa.gov/planners/lifeexpectancy.html
 /// An interesting question is this: Is the user alive or dead and does this model care?
@@ -65,65 +62,42 @@ class UserProfile {
     var riskLevel: RangedValue
     var geneticsLevel: RangedValue
         
-    /// Initalizes the UserProfile with stored properties (sp). If any properties are missing then a defualt value is used.
-    ///
-    /// - Parameter sp: A dictionary of stored properties. Each property is coded as String.
-    init(with sp: [String:String]) {
+    /// Initalizes the UserProfile with stored properties. If any properties are missing then a default constant is used and a stored property is created.
+    init() {
         
-        if let spName = sp["name"] {
-            name = spName
-        } else {
-            name = "Lee Q. Smith"
-        }
+        let udc = UserDefaultConstants()
         
-        // format: mm-dd-yyyy"
-        if let spBirthDate = sp["birthDate"] {
-            birthDate = CalendarUtilities.stringToDate(dateString: spBirthDate)!
-        } else {
-            birthDate = CalendarUtilities.stringToDate(dateString: "02-13-1990")!
-        }
+        name = UserProfile.loadSimple(key: udc.nameKey, value: udc.nameValue)
+                
+        let birthDateString = UserProfile.loadSimple(key:  udc.birthDateKey, value: udc.birthDateValue)
+        birthDate = CalendarUtilities.stringToDate(dateString: birthDateString)!
         
-        if let spLifeExpectancy = sp["lifeExpectancy"] {
+        if let spLifeExpectancy = UserDefaults.standard.string(forKey: udc.lifeExpectancyKey) {
             lifeExpectancy = UserProfile.tranformIntoRV(storedProperty: spLifeExpectancy)
         } else {
+            
+            // calculate the min and max for life expectancy range from today's date and the user's birth year
+            
             let cal = CalendarUtilities.utcCal()
             let birthYear = cal.component(.year, from: birthDate)
+            
             let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
-            let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
-            lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: 88)
+            let lifeExpectancyMax = Float(udc.maxHumanLifeExpectancy)
+            
+            let lifeExpectancySetting = UserProfile.tranformIntoRV(storedProperty: udc.lifeExpectancyValue).setting
+            
+            lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: lifeExpectancySetting)
+            
+            // save the calculated value as a stored property in user defaults
+            UserDefaults.standard.setValue(UserProfile.transformIntoStoredProperty(rangedValue: lifeExpectancy), forKey: udc.lifeExpectancyKey)
         }
         
-        if let spActivityLevel = sp["activityLevel"] {
-            activityLevel = UserProfile.tranformIntoRV(storedProperty: spActivityLevel)
-        } else {
-            activityLevel = RangedValue(min: 1, max: 10, setting: 5)
-        }
+        activityLevel = UserProfile.loadRangedValue(key: udc.activityLevelKey, value: udc.activityLevelValue)
         
-        if let spStressLevel = sp["stressLevel"] {
-            stressLevel = UserProfile.tranformIntoRV(storedProperty: spStressLevel)
-        } else {
-            stressLevel = RangedValue(min: 1, max: 10, setting: 5)
-        }
-        
-        if let spRiskLevel = sp["riskLevel"] {
-            riskLevel = UserProfile.tranformIntoRV(storedProperty: spRiskLevel)
-        } else {
-            riskLevel = RangedValue(min: 1, max: 10, setting: 5)
-        }
-        
-        if let spGeneticsLevel = sp["geneticsLevel"] {
-            geneticsLevel = UserProfile.tranformIntoRV(storedProperty: spGeneticsLevel)
-        } else {
-            geneticsLevel = RangedValue(min: 1, max: 10, setting: 5)
-        }
-        
-        if let spPronounChoices = sp["pronounChoices"] {
-            pronounChoices = UserProfile.tranformIntoRV(storedProperty: spPronounChoices)
-        } else {
-            pronounChoices = RangedValue(min: Float(PronounGender.female.rawValue),
-                                         max: Float(PronounGender.male.rawValue),
-                                         setting: Float(PronounGender.female.rawValue))
-        }
+        stressLevel = UserProfile.loadRangedValue(key: udc.stressLevelKey, value: udc.stressLevelValue)
+        riskLevel = UserProfile.loadRangedValue(key: udc.riskLevelKey, value: udc.riskLevelValue)
+        geneticsLevel = UserProfile.loadRangedValue(key: udc.geneticsLevelKey, value: udc.geneticsLevelValue)
+        pronounChoices = UserProfile.loadRangedValue(key: udc.pronounChoicesKey, value: udc.pronounChoicesValue)
     }
     
     /// Takes a stored property string and transforms it into a RangedValue.
@@ -142,9 +116,40 @@ class UserProfile {
         return RangedValue(min: f[0], max: f[1], setting: f[2])
     }
     
+    static fileprivate func transformIntoStoredProperty(rangedValue rv: RangedValue) -> String {
+        return "\(rv.min) \(rv.max) \(rv.setting)"
+    }
+    
+    fileprivate static func loadSimple(key: String, value: String) -> String {
+        if let spName = UserDefaults.standard.string(forKey: key) {
+            return spName
+        } else {
+            
+            // save as a stored property in user defaults
+            UserDefaults.standard.setValue(value, forKey: key)
+            
+            // return the defult contant value for this key
+            return value
+        }
+    }
+    
+    fileprivate static func loadRangedValue(key: String, value: String) -> RangedValue {
+        if let spActivityLevel = UserDefaults.standard.string(forKey: key)  {
+            return UserProfile.tranformIntoRV(storedProperty:spActivityLevel)
+        } else {
+            
+            // save as a stored property in user defaults
+            UserDefaults.standard.setValue(value, forKey: key)
+            
+            // return the defult contant value for this key
+           return UserProfile.tranformIntoRV(storedProperty:value)
+        }
+    }
+    
     fileprivate func setLifeExpectancy(with ale: Float) {
         let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
-        let lifeExpectancyMax = Float(maxHumanLifeExpectancy)
+        let udc = UserDefaultConstants()
+        let lifeExpectancyMax = Float(udc.maxHumanLifeExpectancy)
         lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: ale)
     }
     

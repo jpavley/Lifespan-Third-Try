@@ -20,14 +20,7 @@ class TabViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         
-        // TODO: Load this from phone storage
-        
-        // load user defaults if they exist
-        if let storedProperites: [String:String] = UserDefaults.standard.dictionary(forKey: "LifespanUD") as? [String:String] {
-            userProfile = UserProfile(with: storedProperites)
-        } else {
-            userProfile = UserProfile(with: [String:String]())
-        }
+        userProfile = UserProfile()
     }
 
     override func didReceiveMemoryWarning() {
