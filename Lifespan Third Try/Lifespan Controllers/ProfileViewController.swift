@@ -102,9 +102,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         // and ProfileViewController.updateView() updates the UX with
         // new birthdate and new LE.
         
-        // TODO: I should not have to know that! Observers would help!
-        
-        UserDefaults.standard.set("\(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.setting)", forKey: udc.lifeExpectancyKey)
+        // TODO: I should not have to know all this! Observers would help!
+        UserDefaults.standard.set("\(userProfile.lifeExpectancy.min) \(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.setting)", forKey: udc.lifeExpectancyKey)
     }
     
     
@@ -118,6 +117,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.lifeExpectancy.setting = sender.value.rounded(.awayFromZero)
         lifeExpencetancySlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.lifeExpectancy.min) \(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.setting)", forKey: udc.lifeExpectancyKey)
     }
     
     @IBAction func activitySliderChanged(_ sender: UISlider) {

@@ -84,7 +84,8 @@ class UserProfile {
             let lifeExpectancyMin = Float(CalendarUtilities.thisYear() - birthYear)
             let lifeExpectancyMax = Float(udc.maxHumanLifeExpectancy)
             
-            let lifeExpectancySetting = UserProfile.tranformIntoRV(storedProperty: udc.lifeExpectancyValue).setting
+            let lifeExpectancyRV = UserProfile.tranformIntoRV(storedProperty: udc.lifeExpectancyValue)
+            let lifeExpectancySetting = lifeExpectancyRV.setting
             
             lifeExpectancy = RangedValue(min: lifeExpectancyMin, max: lifeExpectancyMax, setting: lifeExpectancySetting)
             
