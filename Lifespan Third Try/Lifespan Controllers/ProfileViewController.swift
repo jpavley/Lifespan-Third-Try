@@ -56,6 +56,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         up.name = nameField.text!
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set(up.name, forKey: udc.nameKey)
     }
     
     @IBAction func pronounsValueChanged(_ sender: UISlider) {
@@ -68,6 +71,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userProfile.pronounChoices.setting = sender.value.rounded(.awayFromZero)
         pronounSlider.value = sender.value.rounded(.awayFromZero)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set("\(userProfile.pronounChoices.min) \(userProfile.pronounChoices.max) \(userProfile.pronounChoices.setting)", forKey: udc.pronounChoicesKey)
     }
     
 
@@ -80,6 +86,25 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         userProfile.setBirthDate(with: sender.date)
         updateView()
+        
+        let udc = UserDefaultConstants()
+        
+        // TODO: Refactor into a function
+        
+        let df = DateFormatter()
+        df.dateFormat = "MM-dd-yyyy"
+        df.timeZone = TimeZone(abbreviation: "UTC") // always work in UTC!
+        let birthDateString = df.string(from: userProfile.birthDate)
+        UserDefaults.standard.set(birthDateString, forKey: udc.birthDateKey)
+        
+        // When the birthdate changes so does the life expenctancy.
+        // LE is changed in UserPrfile.setBirthDate() as a side effect
+        // and ProfileViewController.updateView() updates the UX with
+        // new birthdate and new LE.
+        
+        // TODO: I should not have to know that! Observers would help!
+        
+        UserDefaults.standard.set("\(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.setting)", forKey: udc.lifeExpectancyKey)
     }
     
     
