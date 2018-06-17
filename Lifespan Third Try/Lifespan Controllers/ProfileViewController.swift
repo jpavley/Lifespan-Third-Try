@@ -201,7 +201,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     /// Sets all user profile properties to their original default values and saves the result to UserDefaults
     fileprivate func restoreUserDefaults() {
-        print("restore user profile defaults")
+        // print("restore user profile defaults")
         
         let tb = self.tabBarController as! TabViewController
         
@@ -313,9 +313,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         // instead of user local timezone, the default, this app uses UTC
         birthDatePicker.timeZone = TimeZone(abbreviation: "UTC")
         
-        // TODO: set this to currentdate - userProfile.lifeExpectancy.max
-        birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: "01-01-1898")
+        let minYear = CalendarUtilities.thisYear() - Int(userProfile.lifeExpectancy.max.rounded(.down))
+        let minYearString = "01-01-\(minYear)"
         
+        birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: minYearString)
         birthDatePicker.maximumDate = Date()
         birthDatePicker.setDate(userProfile.birthDate, animated: true)
 
