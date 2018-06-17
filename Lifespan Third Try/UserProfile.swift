@@ -105,7 +105,7 @@ class UserProfile {
     ///
     /// - Parameter storedProperty: String with the format "minValue maxValue settingValue"
     /// - Returns: RangedValue representation of storedProperty
-    static fileprivate func tranformIntoRV(storedProperty: String) -> RangedValue {
+    static func tranformIntoRV(storedProperty: String) -> RangedValue {
         
         // break the stored property string into a list of compontents (minValue, maxValue, settingValue)
         let s = storedProperty.components(separatedBy: " ")
@@ -117,7 +117,7 @@ class UserProfile {
         return RangedValue(min: f[0], max: f[1], setting: f[2])
     }
     
-    static fileprivate func transformIntoStoredProperty(rangedValue rv: RangedValue) -> String {
+    static func transformIntoStoredProperty(rangedValue rv: RangedValue) -> String {
         return "\(rv.min) \(rv.max) \(rv.setting)"
     }
     

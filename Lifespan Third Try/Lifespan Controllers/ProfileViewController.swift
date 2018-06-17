@@ -190,16 +190,67 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBAction func resetAction(_ sender: Any) {
         let alert = UIAlertController(title: "Reset User Profile", message: "Store settings to factory defaults? All current data will be lost.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
-            print("restore user profile defaults")
+            self.restoreUserDefaults()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler:  { (action) in
-            print("keep current user profile")
-        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler:  nil))
         present(alert, animated: true)
     }
     
     
     // MARK:- Methods -
+    
+    /// Sets all user profile properties to their original default values and saves the result to UserDefaults
+    fileprivate func restoreUserDefaults() {
+        print("restore user profile defaults")
+        
+        let tb = self.tabBarController as! TabViewController
+        
+        guard let up = tb.userProfile else {
+            return
+        }
+        
+        let udc = UserDefaultConstants()
+        
+        // name
+        up.name = udc.nameValue
+        UserDefaults.standard.set(udc.nameValue, forKey: udc.nameKey)
+        
+        // birth date
+        up.birthDate = CalendarUtilities.stringToDate(dateString: udc.birthDateValue)!
+        UserDefaults.standard.set(udc.birthDateValue, forKey: udc.birthDateKey)
+        
+        // life expectancy
+        let lifeExpectancyRV = UserProfile.tranformIntoRV(storedProperty: udc.lifeExpectancyValue)
+        up.lifeExpectancy.setting = lifeExpectancyRV.setting
+        UserDefaults.standard.set(udc.lifeExpectancyValue, forKey: udc.lifeExpectancyKey)
+        
+        // activity level
+        let activityLevelRV = UserProfile.tranformIntoRV(storedProperty: udc.activityLevelValue)
+        up.activityLevel.setting = activityLevelRV.setting
+        UserDefaults.standard.set(udc.activityLevelValue, forKey: udc.activityLevelKey)
+
+        // stress level
+        let stressLevelRV = UserProfile.tranformIntoRV(storedProperty: udc.stressLevelValue)
+        up.stressLevel.setting = stressLevelRV.setting
+        UserDefaults.standard.set(udc.stressLevelValue, forKey: udc.stressLevelKey)
+
+        // risk level
+        let riskLevelRV = UserProfile.tranformIntoRV(storedProperty: udc.riskLevelValue)
+        up.riskLevel.setting = riskLevelRV.setting
+        UserDefaults.standard.set(udc.riskLevelValue, forKey: udc.riskLevelKey)
+        
+        // genetics level
+        let geneticsLevelRV = UserProfile.tranformIntoRV(storedProperty: udc.geneticsLevelValue)
+        up.geneticsLevel.setting = geneticsLevelRV.setting
+        UserDefaults.standard.set(udc.geneticsLevelValue, forKey: udc.geneticsLevelKey)
+
+        // pronouns
+        let pronounsRV = UserProfile.tranformIntoRV(storedProperty: udc.pronounChoicesValue)
+        up.pronounChoices.setting = pronounsRV.setting
+        UserDefaults.standard.set(udc.pronounChoicesValue, forKey: udc.pronounChoicesKey)
+        
+        updateView()
+    }
     
     @objc func updateView() {
         let tb = self.tabBarController as! TabViewController
