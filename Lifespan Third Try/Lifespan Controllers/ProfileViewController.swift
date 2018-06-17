@@ -273,7 +273,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         birthField.text = "\(birthDay) \(birthMonth) \(birthYear) \(ale)"
     }
     
-    fileprivate func updateAleField() {
+    fileprivate func updateAleFieldAndSider() {
         let tb = self.tabBarController as! TabViewController
         
         guard let userProfile = tb.userProfile else {
@@ -281,7 +281,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         let ale = userProfile.lifeExpectancy.settingAsInt()
-        lifeExpenctancyField.text = "\(ale)"
+        let min = Int(userProfile.lifeExpectancy.min.rounded(.down))
+        let max = Int(userProfile.lifeExpectancy.max.rounded(.down))
+        lifeExpenctancyField.text = "\(min) \(ale) \(max)"
+        // TODO: Bug when birth year is at min (1898) ale field and sider are not correctly set.
+        print("== updateAleFieldAndSider()")
+        print("   \(ale)")
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
     }
     
@@ -306,8 +311,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     fileprivate func updateBirthFactors() {
         updateBirthField()
-        updateAleField()
         updateBirthDatePicker()
+        updateAleFieldAndSider()
     }
     
     fileprivate func updateLifeFactors() {
