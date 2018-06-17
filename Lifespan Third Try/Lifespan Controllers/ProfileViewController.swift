@@ -87,24 +87,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         userProfile.setBirthDate(with: sender.date)
         updateView()
-        
-        let udc = UserDefaultConstants()
-        
-        // TODO: Refactor into a function
-        
-        let df = DateFormatter()
-        df.dateFormat = "MM-dd-yyyy"
-        df.timeZone = TimeZone(abbreviation: "UTC") // always work in UTC!
-        let birthDateString = df.string(from: userProfile.birthDate)
-        UserDefaults.standard.set(birthDateString, forKey: udc.birthDateKey)
-        
-        // When the birthdate changes so does the life expenctancy.
-        // LE is changed in UserPrfile.setBirthDate() as a side effect
-        // and ProfileViewController.updateView() updates the UX with
-        // new birthdate and new LE.
-        
-        // TODO: I should not have to know all this! Observers would help!
-        UserDefaults.standard.set("\(userProfile.lifeExpectancy.min) \(userProfile.lifeExpectancy.max) \(userProfile.lifeExpectancy.setting)", forKey: udc.lifeExpectancyKey)
     }
     
     
