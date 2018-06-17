@@ -87,6 +87,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         userProfile.setBirthDate(with: sender.date)
         updateView()
+        
+        let birthDateString = CalendarUtilities.dateToString(date: userProfile.birthDate)
+        let udc = UserDefaultConstants()
+        UserDefaults.standard.set(birthDateString, forKey: udc.birthDateKey)
     }
     
     
@@ -286,7 +290,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         lifeExpenctancyField.text = "\(min) \(ale) \(max)"
         // TODO: Bug when birth year is at min (1898) ale field and sider are not correctly set.
         print("== updateAleFieldAndSider()")
-        print("   \(ale)")
+        print("   lifeExpenctancyField.text \(lifeExpenctancyField.text!)")
+        
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
     }
     

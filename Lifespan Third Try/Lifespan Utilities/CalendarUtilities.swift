@@ -10,6 +10,17 @@ import Foundation
 
 class CalendarUtilities {
     
+    /// Transforms a Date object into a String.
+    ///
+    /// - Parameter date: any valid Date object
+    /// - Returns: Date string with the format MM-dd-yyyy
+    static func dateToString(date: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "MM-dd-yyyy"
+        df.timeZone = TimeZone(abbreviation: "UTC") // always work in UTC!
+        return df.string(from: date)
+    }
+    
     /// Transforms a string into a Date object.
     ///
     /// - Parameter dateString: MM-dd-yyyy
