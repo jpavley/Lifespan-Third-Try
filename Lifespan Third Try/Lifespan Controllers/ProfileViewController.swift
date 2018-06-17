@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var riskSlider: UISlider!
     @IBOutlet weak var geneticsSlider: UISlider!
     
+    
     // MARK:- Control Actions -
     
     @IBAction func nameEditingChanged(_ sender: UITextField) {
@@ -185,6 +186,20 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBAction func showTipAction(_ sender: UIButton) {
         performSegue(withIdentifier: "ShowTip", sender: sender)
     }
+    
+    @IBAction func resetAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Reset User Profile", message: "Store settings to factory defaults? All current data will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+            print("restore user profile defaults")
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler:  { (action) in
+            print("keep current user profile")
+        }))
+        present(alert, animated: true)
+    }
+    
+    
+    // MARK:- Methods -
     
     @objc func updateView() {
         let tb = self.tabBarController as! TabViewController

@@ -311,10 +311,10 @@
                                 <rect key="frame" x="0.0" y="118" width="320" height="1193"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-wW-bgG">
-                                        <rect key="frame" x="16" y="0.0" width="288" height="1100"/>
+                                        <rect key="frame" x="16" y="0.0" width="288" height="1132"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-R1-ZQR">
-                                                <rect key="frame" x="16" y="16" width="256" height="1043.5"/>
+                                                <rect key="frame" x="16" y="16" width="256" height="1105.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-wC-5xI">
                                                         <rect key="frame" x="0.0" y="0.0" width="256" height="198.5"/>
@@ -674,6 +674,13 @@
                                                         </constraints>
                                                         <viewLayoutGuide key="safeArea" id="iCH-g0-mDJ"/>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz1-Vh-ioW">
+                                                        <rect key="frame" x="0.0" y="1075.5" width="256" height="30"/>
+                                                        <state key="normal" title="Reset"/>
+                                                        <connections>
+                                                            <action selector="resetAction:" destination="M2B-uX-7MA" eventType="touchUpInside" id="6Xz-Mn-oRn"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="XAR-eP-YaJ" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="CFC-sW-mog"/>
@@ -682,6 +689,7 @@
                                                     <constraint firstItem="hmx-wC-5xI" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="cD0-wC-SHc"/>
                                                     <constraint firstItem="ix9-TU-oHc" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="jzn-d2-RiY"/>
                                                     <constraint firstItem="mtG-5a-cSg" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="rWO-wj-2mW"/>
+                                                    <constraint firstItem="qz1-Vh-ioW" firstAttribute="centerX" secondItem="xzG-R1-ZQR" secondAttribute="centerX" id="sRZ-UK-7yb"/>
                                                     <constraint firstItem="yLl-sq-8TT" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="yMW-Vs-pxD"/>
                                                     <constraint firstItem="hYZ-0R-iOY" firstAttribute="width" secondItem="xzG-R1-ZQR" secondAttribute="width" id="za8-m2-6iv"/>
                                                 </constraints>
@@ -689,7 +697,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1100" id="2ZB-DJ-kLF"/>
+                                            <constraint firstAttribute="height" constant="1132" id="2ZB-DJ-kLF"/>
                                             <constraint firstItem="xzG-R1-ZQR" firstAttribute="leading" secondItem="Onf-wW-bgG" secondAttribute="leading" constant="16" id="5ga-q9-93z"/>
                                             <constraint firstAttribute="trailing" secondItem="xzG-R1-ZQR" secondAttribute="trailing" constant="16" id="Cs4-Um-rda"/>
                                             <constraint firstItem="xzG-R1-ZQR" firstAttribute="top" secondItem="Onf-wW-bgG" secondAttribute="top" constant="16" id="FJG-zC-XRQ"/>
@@ -1010,6 +1018,6 @@
         <image name="year" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aAA-Bj-cbU"/>
+        <segue reference="hGu-Mn-aHr"/>
     </inferredMetricsTieBreakers>
 </document>
