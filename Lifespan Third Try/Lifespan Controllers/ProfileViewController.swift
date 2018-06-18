@@ -207,6 +207,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         // life expectancy
         let lifeExpectancyRV = UserProfile.tranformIntoRV(storedProperty: udc.lifeExpectancyValue)
+        // need to reset LE min and max as well as setting as these value change while the other slider min and max values never change
+        up.lifeExpectancy.min = lifeExpectancyRV.min
+        up.lifeExpectancy.max = lifeExpectancyRV.max
         up.lifeExpectancy.setting = lifeExpectancyRV.setting
         UserDefaults.standard.set(udc.lifeExpectancyValue, forKey: udc.lifeExpectancyKey)
         
