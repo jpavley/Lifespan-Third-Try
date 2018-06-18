@@ -287,12 +287,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         let ale = userProfile.lifeExpectancy.settingAsInt()
         let min = Int(userProfile.lifeExpectancy.min.rounded(.down))
         let max = Int(userProfile.lifeExpectancy.max.rounded(.down))
+        
+        if ale == min && ale == max {
+            print("updateAleFieldAndSider()")
+        }
+
+        
         lifeExpenctancyField.text = "\(min) \(ale) \(max)"
         
         // TODO: Bug when birth year is at min (1898) ale field and sider are not correctly set.
-        
-        print("== updateAleFieldAndSider()")
-        print("   lifeExpenctancyField.text \(lifeExpenctancyField.text!)")
         
         configure(slider: lifeExpencetancySlider, with: userProfile.lifeExpectancy)
     }
@@ -313,6 +316,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         birthDatePicker.minimumDate = CalendarUtilities.stringToDate(dateString: minYearString)
         birthDatePicker.maximumDate = Date()
         birthDatePicker.setDate(userProfile.birthDate, animated: true)
+        
+        if CalendarUtilities.dateToString(date: userProfile.birthDate) == "01-01-1898" {
+            print("updateBirthDatePicker()")
+        }
+
         
         // TODO: if year == 1898 make sure ALE slider is updated
 
