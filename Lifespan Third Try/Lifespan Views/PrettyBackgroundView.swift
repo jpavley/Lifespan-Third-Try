@@ -8,10 +8,6 @@
 
 import UIKit
 
-// TODO: Change background color based on LifeClock time.
-//       From light to dark. 12 o'clock is lightest.
-//       6 o'clock is darkest.
-
 @IBDesignable
 class PrettyBackgroundView: UIView {
     
