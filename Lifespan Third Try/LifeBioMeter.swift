@@ -40,28 +40,26 @@ class LifeBioMeter {
         biologicalAge = biologicalAge > maxAge ? maxAge : biologicalAge
     }
     
-    /// Maps chronological age to a the angle of of the chronological hand of the biometer.
-    ///
-    /// - Age 120 (max age) = 120 degrees (4 o'clock)
-    /// - Age 60 = 0 degrees (12 o'clock)
-    /// - Age 0 = -120 degrees (8 o'clock)
     var chronAgeHandAngle: CGFloat {
         get {
-//            let percentOfMaxAge = chronologicalAge/maxAge
-//            return (percentOfMaxAge * totalDegrees) - startingAngle
             return calcHandAngle(for: chronologicalAge)
         }
     }
     
     var bioAgeHandAngle: CGFloat {
         get {
-//            let percentOfMaxAge = biologicalAge/maxAge
-//            return (percentOfMaxAge * totalDegrees) - startingAngle
             return calcHandAngle(for: biologicalAge)
         }
         
     }
     
+    /// Maps chronological or biological age to a the angle of of a hand of the biometer.
+    /// - Age 120 (max age) = 120 degrees (4 o'clock)
+    /// - Age 60 = 0 degrees (12 o'clock)
+    /// - Age 0 = -120 degrees (8 o'clock)
+    ///
+    /// - Parameter age: biological or chronoligcal age value
+    /// - Returns: angle of hand
     fileprivate func calcHandAngle(for age: CGFloat) -> CGFloat {
         let percentOfMaxAge = age/maxAge
         return (percentOfMaxAge * totalDegrees) - startingAngle

@@ -498,7 +498,7 @@ class AnalysisViewController: UIViewController {
             
         case .allFactors:
             
-            // TODO: is this ever called?
+            print(".allFactors")
             
             let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) natural life expectancy of \(d.lifeExpectancy) years is influenced by the following life factors: "
             let part2 = "A \(d.activityLevel) level of physical activity. "
