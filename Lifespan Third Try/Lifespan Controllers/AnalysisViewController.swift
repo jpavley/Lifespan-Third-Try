@@ -497,9 +497,7 @@ class AnalysisViewController: UIViewController {
             resultIndexes = [3, 7, 9, 10, 12, 16]
             
         case .allFactors:
-            
-            print(".allFactors")
-            
+                        
             let part1 = " was born \(d.age) years ago in \(d.birthYear). \(d.possesser.capitalized) natural life expectancy of \(d.lifeExpectancy) years is influenced by the following life factors: "
             let part2 = "A \(d.activityLevel) level of physical activity. "
             let part3 = "A \(d.stressLevel) level of mental stress. "
