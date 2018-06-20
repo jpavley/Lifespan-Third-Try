@@ -87,6 +87,7 @@
 		1878F0392067F2FB00BEA332 /* BiometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometerViewController.swift; sourceTree = "<group>"; };
 		4802A60820BD786D00BEB1C5 /* LifeBioMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBioMeter.swift; sourceTree = "<group>"; };
 		481274FC20C97769008AF535 /* LifespanBiometerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifespanBiometerModelTests.swift; sourceTree = "<group>"; };
+		481EB4FE20DAA00E005A5237 /* Lifespan Third Try.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lifespan Third Try.entitlements"; sourceTree = "<group>"; };
 		4828069220B05E7700F0091E /* lifeclock3.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifeclock3.idraw; sourceTree = "<group>"; };
 		4828069420B115C800F0091E /* Pronouns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pronouns.swift; sourceTree = "<group>"; };
 		484D707920A541910086CA68 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 		1878F0082067EEB600BEA332 /* Lifespan Third Try */ = {
 			isa = PBXGroup;
 			children = (
+				481EB4FE20DAA00E005A5237 /* Lifespan Third Try.entitlements */,
 				48EB7AC7208B73E300DBA476 /* Lifespan Resources */,
 				48EB7AC6208B738E00DBA476 /* Lifespan Utilities */,
 				48E25CB52069B85B006BB346 /* Lifespan Models */,
@@ -350,6 +352,11 @@
 					1878F0052067EEB600BEA332 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					1878F01B2067EEB600BEA332 = {
 						CreatedOnToolsVersion = 9.2;
@@ -624,12 +631,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lifespan Third Try/Lifespan Third Try.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ7SMYA7GB;
 				INFOPLIST_FILE = "Lifespan Third Try/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-Try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lifespan Third Try/Lifespan Third Try.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ7SMYA7GB;
@@ -646,6 +657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-Try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
