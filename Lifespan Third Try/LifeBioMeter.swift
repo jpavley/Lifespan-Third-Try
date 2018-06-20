@@ -47,18 +47,24 @@ class LifeBioMeter {
     /// - Age 0 = -120 degrees (8 o'clock)
     var chronAgeHandAngle: CGFloat {
         get {
-            let percentOfMaxAge = chronologicalAge/maxAge
-            return (percentOfMaxAge * totalDegrees) - startingAngle
+//            let percentOfMaxAge = chronologicalAge/maxAge
+//            return (percentOfMaxAge * totalDegrees) - startingAngle
+            return calcHandAngle(for: chronologicalAge)
         }
     }
     
     var bioAgeHandAngle: CGFloat {
         get {
-            // TODO: this is almost the same code as chronAgeHandAngle so it should be refactored into a common function
-            let percentOfMaxAge = biologicalAge/maxAge
-            return (percentOfMaxAge * totalDegrees) - startingAngle
+//            let percentOfMaxAge = biologicalAge/maxAge
+//            return (percentOfMaxAge * totalDegrees) - startingAngle
+            return calcHandAngle(for: biologicalAge)
         }
         
+    }
+    
+    fileprivate func calcHandAngle(for age: CGFloat) -> CGFloat {
+        let percentOfMaxAge = age/maxAge
+        return (percentOfMaxAge * totalDegrees) - startingAngle
     }
     
     func daysSpent(from birthDate: Date,  to compareDate: Date = Date()) -> [Int] {

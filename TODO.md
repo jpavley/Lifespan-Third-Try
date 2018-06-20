@@ -6,7 +6,6 @@
 - Support localized text
 
 ## In Progress
-- Save user profile data so that if the app is killed the data is reloaded.
 
 
 ## Parked
@@ -46,6 +45,8 @@
 - Create launch screen
 - Support Dynamic Type (Attributed Text does support dynamic type).
 - Use scroll views on biometer and clock tabs to support growing type
+- Save user profile data so that if the app is killed the data is reloaded.
+
 
 
 
