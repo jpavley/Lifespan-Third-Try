@@ -362,7 +362,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     fileprivate func updateTombstone() {
-        let tombstoneVC = childViewControllers[0] as! TombstoneViewController
+        let tombstoneVC = children[0] as! TombstoneViewController
         tombstoneVC.updateView()
     }
         

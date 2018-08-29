@@ -33,6 +33,7 @@
 		48664C3E20BADE420060634E /* ChronologicalHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3D20BADE420060634E /* ChronologicalHandView.swift */; };
 		48664C4020BADE600060634E /* BiologicalHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48664C3F20BADE600060634E /* BiologicalHandView.swift */; };
 		48664C4220BAE0490060634E /* lifeaccelerometer.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 48664C4120BAE0490060634E /* lifeaccelerometer.idraw */; };
+		488C45DD2136238F00303CED /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC91AB20D54C9F002460E0 /* UserDefaultConstants.swift */; };
 		48C6207D20BB4B9700026456 /* OdometerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6207C20BB4B9700026456 /* OdometerTextView.swift */; };
 		48D70426207C118600F569AF /* TombstoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D70425207C118600F569AF /* TombstoneViewController.swift */; };
 		48D7042820803ECA00F569AF /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7042720803ECA00F569AF /* LogoView.swift */; };
@@ -351,6 +352,7 @@
 				TargetAttributes = {
 					1878F0052067EEB600BEA332 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.iCloud = {
@@ -360,6 +362,7 @@
 					};
 					1878F01B2067EEB600BEA332 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1878F0052067EEB600BEA332;
 					};
@@ -466,6 +469,7 @@
 				481274FE20C97817008AF535 /* LifeBioMeter.swift in Sources */,
 				481274FD20C97769008AF535 /* LifespanBiometerModelTests.swift in Sources */,
 				4812750220C98842008AF535 /* Pronouns.swift in Sources */,
+				488C45DD2136238F00303CED /* UserDefaultConstants.swift in Sources */,
 				4812750520C98973008AF535 /* WebUtilities.swift in Sources */,
 				1878F0212067EEB600BEA332 /* Lifespan_Third_TryTests.swift in Sources */,
 				4812750120C9883C008AF535 /* LifeClock.swift in Sources */,
@@ -640,7 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-Try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -658,7 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-Try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -674,7 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-TryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifespan Third Try.app/Lifespan Third Try";
 			};
@@ -691,7 +695,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Epic-Loot.Lifespan-Third-TryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifespan Third Try.app/Lifespan Third Try";
 			};

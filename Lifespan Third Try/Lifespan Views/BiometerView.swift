@@ -1246,7 +1246,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 48)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr.setAttributes(textAttribs, range: NSRange(location: 0, length: 1))
         
         let textBox = CGRect(x: 136.333, y: 391.167, width: 26.695, height: 60)
@@ -1271,7 +1271,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 48)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle2
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr2.setAttributes(textAttribs2, range: NSRange(location: 0, length: 3))
         
         let textBox2 = CGRect(x: 410.609, y: 391.167, width: 103.409, height: 60)
@@ -1296,7 +1296,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 48)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle3
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr3.setAttributes(textAttribs3, range: NSRange(location: 0, length: 2))
         
         let textBox3 = CGRect(x: 268.703, y: 95.268, width: 103.409, height: 60)
@@ -1321,7 +1321,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 24)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle4
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr4.setAttributes(textAttribs4, range: NSRange(location: 0, length: 2))
         
         let textBox4 = CGRect(x: 87.268, y: 305, width: 63.89, height: 30)
@@ -1346,7 +1346,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 24)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle5
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr5.setAttributes(textAttribs5, range: NSRange(location: 0, length: 3))
         
         let textBox5 = CGRect(x: 475.342, y: 305, width: 74.39, height: 30)
@@ -1371,7 +1371,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 48)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle6
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr6.setAttributes(textAttribs6, range: NSRange(location: 0, length: 2))
         
         let textBox6 = CGRect(x: 132.835, y: 193.016, width: 59.814, height: 60)
@@ -1396,7 +1396,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 48)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle7
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr7.setAttributes(textAttribs7, range: NSRange(location: 0, length: 2))
         
         let textBox7 = CGRect(x: 442.371, y: 193.349, width: 72.314, height: 60)
@@ -1421,7 +1421,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 24)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle8
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr8.setAttributes(textAttribs8, range: NSRange(location: 0, length: 2))
         
         let textBox8 = CGRect(x: 193.677, y: 128.106, width: 59.401, height: 30.621)
@@ -1446,7 +1446,7 @@ class BiometerView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 24)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle9
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr9.setAttributes(textAttribs9, range: NSRange(location: 0, length: 2))
         
         let textBox9 = CGRect(x: 387.047, y: 128.106, width: 59.401, height: 30.621)

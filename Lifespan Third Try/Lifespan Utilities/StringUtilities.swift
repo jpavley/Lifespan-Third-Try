@@ -32,20 +32,20 @@ class TextFormatter {
     var boldFontSize: CGFloat
     var boldFont: UIFont
     
-    var plainAttributes: [NSAttributedStringKey : UIFont]
-    var boldAttributes: [NSAttributedStringKey : UIFont]
+    var plainAttributes: [NSAttributedString.Key : UIFont]
+    var boldAttributes: [NSAttributedString.Key : UIFont]
     
     init() {
-        plainFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFontTextStyle.body)
+        plainFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body)
         boldFontDescriptor = plainFontDescriptor.withSymbolicTraits(.traitBold)!
         
-        plainFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        plainFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
         boldFontSize = plainFont.pointSize + 4
         boldFont = UIFont(descriptor: boldFontDescriptor, size: boldFontSize)
         
-        plainAttributes = [NSAttributedStringKey.font : plainFont]
-        boldAttributes = [NSAttributedStringKey.font : boldFont]
+        plainAttributes = [NSAttributedString.Key.font : plainFont]
+        boldAttributes = [NSAttributedString.Key.font : boldFont]
     }
     
     /// Creates a plain style attributed string.

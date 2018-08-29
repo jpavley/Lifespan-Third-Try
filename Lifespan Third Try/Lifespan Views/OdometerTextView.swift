@@ -38,7 +38,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr.setAttributes(textAttribs, range: NSRange(location: 0, length: 1))
         
         let textBox = CGRect(x: 174.5, y: 456, width: 48, height: 48)
@@ -63,7 +63,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle2
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr2.setAttributes(textAttribs2, range: NSRange(location: 0, length: 1))
         
         let textBox2 = CGRect(x: 222.5, y: 456, width: 48, height: 48)
@@ -88,7 +88,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle3
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr3.setAttributes(textAttribs3, range: NSRange(location: 0, length: 1))
         
         let textBox3 = CGRect(x: 270.5, y: 456, width: 48, height: 48)
@@ -113,7 +113,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle4
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr4.setAttributes(textAttribs4, range: NSRange(location: 0, length: 1))
         
         let textBox4 = CGRect(x: 318.5, y: 456, width: 48, height: 48)
@@ -138,7 +138,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle5
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr5.setAttributes(textAttribs5, range: NSRange(location: 0, length: 1))
         
         let textBox5 = CGRect(x: 366.5, y: 456, width: 48, height: 48)
@@ -163,7 +163,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-Bold", size: 39)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle6
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr6.setAttributes(textAttribs6, range: NSRange(location: 0, length: 1))
         
         let textBox6 = CGRect(x: 414.5, y: 456, width: 48, height: 48)
@@ -188,7 +188,7 @@ class OdometerTextView: CoreGraphicsView {
             .font: UIFont(name: "Helvetica-LightOblique", size: 28)!,
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .paragraphStyle: paragraphStyle7
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         attributedStr7.setAttributes(textAttribs7, range: NSRange(location: 0, length: odoLabel.count))
 
         let textBox7 = CGRect(x: 115, y: 530, width: 400, height: 40)
