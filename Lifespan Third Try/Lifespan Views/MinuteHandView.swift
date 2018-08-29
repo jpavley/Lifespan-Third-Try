@@ -10,7 +10,7 @@ import UIKit
 
 class MinuteHandView: CoreGraphicsView {
     
-    // Need to animate the second, hour, and minuet hand independently
+    // Need to animate the second, hour, and minute hand independently
     
     let minuteHandPathRef = CGMutablePath()
     

@@ -57,7 +57,7 @@ class Lifespan {
         if minuteHandValue == 0 && secondHandValue == 0 {
             return 12 - hourHandValue
         } else {
-            // minuets and seconds eat into the final hour
+            // minutes and seconds eat into the final hour
             return 11 - hourHandValue
         }
     }
@@ -102,8 +102,8 @@ class Lifespan {
     var monthsPerMinutes: String {
         if let mALE = modifiedALE {
             let monthsInYearSpan: CGFloat = 12 * mALE
-            let minuetsIn12HourDay: CGFloat = 60 * 12
-            let minSpan = unitsPerSlice(units: monthsInYearSpan, slices: minuetsIn12HourDay)
+            let minutesIn12HourDay: CGFloat = 60 * 12
+            let minSpan = unitsPerSlice(units: monthsInYearSpan, slices: minutesIn12HourDay)
             let minSpanString = String(format: "%.2f", minSpan)
             return "\(minSpanString)"
         } else {
@@ -204,7 +204,7 @@ class Lifespan {
         // 4. hourHandValue = timeSpent divisor
         // 5. minutesSpent = 60 * timeSpent remainder (60 * % of an hour remaining)
         // 6. minuteHandValue = minutesSpent divisor
-        // 7. secondHandValue = 60 * minutesSpent remainder (60 * % of a minuet remaining)
+        // 7. secondHandValue = 60 * minutesSpent remainder (60 * % of a minute remaining)
         
         let ageInYears = CalendarUtilities.yearsFromNow(from: b.date)
         let ageInDays = CalendarUtilities.daysFromNow(from: b.date)

@@ -36,8 +36,8 @@ class ClockViewController: UIViewController {
         let hourAttributedString = tf.createStringWithBoldPart(with: "One hour is ", and: "\(lifeSpan.yearsPerHour)", and: " years")
         hourKeyLabel.attributedText = hourAttributedString
         
-        let minuetAttributedString = tf.createStringWithBoldPart(with: "One minuet is ", and: "\(lifeSpan.monthsPerMinutes)", and: " months")
-        minuteKeyLabel.attributedText = minuetAttributedString
+        let minuteAttributedString = tf.createStringWithBoldPart(with: "One minute is ", and: "\(lifeSpan.monthsPerMinutes)", and: " months")
+        minuteKeyLabel.attributedText = minuteAttributedString
         
         let secondAttributedString = tf.createStringWithBoldPart(with: "One second is ", and: "\(lifeSpan.daysPerSeconds)", and: " days")
         secondKeyLabel.attributedText = secondAttributedString
