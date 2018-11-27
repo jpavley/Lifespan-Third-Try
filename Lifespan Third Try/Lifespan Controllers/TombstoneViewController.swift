@@ -14,7 +14,6 @@ class TombstoneViewController: UIViewController {
     @IBOutlet weak var subheadLabel: UILabel!
     @IBOutlet weak var footnoteLabel: UILabel!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
